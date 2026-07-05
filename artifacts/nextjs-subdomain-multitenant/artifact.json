@@ -1,0 +1,14 @@
+{
+  "id": "nextjs-subdomain-multitenant",
+  "name": "Next.js Subdomain Multi-Tenant Routing",
+  "version": "1.0.0",
+  "kind": "playbook",
+  "category": "infra",
+  "description": "Subdomain -> tenant rewriting in Next.js App Router via middleware, with static/verification-file exemptions and localhost fallback.",
+  "tags": ["nextjs", "middleware", "multi-tenant", "subdomain", "saas", "routing"],
+  "compatible_with": ["facebook-domain-verification", "meta-capi-dedup"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
