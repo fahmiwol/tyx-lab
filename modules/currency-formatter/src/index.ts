@@ -1,1 +1,75 @@
-aW1wb3J0IGdldERiIGZyb20gJ0AvbGliL2RiJzsKCi8qKgogKiBDdXJyZW5jeSBmb3JtYXR0ZXIgJiBjb252ZXJzaW9uIGZvciBJRFIg4oaUIFVTRC4KICogUmF0ZSBzdG9yZWQgaW4gc2l0ZV9zZXR0aW5ncyBvciBlbnYuIFBheW1lbnRzIGFsd2F5cyBpbiBJRFIuCiAqIFVTRCBpcyBkaXNwbGF5LW9ubHkgZm9yIGludGVybmF0aW9uYWwgY3VzdG9tZXJzLgogKi8KCmNvbnN0IERFRkFVTFRfUkFURSA9IDE2XzAwMDsgLy8gMSBVU0QgPSBScCAxNi4wMDAKCi8qKgogKiBHZXQgY3VycmVudCBVU0TihpJJRFIgcmF0ZSBmcm9tIERCIG9yIGZhbGxiYWNrLgogKi8KZXhwb3J0IGZ1bmN0aW9uIGdldFVzZFJhdGUoKTogbnVtYmVyIHsKICB0cnkgewogICAgY29uc3Qgcm93ID0gZ2V0RGIoKQogICAgICAucHJlcGFyZSgiU0VMRUNUIHZhbHVlIEZST00gc2l0ZV9zZXR0aW5ncyBXSEVSRSBrZXkgPSAndXNkX3JhdGUnIikKICAgICAgLmdldCgpIGFzIHsgdmFsdWU6IHN0cmluZyB9IHwgdW5kZWZpbmVkOwoKICAgIGNvbnN0IG4gPSByb3cgPyBwYXJzZUludChyb3cudmFsdWUsIDEwKSA6IE5hTjsKICAgIHJldHVybiBOdW1iZXIuaXNGaW5pdGUobikgJiYgbiA+IDAgPyBuIDogREVGQVVMVF9SQVRFOwogIH0gY2F0Y2ggewogICAgcmV0dXJuIERFRkFVTFRfUkFURTsKICB9Cn0KCi8qKgogKiBDb252ZXJ0IElEUiB0byBVU0QgKGZsb2F0LCAyIGRlY2ltYWxzKS4KICogRXhhbXBsZTogaWRyVG9Vc2QoMTYwMDAwLCAxNjAwMCkg4oaSICIxMC4wMCIKICovCmV4cG9ydCBmdW5jdGlvbiBpZHJUb1VzZChpZHI6IG51bWJlciwgcmF0ZTogbnVtYmVyKTogc3RyaW5nIHsKICByZXR1cm4gKGlkciAvIHJhdGUpLnRvRml4ZWQoMik7Cn0KCi8qKgogKiBGb3JtYXQgYXMgVVNEIGRpc3BsYXk6ICIkWC5YWCIKICovCmV4cG9ydCBmdW5jdGlvbiB1c2REaXNwbGF5UHJpY2UoaWRyOiBudW1iZXIsIHJhdGU6IG51bWJlcik6IHN0cmluZyB7CiAgcmV0dXJuIGAkJHtpZHJUb1VzZChpZHIsIHJhdGUpfWA7Cn0KCi8qKgogKiBGb3JtYXQgYXMgSURSIGRpc3BsYXk6ICJScCAxNTAuMDAwIgogKi8KZXhwb3J0IGZ1bmN0aW9uIGlkckRpc3BsYXlQcmljZShpZHI6IG51bWJlcik6IHN0cmluZyB7CiAgcmV0dXJuICdScCAnICsgaWRyLnRvTG9jYWxlU3RyaW5nKCdpZC1JRCcpOwp9CgovKioKICogRnVsbCBsYWJlbDogIlJwIDE1MC4wMDAgKH4kMTAuMDApIgogKi8KZXhwb3J0IGZ1bmN0aW9uIGZ1bGxQcmljZUxhYmVsKGlkcjogbnVtYmVyLCByYXRlOiBudW1iZXIpOiBzdHJpbmcgewogIHJldHVybiBgJHtpZHJEaXNwbGF5UHJpY2UoaWRyKX0gKH4ke3VzZERpc3BsYXlQcmljZShpZHIsIHJhdGUpfSlgOwp9CgovKioKICogVXBkYXRlIHJhdGUgaW4gREIuIEFkbWluIG9ubHkuCiAqLwpleHBvcnQgZnVuY3Rpb24gc2V0VXNkUmF0ZShuZXdSYXRlOiBudW1iZXIpOiBib29sZWFuIHsKICBpZiAoIU51bWJlci5pc0Zpbml0ZShuZXdSYXRlKSB8fCBuZXdSYXRlIDw9IDApIHJldHVybiBmYWxzZTsKCiAgdHJ5IHsKICAgIGdldERiKCkKICAgICAgLnByZXBhcmUoCiAgICAgICAgYElOU0VSVCBJTlRPIHNpdGVfc2V0dGluZ3MgKGtleSwgdmFsdWUpIFZBTFVFUyAoJ3VzZF9yYXRlJywgPykKICAgICAgICAgT04gQ09ORkxJQ1Qoa2V5KSBETyBVUERBVEUgU0VUIHZhbHVlID0gZXhjbHVkZWQudmFsdWVgCiAgICAgICkKICAgICAgLnJ1bihTdHJpbmcobmV3UmF0ZSkpOwogICAgcmV0dXJuIHRydWU7CiAgfSBjYXRjaCB7CiAgICByZXR1cm4gZmFsc2U7CiAgfQp9CgpleHBvcnQgeyBERUZBVUxUX1JBVEUgfTsK
+import getDb from '@/lib/db';
+
+/**
+ * Currency formatter & conversion for IDR ↔ USD.
+ * Rate stored in site_settings or env. Payments always in IDR.
+ * USD is display-only for international customers.
+ */
+
+const DEFAULT_RATE = 16_000; // 1 USD = Rp 16.000
+
+/**
+ * Get current USD→IDR rate from DB or fallback.
+ */
+export function getUsdRate(): number {
+  try {
+    const row = getDb()
+      .prepare("SELECT value FROM site_settings WHERE key = 'usd_rate'")
+      .get() as { value: string } | undefined;
+
+    const n = row ? parseInt(row.value, 10) : NaN;
+    return Number.isFinite(n) && n > 0 ? n : DEFAULT_RATE;
+  } catch {
+    return DEFAULT_RATE;
+  }
+}
+
+/**
+ * Convert IDR to USD (float, 2 decimals).
+ * Example: idrToUsd(160000, 16000) → "10.00"
+ */
+export function idrToUsd(idr: number, rate: number): string {
+  return (idr / rate).toFixed(2);
+}
+
+/**
+ * Format as USD display: "$X.XX"
+ */
+export function usdDisplayPrice(idr: number, rate: number): string {
+  return `$${idrToUsd(idr, rate)}`;
+}
+
+/**
+ * Format as IDR display: "Rp 150.000"
+ */
+export function idrDisplayPrice(idr: number): string {
+  return 'Rp ' + idr.toLocaleString('id-ID');
+}
+
+/**
+ * Full label: "Rp 150.000 (~$10.00)"
+ */
+export function fullPriceLabel(idr: number, rate: number): string {
+  return `${idrDisplayPrice(idr)} (~${usdDisplayPrice(idr, rate)})`;
+}
+
+/**
+ * Update rate in DB. Admin only.
+ */
+export function setUsdRate(newRate: number): boolean {
+  if (!Number.isFinite(newRate) || newRate <= 0) return false;
+
+  try {
+    getDb()
+      .prepare(
+        `INSERT INTO site_settings (key, value) VALUES ('usd_rate', ?)
+         ON CONFLICT(key) DO UPDATE SET value = excluded.value`
+      )
+      .run(String(newRate));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export { DEFAULT_RATE };
