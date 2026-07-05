@@ -1,0 +1,20 @@
+{
+  "id": "3d-npc-agent",
+  "name": "3D Isometric NPC Agent — Random Wander + State Machine",
+  "version": "1.0.0",
+  "category": "3d",
+  "description": "AI agent in 3D isometric world with random movement, state machine (idle/walking/working), spawn points, and wander radius. Supports behavior trees and optional connection to external workflow.",
+  "input": [
+    { "name": "definition", "type": "object", "description": "Agent config: id, name, role, color, startX, startY, wanderRadius" },
+    { "name": "room", "type": "object", "description": "Room context: spawnPoint, walkable tiles" }
+  ],
+  "output": [
+    { "name": "agent", "type": "object", "description": "Agent instance with position, state, movement" }
+  ],
+  "tags": ["3d", "agent", "isometric", "npc", "behavior"],
+  "compatible_with": ["world-lite", "game-builder"],
+  "used_in_recipes": ["virtual-world", "npc-town"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
