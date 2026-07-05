@@ -1,0 +1,21 @@
+{
+  "id": "raycaster-object-picker",
+  "name": "Raycaster Object Picker",
+  "version": "1.0.0",
+  "category": "3d",
+  "description": "Three.js mouse/touch-to-3D object picking via raycasting. Click/tap to select objects, optional hover highlighting with customizable color. Event-driven API with pick/hover/unhover callbacks. Preserves original material colors.",
+  "input": [
+    { "name": "camera", "type": "THREE.Camera", "description": "Three.js camera" },
+    { "name": "scene", "type": "THREE.Scene", "description": "Three.js scene with pickable objects" }
+  ],
+  "output": [
+    { "name": "pickedObject", "type": "THREE.Object3D", "description": "Object hit by raycast" },
+    { "name": "intersection", "type": "Object", "description": "Raycast hit data (point, distance, etc.)" }
+  ],
+  "tags": ["3d", "threejs", "input", "interaction", "game-dev", "ui"],
+  "compatible_with": ["browser", "typescript", "threejs", "game-engines"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
