@@ -1,1 +1,1 @@
-
+{"id":"ai-provider-router-fallback","name":"AI Provider Router with Fallback","version":"1.0.0","category":"ai","description":"Route LLM calls across multiple OpenAI-compatible endpoints with automatic fallback chaining.","input":[],"output":[],"tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
