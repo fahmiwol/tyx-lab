@@ -1,0 +1,14 @@
+{
+  "id": "multi-agent-dispatch-router",
+  "name": "Multi-Agent Intent-Based Dispatch Router",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "ai",
+  "description": "Intelligent routing system that detects user intent and dispatches to the best specialized agent. Supports command-based routing, LLM-based intent classification, and per-agent gateway endpoints. Enables seamless multi-agent collaboration without user knowing which agent handles their request.",
+  "tags": ["agents", "dispatch", "routing", "intent", "nlp"],
+  "compatible_with": ["nodejs", "claude", "openai"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
