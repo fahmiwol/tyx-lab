@@ -1,1 +1,214 @@
-IyBJbWFnZSB3aXRoIEZhbGxiYWNrIENvbXBvbmVudAoKUmVhY3QgY29tcG9uZW50IHRoYXQgZGlzcGxheXMgYW4gaW1hZ2Ugd2l0aCBpbmxpbmUgU1ZHIGZhbGxiYWNrIG9uIGxvYWQgZXJyb3IuIFVzZWZ1bCBmb3IgVUdDLCBhdmF0YXJzLCBwcm9kdWN0IHBob3RvcyB3aGVyZSBVUkxzIG1heSBicmVhay4KCiMjIFdoeQoKLSAqKkdyYWNlZnVsIGRlZ3JhZGF0aW9uKio6IFVzZXItZ2VuZXJhdGVkIFVSTHMgZmFpbD8gU2hvdyBwbGFjZWhvbGRlciwgbm90IGJyb2tlbiBpbWFnZSBpY29uCi0gKipJbmxpbmUgZmFsbGJhY2sqKjogTm8gZXh0ZXJuYWwgaW1hZ2UgbmVlZGVkIChiYXNlNjQtZW5jb2RlZCBTVkcpCi0gKipQcmVzZXJ2ZSBsYXlvdXQqKjogRmFsbGJhY2sgcmVzcGVjdHMgd2lkdGgsIGhlaWdodCwgY2xhc3NOYW1lCi0gKipUcmFuc3BhcmVudCoqOiBQcm9wcyBwYXNzIHRocm91Z2g7IGRyb3AtaW4gcmVwbGFjZW1lbnQgZm9yIGA8aW1nPmAKCiMjIFVzYWdlCgpgYGB0c3gKaW1wb3J0IHsgSW1hZ2VXaXRoRmFsbGJhY2sgfSBmcm9tICdAL2NvbXBvbmVudHMvSW1hZ2VXaXRoRmFsbGJhY2snOwoKLy8gU2ltcGxlCjxJbWFnZVdpdGhGYWxsYmFjawogIHNyYz0iaHR0cHM6Ly9hcGkuZXhhbXBsZS5jb20vaW1hZ2VzL3VzZXItMTIzLmpwZyIKICBhbHQ9IlVzZXIgcHJvZmlsZSIKLz4KCi8vIFdpdGggc3R5bGluZwo8SW1hZ2VXaXRoRmFsbGJhY2sKICBzcmM9Imh0dHBzOi8vZXhhbXBsZS5jb20vcHJvZHVjdC5qcGciCiAgYWx0PSJQcm9kdWN0IgogIGNsYXNzTmFtZT0idy02NCBoLTY0IG9iamVjdC1jb3ZlciByb3VuZGVkLWxnIgogIHN0eWxlPXt7IGFzcGVjdFJhdGlvOiAnMS8xJyB9fQovPgoKLy8gSW4gYSBnYWxsZXJ5CntpdGVtcy5tYXAoaXRlbSA9PiAoCiAgPEltYWdlV2l0aEZhbGxiYWNrCiAgICBrZXk9e2l0ZW0uaWR9CiAgICBzcmM9e2l0ZW0uaW1hZ2VVcmx9CiAgICBhbHQ9e2l0ZW0udGl0bGV9CiAgICBjbGFzc05hbWU9InctNDggaC00OCByb3VuZGVkLWxnIgogIC8+CikpfQpgYGAKCiMjIEZhbGxiYWNrIEJlaGF2aW9yCgpXaGVuIGltYWdlIGZhaWxzIHRvIGxvYWQgKGBvbkVycm9yYCk6CjEuIENvbXBvbmVudCBzZXRzIGludGVybmFsIGBkaWRFcnJvcmAgc3RhdGUKMi4gUmVuZGVycyBhIGNvbnRhaW5lciBkaXYgaW5zdGVhZCBvZiBgPGltZz5gCjMuIERpc3BsYXlzIHBsYWNlaG9sZGVyIFNWRyBpbnNpZGUKNC4gUHJlc2VydmVzIG9yaWdpbmFsIGRpbWVuc2lvbnMgYW5kIGNsYXNzTmFtZQoKSFRNTCBmYWxsYmFjazoKYGBgaHRtbAo8ZGl2IGNsYXNzPSJpbmxpbmUtYmxvY2sgYmctZ3JheS0xMDAgdGV4dC1jZW50ZXIgYWxpZ24tbWlkZGxlIHctNjQgaC02NCByb3VuZGVkLWxnIj4KICA8ZGl2IGNsYXNzPSJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciB3LWZ1bGwgaC1mdWxsIj4KICAgIDxpbWcgc3JjPSJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LC4uLiIgYWx0PSJCcm9rZW4gaW1hZ2UgcGxhY2Vob2xkZXIiIC8+CiAgPC9kaXY+CjwvZGl2PgpgYGAKCiMjIFBsYWNlaG9sZGVyCgpCdWlsdC1pbiBTVkcgKGZyYW1lICsgYnJva2VuLWltYWdlIGljb24pOgotIFRyYW5zcGFyZW50IGJhY2tncm91bmQgKG1hdGNoZXMgcGFyZW50KQotIDMwJSBvcGFjaXR5IChzdWJ0bGUpCi0gUmVhZGFibGUgZXZlbiBhdCBzbWFsbCBzaXplcwotIFB1cmUgU1ZHIChubyBleHRlcm5hbCBkZXBlbmRlbmNpZXMpCgpUbyBjdXN0b21pemUsIHJlcGxhY2UgYEVSUk9SX0lNR19TUkNgOgoKYGBgdHN4CmNvbnN0IENVU1RPTV9QTEFDRUhPTERFUiA9IGBkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LC4uLmA7CgovLyBUaGVuIHVzZSBpbiBjb21wb25lbnQKPGltZyBzcmM9e0NVU1RPTV9QTEFDRUhPTERFUn0gLi4uIC8+CmBgYAoKIyMgUHJvcHMKCkFsbCBzdGFuZGFyZCBgPGltZz5gIGF0dHJpYnV0ZXMgd29yazoKCnwgUHJvcCB8IFR5cGUgfCBEZXNjcmlwdGlvbiB8CnwtLS0tLS18LS0tLS0tfC0tLS0tLS0tLS0tLS18CnwgYHNyY2AgfCBzdHJpbmcgfCBJbWFnZSBVUkwgfAp8IGBhbHRgIHwgc3RyaW5nIHwgQWx0IHRleHQgfAp8IGBjbGFzc05hbWVgIHwgc3RyaW5nIHwgVGFpbHdpbmQvQ1NTIGNsYXNzZXMgfAp8IGBzdHlsZWAgfCBDU1NQcm9wZXJ0aWVzIHwgSW5saW5lIHN0eWxlcyB8CnwgYHdpZHRoYCAvIGBoZWlnaHRgIHwgbnVtYmVyIHwgRGltZW5zaW9ucyB8CnwgYGxvYWRpbmdgIHwgJ2xhenknIFx8ICdlYWdlcicgfCBMb2FkaW5nIHN0cmF0ZWd5IHwKfCBgY3Jvc3NPcmlnaW5gIHwgc3RyaW5nIHwgQ09SUyBoYW5kbGluZyB8CnwgYGRhdGEtKmAgfCBhbnkgfCBEYXRhIGF0dHJpYnV0ZXMgfAoKIyMgRXhhbXBsZXMKCiMjIyBVc2VyIEF2YXRhcgoKYGBgdHN4CjxJbWFnZVdpdGhGYWxsYmFjawogIHNyYz17dXNlci5hdmF0YXJVcmx9CiAgYWx0PXt1c2VyLm5hbWV9CiAgY2xhc3NOYW1lPSJ3LTEyIGgtMTIgcm91bmRlZC1mdWxsIGJvcmRlci0yIGJvcmRlci1ncmF5LTIwMCIKLz4KYGBgCgpJZiBVUkwgYnJlYWtzLCBzaG93cyBncmF5IGNpcmNsZSB3aXRoIHBsYWNlaG9sZGVyIGljb24uCgojIyMgUHJvZHVjdCBHcmlkCgpgYGB0c3gKe3Byb2R1Y3RzLm1hcChwcm9kdWN0ID0+ICgKICA8ZGl2IGtleT17cHJvZHVjdC5pZH0gY2xhc3NOYW1lPSJjb2wtc3Bhbi0xIj4KICAgIDxJbWFnZVdpdGhGYWxsYmFjawogICAgICBzcmM9e3Byb2R1Y3QuaW1hZ2VVcmx9CiAgICAgIGFsdD17cHJvZHVjdC5uYW1lfQogICAgICBjbGFzc05hbWU9InctZnVsbCBoLWF1dG8gcm91bmRlZC1tZCIKICAgICAgbG9hZGluZz0ibGF6eSIKICAgIC8+CiAgICA8aDM+e3Byb2R1Y3QubmFtZX08L2gzPgogIDwvZGl2PgopKX0KYGBgCgojIyMgQmxvZyBQb3N0IEZlYXR1cmVkIEltYWdlCgpgYGB0c3gKPEltYWdlV2l0aEZhbGxiYWNrCiAgc3JjPXtwb3N0LmZlYXR1cmVkSW1hZ2VVcmx9CiAgYWx0PXtwb3N0LnRpdGxlfQogIGNsYXNzTmFtZT0idy1mdWxsIGgtOTYgb2JqZWN0LWNvdmVyIHJvdW5kZWQteGwiCiAgcHJpb3JpdHkKLz4KYGBgCgojIyBTdHlsaW5nIHRoZSBGYWxsYmFjawoKRmFsbGJhY2sgcmVzcGVjdHMgY2xhc3NOYW1lOgoKYGBgdHN4CjxJbWFnZVdpdGhGYWxsYmFjawogIHNyYz17c3JjfQogIGFsdD0idGVzdCIKICBjbGFzc05hbWU9InctNjQgaC02NCByb3VuZGVkLWZ1bGwgYm9yZGVyLTQgYm9yZGVyLXJlZC01MDAiCi8+CgovLyBGYWxsYmFjayA8ZGl2PiBnZXRzOiAiaW5saW5lLWJsb2NrIGJnLWdyYXktMTAwIHRleHQtY2VudGVyIGFsaWduLW1pZGRsZSB3LTY0IGgtNjQgcm91bmRlZC1mdWxsIGJvcmRlci00IGJvcmRlci1yZWQtNTAwIgovLyBOb3RlOiBTb21lIENTUyBwcm9wZXJ0aWVzIG1heSBub3QgYXBwbHkgdG8gPGRpdj4gKGUuZy4sIG9iamVjdC1maXQpCmBgYAoKRm9yIGNvbXBsZXggbGF5b3V0cywgY29uc2lkZXIgQ1NTIGZhbGxiYWNrOgoKYGBgY3NzCmltZy5pbWFnZS13aXRoLWZhbGxiYWNrIHsKICBiYWNrZ3JvdW5kOiB1cmwoJ2RhdGE6aW1hZ2Uvc3ZnK3htbDsuLi4nKSBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdDsKICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjNmNGY2Owp9CmBgYAoKIyMgRGVidWdnaW5nCgpUbyBzZWUgd2hlbiBpbWFnZXMgZmFpbDoKCmBgYHRzeApjb25zdCBoYW5kbGVFcnJvciA9IChlOiBSZWFjdC5TeW50aGV0aWNFdmVudDxIVE1MSW1hZ2VFbGVtZW50PikgPT4gewogIGNvbnNvbGUuZXJyb3IoJ0ltYWdlIGZhaWxlZDonLCBlLmN1cnJlbnRUYXJnZXQuc3JjKTsKICBzZXREaWRFcnJvcih0cnVlKTsKfTsKYGBgCgpDb21wb25lbnQgbG9ncyBvcmlnaW5hbCBVUkwgaW4gYGRhdGEtb3JpZ2luYWwtdXJsYCBhdHRyaWJ1dGUgZm9yIGRlYnVnZ2luZzoKCmBgYHRzeAo8aW1nIC4uLiBkYXRhLW9yaWdpbmFsLXVybD0iaHR0cHM6Ly9hcGkuZXhhbXBsZS5jb20vaW1hZ2UtMTIzLmpwZyIgLz4KYGBgCgojIyBQZXJmb3JtYW5jZQoKLSAqKk5vIGxhenktbG9hZCBieSBkZWZhdWx0Kio6IFNldCBgbG9hZGluZz0ibGF6eSJgIGZvciBvZmYtc2NyZWVuIGltYWdlcwotICoqSW5saW5lIFNWRyoqOiBObyBleHRlcm5hbCByZXF1ZXN0IChpbnN0YW50IGZhbGxiYWNrKQotICoqTWluaW1hbCByZS1yZW5kZXIqKjogT25seSBvbmUgc3RhdGUgdXBkYXRlIG9uIGVycm9yCi0gKipTbWFsbCBidW5kbGUqKjogPCAxS0IgbWluaWZpZWQKCiMjIEJyb3dzZXIgU3VwcG9ydAoKLSBDaHJvbWUvRWRnZSA5MCsKLSBGaXJlZm94IDg4KwotIFNhZmFyaSAxNCsKLSBBbGwgbW9kZXJuIG1vYmlsZSBicm93c2VycwoKRmFsbGJhY2sgU1ZHIHVzZXMgc3RhbmRhcmQgWE1MIChubyBleG90aWMgZmVhdHVyZXMpLgoKIyMgSW50ZWdyYXRpb24gd2l0aCBOZXh0LmpzIEltYWdlCgpUbyB1c2Ugd2l0aCBOZXh0LmpzIGBJbWFnZWAgY29tcG9uZW50OgoKYGBgdHN4CmltcG9ydCBJbWFnZSBmcm9tICduZXh0L2ltYWdlJzsKaW1wb3J0IHsgSW1hZ2VXaXRoRmFsbGJhY2sgfSBmcm9tICdAL2NvbXBvbmVudHMvSW1hZ2VXaXRoRmFsbGJhY2snOwoKLy8gU3RhbmRhcmQgPGltZz4gKHRoaXMgbW9kdWxlKQo8SW1hZ2VXaXRoRmFsbGJhY2sgc3JjPXsuLi59IC8+CgovLyBPciB1c2UgSW1hZ2Ugd2l0aCBvbkVycm9yIGhhbmRsZXIKPEltYWdlCiAgc3JjPXtzcmN9CiAgYWx0PXthbHR9CiAgb25FcnJvcj17KCkgPT4gc2V0U2hvd0ZhbGxiYWNrKHRydWUpfQogIHsuLi59Ci8+CmBgYAoKIyMgUmVsYXRlZCBNb2R1bGVzCgotIGBhZXMtMjU2LWdjbS1zZWNyZXRgOiBFbmNyeXB0IGltYWdlIFVSTHMgYmVmb3JlIHN0b3JpbmcKLSBgY3VycmVuY3ktZm9ybWF0dGVyYDogRGlzcGxheSBwcm9kdWN0IHByaWNlcyBhbG9uZ3NpZGUgaW1hZ2VzCgoqT3BlbiBzb3VyY2Ug4oCUIHVzZSBpdCB3aXNlbHkuKgo=
+# Image with Fallback Component
+
+React component that displays an image with inline SVG fallback on load error. Useful for UGC, avatars, product photos where URLs may break.
+
+## Why
+
+- **Graceful degradation**: User-generated URLs fail? Show placeholder, not broken image icon
+- **Inline fallback**: No external image needed (base64-encoded SVG)
+- **Preserve layout**: Fallback respects width, height, className
+- **Transparent**: Props pass through; drop-in replacement for `<img>`
+
+## Usage
+
+```tsx
+import { ImageWithFallback } from '@/components/ImageWithFallback';
+
+// Simple
+<ImageWithFallback
+  src="https://api.example.com/images/user-123.jpg"
+  alt="User profile"
+/>
+
+// With styling
+<ImageWithFallback
+  src="https://example.com/product.jpg"
+  alt="Product"
+  className="w-64 h-64 object-cover rounded-lg"
+  style={{ aspectRatio: '1/1' }}
+/>
+
+// In a gallery
+{items.map(item => (
+  <ImageWithFallback
+    key={item.id}
+    src={item.imageUrl}
+    alt={item.title}
+    className="w-48 h-48 rounded-lg"
+  />
+))}
+```
+
+## Fallback Behavior
+
+When image fails to load (`onError`):
+1. Component sets internal `didError` state
+2. Renders a container div instead of `<img>`
+3. Displays placeholder SVG inside
+4. Preserves original dimensions and className
+
+HTML fallback:
+```html
+<div class="inline-block bg-gray-100 text-center align-middle w-64 h-64 rounded-lg">
+  <div class="flex items-center justify-center w-full h-full">
+    <img src="data:image/svg+xml;base64,..." alt="Broken image placeholder" />
+  </div>
+</div>
+```
+
+## Placeholder
+
+Built-in SVG (frame + broken-image icon):
+- Transparent background (matches parent)
+- 30% opacity (subtle)
+- Readable even at small sizes
+- Pure SVG (no external dependencies)
+
+To customize, replace `ERROR_IMG_SRC`:
+
+```tsx
+const CUSTOM_PLACEHOLDER = `data:image/svg+xml;base64,...`;
+
+// Then use in component
+<img src={CUSTOM_PLACEHOLDER} ... />
+```
+
+## Props
+
+All standard `<img>` attributes work:
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `src` | string | Image URL |
+| `alt` | string | Alt text |
+| `className` | string | Tailwind/CSS classes |
+| `style` | CSSProperties | Inline styles |
+| `width` / `height` | number | Dimensions |
+| `loading` | 'lazy' \| 'eager' | Loading strategy |
+| `crossOrigin` | string | CORS handling |
+| `data-*` | any | Data attributes |
+
+## Examples
+
+### User Avatar
+
+```tsx
+<ImageWithFallback
+  src={user.avatarUrl}
+  alt={user.name}
+  className="w-12 h-12 rounded-full border-2 border-gray-200"
+/>
+```
+
+If URL breaks, shows gray circle with placeholder icon.
+
+### Product Grid
+
+```tsx
+{products.map(product => (
+  <div key={product.id} className="col-span-1">
+    <ImageWithFallback
+      src={product.imageUrl}
+      alt={product.name}
+      className="w-full h-auto rounded-md"
+      loading="lazy"
+    />
+    <h3>{product.name}</h3>
+  </div>
+))}
+```
+
+### Blog Post Featured Image
+
+```tsx
+<ImageWithFallback
+  src={post.featuredImageUrl}
+  alt={post.title}
+  className="w-full h-96 object-cover rounded-xl"
+  priority
+/>
+```
+
+## Styling the Fallback
+
+Fallback respects className:
+
+```tsx
+<ImageWithFallback
+  src={src}
+  alt="test"
+  className="w-64 h-64 rounded-full border-4 border-red-500"
+/>
+
+// Fallback <div> gets: "inline-block bg-gray-100 text-center align-middle w-64 h-64 rounded-full border-4 border-red-500"
+// Note: Some CSS properties may not apply to <div> (e.g., object-fit)
+```
+
+For complex layouts, consider CSS fallback:
+
+```css
+img.image-with-fallback {
+  background: url('data:image/svg+xml;...') center / contain no-repeat;
+  background-color: #f3f4f6;
+}
+```
+
+## Debugging
+
+To see when images fail:
+
+```tsx
+const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+  console.error('Image failed:', e.currentTarget.src);
+  setDidError(true);
+};
+```
+
+Component logs original URL in `data-original-url` attribute for debugging:
+
+```tsx
+<img ... data-original-url="https://api.example.com/image-123.jpg" />
+```
+
+## Performance
+
+- **No lazy-load by default**: Set `loading="lazy"` for off-screen images
+- **Inline SVG**: No external request (instant fallback)
+- **Minimal re-render**: Only one state update on error
+- **Small bundle**: < 1KB minified
+
+## Browser Support
+
+- Chrome/Edge 90+
+- Firefox 88+
+- Safari 14+
+- All modern mobile browsers
+
+Fallback SVG uses standard XML (no exotic features).
+
+## Integration with Next.js Image
+
+To use with Next.js `Image` component:
+
+```tsx
+import Image from 'next/image';
+import { ImageWithFallback } from '@/components/ImageWithFallback';
+
+// Standard <img> (this module)
+<ImageWithFallback src={...} />
+
+// Or use Image with onError handler
+<Image
+  src={src}
+  alt={alt}
+  onError={() => setShowFallback(true)}
+  {...}
+/>
+```
+
+## Related Modules
+
+- `aes-256-gcm-secret`: Encrypt image URLs before storing
+- `currency-formatter`: Display product prices alongside images
+
+*Open source — use it wisely.*
