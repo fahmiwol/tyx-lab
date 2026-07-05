@@ -1,1 +1,227 @@
-IyBOb2RlbWFpbGVyIEVtYWlsIFRlbXBsYXRlCgpTTVRQIGVtYWlsIGRpc3BhdGNoIHZpYSBub2RlbWFpbGVyLiBHcmFjZWZ1bCBmYWxsYmFjayBpZiB1bmNvbmZpZ3VyZWQuIFByZS1idWlsdCB0ZW1wbGF0ZXMgZm9yIHB1cmNoYXNlLCByZXNldCwgaW52aXRlIGZsb3dzLgoKIyMgV2h5CgotICoqU01UUCBhYnN0cmFjdGlvbioqOiBXb3JrcyB3aXRoIEdtYWlsLCBTZW5kR3JpZCwgQW1hem9uIFNFUywgY3VzdG9tIFNNVFAKLSAqKkdyYWNlZnVsIGZhbGxiYWNrKio6IElmIGBTTVRQX0hPU1RgIG5vdCBzZXQsIGxvZ3MgYW5kIHJldHVybnMgYHsgb2s6IHRydWUsIHNraXBwZWQ6IHRydWUgfWAKLSAqKkJ1aWx0LWluIHRlbXBsYXRlcyoqOiBDb21tb24gU2FhUyBlbWFpbHMgcmVhZHkgdG8gdXNlCi0gKipTaW5nbGV0b24gdHJhbnNwb3J0Kio6IFJldXNlZCBhY3Jvc3MgcmVxdWVzdHMgKGVmZmljaWVudCBjb25uZWN0aW9uIHBvb2xpbmcpCgojIyBTZXR1cAoKIyMjIDEuIEVudmlyb25tZW50IFZhcmlhYmxlcwoKYGBgYmFzaAojIEdtYWlsIHdpdGggQXBwIFBhc3N3b3JkIChyZWNvbW1lbmRlZCBmb3IgZGV2L3NtYWxsIHByb2plY3RzKQpTTVRQX0hPU1Q9c210cC5nbWFpbC5jb20KU01UUF9QT1JUPTU4NwpTTVRQX1VTRVI9eW91ci1lbWFpbEBnbWFpbC5jb20KU01UUF9QQVNTPXh4eHggeHh4eCB4eHh4IHh4eHggICMgR2VuZXJhdGUgaW4gR29vZ2xlIEFjY291bnQKU01UUF9GUk9NPVlvdXIgQXBwIDxub3JlcGx5QGV4YW1wbGUuY29tPgoKIyBTZW5kR3JpZApTTVRQX0hPU1Q9c210cC5zZW5kZ3JpZC5uZXQKU01UUF9QT1JUPTU4NwpTTVRQX1VTRVI9YXBpa2V5ClNNVFBfUEFTUz1TRy54eHh4eHh4eHh4eHh4CgojIEFtYXpvbiBTRVMKU01UUF9IT1NUPWVtYWlsLXNtdHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20KU01UUF9QT1JUPTU4NwpTTVRQX1VTRVI9Li4uClNNVFBfUEFTUz0uLi4KU01UUF9GUk9NPVlvdXIgQXBwIDxpbmZvQHlvdXJkb21haW4uY29tPgpgYGAKCiMjIyAyLiBHbWFpbCBBcHAgUGFzc3dvcmQKCjEuIEdvIHRvIFtteWFjY291bnQuZ29vZ2xlLmNvbV0oaHR0cHM6Ly9teWFjY291bnQuZ29vZ2xlLmNvbSkg4oaSIFNlY3VyaXR5CjIuIEVuYWJsZSAyLWZhY3RvciBhdXRoZW50aWNhdGlvbgozLiBTZWFyY2ggIkFwcCBwYXNzd29yZHMiIOKGkiBzZWxlY3QgTWFpbCArIFdpbmRvd3MgQ29tcHV0ZXIKNC4gQ29weSB0aGUgMTYtY2hhciBwYXNzd29yZAo1LiBQYXN0ZSBpbnRvIGBTTVRQX1BBU1NgIChyZW1vdmUgc3BhY2VzKQoKIyMgVXNhZ2UKCmBgYHR5cGVzY3JpcHQKaW1wb3J0IHsgc2VuZEVtYWlsLCB0cGxQdXJjaGFzZVN1Y2Nlc3MgfSBmcm9tICdAL2xpYi9ub2RlbWFpbGVyLWVtYWlsLXRlbXBsYXRlJzsKCi8vIFNlbmQgY3VzdG9tIGVtYWlsCmF3YWl0IHNlbmRFbWFpbCh7CiAgdG86ICd1c2VyQGV4YW1wbGUuY29tJywKICBzdWJqZWN0OiAnV2VsY29tZSB0byBNaWdhbmNvcmUnLAogIGh0bWw6ICc8aDE+V2VsY29tZSE8L2gxPjxwPlRoYW5rcyBmb3Igc2lnbmluZyB1cC48L3A+JywKfSk7CgovLyBTZW5kIHdpdGggYnVpbHQtaW4gdGVtcGxhdGUKY29uc3QgZW1haWwgPSB0cGxQdXJjaGFzZVN1Y2Nlc3MoewogIGJ1eWVyTmFtZTogJ0pvaG4gRG9lJywKICBwcm9kdWN0TmFtZTogJ1ByZW1pdW0gQnVuZGxlJywKICBvcmRlcklkOiAnT1JELTEyMzQ1JywKICBkb3dubG9hZFVybDogJ2h0dHBzOi8vZXhhbXBsZS5jb20vZG93bmxvYWRzL09SRC0xMjM0NScsCiAgYW1vdW50SWRyOiA1MDAwMDAsCn0pOwoKYXdhaXQgc2VuZEVtYWlsKHsKICAuLi5lbWFpbCwKICB0bzogJ2pvaG5AZXhhbXBsZS5jb20nLAp9KTsKYGBgCgojIyBCdWlsdC1pbiBUZW1wbGF0ZXMKCiMjIyB0cGxQdXJjaGFzZVN1Y2Nlc3MKClB1cmNoYXNlIGNvbmZpcm1hdGlvbiB3aXRoIG9yZGVyIGRldGFpbHMgYW5kIGRvd25sb2FkIGxpbmsuCgpgYGB0eXBlc2NyaXB0CmF3YWl0IHNlbmRFbWFpbCh7CiAgLi4udHBsUHVyY2hhc2VTdWNjZXNzKHsKICAgIGJ1eWVyTmFtZTogJ0FsaWNlJywKICAgIHByb2R1Y3ROYW1lOiAnQ29mZmVlIE11ZycsCiAgICBvcmRlcklkOiAnT1JELTk5OScsCiAgICBkb3dubG9hZFVybDogJ2h0dHBzOi8vZXhhbXBsZS5jb20vZGwvT1JELTk5OScsCiAgICBhbW91bnRJZHI6IDE1MDAwMCwKICB9KSwKICB0bzogJ2FsaWNlQGV4YW1wbGUuY29tJywKfSk7CmBgYAoKT3V0cHV0OiBQcm9mZXNzaW9uYWwgSFRNTCBlbWFpbCB3aXRoIGJyYW5kaW5nLCBvcmRlciBpbmZvLCBDVEEgYnV0dG9uLgoKIyMjIHRwbFBhc3N3b3JkUmVzZXQKClBhc3N3b3JkIHJlc2V0IGxpbmsgd2l0aCBleHBpcnkgbm90aWNlLgoKYGBgdHlwZXNjcmlwdAphd2FpdCBzZW5kRW1haWwoewogIC4uLnRwbFBhc3N3b3JkUmVzZXQoewogICAgcmVjaXBpZW50TmFtZTogJ0JvYicsCiAgICByZXNldFVybDogJ2h0dHBzOi8vZXhhbXBsZS5jb20vcmVzZXQvdG9rZW4teHl6JywKICAgIGV4cGlyeU1pbnV0ZXM6IDYwLAogIH0pLAogIHRvOiAnYm9iQGV4YW1wbGUuY29tJywKfSk7CmBgYAoKIyMgQVBJIFJvdXRlIEV4YW1wbGUKCmBgYHR5cGVzY3JpcHQKLy8gYXBwL2FwaS9hdXRoL3JlZ2lzdGVyL3JvdXRlLnRzCmltcG9ydCB7IHNlbmRFbWFpbCwgdHBsUGFzc3dvcmRSZXNldCB9IGZyb20gJ0AvbGliL25vZGVtYWlsZXItZW1haWwtdGVtcGxhdGUnOwoKZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIFBPU1QocmVxdWVzdDogUmVxdWVzdCkgewogIGNvbnN0IHsgZW1haWwsIG5hbWUsIHJlc2V0VG9rZW4gfSA9IGF3YWl0IHJlcXVlc3QuanNvbigpOwoKICAvLyBHZW5lcmF0ZSByZXNldCBsaW5rCiAgY29uc3QgcmVzZXRVcmwgPSBgJHtwcm9jZXNzLmVudi5ORVhUX1BVQkxJQ19TSVRFX1VSTH0vcmVzZXQvJHtyZXNldFRva2VufWA7CgogIC8vIFNlbmQgZW1haWwKICBjb25zdCByZXN1bHQgPSBhd2FpdCBzZW5kRW1haWwoewogICAgLi4udHBsUGFzc3dvcmRSZXNldCh7CiAgICAgIHJlY2lwaWVudE5hbWU6IG5hbWUsCiAgICAgIHJlc2V0VXJsLAogICAgICBleHBpcnlNaW51dGVzOiAyNCAqIDYwLCAvLyAxIGRheQogICAgfSksCiAgICB0bzogZW1haWwsCiAgfSk7CgogIGlmICghcmVzdWx0Lm9rKSB7CiAgICBjb25zb2xlLmVycm9yKCdFbWFpbCBmYWlsZWQ6JywgcmVzdWx0LmVycm9yKTsKICAgIHJldHVybiBSZXNwb25zZS5qc29uKHsgZXJyb3I6ICdDb3VsZCBub3Qgc2VuZCBlbWFpbCcgfSwgeyBzdGF0dXM6IDUwMCB9KTsKICB9CgogIGlmIChyZXN1bHQuc2tpcHBlZCkgewogICAgY29uc29sZS53YXJuKCdFbWFpbCBza2lwcGVkIChTTVRQIG5vdCBjb25maWd1cmVkKScpOwogIH0KCiAgcmV0dXJuIFJlc3BvbnNlLmpzb24oeyBvazogdHJ1ZSB9KTsKfQpgYGAKCiMjIEN1c3RvbSBUZW1wbGF0ZXMKCkFkZCB5b3VyIG93bjoKCmBgYHR5cGVzY3JpcHQKZXhwb3J0IGludGVyZmFjZSBXZWxjb21lT3B0cyB7CiAgdXNlck5hbWU6IHN0cmluZzsKICBkYXNoYm9hcmRVcmw6IHN0cmluZzsKfQoKZXhwb3J0IGZ1bmN0aW9uIHRwbFdlbGNvbWUob3B0czogV2VsY29tZU9wdHMpOiBFbWFpbFBheWxvYWQgewogIHJldHVybiB7CiAgICB0bzogJycsIC8vIENhbGxlciBzZXRzIHRoaXMKICAgIHN1YmplY3Q6ICdXZWxjb21lIHRvIE1pZ2FuY29yZSEnLAogICAgaHRtbDogYAogICAgICA8ZGl2IHN0eWxlPSJmb250LWZhbWlseTpJbnRlcixzYW5zLXNlcmlmO21heC13aWR0aDo1MjBweDttYXJnaW46MCBhdXRvO2NvbG9yOiMxZTI5M2IiPgogICAgICAgIDxoMT5IaSAke29wdHMudXNlck5hbWV9ISDwn5GLPC9oMT4KICAgICAgICA8cD5Zb3VyIGFjY291bnQgaXMgcmVhZHkuIEFjY2VzcyB5b3VyIGRhc2hib2FyZDo8L3A+CiAgICAgICAgPGEgaHJlZj0iJHtvcHRzLmRhc2hib2FyZFVybH0iIHN0eWxlPSIuLi4iPkdvIHRvIERhc2hib2FyZDwvYT4KICAgICAgPC9kaXY+YCwKICB9Owp9CmBgYAoKVGhlbiB1c2U6CgpgYGB0eXBlc2NyaXB0CmF3YWl0IHNlbmRFbWFpbCh7CiAgLi4udHBsV2VsY29tZSh7IHVzZXJOYW1lOiAnQWxpY2UnLCBkYXNoYm9hcmRVcmw6ICdodHRwczovL2FwcC5leGFtcGxlLmNvbScgfSksCiAgdG86ICdhbGljZUBleGFtcGxlLmNvbScsCn0pOwpgYGAKCiMjIEdyYWNlZnVsIEZhbGxiYWNrCgpJZiBgU01UUF9IT1NUYCBpcyBub3Qgc2V0OgoKYGBgdHlwZXNjcmlwdApjb25zdCByZXN1bHQgPSBhd2FpdCBzZW5kRW1haWwoewogIHRvOiAndXNlckBleGFtcGxlLmNvbScsCiAgc3ViamVjdDogJ1Rlc3QnLAogIGh0bWw6ICc8cD5IZWxsbzwvcD4nLAp9KTsKCi8vIHJlc3VsdDogeyBvazogdHJ1ZSwgc2tpcHBlZDogdHJ1ZSB9Ci8vIExvZ3M6ICJbbWFpbGVyXSBTTVRQIG5vdCBjb25maWd1cmVkIOKAlCBza2lwcGVkOiAiVGVzdCIg4oaSIHVzZXJAZXhhbXBsZS5jb20iCmBgYAoKUGVyZmVjdCBmb3IgKipkZXYvdGVzdCBlbnZpcm9ubWVudHMqKiB3aGVyZSBlbWFpbCBpc24ndCBuZWVkZWQuCgojIyBFcnJvciBIYW5kbGluZwoKYGBgdHlwZXNjcmlwdApjb25zdCByZXN1bHQgPSBhd2FpdCBzZW5kRW1haWwoey4uLn0pOwoKaWYgKCFyZXN1bHQub2sgJiYgIXJlc3VsdC5za2lwcGVkKSB7CiAgY29uc29sZS5lcnJvcignU2VuZCBmYWlsZWQ6JywgcmVzdWx0LmVycm9yKTsKICAvLyBIYW5kbGU6IHJldHJ5LCBsb2csIGFsZXJ0LCBldGMuCn0KYGBgCgpDb21tb24gZXJyb3JzOgotICoqQXV0aGVudGljYXRpb24gZmFpbGVkKio6IENoZWNrIFNNVFBfVVNFUiwgU01UUF9QQVNTCi0gKipIb3N0IG5vdCBmb3VuZCoqOiBDaGVjayBTTVRQX0hPU1QsIFNNVFBfUE9SVAotICoqUmF0ZSBsaW1pdGVkKio6IFNNVFAgcHJvdmlkZXIgdGhyb3R0bGluZyAoU2VuZEdyaWQsIEdtYWlsIGRhaWx5IGxpbWl0cykKCiMjIFBlcmZvcm1hbmNlCgotICoqU2luZ2xldG9uIHRyYW5zcG9ydCoqOiBDcmVhdGVkIG9uY2UsIHJldXNlZCAoZWZmaWNpZW50KQotICoqQXN5bmMqKjogTm9uLWJsb2NraW5nIHZpYSBgbm9kZW1haWxlci5zZW5kTWFpbCgpYAotICoqVGV4dCBnZW5lcmF0aW9uKio6IEF1dG8tc3RyaXBzIEhUTUwgaWYgYHRleHRgIG5vdCBwcm92aWRlZAoKRm9yIGhpZ2ggdm9sdW1lICgxMDAwKyBlbWFpbHMvbWluKSwgY29uc2lkZXI6CjEuIEJhY2tncm91bmQgcXVldWUgKEJ1bGxNUSwgUmFiYml0TVEpCjIuIFRyYW5zYWN0aW9uYWwgZW1haWwgc2VydmljZSAoU2VuZEdyaWQsIE1haWxndW4sIEFXUyBTRVMpCjMuIEJhdGNoIHRlbXBsYXRlcyAobWVyZ2UgbWFpbCkKCiMjIFJlbGF0ZWQgTW9kdWxlcwoKLSBgdGllcmVkLXF1b3RhLXJlc29sdmVyYDogUmF0ZS1saW1pdCBlbWFpbCBzZW5kcyBwZXIgdXNlcgotIGBwYXNzd29yZC1zY3J5cHQtaGFzaGA6IFNlbmQgcmVzZXQgd2l0aCBoYXNoZWQgdG9rZW4KLSBgYWVzLTI1Ni1nY20tc2VjcmV0YDogRW5jcnlwdCBzZW5kZXIgY3JlZGVudGlhbHMKCipPcGVuIHNvdXJjZSDigJQgdXNlIGl0IHdpc2VseS4qCg==
+# Nodemailer Email Template
+
+SMTP email dispatch via nodemailer. Graceful fallback if unconfigured. Pre-built templates for purchase, reset, invite flows.
+
+## Why
+
+- **SMTP abstraction**: Works with Gmail, SendGrid, Amazon SES, custom SMTP
+- **Graceful fallback**: If `SMTP_HOST` not set, logs and returns `{ ok: true, skipped: true }`
+- **Built-in templates**: Common SaaS emails ready to use
+- **Singleton transport**: Reused across requests (efficient connection pooling)
+
+## Setup
+
+### 1. Environment Variables
+
+```bash
+# Gmail with App Password (recommended for dev/small projects)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=xxxx xxxx xxxx xxxx  # Generate in Google Account
+SMTP_FROM=Your App <noreply@example.com>
+
+# SendGrid
+SMTP_HOST=smtp.sendgrid.net
+SMTP_PORT=587
+SMTP_USER=apikey
+SMTP_PASS=SG.xxxxxxxxxxxxx
+
+# Amazon SES
+SMTP_HOST=email-smtp.us-east-1.amazonaws.com
+SMTP_PORT=587
+SMTP_USER=...
+SMTP_PASS=...
+SMTP_FROM=Your App <info@yourdomain.com>
+```
+
+### 2. Gmail App Password
+
+1. Go to [myaccount.google.com](https://myaccount.google.com) → Security
+2. Enable 2-factor authentication
+3. Search "App passwords" → select Mail + Windows Computer
+4. Copy the 16-char password
+5. Paste into `SMTP_PASS` (remove spaces)
+
+## Usage
+
+```typescript
+import { sendEmail, tplPurchaseSuccess } from '@/lib/nodemailer-email-template';
+
+// Send custom email
+await sendEmail({
+  to: 'user@example.com',
+  subject: 'Welcome to Migancore',
+  html: '<h1>Welcome!</h1><p>Thanks for signing up.</p>',
+});
+
+// Send with built-in template
+const email = tplPurchaseSuccess({
+  buyerName: 'John Doe',
+  productName: 'Premium Bundle',
+  orderId: 'ORD-12345',
+  downloadUrl: 'https://example.com/downloads/ORD-12345',
+  amountIdr: 500000,
+});
+
+await sendEmail({
+  ...email,
+  to: 'john@example.com',
+});
+```
+
+## Built-in Templates
+
+### tplPurchaseSuccess
+
+Purchase confirmation with order details and download link.
+
+```typescript
+await sendEmail({
+  ...tplPurchaseSuccess({
+    buyerName: 'Alice',
+    productName: 'Coffee Mug',
+    orderId: 'ORD-999',
+    downloadUrl: 'https://example.com/dl/ORD-999',
+    amountIdr: 150000,
+  }),
+  to: 'alice@example.com',
+});
+```
+
+Output: Professional HTML email with branding, order info, CTA button.
+
+### tplPasswordReset
+
+Password reset link with expiry notice.
+
+```typescript
+await sendEmail({
+  ...tplPasswordReset({
+    recipientName: 'Bob',
+    resetUrl: 'https://example.com/reset/token-xyz',
+    expiryMinutes: 60,
+  }),
+  to: 'bob@example.com',
+});
+```
+
+## API Route Example
+
+```typescript
+// app/api/auth/register/route.ts
+import { sendEmail, tplPasswordReset } from '@/lib/nodemailer-email-template';
+
+export async function POST(request: Request) {
+  const { email, name, resetToken } = await request.json();
+
+  // Generate reset link
+  const resetUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/reset/${resetToken}`;
+
+  // Send email
+  const result = await sendEmail({
+    ...tplPasswordReset({
+      recipientName: name,
+      resetUrl,
+      expiryMinutes: 24 * 60, // 1 day
+    }),
+    to: email,
+  });
+
+  if (!result.ok) {
+    console.error('Email failed:', result.error);
+    return Response.json({ error: 'Could not send email' }, { status: 500 });
+  }
+
+  if (result.skipped) {
+    console.warn('Email skipped (SMTP not configured)');
+  }
+
+  return Response.json({ ok: true });
+}
+```
+
+## Custom Templates
+
+Add your own:
+
+```typescript
+export interface WelcomeOpts {
+  userName: string;
+  dashboardUrl: string;
+}
+
+export function tplWelcome(opts: WelcomeOpts): EmailPayload {
+  return {
+    to: '', // Caller sets this
+    subject: 'Welcome to Migancore!',
+    html: `
+      <div style="font-family:Inter,sans-serif;max-width:520px;margin:0 auto;color:#1e293b">
+        <h1>Hi ${opts.userName}! 👋</h1>
+        <p>Your account is ready. Access your dashboard:</p>
+        <a href="${opts.dashboardUrl}" style="...">Go to Dashboard</a>
+      </div>`,
+  };
+}
+```
+
+Then use:
+
+```typescript
+await sendEmail({
+  ...tplWelcome({ userName: 'Alice', dashboardUrl: 'https://app.example.com' }),
+  to: 'alice@example.com',
+});
+```
+
+## Graceful Fallback
+
+If `SMTP_HOST` is not set:
+
+```typescript
+const result = await sendEmail({
+  to: 'user@example.com',
+  subject: 'Test',
+  html: '<p>Hello</p>',
+});
+
+// result: { ok: true, skipped: true }
+// Logs: "[mailer] SMTP not configured — skipped: "Test" → user@example.com"
+```
+
+Perfect for **dev/test environments** where email isn't needed.
+
+## Error Handling
+
+```typescript
+const result = await sendEmail({...});
+
+if (!result.ok && !result.skipped) {
+  console.error('Send failed:', result.error);
+  // Handle: retry, log, alert, etc.
+}
+```
+
+Common errors:
+- **Authentication failed**: Check SMTP_USER, SMTP_PASS
+- **Host not found**: Check SMTP_HOST, SMTP_PORT
+- **Rate limited**: SMTP provider throttling (SendGrid, Gmail daily limits)
+
+## Performance
+
+- **Singleton transport**: Created once, reused (efficient)
+- **Async**: Non-blocking via `nodemailer.sendMail()`
+- **Text generation**: Auto-strips HTML if `text` not provided
+
+For high volume (1000+ emails/min), consider:
+1. Background queue (BullMQ, RabbitMQ)
+2. Transactional email service (SendGrid, Mailgun, AWS SES)
+3. Batch templates (merge mail)
+
+## Related Modules
+
+- `tiered-quota-resolver`: Rate-limit email sends per user
+- `password-scrypt-hash`: Send reset with hashed token
+- `aes-256-gcm-secret`: Encrypt sender credentials
+
+*Open source — use it wisely.*
