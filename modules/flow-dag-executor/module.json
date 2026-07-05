@@ -1,0 +1,15 @@
+{
+  "id": "flow-dag-executor",
+  "name": "Flow DAG Executor",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Executes declarative node DAG from JSON: trigger, action, foreach, filter, spinner, delay. Variables via {{path.binding}}. Logs all node executions.",
+  "input": [{"name": "flow", "type": "dict"}, {"name": "seed", "type": "dict"}],
+  "output": [{"name": "result", "type": "dict"}],
+  "tags": ["flow-engine", "dag", "orchestration", "declarative"],
+  "compatible_with": ["python3.9+"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
