@@ -1,0 +1,14 @@
+{
+  "id": "brief-intake-framework",
+  "name": "Creative Brief Intake Framework (IHOS-Aligned)",
+  "version": "1.0.0",
+  "kind": "template",
+  "category": ["ai", "business"],
+  "description": "Structured intake for creative briefs: capture all 4 semantic layers (Zahir/Batin/Hadd/Mathla), user state (Haal), grounding context (Asbabun Nuzul), and validation checklist. Converts vague requests into actionable specs.",
+  "tags": ["brief-intake", "creative-brief", "framework", "template", "ihos"],
+  "compatible_with": ["brief-parsing", "creative-agents", "project-management"],
+  "used_in_recipes": ["creative-pipeline"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
