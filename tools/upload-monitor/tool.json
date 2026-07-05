@@ -1,0 +1,17 @@
+{
+  "id": "upload-monitor",
+  "name": "Upload Monitor Dashboard",
+  "version": "1.0.0",
+  "kind": "web-app",
+  "category": "ops",
+  "description": "Real-time file upload monitoring dashboard. Tracks upload progress, file sizes, error rates, queue status with live updates via Socket.io.",
+  "run": "cd tools/upload-monitor && npm install && npm run dev",
+  "input": [{"name": "GATEWAY_URL", "type": "string", "description": "Backend gateway URL"}],
+  "output": [{"name": "upload_events", "type": "array", "description": "Real-time upload status events"}],
+  "tags": ["monitoring", "file-upload", "socket.io", "dashboard", "react", "vite"],
+  "compatible_with": ["file-service", "ops-gateway"],
+  "used_in_recipes": ["bulk-upload", "file-processing"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
