@@ -1,1 +1,32 @@
-ewogICJpZCI6ICJwYXNzd29yZC1zY3J5cHQtaGFzaCIsCiAgIm5hbWUiOiAiUGFzc3dvcmQgSGFzaGluZyB3aXRoIFNjcnlwdCIsCiAgInZlcnNpb24iOiAiMS4wLjAiLAogICJjYXRlZ29yeSI6IFsiaW5mcmEiXSwKICAiZGVzY3JpcHRpb24iOiAiSGFzaCBhbmQgdmVyaWZ5IHBhc3N3b3JkcyB1c2luZyBzY3J5cHQgKE5vZGUgYnVpbHQtaW4gY3J5cHRvKS4gRm9ybWF0OiBoZXhTYWx0OmhleEtleS4gTm8gbmF0aXZlIGRlcGVuZGVuY2llcy4gVGltaW5nLXNhZmUgY29tcGFyaXNvbi4iLAogICJpbnB1dCI6IFsKICAgIHsKICAgICAgIm5hbWUiOiAicGFzc3dvcmQiLAogICAgICAidHlwZSI6ICJzdHJpbmciLAogICAgICAiZGVzY3JpcHRpb24iOiAiUGxhaW4gdGV4dCBwYXNzd29yZCB0byBoYXNoIG9yIHZlcmlmeSIKICAgIH0KICBdLAogICJvdXRwdXQiOiBbCiAgICB7CiAgICAgICJuYW1lIjogImhhc2giLAogICAgICAidHlwZSI6ICJzdHJpbmciLAogICAgICAiZGVzY3JpcHRpb24iOiAiU2NyeXB0IGhhc2ggaW4gZm9ybWF0IHNhbHQ6a2V5IChoZXgpIgogICAgfSwKICAgIHsKICAgICAgIm5hbWUiOiAidmVyaWZpZWQiLAogICAgICAidHlwZSI6ICJib29sZWFuIiwKICAgICAgImRlc2NyaXB0aW9uIjogIldoZXRoZXIgcGFzc3dvcmQgbWF0Y2hlcyBzdG9yZWQgaGFzaCIKICAgIH0KICBdLAogICJ0YWdzIjogWyJhdXRoIiwgInBhc3N3b3JkIiwgImNyeXB0byIsICJzZWN1cml0eSJdLAogICJjb21wYXRpYmxlX3dpdGgiOiBbIm5vZGVqcyIsICJiYWNrZW5kIl0sCiAgInVzZWRfaW5fcmVjaXBlcyI6IFsidXNlci1hdXRoIiwgInBhc3N3b3JkLXJlc2V0Il0sCiAgInN0YXR1cyI6ICJzdGFibGUiLAogICJhdXRob3IiOiAiVGlyYW55eCIsCiAgImxpY2Vuc2UiOiAiTUlUIgp9Cg==
+{
+  "id": "password-scrypt-hash",
+  "name": "Password Hashing with Scrypt",
+  "version": "1.0.0",
+  "category": ["infra"],
+  "description": "Hash and verify passwords using scrypt (Node built-in crypto). Format: hexSalt:hexKey. No native dependencies. Timing-safe comparison.",
+  "input": [
+    {
+      "name": "password",
+      "type": "string",
+      "description": "Plain text password to hash or verify"
+    }
+  ],
+  "output": [
+    {
+      "name": "hash",
+      "type": "string",
+      "description": "Scrypt hash in format salt:key (hex)"
+    },
+    {
+      "name": "verified",
+      "type": "boolean",
+      "description": "Whether password matches stored hash"
+    }
+  ],
+  "tags": ["auth", "password", "crypto", "security"],
+  "compatible_with": ["nodejs", "backend"],
+  "used_in_recipes": ["user-auth", "password-reset"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
