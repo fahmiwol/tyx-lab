@@ -1,1 +1,153 @@
-IyBDdXJyZW5jeSBGb3JtYXR0ZXIgJiBDb252ZXJzaW9uCgpGb3JtYXQgSURSIGFuZCBVU0QgcHJpY2VzOyBzeW5jIHJhdGUgZnJvbSBEQi4gRGlzcGxheS1vbmx5IFVTRCBmb3IgaW50ZXJuYXRpb25hbCBidXllcnM7IGFsbCBwYXltZW50cyBpbiBJRFIgKE1pZHRyYW5zLCBldGMuKS4KCiMjIFdoeQoKLSAqKkxvY2FsaXphdGlvbioqOiBTaG93IHByaWNlcyBpbiBsb2NhbCBjdXJyZW5jeSAoSURSKSBhbmQgVVNECi0gKipSYXRlIG1hbmFnZW1lbnQqKjogU3RvcmUgZXhjaGFuZ2UgcmF0ZSBpbiBEQiwgdXBkYXRlIHdpdGhvdXQgY29kZSByZWRlcGxveQotICoqVUkgaGVscGVycyoqOiBQcmUtZm9ybWF0dGVkIHN0cmluZ3MgZm9yIGNvbW1vbiBkaXNwbGF5IHBhdHRlcm5zCi0gKipQYXltZW50IGNsYXJpdHkqKjogQ2hhcmdlIGluIElEUiwgZGlzcGxheSBVU0QgZXF1aXZhbGVudAoKIyMgVXNhZ2UKCmBgYHR5cGVzY3JpcHQKaW1wb3J0IHsKICBnZXRVc2RSYXRlLAogIGlkclRvVXNkLAogIGlkckRpc3BsYXlQcmljZSwKICB1c2REaXNwbGF5UHJpY2UsCiAgZnVsbFByaWNlTGFiZWwsCiAgc2V0VXNkUmF0ZSwKfSBmcm9tICdAL2xpYi9jdXJyZW5jeS1mb3JtYXR0ZXInOwoKY29uc3QgcmF0ZSA9IGdldFVzZFJhdGUoKTsgLy8gMTYwMDAgKGZyb20gREIgb3IgZGVmYXVsdCkKCi8vIENvbnZlcnQKY29uc3QgdXNkID0gaWRyVG9Vc2QoMTYwMDAwLCByYXRlKTsgLy8gIjEwLjAwIgoKLy8gRGlzcGxheQpjb25zb2xlLmxvZyhpZHJEaXNwbGF5UHJpY2UoMTYwMDAwKSk7ICAgICAgICAvLyAiUnAgMTYwLjAwMCIKY29uc29sZS5sb2codXNkRGlzcGxheVByaWNlKDE2MDAwMCwgcmF0ZSkpOyAgLy8gIiQxMC4wMCIKY29uc29sZS5sb2coZnVsbFByaWNlTGFiZWwoMTYwMDAwLCByYXRlKSk7ICAgLy8gIlJwIDE2MC4wMDAgKH4kMTAuMDApIgoKLy8gQWRtaW46IHVwZGF0ZSByYXRlCnNldFVzZFJhdGUoMTcwMDApOwpgYGAKCiMjIEZvcm1hdHRpbmcgRXhhbXBsZXMKCmBgYHR5cGVzY3JpcHQKY29uc3QgcmF0ZSA9IGdldFVzZFJhdGUoKTsKCi8vIFNtYWxsIGFtb3VudApmdWxsUHJpY2VMYWJlbCg1MDAwMCwgcmF0ZSk7ICAvLyAiUnAgNTAuMDAwICh+JDMuMTMpIgoKLy8gTGFyZ2UgYW1vdW50CmZ1bGxQcmljZUxhYmVsKDIwMDAwMDAsIHJhdGUpOyAvLyAiUnAgMi4wMDAuMDAwICh+JDEyNS4wMCkiCgovLyBaZXJvLXBhZGRlZCBjZW50cwppZHJUb1VzZCgxMDAwMSwgcmF0ZSk7IC8vICIwLjYyIiAoYWx3YXlzIDIgZGVjaW1hbHMpCmBgYAoKIyMgRGF0YWJhc2UgU3RvcmFnZQoKYGBgc3FsCkNSRUFURSBUQUJMRSBzaXRlX3NldHRpbmdzICgKICBrZXkgVEVYVCBQUklNQVJZIEtFWSwKICB2YWx1ZSBURVhUIE5PVCBOVUxMLAogIHVwZGF0ZWRfYXQgREFURVRJTUUgREVGQVVMVCBDVVJSRU5UX1RJTUVTVEFNUAopOwoKLS0gSW5pdGlhbGl6ZQpJTlNFUlQgSU5UTyBzaXRlX3NldHRpbmdzIChrZXksIHZhbHVlKSBWQUxVRVMgKCd1c2RfcmF0ZScsICcxNjAwMCcpOwpgYGAKCiMjIEFQSSBSb3V0ZSBFeGFtcGxlCgpgYGB0eXBlc2NyaXB0CmltcG9ydCB7IGZ1bGxQcmljZUxhYmVsLCBnZXRVc2RSYXRlIH0gZnJvbSAnQC9saWIvY3VycmVuY3ktZm9ybWF0dGVyJzsKCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBHRVQoKSB7CiAgY29uc3QgcHJvZHVjdHMgPSBbCiAgICB7IGlkOiAxLCBuYW1lOiAnQ29mZmVlIE11ZycsIHByaWNlSWRyOiAxNTAwMDAgfSwKICAgIHsgaWQ6IDIsIG5hbWU6ICdULVNoaXJ0JywgcHJpY2VJZHI6IDMwMDAwMCB9LAogIF07CgogIGNvbnN0IHJhdGUgPSBnZXRVc2RSYXRlKCk7CgogIHJldHVybiBSZXNwb25zZS5qc29uKAogICAgcHJvZHVjdHMubWFwKHAgPT4gKHsKICAgICAgLi4ucCwKICAgICAgZGlzcGxheTogZnVsbFByaWNlTGFiZWwocC5wcmljZUlkciwgcmF0ZSksCiAgICB9KSkKICApOwp9CgovLyBPdXRwdXQ6Ci8vIFsKLy8gICB7IGlkOiAxLCBuYW1lOiAnQ29mZmVlIE11ZycsIHByaWNlSWRyOiAxNTAwMDAsIGRpc3BsYXk6ICdScCAxNTAuMDAwICh+JDkuMzgpJyB9LAovLyAgIHsgaWQ6IDIsIG5hbWU6ICdULVNoaXJ0JywgcHJpY2VJZHI6IDMwMDAwMCwgZGlzcGxheTogJ1JwIDMwMC4wMDAgKH4kMTguNzUpJyB9LAovLyBdCmBgYAoKIyMgRnJvbnQtRW5kIENvbXBvbmVudAoKYGBgdHN4CmltcG9ydCB7IGZ1bGxQcmljZUxhYmVsLCBnZXRVc2RSYXRlIH0gZnJvbSAnQC9saWIvY3VycmVuY3ktZm9ybWF0dGVyJzsKCmV4cG9ydCBmdW5jdGlvbiBQcm9kdWN0Q2FyZCh7IHByb2R1Y3QgfSkgewogIGNvbnN0IHJhdGUgPSBnZXRVc2RSYXRlKCk7CiAgY29uc3QgcHJpY2VEaXNwbGF5ID0gZnVsbFByaWNlTGFiZWwocHJvZHVjdC5wcmljZUlkciwgcmF0ZSk7CgogIHJldHVybiAoCiAgICA8ZGl2IGNsYXNzTmFtZT0iY2FyZCI+CiAgICAgIDxoMz57cHJvZHVjdC5uYW1lfTwvaDM+CiAgICAgIDxwIGNsYXNzTmFtZT0icHJpY2UiPntwcmljZURpc3BsYXl9PC9wPgogICAgICA8YnV0dG9uPkJ1eTwvYnV0dG9uPgogICAgPC9kaXY+CiAgKTsKfQpgYGAKCiMjIFJhdGUgVXBkYXRlIEZsb3cKCjEuIEFkbWluIHZpc2l0cyBzZXR0aW5ncyBwYWdlCjIuIFNlZXMgY3VycmVudCByYXRlIGZyb20gYGdldFVzZFJhdGUoKWAKMy4gRW50ZXJzIG5ldyByYXRlIChlLmcuLCAxNzAwMCkKNC4gQ2FsbHMgYHNldFVzZFJhdGUoMTcwMDApYAo1LiBBbGwgbmV3IHByaWNlcyB1c2UgbmV3IHJhdGUgaW1tZWRpYXRlbHkgKG5vIGNhY2hlIGludmFsaWRhdGlvbiBuZWVkZWQpCgpgYGB0eXBlc2NyaXB0Ci8vIEFkbWluIEFQSSByb3V0ZQpleHBvcnQgYXN5bmMgZnVuY3Rpb24gUE9TVChyZXF1ZXN0OiBSZXF1ZXN0KSB7CiAgLy8gVmVyaWZ5IGFkbWluLi4uCiAgY29uc3QgeyBuZXdSYXRlIH0gPSBhd2FpdCByZXF1ZXN0Lmpzb24oKTsKCiAgaWYgKCFzZXRVc2RSYXRlKG5ld1JhdGUpKSB7CiAgICByZXR1cm4gUmVzcG9uc2UuanNvbih7IGVycm9yOiAnSW52YWxpZCByYXRlJyB9LCB7IHN0YXR1czogNDAwIH0pOwogIH0KCiAgcmV0dXJuIFJlc3BvbnNlLmpzb24oeyBvazogdHJ1ZSwgbmV3UmF0ZSB9KTsKfQpgYGAKCiMjIEVkZ2UgQ2FzZXMKCi0gKipaZXJvIHJhdGUqKjogUmVqZWN0ZWQgKHJldHVybnMgZGVmYXVsdCkKLSAqKk5lZ2F0aXZlIHJhdGUqKjogUmVqZWN0ZWQKLSAqKk5vbi1udW1lcmljIHJhdGUqKjogRmFsbHMgYmFjayB0byBERUZBVUxUX1JBVEUKLSAqKkRCIHVucmVhY2hhYmxlKio6IFVzZXMgREVGQVVMVF9SQVRFICgxNjAwMCkKLSAqKlZlcnkgbGFyZ2UgYW1vdW50cyoqOiBTdGlsbCBmb3JtYXRzIGNvcnJlY3RseSAobm8gb3ZlcmZsb3cpCgojIyBMb2NhbGVzCgotICoqSURSKio6IFVzZXMgYGlkLUlEYCBsb2NhbGUgKHRob3VzYW5kcyBzZXBhcmF0b3I6IGAuYCwgZGVjaW1hbDogYCxgKQotICoqVVNEKio6IFVTIGZvcm1hdCAodGhvdXNhbmRzOiBgLGAsIGRlY2ltYWw6IGAuYCkKCiMjIFJlbGF0ZWQgTW9kdWxlcwoKLSBgdGllcmVkLXF1b3RhLXJlc29sdmVyYDogVXNlcyByYXRlcyBmb3IgY29pbiBwcmljaW5nCi0gYGFlcy0yNTYtZ2NtLXNlY3JldGA6IENhbiBlbmNyeXB0IHBheW1lbnQgQVBJIGtleXMKCipPcGVuIHNvdXJjZSDigJQgdXNlIGl0IHdpc2VseS4qCg==
+# Currency Formatter & Conversion
+
+Format IDR and USD prices; sync rate from DB. Display-only USD for international buyers; all payments in IDR (Midtrans, etc.).
+
+## Why
+
+- **Localization**: Show prices in local currency (IDR) and USD
+- **Rate management**: Store exchange rate in DB, update without code redeploy
+- **UI helpers**: Pre-formatted strings for common display patterns
+- **Payment clarity**: Charge in IDR, display USD equivalent
+
+## Usage
+
+```typescript
+import {
+  getUsdRate,
+  idrToUsd,
+  idrDisplayPrice,
+  usdDisplayPrice,
+  fullPriceLabel,
+  setUsdRate,
+} from '@/lib/currency-formatter';
+
+const rate = getUsdRate(); // 16000 (from DB or default)
+
+// Convert
+const usd = idrToUsd(160000, rate); // "10.00"
+
+// Display
+console.log(idrDisplayPrice(160000));        // "Rp 160.000"
+console.log(usdDisplayPrice(160000, rate));  // "$10.00"
+console.log(fullPriceLabel(160000, rate));   // "Rp 160.000 (~$10.00)"
+
+// Admin: update rate
+setUsdRate(17000);
+```
+
+## Formatting Examples
+
+```typescript
+const rate = getUsdRate();
+
+// Small amount
+fullPriceLabel(50000, rate);  // "Rp 50.000 (~$3.13)"
+
+// Large amount
+fullPriceLabel(2000000, rate); // "Rp 2.000.000 (~$125.00)"
+
+// Zero-padded cents
+idrToUsd(10001, rate); // "0.62" (always 2 decimals)
+```
+
+## Database Storage
+
+```sql
+CREATE TABLE site_settings (
+  key TEXT PRIMARY KEY,
+  value TEXT NOT NULL,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Initialize
+INSERT INTO site_settings (key, value) VALUES ('usd_rate', '16000');
+```
+
+## API Route Example
+
+```typescript
+import { fullPriceLabel, getUsdRate } from '@/lib/currency-formatter';
+
+export async function GET() {
+  const products = [
+    { id: 1, name: 'Coffee Mug', priceIdr: 150000 },
+    { id: 2, name: 'T-Shirt', priceIdr: 300000 },
+  ];
+
+  const rate = getUsdRate();
+
+  return Response.json(
+    products.map(p => ({
+      ...p,
+      display: fullPriceLabel(p.priceIdr, rate),
+    }))
+  );
+}
+
+// Output:
+// [
+//   { id: 1, name: 'Coffee Mug', priceIdr: 150000, display: 'Rp 150.000 (~$9.38)' },
+//   { id: 2, name: 'T-Shirt', priceIdr: 300000, display: 'Rp 300.000 (~$18.75)' },
+// ]
+```
+
+## Front-End Component
+
+```tsx
+import { fullPriceLabel, getUsdRate } from '@/lib/currency-formatter';
+
+export function ProductCard({ product }) {
+  const rate = getUsdRate();
+  const priceDisplay = fullPriceLabel(product.priceIdr, rate);
+
+  return (
+    <div className="card">
+      <h3>{product.name}</h3>
+      <p className="price">{priceDisplay}</p>
+      <button>Buy</button>
+    </div>
+  );
+}
+```
+
+## Rate Update Flow
+
+1. Admin visits settings page
+2. Sees current rate from `getUsdRate()`
+3. Enters new rate (e.g., 17000)
+4. Calls `setUsdRate(17000)`
+5. All new prices use new rate immediately (no cache invalidation needed)
+
+```typescript
+// Admin API route
+export async function POST(request: Request) {
+  // Verify admin...
+  const { newRate } = await request.json();
+
+  if (!setUsdRate(newRate)) {
+    return Response.json({ error: 'Invalid rate' }, { status: 400 });
+  }
+
+  return Response.json({ ok: true, newRate });
+}
+```
+
+## Edge Cases
+
+- **Zero rate**: Rejected (returns default)
+- **Negative rate**: Rejected
+- **Non-numeric rate**: Falls back to DEFAULT_RATE
+- **DB unreachable**: Uses DEFAULT_RATE (16000)
+- **Very large amounts**: Still formats correctly (no overflow)
+
+## Locales
+
+- **IDR**: Uses `id-ID` locale (thousands separator: `.`, decimal: `,`)
+- **USD**: US format (thousands: `,`, decimal: `.`)
+
+## Related Modules
+
+- `tiered-quota-resolver`: Uses rates for coin pricing
+- `aes-256-gcm-secret`: Can encrypt payment API keys
+
+*Open source — use it wisely.*
