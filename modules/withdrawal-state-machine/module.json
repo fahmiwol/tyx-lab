@@ -1,0 +1,15 @@
+{
+  "id": "withdrawal-state-machine",
+  "name": "Withdrawal State Machine",
+  "version": "1.0.0",
+  "category": "business",
+  "description": "Two-phase settlement: (1) PENDING — funds held on-chain, (2) COMPLETE — transferred to external account. Tracks state transition + admin confirmation. Prevents duplicate completions via idempotency key. Stores: { id, type, status, amount, note, createdAt, fromWallet, completedAt }.",
+  "input": ["withdrawalId: string, action: 'complete'|'cancel', adminKey: string"],
+  "output": ["{ id, status: 'PENDING'|'COMPLETE'|'CANCELED', completedAt }"],
+  "tags": ["settlement","withdrawal","state-machine","fintech","async-payment"],
+  "compatible_with": ["dual-auth-internal-key-pattern","ledger-double-entry-transfer"],
+  "used_in_recipes": ["payout-settlement","user-cashout"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
