@@ -1,1 +1,32 @@
-ewogICJpZCI6ICJtaW5pbWFsLXNlc3Npb24tY29va2llIiwKICAibmFtZSI6ICJNaW5pbWFsIFNlc3Npb24gQ29va2llIEF1dGgiLAogICJ2ZXJzaW9uIjogIjEuMC4wIiwKICAiY2F0ZWdvcnkiOiBbImJ1c2luZXNzIl0sCiAgImRlc2NyaXB0aW9uIjogIkhNQUMtU0hBMjU2IHNpZ25lZCBzZXNzaW9uIHRva2VucyAobm8gZXh0ZXJuYWwgYXV0aCBsaWJyYXJ5KS4gUGF5bG9hZDogYmFzZTY0KGpzb24pLnNpZ25hdHVyZS4gU3RvcmVzIGluIGh0dHBPbmx5IGNvb2tpZSB3aXRoIDE0LWRheSBUVEwuIiwKICAiaW5wdXQiOiBbCiAgICB7CiAgICAgICJuYW1lIjogInVzZXJJZCIsCiAgICAgICJ0eXBlIjogInN0cmluZyIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJVc2VyIElEIHRvIGVuY29kZSBpbiBzZXNzaW9uIgogICAgfQogIF0sCiAgIm91dHB1dCI6IFsKICAgIHsKICAgICAgIm5hbWUiOiAic2Vzc2lvblRva2VuIiwKICAgICAgInR5cGUiOiAic3RyaW5nIiwKICAgICAgImRlc2NyaXB0aW9uIjogIlNpZ25lZCBzZXNzaW9uIHRva2VuIChiYXNlNjQuc2lnbmF0dXJlIGZvcm1hdCkiCiAgICB9LAogICAgewogICAgICAibmFtZSI6ICJ1c2VySWQiLAogICAgICAidHlwZSI6ICJzdHJpbmciLAogICAgICAiZGVzY3JpcHRpb24iOiAiRGVjb2RlZCB1c2VyIElEIGZyb20gc2Vzc2lvbiIKICAgIH0KICBdLAogICJ0YWdzIjogWyJhdXRoIiwgInNlc3Npb24iLCAiY29va2llIiwgIm1pbmltYWwiXSwKICAiY29tcGF0aWJsZV93aXRoIjogWyJuZXh0anMiLCAiYmFja2VuZCIsICJhcGkiXSwKICAidXNlZF9pbl9yZWNpcGVzIjogWyJ1c2VyLWF1dGgiLCAiYXBwLXNlc3Npb24iXSwKICAic3RhdHVzIjogInN0YWJsZSIsCiAgImF1dGhvciI6ICJUaXJhbnl4IiwKICAibGljZW5zZSI6ICJNSVQiCn0K
+{
+  "id": "minimal-session-cookie",
+  "name": "Minimal Session Cookie Auth",
+  "version": "1.0.0",
+  "category": ["business"],
+  "description": "HMAC-SHA256 signed session tokens (no external auth library). Payload: base64(json).signature. Stores in httpOnly cookie with 14-day TTL.",
+  "input": [
+    {
+      "name": "userId",
+      "type": "string",
+      "description": "User ID to encode in session"
+    }
+  ],
+  "output": [
+    {
+      "name": "sessionToken",
+      "type": "string",
+      "description": "Signed session token (base64.signature format)"
+    },
+    {
+      "name": "userId",
+      "type": "string",
+      "description": "Decoded user ID from session"
+    }
+  ],
+  "tags": ["auth", "session", "cookie", "minimal"],
+  "compatible_with": ["nextjs", "backend", "api"],
+  "used_in_recipes": ["user-auth", "app-session"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
