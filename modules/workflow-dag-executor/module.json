@@ -1,1 +1,1 @@
-
+{"id":"workflow-dag-executor","name":"Workflow DAG Executor","version":"1.0.0","category":"business","description":"Validate a workflow DAG (node integrity, cycle detection) and simulate/execute nodes in dependency order.","input":[],"output":[],"tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
