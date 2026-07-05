@@ -1,0 +1,37 @@
+{
+  "id": "command-intent-router",
+  "name": "Command Intent Router",
+  "version": "1.0.0",
+  "category": ["business"],
+  "description": "Parse text commands and route to intent handlers. Supports regex patterns, fuzzy matching, and parameter extraction.",
+  "input": [
+    {
+      "name": "rawText",
+      "type": "string",
+      "description": "User input text"
+    },
+    {
+      "name": "commands",
+      "type": "array",
+      "description": "Command definitions with pattern + handler"
+    }
+  ],
+  "output": [
+    {
+      "name": "intent",
+      "type": "string",
+      "description": "Matched intent identifier"
+    },
+    {
+      "name": "params",
+      "type": "object",
+      "description": "Extracted parameters from pattern"
+    }
+  ],
+  "tags": ["command-parsing", "intent-routing", "regex", "fuzzy-match"],
+  "compatible_with": ["nodejs", "python", "typescript"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
