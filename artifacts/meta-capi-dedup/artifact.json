@@ -1,0 +1,14 @@
+{
+  "id": "meta-capi-dedup",
+  "name": "Meta Pixel + Conversions API with Dedup",
+  "version": "1.0.0",
+  "kind": "playbook",
+  "category": "infra",
+  "description": "Wire Meta Pixel + server-side Conversions API with browser<->server event_id dedup for high Event Match Quality, no CAPI Gateway needed.",
+  "tags": ["meta", "facebook-ads", "capi", "tracking", "nextjs", "dedup", "emq"],
+  "compatible_with": ["nextjs-subdomain-multitenant"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
