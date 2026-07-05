@@ -1,0 +1,15 @@
+{
+  "id": "wallet-denomination-ledger",
+  "name": "Wallet Denomination Ledger",
+  "version": "1.0.0",
+  "category": "business",
+  "description": "Append-only transaction log per wallet, per denomination. Tracks all movements: TRANSFER in/out, MINT received, BURN removed, HOLD reserved, SETTLE debit. Summed per denom = current balance. Immutable for audit + reconciliation.",
+  "input": ["walletId, denom: Denomination, type: TransactionType, amount, note"],
+  "output": ["{ txId, walletId, denom, type, amount, balance, timestamp }"],
+  "tags": ["ledger","audit","fintech","multi-currency","double-entry"],
+  "compatible_with": ["double-entry-ledger","multi-denom-wallet-balance"],
+  "used_in_recipes": ["wallet-reconciliation","audit-report","settlement-trace"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
