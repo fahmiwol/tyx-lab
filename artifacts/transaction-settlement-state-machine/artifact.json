@@ -1,0 +1,11 @@
+{
+  "id": "transaction-settlement-state-machine",
+  "name": "Transaction Settlement State Machine",
+  "version": "1.0.0",
+  "kind": "artifact",
+  "category": "business",
+  "description": "Canonical state flow for settlement workflows: PENDING → AUTHORIZED → POSTED → RECONCILED. Defines valid transitions, error recovery paths (RETURNED, FAILED), and deadletter handling. Reference for implementing fault-tolerant payment pipelines.",
+  "tags": ["state-machine", "settlement", "payment-flow", "workflow"],
+  "compatible_with": ["transfer-intent-checkout-state", "idempotent-payment-processing"],
+  "used_in_recipes": ["payment-reconciliation", "clearing-settlement"]
+}
