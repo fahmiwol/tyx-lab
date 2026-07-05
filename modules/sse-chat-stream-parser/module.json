@@ -1,0 +1,19 @@
+{
+  "id": "sse-chat-stream-parser",
+  "name": "Server-Sent Event Chat Stream Parser",
+  "version": "1.0.0",
+  "category": "ai",
+  "description": "Parse SSE frames from LLM/chat streaming endpoints. Tolerant of multiple JSON payload formats (token/delta/content/text variants), plain text fallback, and frame errors. Extracts tool start/result events.",
+  "input": [
+    { "name": "payload", "type": "string", "description": "Raw SSE data: line from event stream" }
+  ],
+  "output": [
+    { "name": "chunk", "type": "ChatChunk", "description": "{delta, done, tool?: ToolEvent}" }
+  ],
+  "tags": ["sse", "streaming", "chat", "llm", "ai", "parsing"],
+  "compatible_with": ["nodejs", "browser", "typescript", "react"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
