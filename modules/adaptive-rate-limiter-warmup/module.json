@@ -1,0 +1,15 @@
+{
+  "id": "adaptive-rate-limiter-warmup",
+  "name": "Adaptive Rate Limiter with Warmup",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Per-entity rate limiter with age-based warmup curve (0.08→1.0 over 21 days), jittered intervals, daily caps, and persistent state.",
+  "input": [{"name": "entity_id", "type": "string"}, {"name": "age_days", "type": "float"}, {"name": "action_key", "type": "string"}, {"name": "base_cap", "type": "int"}, {"name": "min_interval", "type": "float"}, {"name": "tz_offset_hours", "type": "int"}],
+  "output": [{"name": "allowed", "type": "boolean"}, {"name": "wait_seconds", "type": "float"}, {"name": "reason", "type": "string"}],
+  "tags": ["rate-limit", "warmup", "throttle", "anti-detection"],
+  "compatible_with": ["python3.9+"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
