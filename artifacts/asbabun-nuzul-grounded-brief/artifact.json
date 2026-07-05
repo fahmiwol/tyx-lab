@@ -1,0 +1,14 @@
+{
+  "id": "asbabun-nuzul-grounded-brief",
+  "name": "Asbabun Nuzul: Grounded Brief Pattern",
+  "version": "1.0.0",
+  "kind": "playbook",
+  "category": ["ai", "business"],
+  "description": "Every creative output grounded in specific trigger (Asbabun Nuzul). Extract: trigger event, specific audience, concrete moment, real tension. Generic briefs yield generic output; grounded specifics yield resonant universals.",
+  "tags": ["asbab", "grounding", "context", "brief-intake", "specificity"],
+  "compatible_with": ["brief-parsing", "creative-frameworks"],
+  "used_in_recipes": ["brief-intake-pipeline"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
