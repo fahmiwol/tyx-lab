@@ -1,0 +1,14 @@
+{
+  "id": "cost-aware-gpu-training-optimization",
+  "name": "Cost-Aware GPU Training Optimization",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "infra",
+  "description": "Methods for reducing cloud GPU training costs through dependency caching, hardware selection, and pre-built images",
+  "tags": ["gpu-training", "cost-optimization", "cloud-compute", "runpod", "dependencies"],
+  "compatible_with": ["RunPod", "Vast.ai", "Lambda Labs"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
