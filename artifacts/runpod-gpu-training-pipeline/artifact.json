@@ -1,0 +1,22 @@
+{
+  "id": "runpod-gpu-training-pipeline",
+  "name": "Runpod Gpu Training Pipeline",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "infra",
+  "description": "Practical methodology for orchestrating LoRA/DPO training on RunPod cloud GPUs with cost optimization",
+  "tags": [
+    "gpu-training",
+    "runpod",
+    "cloud-compute",
+    "lora",
+    "dpo"
+  ],
+  "compatible_with": [
+    "generic-ai-systems"
+  ],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
