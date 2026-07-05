@@ -1,0 +1,14 @@
+{
+  "id": "threejs-scene-architecture",
+  "name": "Three.js Scene Architecture & Composition Pattern",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "3d",
+  "description": "Reusable Three.js scene patterns: helper functions (box/cyl builders), material/group composition, warp zones for navigation, and rendering optimization. Used for isometric office simulations, virtual worlds, and interactive 3D environments.",
+  "tags": ["threejs", "3d", "scene-graph", "webgl", "architecture"],
+  "compatible_with": ["threejs", "javascript"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
