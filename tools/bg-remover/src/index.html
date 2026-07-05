@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MighanRemove — Background Removal</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d0d0f; --surface: #16181c; --surface2: #1e2028;
+      --border: #2a2d35; --accent: #00d4aa; --accent2: #6c63ff;
+      --text: #e8eaf0; --muted: #6b7280;
+      --danger: #ff4757; --success: #2ed573; --warning: #ffd32a;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+
+    /* ── Header ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 28px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .logo { font-size: 18px; font-weight: 700; }
+    .logo span { color: var(--accent); }
+    .back-btn {
+      margin-left: auto; background: var(--border); border: none;
+      border-radius: 8px; color: var(--text); cursor: pointer;
+      padding: 7px 14px; font-size: 13px; text-decoration: none;
+    }
+    .back-btn:hover { background: var(--accent2); }
+
+    /* ── Server status badge ── */
+    #server-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px; border-radius: 20px;
+      background: var(--surface2); border: 1px solid var(--border);
+      font-size: 12px;
+    }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); }
+    .dot.green  { background: var(--success); box-shadow: 0 0 5px var(--success); }
+    .dot.red    { background: var(--danger); }
+    .dot.yellow { background: var(--warning); animation: blink 1s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    /* ── Main layout ── */
+    .main { max-width: 1100px; margin: 0 auto; padding: 32px 28px 80px; }
+
+    h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+    h1 span { color: var(--accent); }
+    .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 32px; }
+
+    /* ── Drop zone ── */
+    #drop-zone {
+      border: 2px dashed var(--border);
+      border-radius: 16px;
+      padding: 60px 40px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: var(--surface);
+      position: relative;
+    }
+    #drop-zone.drag-over { border-color: var(--accent); background: rgba(0,212,170,0.06); }
+    #drop-zone.has-file  { border-color: var(--accent); border-style: solid; }
+    #drop-zone .drop-icon { font-size: 48px; margin-bottom: 16px; }
+    #drop-zone h2 { font-size: 18px; margin-bottom: 8px; }
+    #drop-zone p  { color: var(--muted); font-size: 13px; }
+    #file-input { display: none; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 22px; border-radius: 10px; border: none;
+      font-size: 14px; font-weight: 600; cursor: pointer;
+      transition: all 0.15s; text-decoration: none;
+    }
+    .btn-accent  { background: var(--accent); color: #0d0d0f; }
+    .btn-accent:hover { background: #00bfa0; }
+    .btn-primary { background: var(--accent2); color: white; }
+    .btn-primary:hover { background: #5a52e0; }
+    .btn-ghost   { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--accent); }
+    .btn-danger  { background: var(--danger); color: white; }
+    .btn-danger:hover { background: #e63946; }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    /* ── Progress ── */
+    #progress-wrap { display: none; margin-top: 24px; }
+    .progress-bar {
+      height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 8px;
+    }
+    .progress-fill {
+      height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 3px; transition: width 0.3s;
+      animation: shimmer 1.5s infinite;
+    }
+    @keyframes shimmer {
+      0%   { filter: brightness(1);   }
+      50%  { filter: brightness(1.3); }
+      100% { filter: brightness(1);   }
+    }
+    #progress-text { font-size: 13px; color: var(--muted); text-align: center; }
+
+    /* ── Result panel ── */
+    #result-panel { display: none; margin-top: 32px; }
+    .result-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .result-header h2 { font-size: 18px; }
+    .result-actions { margin-left: auto; display: flex; gap: 10px; flex-wrap: wrap; }
+
+    /* ── Before / After ── */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 640px) { .compare-grid { grid-template-columns: 1fr; } }
+
+    .img-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .img-panel-label {
+      padding: 10px 16px;
+      font-size: 12px; font-weight: 600;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .img-panel img {
+      width: 100%; max-height: 400px;
+      object-fit: contain;
+      display: block;
+    }
+    /* Checkerboard untuk transparent background */
+    .img-panel.transparent {
+      background-image:
+        linear-gradient(45deg, #2a2d35 25%, transparent 25%),
+        linear-gradient(-45deg, #2a2d35 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #2a2d35 75%),
+        linear-gradient(-45deg, transparent 75%, #2a2d35 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    }
+
+    /* ── Slider compare (bonus) ── */
+    .slider-wrap {
+      position: relative; cursor: col-resize;
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--border);
+      margin-bottom: 24px; display: none;
+      background-image:
+        linear-gradient(45deg, #2a2d35 25%, transparent 25%),
+        linear-gradient(-45deg, #2a2d35 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #2a2d35 75%),
+        linear-gradient(-45deg, transparent 75%, #2a2d35 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    }
+    .slider-wrap img { width: 100%; display: block; max-height: 480px; object-fit: contain; }
+    #slider-before {
+      position: absolute; top: 0; left: 0; width: 50%; height: 100%;
+      overflow: hidden; border-right: 2px solid var(--accent);
+    }
+    #slider-before img { min-width: 200%; }
+    .slider-handle {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 36px; height: 36px; background: var(--accent);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 14px; user-select: none; box-shadow: 0 2px 12px rgba(0,212,170,0.5);
+    }
+
+    /* ── Stats ── */
+    .stats-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; }
+    .stat-chip {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 8px; padding: 8px 14px; font-size: 12px;
+    }
+    .stat-chip strong { color: var(--accent); display: block; font-size: 16px; }
+
+    /* ── Batch section ── */
+    #batch-section { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
+    #batch-section h2 { font-size: 18px; margin-bottom: 8px; }
+    #batch-section p  { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+    #batch-list { display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+    .batch-item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 10px 14px;
+      display: flex; align-items: center; gap: 12px; font-size: 13px;
+    }
+    .batch-item .status-icon { font-size: 16px; }
+
+    /* ── Error ── */
+    #error-msg {
+      display: none; background: rgba(255,71,87,0.1); border: 1px solid var(--danger);
+      border-radius: 10px; padding: 14px 18px; margin-top: 20px;
+      color: var(--danger); font-size: 13px;
+    }
+
+    /* ── Toast ── */
+    #toast {
+      position: fixed; bottom: 24px; right: 24px;
+      background: var(--surface); border: 1px solid var(--accent);
+      border-radius: 10px; padding: 12px 20px;
+      font-size: 13px; display: none;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      animation: slideIn 0.2s ease;
+      z-index: 9999;
+    }
+    @keyframes slideIn { from{transform:translateY(20px);opacity:0} to{transform:translateY(0);opacity:1} }
+
+    /* ── Tips ── */
+    .tips { margin-top: 32px; background: var(--surface); border-radius: 12px; padding: 20px 24px; }
+    .tips h3 { font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 12px; }
+    .tips ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .tips li { font-size: 12px; color: var(--muted); display: flex; gap: 8px; }
+    .tips li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">✂️ Mighan<span>Remove</span></div>
+  <div id="server-badge"><div class="dot yellow" id="srv-dot"></div><span id="srv-text">Checking rembg...</span></div>
+  <a href="/design-studio/index.html" class="back-btn">← Design Studio</a>
+</header>
+
+<div class="main">
+  <h1>Background <span>Removal</span></h1>
+  <p class="subtitle">Hapus background gambar secara otomatis dengan AI (rembg + BiRefNet). Self-hosted, tanpa biaya per-request.</p>
+
+  <!-- Drop Zone -->
+  <div id="drop-zone" onclick="document.getElementById('file-input').click()">
+    <div class="drop-icon">🖼️</div>
+    <h2>Drag & Drop gambar di sini</h2>
+    <p>atau klik untuk pilih file — JPG, PNG, WEBP, BMP (maks 20MB)</p>
+    <br>
+    <button class="btn btn-accent" onclick="event.stopPropagation();document.getElementById('file-input').click()">
+      📁 Pilih File
+    </button>
+    <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp,image/bmp">
+  </div>
+
+  <!-- Progress -->
+  <div id="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    <p id="progress-text">Menginisialisasi...</p>
+  </div>
+
+  <!-- Error -->
+  <div id="error-msg"></div>
+
+  <!-- Result -->
+  <div id="result-panel">
+    <div class="result-header">
+      <h2>✅ Selesai!</h2>
+      <div class="result-actions">
+        <button class="btn btn-accent" id="btn-download">⬇️ Download PNG</button>
+        <button class="btn btn-primary" id="btn-copy-b64">📋 Copy Base64</button>
+        <button class="btn btn-ghost"  id="btn-toggle-compare">⇔ Slider Compare</button>
+        <button class="btn btn-ghost"  id="btn-new">🔄 Gambar Baru</button>
+      </div>
+    </div>
+
+    <!-- Slider compare (hidden by default) -->
+    <div class="slider-wrap" id="slider-wrap">
+      <img id="slider-after-img" src="" alt="after">
+      <div id="slider-before"><img id="slider-before-img" src="" alt="before"></div>
+      <div class="slider-handle" id="slider-handle">⇔</div>
+    </div>
+
+    <!-- Side by side -->
+    <div class="compare-grid" id="compare-grid">
+      <div class="img-panel">
+        <div class="img-panel-label">
+          <span>SEBELUM</span>
+          <span id="orig-size"></span>
+        </div>
+        <img id="img-before" src="" alt="Original">
+      </div>
+      <div class="img-panel transparent">
+        <div class="img-panel-label">
+          <span>SESUDAH — Background Removed</span>
+          <span id="result-size"></span>
+        </div>
+        <img id="img-after" src="" alt="Result">
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-chip"><strong id="stat-time">—</strong>Waktu proses</div>
+      <div class="stat-chip"><strong id="stat-model">—</strong>Model</div>
+      <div class="stat-chip"><strong id="stat-in">—</strong>Input size</div>
+      <div class="stat-chip"><strong id="stat-out">—</strong>Output size</div>
+    </div>
+  </div>
+
+  <!-- Batch section -->
+  <div id="batch-section">
+    <h2>📦 Batch Processing</h2>
+    <p>Proses banyak gambar sekaligus (maks 10 file). Hasil didownload sebagai ZIP.</p>
+    <input type="file" id="batch-input" accept="image/*" multiple style="display:none">
+    <button class="btn btn-ghost" onclick="document.getElementById('batch-input').click()">
+      📁 Pilih Multiple File
+    </button>
+    <div id="batch-list"></div>
+    <button class="btn btn-primary" id="btn-batch-run" style="display:none">
+      🚀 Proses Semua & Download ZIP
+    </button>
+  </div>
+
+  <!-- Tips -->
+  <div class="tips">
+    <h3>💡 Tips MighanRemove</h3>
+    <ul>
+      <li>Gambar dengan kontras tinggi antara subjek dan background menghasilkan hasil terbaik</li>
+      <li>Model BiRefNet sangat baik untuk rambut, bulu, dan detail halus</li>
+      <li>Gambar produk e-commerce (background putih) hampir selalu sempurna</li>
+      <li>Untuk microstock, hasil PNG transparan langsung bisa diupload ke Dreamstime/Adobe Stock</li>
+      <li>Gunakan batch mode untuk proses banyak gambar sekaligus — cocok untuk pipeline otomatis</li>
+      <li>rembg server harus berjalan di port 9799 — jalankan <code>server/tools/start_rembg.bat</code></li>
+    </ul>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+  const GATEWAY = localStorage.getItem('mighan_gateway_url') || 'http://localhost:9797';
+  let _resultBlob = null;
+  let _resultFilename = 'nobg.png';
+  let _origDataUrl = null;
+
+  // ── Toast ────────────────────────────────────────────────────────────
+  function toast(msg, duration = 2500) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.style.display = 'block';
+    setTimeout(() => t.style.display = 'none', duration);
+  }
+
+  // ── Server status ────────────────────────────────────────────────────
+  async function checkServer() {
+    const dot  = document.getElementById('srv-dot');
+    const text = document.getElementById('srv-text');
+    try {
+      const r = await fetch(GATEWAY + '/api/tools/rembg-status');
+      const d = await r.json();
+      if (d.available) {
+        dot.className = 'dot green';
+        text.textContent = 'rembg online — model: ' + (d.rembg?.model || '?');
+      } else {
+        dot.className = 'dot red';
+        text.textContent = 'rembg offline — jalankan start_rembg.bat';
+      }
+    } catch {
+      dot.className = 'dot red';
+      text.textContent = 'Gateway offline';
+    }
+  }
+  checkServer();
+  setInterval(checkServer, 30000);
+
+  // ── Drag & Drop ──────────────────────────────────────────────────────
+  const dropZone = document.getElementById('drop-zone');
+  const fileInput = document.getElementById('file-input');
+
+  dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (file) processFile(file);
+  });
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files[0]) processFile(fileInput.files[0]);
+  });
+
+  // ── Process single file ──────────────────────────────────────────────
+  async function processFile(file) {
+    // Validasi
+    if (!file.type.startsWith('image/')) return showError('File harus berupa gambar (JPG, PNG, WEBP, BMP)');
+    if (file.size > 20 * 1024 * 1024) return showError('File terlalu besar (maks 20MB)');
+
+    hideError();
+    document.getElementById('result-panel').style.display = 'none';
+    dropZone.classList.add('has-file');
+
+    // Show original preview
+    _origDataUrl = await fileToDataURL(file);
+    document.getElementById('img-before').src = _origDataUrl;
+
+    // Progress
+    const pw = document.getElementById('progress-wrap');
+    const pf = document.getElementById('progress-fill');
+    const pt = document.getElementById('progress-text');
+    pw.style.display = 'block';
+
+    let pct = 0;
+    pt.textContent = 'Mengirim ke rembg server...';
+    pf.style.width = '10%';
+
+    // Simulate progress (model inference tidak bisa ditrack real-time)
+    const ticker = setInterval(() => {
+      if (pct < 85) {
+        pct += Math.random() * 8;
+        pf.style.width = Math.min(pct, 85) + '%';
+        if (pct < 30) pt.textContent = 'Mengirim gambar...';
+        else if (pct < 60) pt.textContent = 'AI memproses background...';
+        else pt.textContent = 'Memfinalisasi hasil...';
+      }
+    }, 400);
+
+    try {
+      const fd = new FormData();
+      fd.append('file', file);
+
+      const resp = await fetch(GATEWAY + '/api/tools/remove-bg', {
+        method: 'POST',
+        body: fd
+      });
+
+      clearInterval(ticker);
+
+      if (!resp.ok) {
+        const err = await resp.json().catch(() => ({ error: resp.statusText }));
+        throw new Error(err.error || err.hint || 'Server error ' + resp.status);
+      }
+
+      _resultBlob = await resp.blob();
+      _resultFilename = (file.name.replace(/\.[^.]+$/, '') || 'image') + '_nobg.png';
+
+      const processingMs = resp.headers.get('X-Processing-Time-Ms');
+      const model        = resp.headers.get('X-Model');
+      const inputSize    = resp.headers.get('X-Input-Size');
+      const outputSize   = resp.headers.get('X-Output-Size');
+
+      pf.style.width = '100%';
+      pt.textContent = 'Selesai! ✅';
+      await new Promise(r => setTimeout(r, 400));
+      pw.style.display = 'none';
+
+      // Show result
+      const resultUrl = URL.createObjectURL(_resultBlob);
+      document.getElementById('img-after').src    = resultUrl;
+      document.getElementById('img-before').src   = _origDataUrl;
+
+      // Slider
+      document.getElementById('slider-after-img').src  = resultUrl;
+      document.getElementById('slider-before-img').src = _origDataUrl;
+
+      // Stats
+      document.getElementById('stat-time').textContent  = processingMs ? processingMs + 'ms' : '—';
+      document.getElementById('stat-model').textContent = model || 'birefnet';
+      document.getElementById('stat-in').textContent    = inputSize  ? formatBytes(parseInt(inputSize))  : formatBytes(file.size);
+      document.getElementById('stat-out').textContent   = outputSize ? formatBytes(parseInt(outputSize)) : formatBytes(_resultBlob.size);
+      document.getElementById('orig-size').textContent  = file.name;
+      document.getElementById('result-size').textContent = _resultFilename;
+
+      document.getElementById('result-panel').style.display = 'block';
+      document.getElementById('result-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      toast('✅ Background berhasil dihapus! ' + (processingMs ? processingMs + 'ms' : ''));
+
+    } catch (err) {
+      clearInterval(ticker);
+      pw.style.display = 'none';
+      showError(err.message);
+    }
+  }
+
+  // ── Download ─────────────────────────────────────────────────────────
+  document.getElementById('btn-download').addEventListener('click', () => {
+    if (!_resultBlob) return;
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(_resultBlob);
+    a.download = _resultFilename;
+    a.click();
+    toast('⬇️ Downloading ' + _resultFilename);
+  });
+
+  // ── Copy Base64 ──────────────────────────────────────────────────────
+  document.getElementById('btn-copy-b64').addEventListener('click', async () => {
+    if (!_resultBlob) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      navigator.clipboard.writeText(reader.result)
+        .then(() => toast('📋 Base64 PNG tersalin ke clipboard!'))
+        .catch(() => toast('⚠️ Gagal copy. Browser mungkin perlu HTTPS.'));
+    };
+    reader.readAsDataURL(_resultBlob);
+  });
+
+  // ── Slider compare toggle ─────────────────────────────────────────────
+  const sliderWrap  = document.getElementById('slider-wrap');
+  const compareGrid = document.getElementById('compare-grid');
+  document.getElementById('btn-toggle-compare').addEventListener('click', () => {
+    const show = sliderWrap.style.display === 'none' || sliderWrap.style.display === '';
+    sliderWrap.style.display  = show ? 'block' : 'none';
+    compareGrid.style.display = show ? 'none'  : 'grid';
+  });
+
+  // Slider drag
+  const sliderHandle = document.getElementById('slider-handle');
+  const sliderBefore = document.getElementById('slider-before');
+  let dragging = false;
+  sliderHandle.addEventListener('mousedown', () => dragging = true);
+  document.addEventListener('mouseup',   () => dragging = false);
+  document.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    const rect = sliderWrap.getBoundingClientRect();
+    const pct  = Math.max(0, Math.min(100, (e.clientX - rect.left) / rect.width * 100));
+    sliderBefore.style.width   = pct + '%';
+    sliderHandle.style.left    = pct + '%';
+  });
+  // Touch
+  sliderHandle.addEventListener('touchstart', e => { dragging = true; e.preventDefault(); }, { passive:false });
+  document.addEventListener('touchend', () => dragging = false);
+  document.addEventListener('touchmove', e => {
+    if (!dragging) return;
+    const rect = sliderWrap.getBoundingClientRect();
+    const pct  = Math.max(0, Math.min(100, (e.touches[0].clientX - rect.left) / rect.width * 100));
+    sliderBefore.style.width = pct + '%';
+    sliderHandle.style.left  = pct + '%';
+  }, { passive: true });
+
+  // ── New image ─────────────────────────────────────────────────────────
+  document.getElementById('btn-new').addEventListener('click', () => {
+    document.getElementById('result-panel').style.display = 'none';
+    dropZone.classList.remove('has-file');
+    document.getElementById('file-input').value = '';
+    sliderWrap.style.display  = 'none';
+    compareGrid.style.display = 'grid';
+    _resultBlob = null;
+    window.scrollTo(0, 0);
+  });
+
+  // ── Batch ─────────────────────────────────────────────────────────────
+  const batchInput   = document.getElementById('batch-input');
+  const batchList    = document.getElementById('batch-list');
+  const btnBatchRun  = document.getElementById('btn-batch-run');
+  let _batchFiles = [];
+
+  batchInput.addEventListener('change', () => {
+    _batchFiles = Array.from(batchInput.files);
+    if (_batchFiles.length > 10) {
+      toast('⚠️ Maks 10 file per batch');
+      _batchFiles = _batchFiles.slice(0, 10);
+    }
+    renderBatchList();
+    btnBatchRun.style.display = _batchFiles.length ? 'inline-flex' : 'none';
+  });
+
+  function renderBatchList(statuses = {}) {
+    batchList.innerHTML = _batchFiles.map((f, i) => {
+      const s = statuses[i] || '';
+      const icon = s === 'done' ? '✅' : s === 'err' ? '❌' : s === 'running' ? '⏳' : '🖼️';
+      return `<div class="batch-item"><span class="status-icon">${icon}</span><span>${f.name}</span><span style="margin-left:auto;color:var(--muted)">${formatBytes(f.size)}</span></div>`;
+    }).join('');
+  }
+
+  btnBatchRun.addEventListener('click', async () => {
+    if (!_batchFiles.length) return;
+    btnBatchRun.disabled = true;
+    btnBatchRun.textContent = '⏳ Memproses...';
+    const statuses = {};
+
+    const fd = new FormData();
+    _batchFiles.forEach((f, i) => { fd.append('files', f); statuses[i] = 'running'; });
+    renderBatchList(statuses);
+
+    try {
+      const resp = await fetch(GATEWAY + '/api/tools/remove-bg', { method: 'POST', body: fd });
+      // Note: batch via single-file endpoint — process one by one for better progress
+      // For now use single file loop
+    } catch {}
+
+    // Process one by one for better UX
+    btnBatchRun.textContent = '⏳ Memproses...';
+    const zipParts = [];
+    for (let i = 0; i < _batchFiles.length; i++) {
+      statuses[i] = 'running';
+      renderBatchList(statuses);
+      try {
+        const fd2 = new FormData();
+        fd2.append('file', _batchFiles[i]);
+        const r = await fetch(GATEWAY + '/api/tools/remove-bg', { method: 'POST', body: fd2 });
+        if (r.ok) {
+          const blob = await r.blob();
+          const name = _batchFiles[i].name.replace(/\.[^.]+$/, '') + '_nobg.png';
+          zipParts.push({ blob, name });
+          statuses[i] = 'done';
+        } else { statuses[i] = 'err'; }
+      } catch { statuses[i] = 'err'; }
+      renderBatchList(statuses);
+    }
+
+    // Create ZIP in browser using JSZip (if available) or just download each
+    if (typeof JSZip !== 'undefined') {
+      const zip = new JSZip();
+      for (const p of zipParts) zip.file(p.name, p.blob);
+      const content = await zip.generateAsync({ type: 'blob' });
+      const a = document.createElement('a'); a.href = URL.createObjectURL(content); a.download = 'mighan_nobg_batch.zip'; a.click();
+    } else {
+      // Fallback: download each separately
+      for (const p of zipParts) {
+        const a = document.createElement('a'); a.href = URL.createObjectURL(p.blob); a.download = p.name; a.click();
+        await new Promise(r => setTimeout(r, 300));
+      }
+    }
+
+    btnBatchRun.disabled = false;
+    btnBatchRun.textContent = '🚀 Proses Semua & Download ZIP';
+    toast('✅ Batch selesai! ' + zipParts.length + '/' + _batchFiles.length + ' berhasil');
+  });
+
+  // ── Helpers ───────────────────────────────────────────────────────────
+  function fileToDataURL(file) {
+    return new Promise((res, rej) => {
+      const r = new FileReader();
+      r.onload = () => res(r.result);
+      r.onerror = rej;
+      r.readAsDataURL(file);
+    });
+  }
+
+  function formatBytes(b) {
+    if (b < 1024) return b + 'B';
+    if (b < 1024*1024) return (b/1024).toFixed(1) + 'KB';
+    return (b/1024/1024).toFixed(2) + 'MB';
+  }
+
+  function showError(msg) {
+    const el = document.getElementById('error-msg');
+    el.textContent = '⚠️ ' + msg;
+    el.style.display = 'block';
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function hideError() { document.getElementById('error-msg').style.display = 'none'; }
+</script>
+</body>
+</html>
