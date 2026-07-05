@@ -4,7 +4,7 @@ Dispatch alerts via WhatsApp, email, logs with throttling.
 
 ## Channels
 
-- **wa** — WhatsApp via Cosmix API
+- **wa** — WhatsApp via a WhatsApp gateway API
 - **email** — SMTP (Phase 2)
 - **log** — console.error
 
@@ -17,7 +17,7 @@ Max 1 alert per hour per (source, provider, level) combo.
 ```js
 const notifier = require('@tiranyx/notifier');
 await notifier.dispatch({
-  source: 'tuwaga',
+  source: 'a-content-pipeline',
   provider: 'runpod-chat',
   level: 'critical',
   message: 'Quota at 90%',
