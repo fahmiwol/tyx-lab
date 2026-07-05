@@ -1,0 +1,14 @@
+{
+  "id": "repo-cartography-handoff",
+  "name": "Repository Cartography & Agent Handoff",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "ops",
+  "description": "Build a maintainable documentation map for a large repo: tiered doc list, folder roles, runtime flow, conflict table, honest coverage, and a living handoff log.",
+  "tags": ["documentation", "onboarding", "handoff", "monorepo", "agents"],
+  "compatible_with": ["disciplined-execution"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
