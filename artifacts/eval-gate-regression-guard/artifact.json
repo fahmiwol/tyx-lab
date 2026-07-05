@@ -1,0 +1,14 @@
+{
+  "id": "eval-gate-regression-guard",
+  "name": "Eval-Gate & Regression-Guard: Model Quality Certification Framework",
+  "version": "1.0.0",
+  "kind": "framework",
+  "category": "ai",
+  "description": "Automated quality assurance system for SLMs that certifies new models are better than baseline before deployment, preventing regressions via MT-Bench-style evaluation.",
+  "tags": ["evaluation", "regression-guard", "quality-gate", "mt-bench", "model-certification", "identity-preservation"],
+  "compatible_with": ["slm-distillation-pipeline", "dpo-training"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
