@@ -1,0 +1,24 @@
+{
+  "id": "haal-user-state-conditioning",
+  "name": "Haal: User-State Conditioning",
+  "version": "1.0.0",
+  "category": ["ai", "nlp"],
+  "description": "User's current state (brand_haal, audience_haal, temporal_haal, spatial_haal) is not metadata—it's first-class computation input. Conditions generation for platform, timing, culture, and audience psychology.",
+  "input": [
+    {"name": "task", "type": "string", "description": "User request"},
+    {"name": "brand_haal", "type": "object", "description": "Brand current state"},
+    {"name": "audience_haal", "type": "object", "description": "Who receives this + state"},
+    {"name": "temporal_haal", "type": "object", "description": "When (season, urgency, trend)"},
+    {"name": "spatial_haal", "type": "object", "description": "Where (platform, geography, culture)"}
+  ],
+  "output": [
+    {"name": "conditioned_output", "type": "string"},
+    {"name": "haal_profile", "type": "object", "description": "Used conditioning profile"}
+  ],
+  "tags": ["conditioning", "haal", "user-state", "context-aware", "personalization"],
+  "compatible_with": ["generation-models", "prompt-engineering", "content-systems"],
+  "used_in_recipes": ["context-aware-generation"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
