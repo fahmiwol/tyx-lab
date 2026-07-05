@@ -1,1 +1,1 @@
-
+{"id":"youtube-upload-wrapper","name":"YouTube Resumable Upload Wrapper","version":"1.0.0","category":"video","description":"Wrap the YouTube Data API for OAuth + resumable uploads with processing/transcript polling.","input":[],"output":[],"tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
