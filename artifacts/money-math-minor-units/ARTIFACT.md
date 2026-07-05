@@ -100,7 +100,7 @@ const result = (amount * BigInt(25)) / BigInt(1000);
 // 50_000_000 * 25 / 1000 = 1_250_000 (12,500.00)
 ```
 
-## Tier Value Mapping (From bank-tiranyx)
+## Tier Value Mapping (from a production ledger service)
 
 ```typescript
 export const TIER_VALUE_IDR: Record<string, number> = {
