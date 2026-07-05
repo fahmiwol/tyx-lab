@@ -1,0 +1,20 @@
+{
+  "id": "game-loop-fixed-timestep",
+  "name": "Game Loop with Fixed Timestep",
+  "version": "1.0.0",
+  "category": "3d",
+  "description": "requestAnimationFrame game loop with decoupled fixed-rate update (physics/logic) and variable-rate render. Includes frame skip limits, FPS tracking, and interpolation support. Prevents physics simulation from frame-rate dependency.",
+  "input": [
+    { "name": "options", "type": "Object", "description": "fixedDt (1/60), maxFrameSkip (5), onUpdate, onRender callbacks" }
+  ],
+  "output": [
+    { "name": "fps", "type": "number", "description": "Current frames per second" },
+    { "name": "accumulator", "type": "number", "description": "Accumulated time since last fixed update" }
+  ],
+  "tags": ["3d", "game-dev", "loop", "physics", "timing", "algorithm"],
+  "compatible_with": ["browser", "typescript", "game-engines"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
