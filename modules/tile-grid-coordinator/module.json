@@ -1,0 +1,21 @@
+{
+  "id": "tile-grid-coordinator",
+  "name": "Tile Grid Coordinator",
+  "version": "1.0.0",
+  "category": "ai",
+  "description": "Pure grid coordinate conversion utility for top-down and isometric tile maps (RPG/Gather-style). Square tiles, screen offset support, Manhattan distance, bounds checking. All functions are deterministic and side-effect-free.",
+  "input": [
+    { "name": "tileX, tileY", "type": "number", "description": "Grid coordinates" },
+    { "name": "screenX, screenY", "type": "number", "description": "Pixel coordinates" }
+  ],
+  "output": [
+    { "name": "position", "type": "{x: number, y: number}", "description": "Converted coordinates" },
+    { "name": "distance", "type": "number", "description": "Manhattan distance between tiles" }
+  ],
+  "tags": ["grid", "tiles", "isometric", "rpg", "coordinate-system", "game-dev"],
+  "compatible_with": ["nodejs", "browser", "typescript", "react", "game-engines"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
