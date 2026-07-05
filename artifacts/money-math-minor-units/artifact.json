@@ -1,0 +1,14 @@
+{
+  "id": "money-math-minor-units",
+  "name": "Money Math in Minor Units",
+  "version": "1.0.0",
+  "kind": "formula",
+  "category": ["business"],
+  "description": "Prevent floating-point rounding errors in financial calculations by working entirely in integer minor units (cents, satoshis). Includes conversion, fee calculation, and reconciliation formulas.",
+  "tags": ["fintech", "money", "bigint", "precision", "arithmetic"],
+  "compatible_with": ["typescript", "javascript", "python", "postgresql", "mysql"],
+  "used_in_recipes": ["payment-processing", "transaction-ledger"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
