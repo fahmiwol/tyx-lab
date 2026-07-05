@@ -3,7 +3,7 @@
   "name": "Denomination Unit Price Resolver",
   "version": "1.0.0",
   "category": "business",
-  "description": "Lookup table: Denomination → IDR unit price. Resolves EMAS, PERAK, PERUNGGU, BERLIAN to fiat value. Supports versioned snapshots for historical settlement + audit trail. Used for wallet totalIDR, fee calculation, and FX reporting.",
+  "description": "Lookup table: Denomination → IDR unit price. Resolves GOLD, SILVER, BRONZE, DIAMOND to fiat value. Supports versioned snapshots for historical settlement + audit trail. Used for wallet totalIDR, fee calculation, and FX reporting.",
   "input": ["denom: Denomination; atTimestamp?: ISO8601"],
   "output": ["{ denom, idr, effectiveAt, nextChange }"],
   "tags": ["pricing","fintech","fiat-conversion","lookup","settlement"],
