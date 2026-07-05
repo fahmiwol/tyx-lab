@@ -1,0 +1,17 @@
+{
+  "id": "tyx-lab-mcp",
+  "name": "tyx-lab MCP Server (library brain)",
+  "version": "1.0.0",
+  "kind": "mcp-server",
+  "category": "ai",
+  "description": "Search and fetch tyx-lab atoms on demand over MCP — turn the whole 188-atom library into a live, queryable knowledge base for your agent.",
+  "run": "node src/server.js  (then register in your MCP client config)",
+  "input": [],
+  "output": [],
+  "tags": ["mcp", "rag", "knowledge-base", "agent", "search"],
+  "compatible_with": ["mcp-server-starter"],
+  "used_in_recipes": ["ship-an-mcp-server"],
+  "status": "beta",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
