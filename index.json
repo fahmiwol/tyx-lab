@@ -1,9 +1,9 @@
 {
-    "version":  "1.2.0",
+    "version":  "1.3.0",
     "last_updated":  "2026-07-05",
-    "total_modules":  100,
+    "total_modules":  92,
     "total_artifacts":  50,
-    "total_atoms":  150,
+    "total_atoms":  142,
     "atoms":  [
                   {
                       "id":  "agent-economy-credit-minting",
@@ -600,14 +600,6 @@
                       "status":  "stable"
                   },
                   {
-                      "id":  "cinematic-camera-controller",
-                      "name":  "Cinematic Camera Controller",
-                      "lane":  "module",
-                      "category":  "3d",
-                      "path":  "modules/cinematic-camera-controller",
-                      "status":  "stable"
-                  },
-                  {
                       "id":  "command-intent-router",
                       "name":  "Command Intent Router",
                       "lane":  "module",
@@ -728,14 +720,6 @@
                       "status":  "stable"
                   },
                   {
-                      "id":  "haal-user-state-conditioning",
-                      "name":  "Haal: User-State Conditioning",
-                      "lane":  "module",
-                      "category":  "ai",
-                      "path":  "modules/haal-user-state-conditioning",
-                      "status":  "stable"
-                  },
-                  {
                       "id":  "human-timing-utils",
                       "name":  "Human-Like Timing Utilities",
                       "lane":  "module",
@@ -749,14 +733,6 @@
                       "lane":  "module",
                       "category":  "business",
                       "path":  "modules/idempotent-payment-processing",
-                      "status":  "stable"
-                  },
-                  {
-                      "id":  "ijaz-coherence-quality",
-                      "name":  "I\u0027jaz Multi-Scale Coherence Evaluator",
-                      "lane":  "module",
-                      "category":  "ai",
-                      "path":  "modules/ijaz-coherence-quality",
                       "status":  "stable"
                   },
                   {
@@ -936,14 +912,6 @@
                       "status":  "stable"
                   },
                   {
-                      "id":  "particle-avatar-engine",
-                      "name":  "Particle Avatar Engine",
-                      "lane":  "module",
-                      "category":  "3d",
-                      "path":  "modules/particle-avatar-engine",
-                      "status":  "stable"
-                  },
-                  {
                       "id":  "password-scrypt-hash",
                       "name":  "Password Hashing with Scrypt",
                       "lane":  "module",
@@ -1029,14 +997,6 @@
                       "lane":  "module",
                       "category":  "crm",
                       "path":  "modules/sale-pipeline-stages",
-                      "status":  "stable"
-                  },
-                  {
-                      "id":  "semantic-layers-decompose",
-                      "name":  "Hierarchical Semantic Layers (Zahir/Batin/Hadd/Mathla)",
-                      "lane":  "module",
-                      "category":  "ai",
-                      "path":  "modules/semantic-layers-decompose",
                       "status":  "stable"
                   },
                   {
@@ -1128,14 +1088,6 @@
                       "status":  "stable"
                   },
                   {
-                      "id":  "tool-registry-dispatch",
-                      "name":  "Tool Registry \u0026 Dispatch Pattern",
-                      "lane":  "module",
-                      "category":  "ai",
-                      "path":  "modules/tool-registry-dispatch",
-                      "status":  "stable"
-                  },
-                  {
                       "id":  "tools-catalogue-schema",
                       "name":  "Tools Catalogue Schema",
                       "lane":  "module",
@@ -1165,14 +1117,6 @@
                       "lane":  "module",
                       "category":  "ai",
                       "path":  "modules/tts-provider-wrapper",
-                      "status":  "stable"
-                  },
-                  {
-                      "id":  "video-script-storyboard-generator",
-                      "name":  "Video Script \u0026 Storyboard Generator",
-                      "lane":  "module",
-                      "category":  "video",
-                      "path":  "modules/video-script-storyboard-generator",
                       "status":  "stable"
                   },
                   {
@@ -1213,14 +1157,6 @@
                       "lane":  "module",
                       "category":  "infra",
                       "path":  "modules/webhook-meta-verify",
-                      "status":  "stable"
-                  },
-                  {
-                      "id":  "withdrawal-state-machine",
-                      "name":  "Withdrawal State Machine",
-                      "lane":  "module",
-                      "category":  "business",
-                      "path":  "modules/withdrawal-state-machine",
                       "status":  "stable"
                   },
                   {
