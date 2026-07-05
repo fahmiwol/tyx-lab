@@ -1,16 +1,482 @@
 {
-    "version":  "1.1.0",
+    "version":  "1.2.0",
     "last_updated":  "2026-07-05",
-    "total_modules":  55,
-    "total_artifacts":  37,
-    "total_atoms":  92,
+    "total_modules":  100,
+    "total_artifacts":  50,
+    "total_atoms":  150,
     "atoms":  [
+                  {
+                      "id":  "agent-economy-credit-minting",
+                      "name":  "Agent-Economy Credit-Minting Design: Service Credits \u0026 Internal Currency",
+                      "lane":  "artifact",
+                      "category":  "business",
+                      "path":  "artifacts/agent-economy-credit-minting",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "agent-persona-router",
+                      "name":  "Agent Persona Router",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/agent-persona-router",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "asbabun-nuzul-grounded-brief",
+                      "name":  "Asbabun Nuzul: Grounded Brief Pattern",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/asbabun-nuzul-grounded-brief",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "brand-identity-framework",
+                      "name":  "Brand Identity Framework",
+                      "lane":  "artifact",
+                      "category":  "business",
+                      "path":  "artifacts/brand-identity-framework",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "brief-intake-framework",
+                      "name":  "Creative Brief Intake Framework (IHOS-Aligned)",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/brief-intake-framework",
+                      "status":  "stable",
+                      "kind":  "template"
+                  },
+                  {
+                      "id":  "continuous-learning-evolution-methodology",
+                      "name":  "Continuous Learning \u0026 Self-Evolution: System-Centric Learning Without Catastrophic Forgetting",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/continuous-learning-evolution-methodology",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "continuous-learning-tafakkur",
+                      "name":  "Continuous Learning via Reflective Loop (Tafakkur)",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/continuous-learning-tafakkur",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "credit-metering-system",
+                      "name":  "Credit Metering System: Real-Time Usage Tracking \u0026 Enforcement",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/credit-metering-system",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "disciplined-execution",
+                      "name":  "Disciplined Execution â€” the 8-gate loop",
+                      "lane":  "artifact",
+                      "category":  "ops",
+                      "path":  "artifacts/disciplined-execution",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "embedding-rag-chunking",
+                      "name":  "Embedding / RAG Chunking",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/embedding-rag-chunking",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "epistemology-reasoning-framework",
+                      "name":  "Epistemology Reasoning Framework",
+                      "lane":  "artifact",
+                      "category":  "research",
+                      "path":  "artifacts/epistemology-reasoning-framework",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "eval-gate-regression-guard",
+                      "name":  "Eval-Gate \u0026 Regression-Guard: Model Quality Certification Framework",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/eval-gate-regression-guard",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "exfat-windows-fix",
+                      "name":  "exFAT Windows Fix for Next.js / Webpack",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/exfat-windows-fix",
+                      "status":  "stable",
+                      "kind":  "finding"
+                  },
+                  {
+                      "id":  "facebook-domain-verification",
+                      "name":  "Facebook Business Domain Verification (dual-method)",
+                      "lane":  "artifact",
+                      "category":  "ops",
+                      "path":  "artifacts/facebook-domain-verification",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "finite-state-machine-workflows",
+                      "name":  "Finite State Machine for Workflows",
+                      "lane":  "artifact",
+                      "category":  "business",
+                      "path":  "artifacts/finite-state-machine-workflows",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "frontend-deploy-bash-pattern",
+                      "name":  "Frontend Deploy Bash Pattern",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/frontend-deploy-bash-pattern",
+                      "status":  "stable",
+                      "kind":  "template"
+                  },
+                  {
+                      "id":  "git-workflow-windows",
+                      "name":  "Git Workflow â€” Windows + Private GitHub Repo",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/git-workflow-windows",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "ihos-epistemology-framework",
+                      "name":  "IHOS Epistemology Framework",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/ihos-epistemology-framework",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "json-repair-fallback",
+                      "name":  "LLM JSON Repair \u0026 Fallback",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/json-repair-fallback",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "lead-source-classifier",
+                      "name":  "Lead Source \u0026 Bounce Reason Taxonomy",
+                      "lane":  "artifact",
+                      "category":  "crm",
+                      "path":  "artifacts/lead-source-classifier",
+                      "status":  null,
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "llm-provider-fallback",
+                      "name":  "LLM Provider Fallback Router",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/llm-provider-fallback",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "lora-continual-learning",
+                      "name":  "LoRA Continual Learning Without Catastrophic Forgetting",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/lora-continual-learning",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "meta-capi-dedup",
+                      "name":  "Meta Pixel + Conversions API with Dedup",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/meta-capi-dedup",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "money-math-minor-units",
+                      "name":  "Money Math in Minor Units",
+                      "lane":  "artifact",
+                      "category":  "business",
+                      "path":  "artifacts/money-math-minor-units",
+                      "status":  "stable",
+                      "kind":  "formula"
+                  },
+                  {
+                      "id":  "nextjs-subdomain-multitenant",
+                      "name":  "Next.js Subdomain Multi-Tenant Routing",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/nextjs-subdomain-multitenant",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "nextjs-webgl-deploy-gotchas",
+                      "name":  "Next.js + Three.js Deploy \u0026 WebGL Debugging Gotchas",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/nextjs-webgl-deploy-gotchas",
+                      "status":  "stable",
+                      "kind":  "finding"
+                  },
+                  {
+                      "id":  "nginx-security-headers-pattern",
+                      "name":  "Nginx Security Headers Pattern",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/nginx-security-headers-pattern",
+                      "status":  "stable",
+                      "kind":  "template"
+                  },
+                  {
+                      "id":  "npc-identity-world-schema",
+                      "name":  "NPC Agent Identity \u0026 World-Object Schema: Gaming AI \u0026 Interactive Worlds",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/npc-identity-world-schema",
+                      "status":  "stable",
+                      "kind":  "schema"
+                  },
+                  {
+                      "id":  "pm2-feature-flag-ecosystem-config",
+                      "name":  "PM2 Ecosystem Config with Feature Flags",
+                      "lane":  "artifact",
+                      "category":  "ops",
+                      "path":  "artifacts/pm2-feature-flag-ecosystem-config",
+                      "status":  "stable",
+                      "kind":  "template"
+                  },
+                  {
+                      "id":  "pricing-plans-schema",
+                      "name":  "Pricing Plans Schema",
+                      "lane":  "artifact",
+                      "category":  "business",
+                      "path":  "artifacts/pricing-plans-schema",
+                      "status":  "stable",
+                      "kind":  "template"
+                  },
+                  {
+                      "id":  "prompt-chain-orchestration",
+                      "name":  "Prompt Chain Orchestration",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/prompt-chain-orchestration",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "prompt-version-tracking",
+                      "name":  "Prompt Version Tracking",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/prompt-version-tracking",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "react-agent-loop-pattern",
+                      "name":  "ReAct Agent Loop (Reason + Act + Observe)",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/react-agent-loop-pattern",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "repo-cartography-handoff",
+                      "name":  "Repository Cartography \u0026 Agent Handoff",
+                      "lane":  "artifact",
+                      "category":  "ops",
+                      "path":  "artifacts/repo-cartography-handoff",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "reputation-trust-scoring",
+                      "name":  "Reputation \u0026 Trust Scoring: Multi-Signal Agent Credibility Framework",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/reputation-trust-scoring",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "reward-gamification-system",
+                      "name":  "Reward \u0026 Gamification System",
+                      "lane":  "artifact",
+                      "category":  "business",
+                      "path":  "artifacts/reward-gamification-system",
+                      "status":  "stable",
+                      "kind":  "template"
+                  },
+                  {
+                      "id":  "sanad-dataset-provenance",
+                      "name":  "Dataset Provenance: The Sanad Method (Certification Chain)",
+                      "lane":  "artifact",
+                      "category":  "research",
+                      "path":  "artifacts/sanad-dataset-provenance",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "selective-adoption-doctrine",
+                      "name":  "Selective Adoption Doctrine",
+                      "lane":  "artifact",
+                      "category":  "research",
+                      "path":  "artifacts/selective-adoption-doctrine",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "self-hosted-model-serving",
+                      "name":  "Self-Hosted Model Serving Architecture: Local-First SLM Deployment",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/self-hosted-model-serving",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "shopee-data-import",
+                      "name":  "Shopee Storefront to Your DB â€” decision tree",
+                      "lane":  "artifact",
+                      "category":  "ops",
+                      "path":  "artifacts/shopee-data-import",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "shopee-open-platform-integration",
+                      "name":  "Shopee Open Platform â€” Partner App Integration",
+                      "lane":  "artifact",
+                      "category":  "ops",
+                      "path":  "artifacts/shopee-open-platform-integration",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "slm-distillation-pipeline",
+                      "name":  "SLM Distillation Pipeline: Teacher-Student Recursive Refinement",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/slm-distillation-pipeline",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "slm-vs-api-decision-framework",
+                      "name":  "SLM vs Cloud API: Decision Framework for Model Selection",
+                      "lane":  "artifact",
+                      "category":  "business",
+                      "path":  "artifacts/slm-vs-api-decision-framework",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "storyboard-prompt-variants",
+                      "name":  "Storyboard Prompt Variants",
+                      "lane":  "artifact",
+                      "category":  "video",
+                      "path":  "artifacts/storyboard-prompt-variants",
+                      "status":  "stable",
+                      "kind":  "template"
+                  },
+                  {
+                      "id":  "tenant-isolation-pattern",
+                      "name":  "Tenant Isolation Pattern",
+                      "lane":  "artifact",
+                      "category":  "business",
+                      "path":  "artifacts/tenant-isolation-pattern",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "tiered-pricing-package-resolution",
+                      "name":  "Tiered Pricing \u0026 Package Resolution",
+                      "lane":  "artifact",
+                      "category":  "business",
+                      "path":  "artifacts/tiered-pricing-package-resolution",
+                      "status":  "stable",
+                      "kind":  "formula"
+                  },
+                  {
+                      "id":  "token-cost-estimator",
+                      "name":  "Multi-Provider Token \u0026 Cost Estimator",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/token-cost-estimator",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "tool-calling-resilient",
+                      "name":  "Resilient Cross-Provider Tool Calling",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/tool-calling-resilient",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "voice-clone-tts-playbook",
+                      "name":  "Voice Clone \u0026 TTS Playbook",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/voice-clone-tts-playbook",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "workflow-node-schema",
+                      "name":  "Visual Workflow Node Schema",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/workflow-node-schema",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
                   {
                       "id":  "aes-256-gcm-secret",
                       "name":  "AES-256-GCM Secret Encrypt/Decrypt",
                       "lane":  "module",
                       "category":  "infra",
                       "path":  "modules/aes-256-gcm-secret",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "agent-memory-3layer-retrieval",
+                      "name":  "Agent Memory: 3-Layer Progressive Retrieval",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/agent-memory-3layer-retrieval",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "agent-persona-registry",
+                      "name":  "Agent Persona Registry",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/agent-persona-registry",
                       "status":  "stable"
                   },
                   {
@@ -22,11 +488,43 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "ai-asset-quality-gate",
+                      "name":  "AI Asset Quality Gate",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/ai-asset-quality-gate",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "ai-metadata-stock-generator",
+                      "name":  "AI Metadata Stock Generator",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/ai-metadata-stock-generator",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "ai-provider-router-fallback",
+                      "name":  "AI Provider Router with Fallback",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/ai-provider-router-fallback",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "ai-router-fallback",
                       "name":  "Multi-Provider AI Router",
                       "lane":  "module",
                       "category":  "ai",
                       "path":  "modules/ai-router-fallback",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "ai-router",
+                      "name":  "Multi-Provider AI Router",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/ai-router",
                       "status":  "stable"
                   },
                   {
@@ -51,6 +549,38 @@
                       "lane":  "module",
                       "category":  "business",
                       "path":  "modules/audit-log-pattern",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "auth-session-token-manager",
+                      "name":  "Auth Session Token Manager",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/auth-session-token-manager",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "behavior-tree-fsm-state-model",
+                      "name":  "Behavior Tree \u0026 FSM State Model",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/behavior-tree-fsm-state-model",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "brand-schema-validator",
+                      "name":  "Brand Schema Validator",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/brand-schema-validator",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "browser-automation-engine",
+                      "name":  "Browser Automation Engine",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/browser-automation-engine",
                       "status":  "stable"
                   },
                   {
@@ -118,11 +648,59 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "denomination-unit-price-resolver",
+                      "name":  "Denomination Unit Price Resolver",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/denomination-unit-price-resolver",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "deploy-helpers",
+                      "name":  "Deploy Helper Scripts",
+                      "lane":  "module",
+                      "category":  "ops",
+                      "path":  "modules/deploy-helpers",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "design-tokens-generator",
+                      "name":  "Design Tokens Generator",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/design-tokens-generator",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "dialogue-tree-branching-narrative",
+                      "name":  "Dialogue Tree: Branching Narrative Model",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/dialogue-tree-branching-narrative",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "double-entry-ledger",
                       "name":  "Double-Entry Ledger",
                       "lane":  "module",
                       "category":  "business",
                       "path":  "modules/double-entry-ledger",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "dual-auth-internal-key-pattern",
+                      "name":  "Dual-Auth Internal Key Pattern",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/dual-auth-internal-key-pattern",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "email-template-builder",
+                      "name":  "Email Template Builder",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/email-template-builder",
                       "status":  "stable"
                   },
                   {
@@ -158,6 +736,14 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "human-timing-utils",
+                      "name":  "Human-Like Timing Utilities",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/human-timing-utils",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "idempotent-payment-processing",
                       "name":  "Idempotent Payment Processing",
                       "lane":  "module",
@@ -182,11 +768,43 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "infinite-feed-renderer",
+                      "name":  "Infinite Feed Renderer",
+                      "lane":  "module",
+                      "category":  "video",
+                      "path":  "modules/infinite-feed-renderer",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "intent-pattern-matcher",
                       "name":  "Intent Pattern Matcher",
                       "lane":  "module",
                       "category":  "business",
                       "path":  "modules/intent-pattern-matcher",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "json-file-store-atomic",
+                      "name":  "JSON File Store â€” Atomic",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/json-file-store-atomic",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "json-store-persistence",
+                      "name":  "Atomic JSON File Store",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/json-store-persistence",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "jungian-archetype-selector",
+                      "name":  "Jungian Archetype Selector",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/jungian-archetype-selector",
                       "status":  "stable"
                   },
                   {
@@ -222,11 +840,35 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "llm-provider-registry-switchable",
+                      "name":  "LLM Provider Registry Switchable",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/llm-provider-registry-switchable",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "media-provider-fallback-orchestrator",
+                      "name":  "Media Provider Fallback Orchestrator",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/media-provider-fallback-orchestrator",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "message-pipeline-router",
                       "name":  "Message Pipeline Router",
                       "lane":  "module",
                       "category":  "business",
                       "path":  "modules/message-pipeline-router",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "message-queue-scheduler",
+                      "name":  "Rate-Limited Message Queue Scheduler",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/message-queue-scheduler",
                       "status":  "stable"
                   },
                   {
@@ -238,11 +880,43 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "multi-denom-wallet-balance",
+                      "name":  "Multi-Denomination Wallet Balance",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/multi-denom-wallet-balance",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "multi-platform-publisher-adapter",
+                      "name":  "Multi-Platform Publisher Adapter",
+                      "lane":  "module",
+                      "category":  "video",
+                      "path":  "modules/multi-platform-publisher-adapter",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "nodemailer-email-template",
                       "name":  "Nodemailer Email Template",
                       "lane":  "module",
                       "category":  "business",
                       "path":  "modules/nodemailer-email-template",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "notifier",
+                      "name":  "Multi-Channel Alert Notifier",
+                      "lane":  "module",
+                      "category":  "ops",
+                      "path":  "modules/notifier",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "npc-world-state-model",
+                      "name":  "NPC World State Model",
+                      "lane":  "module",
+                      "category":  "3d",
+                      "path":  "modules/npc-world-state-model",
                       "status":  "stable"
                   },
                   {
@@ -294,6 +968,14 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "quota-tracker",
+                      "name":  "Provider Quota Tracker",
+                      "lane":  "module",
+                      "category":  "ops",
+                      "path":  "modules/quota-tracker",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "raycaster-object-picker",
                       "name":  "Raycaster Object Picker",
                       "lane":  "module",
@@ -315,6 +997,14 @@
                       "lane":  "module",
                       "category":  "infra",
                       "path":  "modules/relative-timestamp-formatter",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "rotating-useragents",
+                      "name":  "Rotating User-Agent Pool",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/rotating-useragents",
                       "status":  "stable"
                   },
                   {
@@ -358,6 +1048,14 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "skill-registry-contract",
+                      "name":  "Skill Registry Contract Pattern",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/skill-registry-contract",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "social-post-scheduler",
                       "name":  "Social Post Auto-Scheduler",
                       "lane":  "module",
@@ -379,6 +1077,30 @@
                       "lane":  "module",
                       "category":  "ai",
                       "path":  "modules/sse-chat-stream-parser",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "stealth-fetch-engine",
+                      "name":  "Stealth Fetch Engine",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/stealth-fetch-engine",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "story-carousel-component",
+                      "name":  "Story Carousel Component",
+                      "lane":  "module",
+                      "category":  "video",
+                      "path":  "modules/story-carousel-component",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "telegram-command-router",
+                      "name":  "Telegram Command Router \u0026 Inline Keyboard Builder",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/telegram-command-router",
                       "status":  "stable"
                   },
                   {
@@ -414,11 +1136,59 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "tools-catalogue-schema",
+                      "name":  "Tools Catalogue Schema",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/tools-catalogue-schema",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "transfer-intent-checkout-state",
+                      "name":  "Transfer Intent Checkout State",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/transfer-intent-checkout-state",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "trigger-reward-schedule",
+                      "name":  "Trigger-Based Reward Schedule",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/trigger-reward-schedule",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "tts-provider-wrapper",
                       "name":  "TTS Provider Wrapper",
                       "lane":  "module",
                       "category":  "ai",
                       "path":  "modules/tts-provider-wrapper",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "video-script-storyboard-generator",
+                      "name":  "Video Script \u0026 Storyboard Generator",
+                      "lane":  "module",
+                      "category":  "video",
+                      "path":  "modules/video-script-storyboard-generator",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "wa-session-baileys-connector",
+                      "name":  "WhatsApp Multi-Device Session Connector",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/wa-session-baileys-connector",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "wallet-denomination-ledger",
+                      "name":  "Wallet Denomination Ledger",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/wallet-denomination-ledger",
                       "status":  "stable"
                   },
                   {
@@ -446,337 +1216,44 @@
                       "status":  "stable"
                   },
                   {
-                      "id":  "agent-persona-router",
-                      "name":  "Agent Persona Router",
-                      "lane":  "artifact",
-                      "category":  "ai",
-                      "path":  "artifacts/agent-persona-router",
-                      "status":  "stable",
-                      "kind":  "method"
-                  },
-                  {
-                      "id":  "asbabun-nuzul-grounded-brief",
-                      "name":  "Asbabun Nuzul: Grounded Brief Pattern",
-                      "lane":  "artifact",
-                      "category":  "ai",
-                      "path":  "artifacts/asbabun-nuzul-grounded-brief",
-                      "status":  "stable",
-                      "kind":  "playbook"
-                  },
-                  {
-                      "id":  "brief-intake-framework",
-                      "name":  "Creative Brief Intake Framework (IHOS-Aligned)",
-                      "lane":  "artifact",
-                      "category":  "ai",
-                      "path":  "artifacts/brief-intake-framework",
-                      "status":  "stable",
-                      "kind":  "template"
-                  },
-                  {
-                      "id":  "continuous-learning-tafakkur",
-                      "name":  "Continuous Learning via Reflective Loop (Tafakkur)",
-                      "lane":  "artifact",
-                      "category":  "ai",
-                      "path":  "artifacts/continuous-learning-tafakkur",
-                      "status":  "stable",
-                      "kind":  "framework"
-                  },
-                  {
-                      "id":  "disciplined-execution",
-                      "name":  "Disciplined Execution — the 8-gate loop",
-                      "lane":  "artifact",
-                      "category":  "ops",
-                      "path":  "artifacts/disciplined-execution",
-                      "status":  "stable",
-                      "kind":  "method"
-                  },
-                  {
-                      "id":  "embedding-rag-chunking",
-                      "name":  "Embedding / RAG Chunking",
-                      "lane":  "artifact",
-                      "category":  "ai",
-                      "path":  "artifacts/embedding-rag-chunking",
-                      "status":  "stable",
-                      "kind":  "method"
-                  },
-                  {
-                      "id":  "epistemology-reasoning-framework",
-                      "name":  "Epistemology Reasoning Framework",
-                      "lane":  "artifact",
-                      "category":  "research",
-                      "path":  "artifacts/epistemology-reasoning-framework",
-                      "status":  "stable",
-                      "kind":  "framework"
-                  },
-                  {
-                      "id":  "exfat-windows-fix",
-                      "name":  "exFAT Windows Fix for Next.js / Webpack",
-                      "lane":  "artifact",
-                      "category":  "infra",
-                      "path":  "artifacts/exfat-windows-fix",
-                      "status":  "stable",
-                      "kind":  "finding"
-                  },
-                  {
-                      "id":  "facebook-domain-verification",
-                      "name":  "Facebook Business Domain Verification (dual-method)",
-                      "lane":  "artifact",
-                      "category":  "ops",
-                      "path":  "artifacts/facebook-domain-verification",
-                      "status":  "stable",
-                      "kind":  "playbook"
-                  },
-                  {
-                      "id":  "finite-state-machine-workflows",
-                      "name":  "Finite State Machine for Workflows",
-                      "lane":  "artifact",
+                      "id":  "withdrawal-state-machine",
+                      "name":  "Withdrawal State Machine",
+                      "lane":  "module",
                       "category":  "business",
-                      "path":  "artifacts/finite-state-machine-workflows",
-                      "status":  "stable",
-                      "kind":  "framework"
+                      "path":  "modules/withdrawal-state-machine",
+                      "status":  "stable"
                   },
                   {
-                      "id":  "frontend-deploy-bash-pattern",
-                      "name":  "Frontend Deploy Bash Pattern",
-                      "lane":  "artifact",
-                      "category":  "infra",
-                      "path":  "artifacts/frontend-deploy-bash-pattern",
-                      "status":  "stable",
-                      "kind":  "template"
-                  },
-                  {
-                      "id":  "git-workflow-windows",
-                      "name":  "Git Workflow — Windows + Private GitHub Repo",
-                      "lane":  "artifact",
-                      "category":  "infra",
-                      "path":  "artifacts/git-workflow-windows",
-                      "status":  "stable",
-                      "kind":  "playbook"
-                  },
-                  {
-                      "id":  "haal-conditioning-pattern",
-                      "name":  "Haal Conditioning: User State as Computation",
-                      "lane":  "artifact",
-                      "category":  "ai",
-                      "path":  "artifacts/haal-conditioning-pattern",
-                      "status":  "stable",
-                      "kind":  "framework"
-                  },
-                  {
-                      "id":  "ihos-epistemology-framework",
-                      "name":  "IHOS Epistemology Framework",
-                      "lane":  "artifact",
-                      "category":  "ai",
-                      "path":  "artifacts/ihos-epistemology-framework",
-                      "status":  "stable",
-                      "kind":  "framework"
-                  },
-                  {
-                      "id":  "ijaz-quality-coherence-gate",
-                      "name":  "I\u0027jaz Multi-Scale Coherence Quality Gate",
-                      "lane":  "artifact",
-                      "category":  "ai",
-                      "path":  "artifacts/ijaz-quality-coherence-gate",
-                      "status":  "stable",
-                      "kind":  "formula"
-                  },
-                  {
-                      "id":  "json-repair-fallback",
-                      "name":  "LLM JSON Repair \u0026 Fallback",
-                      "lane":  "artifact",
-                      "category":  "infra",
-                      "path":  "artifacts/json-repair-fallback",
-                      "status":  "stable",
-                      "kind":  "method"
-                  },
-                  {
-                      "id":  "lead-source-classifier",
-                      "name":  "Lead Source \u0026 Bounce Reason Taxonomy",
-                      "lane":  "artifact",
-                      "category":  "crm",
-                      "path":  "artifacts/lead-source-classifier",
-                      "status":  null,
-                      "kind":  "framework"
-                  },
-                  {
-                      "id":  "llm-provider-fallback",
-                      "name":  "LLM Provider Fallback Router",
-                      "lane":  "artifact",
-                      "category":  "ai",
-                      "path":  "artifacts/llm-provider-fallback",
-                      "status":  "stable",
-                      "kind":  "method"
-                  },
-                  {
-                      "id":  "meta-capi-dedup",
-                      "name":  "Meta Pixel + Conversions API with Dedup",
-                      "lane":  "artifact",
-                      "category":  "infra",
-                      "path":  "artifacts/meta-capi-dedup",
-                      "status":  "stable",
-                      "kind":  "playbook"
-                  },
-                  {
-                      "id":  "money-math-minor-units",
-                      "name":  "Money Math in Minor Units",
-                      "lane":  "artifact",
+                      "id":  "workflow-dag-executor",
+                      "name":  "Workflow DAG Executor",
+                      "lane":  "module",
                       "category":  "business",
-                      "path":  "artifacts/money-math-minor-units",
-                      "status":  "stable",
-                      "kind":  "formula"
+                      "path":  "modules/workflow-dag-executor",
+                      "status":  "stable"
                   },
                   {
-                      "id":  "nextjs-subdomain-multitenant",
-                      "name":  "Next.js Subdomain Multi-Tenant Routing",
-                      "lane":  "artifact",
-                      "category":  "infra",
-                      "path":  "artifacts/nextjs-subdomain-multitenant",
-                      "status":  "stable",
-                      "kind":  "playbook"
-                  },
-                  {
-                      "id":  "nextjs-webgl-deploy-gotchas",
-                      "name":  "Next.js + Three.js Deploy \u0026 WebGL Debugging Gotchas",
-                      "lane":  "artifact",
-                      "category":  "infra",
-                      "path":  "artifacts/nextjs-webgl-deploy-gotchas",
-                      "status":  "stable",
-                      "kind":  "finding"
-                  },
-                  {
-                      "id":  "nginx-security-headers-pattern",
-                      "name":  "Nginx Security Headers Pattern",
-                      "lane":  "artifact",
-                      "category":  "infra",
-                      "path":  "artifacts/nginx-security-headers-pattern",
-                      "status":  "stable",
-                      "kind":  "template"
-                  },
-                  {
-                      "id":  "pm2-feature-flag-ecosystem-config",
-                      "name":  "PM2 Ecosystem Config with Feature Flags",
-                      "lane":  "artifact",
-                      "category":  "ops",
-                      "path":  "artifacts/pm2-feature-flag-ecosystem-config",
-                      "status":  "stable",
-                      "kind":  "template"
-                  },
-                  {
-                      "id":  "prompt-chain-orchestration",
-                      "name":  "Prompt Chain Orchestration",
-                      "lane":  "artifact",
-                      "category":  "ai",
-                      "path":  "artifacts/prompt-chain-orchestration",
-                      "status":  "stable",
-                      "kind":  "method"
-                  },
-                  {
-                      "id":  "react-agent-loop-pattern",
-                      "name":  "ReAct Agent Loop (Reason + Act + Observe)",
-                      "lane":  "artifact",
-                      "category":  "ai",
-                      "path":  "artifacts/react-agent-loop-pattern",
-                      "status":  "stable",
-                      "kind":  "playbook"
-                  },
-                  {
-                      "id":  "repo-cartography-handoff",
-                      "name":  "Repository Cartography \u0026 Agent Handoff",
-                      "lane":  "artifact",
-                      "category":  "ops",
-                      "path":  "artifacts/repo-cartography-handoff",
-                      "status":  "stable",
-                      "kind":  "method"
-                  },
-                  {
-                      "id":  "reward-gamification-system",
-                      "name":  "Reward \u0026 Gamification System",
-                      "lane":  "artifact",
+                      "id":  "workflow-node-registry-builder",
+                      "name":  "Workflow Node Registry Builder",
+                      "lane":  "module",
                       "category":  "business",
-                      "path":  "artifacts/reward-gamification-system",
-                      "status":  "stable",
-                      "kind":  "template"
+                      "path":  "modules/workflow-node-registry-builder",
+                      "status":  "stable"
                   },
                   {
-                      "id":  "selective-adoption-doctrine",
-                      "name":  "Selective Adoption Doctrine",
-                      "lane":  "artifact",
-                      "category":  "research",
-                      "path":  "artifacts/selective-adoption-doctrine",
-                      "status":  "stable",
-                      "kind":  "method"
+                      "id":  "world-renderer-three-bootstrap",
+                      "name":  "World Renderer Three.js Bootstrap",
+                      "lane":  "module",
+                      "category":  "3d",
+                      "path":  "modules/world-renderer-three-bootstrap",
+                      "status":  "stable"
                   },
                   {
-                      "id":  "shopee-data-import",
-                      "name":  "Shopee Storefront to Your DB — decision tree",
-                      "lane":  "artifact",
-                      "category":  "ops",
-                      "path":  "artifacts/shopee-data-import",
-                      "status":  "stable",
-                      "kind":  "playbook"
-                  },
-                  {
-                      "id":  "shopee-open-platform-integration",
-                      "name":  "Shopee Open Platform — Partner App Integration",
-                      "lane":  "artifact",
-                      "category":  "ops",
-                      "path":  "artifacts/shopee-open-platform-integration",
-                      "status":  "stable",
-                      "kind":  "playbook"
-                  },
-                  {
-                      "id":  "storyboard-prompt-variants",
-                      "name":  "Storyboard Prompt Variants",
-                      "lane":  "artifact",
+                      "id":  "youtube-upload-wrapper",
+                      "name":  "YouTube Resumable Upload Wrapper",
+                      "lane":  "module",
                       "category":  "video",
-                      "path":  "artifacts/storyboard-prompt-variants",
-                      "status":  "stable",
-                      "kind":  "template"
-                  },
-                  {
-                      "id":  "tiered-pricing-package-resolution",
-                      "name":  "Tiered Pricing \u0026 Package Resolution",
-                      "lane":  "artifact",
-                      "category":  "business",
-                      "path":  "artifacts/tiered-pricing-package-resolution",
-                      "status":  "stable",
-                      "kind":  "formula"
-                  },
-                  {
-                      "id":  "token-cost-estimator",
-                      "name":  "Multi-Provider Token \u0026 Cost Estimator",
-                      "lane":  "artifact",
-                      "category":  "ai",
-                      "path":  "artifacts/token-cost-estimator",
-                      "status":  "stable",
-                      "kind":  "method"
-                  },
-                  {
-                      "id":  "tool-calling-resilient",
-                      "name":  "Resilient Cross-Provider Tool Calling",
-                      "lane":  "artifact",
-                      "category":  "infra",
-                      "path":  "artifacts/tool-calling-resilient",
-                      "status":  "stable",
-                      "kind":  "method"
-                  },
-                  {
-                      "id":  "tool-registry-pattern",
-                      "name":  "Tool Registry \u0026 Discovery Pattern",
-                      "lane":  "artifact",
-                      "category":  "ai",
-                      "path":  "artifacts/tool-registry-pattern",
-                      "status":  "stable",
-                      "kind":  "playbook"
-                  },
-                  {
-                      "id":  "workflow-node-schema",
-                      "name":  "Visual Workflow Node Schema",
-                      "lane":  "artifact",
-                      "category":  "ai",
-                      "path":  "artifacts/workflow-node-schema",
-                      "status":  "stable",
-                      "kind":  "framework"
+                      "path":  "modules/youtube-upload-wrapper",
+                      "status":  "stable"
                   }
               ]
 }
