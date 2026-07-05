@@ -1,0 +1,22 @@
+{
+  "id": "mcp-server-starter",
+  "name": "MCP Server Skeleton",
+  "version": "1.0.0",
+  "kind": "mcp-server",
+  "category": "infra",
+  "description": "Minimal stdio-transport MCP server template with tool registration & example tool. Use as foundation for adapting any service/API to MCP.",
+  "run": "node src/server.ts (after npm install @modelcontextprotocol/sdk)",
+  "input": [
+    { "name": "tool_name", "type": "string", "description": "Tool to invoke" },
+    { "name": "tool_args", "type": "object", "description": "Tool arguments" }
+  ],
+  "output": [
+    { "name": "result", "type": "object", "description": "Tool result JSON" }
+  ],
+  "tags": ["mcp", "template", "cli", "nodejs"],
+  "compatible_with": ["Claude", "Cursor", "VS Code"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
