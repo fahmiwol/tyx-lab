@@ -1,0 +1,14 @@
+{
+  "id": "credit-metering-system",
+  "name": "Credit Metering System: Real-Time Usage Tracking & Enforcement",
+  "version": "1.0.0",
+  "kind": "framework",
+  "category": "infra",
+  "description": "Production system for tracking agent/user service consumption in real-time, enforcing quotas, and preventing over-spend in multi-tenant SaaS and agent marketplaces.",
+  "tags": ["metering", "quota-enforcement", "real-time-tracking", "billing", "rate-limiting", "redis", "ledger"],
+  "compatible_with": ["agent-economy-credit-minting"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
