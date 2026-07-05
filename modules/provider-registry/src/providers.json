@@ -1,0 +1,16 @@
+{
+  "router": [
+    { "id": "gemini-2.0-flash", "name": "Gemini 2.0 Flash", "enabled": true, "type": "google", "costTier": "cheap" },
+    { "id": "hermes-4-70b", "name": "Hermes 4 70B", "enabled": false, "type": "openrouter", "costTier": "mid" }
+  ],
+  "executor": [
+    { "id": "claude-opus", "name": "Claude Opus", "enabled": true, "type": "anthropic", "costTier": "premium" },
+    { "id": "gemini-2.0-flash", "name": "Gemini 2.0 Flash", "enabled": true, "type": "google", "costTier": "cheap" },
+    { "id": "qwen-2.5-7b", "name": "Qwen 2.5 7B", "enabled": false, "type": "huggingface", "costTier": "free" }
+  ],
+  "media": [
+    { "id": "kling-3.0", "name": "Kling 3.0 (i2v)", "enabled": true, "type": "video", "costTier": "premium" },
+    { "id": "runway-ml", "name": "Runway ML Gen 3", "enabled": false, "type": "video", "costTier": "premium" },
+    { "id": "fal-sdxl", "name": "FAL SDXL (image)", "enabled": true, "type": "image", "costTier": "cheap" }
+  ]
+}
