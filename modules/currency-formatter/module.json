@@ -1,1 +1,32 @@
-ewogICJpZCI6ICJjdXJyZW5jeS1mb3JtYXR0ZXIiLAogICJuYW1lIjogIkN1cnJlbmN5IEZvcm1hdHRlciAmIENvbnZlcnNpb24iLAogICJ2ZXJzaW9uIjogIjEuMC4wIiwKICAiY2F0ZWdvcnkiOiBbImJ1c2luZXNzIl0sCiAgImRlc2NyaXB0aW9uIjogIkZvcm1hdCBhbmQgY29udmVydCBiZXR3ZWVuIElEUiBhbmQgVVNELiBSYXRlIHN0b3JlZCBpbiBEQiBvciBlbnYsIHdpdGggZmFsbGJhY2suIERpc3BsYXkgaGVscGVycyBmb3IgcHJpY2VzIHdpdGgvd2l0aG91dCBjb252ZXJzaW9ucy4iLAogICJpbnB1dCI6IFsKICAgIHsKICAgICAgIm5hbWUiOiAiYW1vdW50IiwKICAgICAgInR5cGUiOiAibnVtYmVyIiwKICAgICAgImRlc2NyaXB0aW9uIjogIkFtb3VudCBpbiBiYXNlIGN1cnJlbmN5IChJRFIpIgogICAgfSwKICAgIHsKICAgICAgIm5hbWUiOiAicmF0ZSIsCiAgICAgICJ0eXBlIjogIm51bWJlciIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJFeGNoYW5nZSByYXRlIChJRFIgcGVyIDEgVVNEKSIKICAgIH0KICBdLAogICJvdXRwdXQiOiBbCiAgICB7CiAgICAgICJuYW1lIjogImZvcm1hdHRlZCIsCiAgICAgICJ0eXBlIjogInN0cmluZyIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJGb3JtYXR0ZWQgcHJpY2Ugc3RyaW5nIChlLmcuICdScCAxNTAuMDAwJyBvciAnJDEwLjAwJykiCiAgICB9CiAgXSwKICAidGFncyI6IFsiY3VycmVuY3kiLCAiZm9ybWF0dGluZyIsICJiaWxsaW5nIiwgImxvY2FsaXphdGlvbiJdLAogICJjb21wYXRpYmxlX3dpdGgiOiBbImJhY2tlbmQiLCAiZnJvbnRlbmQiLCAic2FhcyJdLAogICJ1c2VkX2luX3JlY2lwZXMiOiBbInByaWNpbmctZGlzcGxheSIsICJwYXltZW50LWNvbnZlcnNpb24iXSwKICAic3RhdHVzIjogInN0YWJsZSIsCiAgImF1dGhvciI6ICJUaXJhbnl4IiwKICAibGljZW5zZSI6ICJNSVQiCn0K
+{
+  "id": "currency-formatter",
+  "name": "Currency Formatter & Conversion",
+  "version": "1.0.0",
+  "category": ["business"],
+  "description": "Format and convert between IDR and USD. Rate stored in DB or env, with fallback. Display helpers for prices with/without conversions.",
+  "input": [
+    {
+      "name": "amount",
+      "type": "number",
+      "description": "Amount in base currency (IDR)"
+    },
+    {
+      "name": "rate",
+      "type": "number",
+      "description": "Exchange rate (IDR per 1 USD)"
+    }
+  ],
+  "output": [
+    {
+      "name": "formatted",
+      "type": "string",
+      "description": "Formatted price string (e.g. 'Rp 150.000' or '$10.00')"
+    }
+  ],
+  "tags": ["currency", "formatting", "billing", "localization"],
+  "compatible_with": ["backend", "frontend", "saas"],
+  "used_in_recipes": ["pricing-display", "payment-conversion"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
