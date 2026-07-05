@@ -1,0 +1,14 @@
+{
+  "id": "react-agent-loop-pattern",
+  "name": "ReAct Agent Loop (Reason + Act + Observe)",
+  "version": "1.0.0",
+  "kind": "playbook",
+  "category": ["ai", "agent-reasoning"],
+  "description": "Reasoning + Action + Observation loop. Agent generates Thought → Action (tool call) → Observation (result) → loops until sufficient info → Final Answer. LLM-agnostic, works with rule-based or neural agents.",
+  "tags": ["agent-loop", "reasoning", "tool-use", "decision-making", "iteration"],
+  "compatible_with": ["agent-frameworks", "tool-calling", "llm-inference"],
+  "used_in_recipes": ["autonomous-task-execution"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
