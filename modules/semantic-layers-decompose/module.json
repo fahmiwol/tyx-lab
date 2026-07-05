@@ -1,0 +1,24 @@
+{
+  "id": "semantic-layers-decompose",
+  "name": "Hierarchical Semantic Layers (Zahir/Batin/Hadd/Mathla)",
+  "version": "1.0.0",
+  "category": ["ai", "nlp"],
+  "description": "Decomposes text into simultaneous valid semantic layers: surface (Zahir), inner intent (Batin), boundaries (Hadd), ultimate purpose (Mathla). Enables multi-layer understanding and quality gates.",
+  "input": [
+    {"name": "text", "type": "string"},
+    {"name": "context", "type": "object", "description": "Brand/audience context"}
+  ],
+  "output": [
+    {"name": "zahir", "type": "string", "description": "Literal surface meaning"},
+    {"name": "batin", "type": "string", "description": "Inner/implicit meaning"},
+    {"name": "hadd", "type": "string", "description": "Boundaries/constraints"},
+    {"name": "mathla", "type": "string", "description": "Ultimate purpose/telos"},
+    {"name": "coherence_score", "type": "number"}
+  ],
+  "tags": ["semantic-layers", "multi-interpretation", "coherence", "intent-detection"],
+  "compatible_with": ["prompt-engineering", "brief-parsing", "quality-gates"],
+  "used_in_recipes": ["ijaz-quality-check"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
