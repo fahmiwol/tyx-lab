@@ -1,0 +1,40 @@
+{
+  "id": "jwt-auth-cookies",
+  "name": "JWT Auth Cookies",
+  "version": "1.0.0",
+  "category": ["infra", "business"],
+  "description": "JWT-based authentication with secure httpOnly cookies, refresh token rotation, and access token expiry. Handles auth state across SPA + API.",
+  "input": [
+    {
+      "name": "credentials",
+      "type": "object",
+      "schema": {
+        "email": "string",
+        "password": "string"
+      }
+    }
+  ],
+  "output": [
+    {
+      "name": "accessToken",
+      "type": "string",
+      "description": "Short-lived JWT (15-60min)"
+    },
+    {
+      "name": "refreshToken",
+      "type": "string",
+      "description": "Long-lived JWT (7 days)"
+    },
+    {
+      "name": "user",
+      "type": "object",
+      "description": "User profile (id, email, role, metadata)"
+    }
+  ],
+  "tags": ["auth", "jwt", "cookies", "session", "security"],
+  "compatible_with": ["fastapi", "nodejs", "nestjs"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
