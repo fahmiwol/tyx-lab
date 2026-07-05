@@ -1,0 +1,1 @@
+{"id":"sale-pipeline-stages","name":"Sales Pipeline Stage Machine","version":"1.0.0","category":["crm"],"description":"Sales pipeline stage machine with SLA tracking and terminal state detection.","status":"stable","author":"Tiranyx","license":"MIT"}
