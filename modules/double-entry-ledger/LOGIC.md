@@ -33,7 +33,7 @@ Maintain a `WalletBalance` table SEPARATE from `Transaction` log:
 ```sql
 -- Query pattern 1: "What's my balance?" (frequent, simple)
 SELECT amount FROM wallet_balance 
-WHERE walletId = ? AND denomination = 'PERAK'
+WHERE walletId = ? AND denomination = 'SILVER'
 
 -- Query pattern 2: "Show my transactions" (audit, less frequent)
 SELECT * FROM transactions 
@@ -48,10 +48,10 @@ Store allowed conversions + fees in a central place:
 
 ```typescript
 export const CONVERSION_RULES: Record<string, { ratio: number; allowed: boolean; fee?: number }> = {
-  "EMAS->PERAK": { ratio: 1, allowed: true },
-  "PERAK->PERUNGGU": { ratio: 1, allowed: true, fee: 3000 },  // IDR margin
-  "PERUNGGU->PERAK": { ratio: 0, allowed: false },  // No downgrade
-  "BERLIAN->*": { ratio: 0, allowed: false },  // Rewards never convert
+  "GOLD->SILVER": { ratio: 1, allowed: true },
+  "SILVER->BRONZE": { ratio: 1, allowed: true, fee: 3000 },  // IDR margin
+  "BRONZE->SILVER": { ratio: 0, allowed: false },  // No downgrade
+  "DIAMOND->*": { ratio: 0, allowed: false },  // Rewards never convert
 };
 ```
 
@@ -106,7 +106,7 @@ Periodically verify: Σ (debit from X) = Σ (credit to X) across all wallets.
 SELECT
   SUM(CASE WHEN type='MINT' THEN amount ELSE 0 END) as total_minted,
   SUM(CASE WHEN type='WITHDRAW' THEN amount ELSE 0 END) as total_withdrawn,
-  (SELECT SUM(amount) FROM wallet_balance WHERE denomination='PERAK') as in_wallets
+  (SELECT SUM(amount) FROM wallet_balance WHERE denomination='SILVER') as in_wallets
 FROM transactions;
 
 -- Should be: total_minted - total_withdrawn - in_wallets = 0 (or accounted margin in hub)
@@ -115,13 +115,13 @@ FROM transactions;
 ## Conversion with Margin Flow
 
 ```
-User: "Convert 100 PERAK → PERUNGGU"
+User: "Convert 100 SILVER → BRONZE"
 
-Step 1: CONVERSION_RULES["PERAK->PERUNGGU"] = { ratio: 1, fee: 3000 }
-Step 2: Debit user 100 PERAK
-Step 3: Credit user 100 PERUNGGU (no fee deducted from user; margin is platform revenue)
+Step 1: CONVERSION_RULES["SILVER->BRONZE"] = { ratio: 1, fee: 3000 }
+Step 2: Debit user 100 SILVER
+Step 3: Credit user 100 BRONZE (no fee deducted from user; margin is platform revenue)
 Step 4: Create TWO ledger records:
-  - User transfer: PERAK -100 → PERUNGGU +100
+  - User transfer: SILVER -100 → BRONZE +100
   - Platform revenue: margin +3000 IDR → platform account
 Step 5: Notify accounting: Revenue recorded
 ```
