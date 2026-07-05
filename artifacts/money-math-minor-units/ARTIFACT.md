@@ -66,10 +66,10 @@ const net = gross - feeAmount;  // 97500 (975.00)
 ```typescript
 // Rule: 1 Silver = 1 Bronze (in this system)
 // But: Silver worth Rp 8,000 vs Bronze worth Rp 5,000 (per TierValueIDR)
-const perakAmount = BigInt(100);
+const silverAmount = BigInt(100);
 const exchangeRatio = 1;  // 1 Silver → 1 Bronze
 
-const perungguAmount = perakAmount * BigInt(exchangeRatio);
+const bronzeAmount = silverAmount * BigInt(exchangeRatio);
 // Result: 100 Bronze
 ```
 
