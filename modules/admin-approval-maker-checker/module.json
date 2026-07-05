@@ -1,0 +1,27 @@
+{
+  "id": "admin-approval-maker-checker",
+  "name": "Admin Approval Workflow — Maker-Checker Pattern",
+  "version": "1.0.0",
+  "category": "business",
+  "description": "Four-eye approval system for high-value or sensitive operations (withdrawals, rate changes, supply adjustments). Separates initiation (Maker) from authorization (Checker). Logs all decisions with audit trail.",
+  "input": [
+    {"name": "operationType", "type": "enum", "values": ["withdrawal_request", "rate_update", "supply_adjustment", "user_suspension"]},
+    {"name": "targetId", "type": "string"},
+    {"name": "amount", "type": "decimal", "optional": true},
+    {"name": "makerId", "type": "string"}
+  ],
+  "output": [
+    {"name": "requestId", "type": "string"},
+    {"name": "status", "type": "enum", "values": ["pending_approval", "approved", "rejected", "revoked"]},
+    {"name": "makerId", "type": "string"},
+    {"name": "checkerId", "type": "string", "nullable": true},
+    {"name": "checkerNote", "type": "string", "nullable": true},
+    {"name": "appliedAt", "type": "datetime", "nullable": true}
+  ],
+  "tags": ["governance", "audit", "approval-workflow", "compliance"],
+  "compatible_with": ["dual-auth-internal-key-pattern", "token-burn-redemption-audit"],
+  "used_in_recipes": ["high-value-transaction-approval", "administrative-governance"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
