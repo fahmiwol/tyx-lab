@@ -4,16 +4,16 @@
 <h3 align="center">Atomic Building Blocks &amp; Mini-Tools for AI Agents, LLM Apps, RAG &amp; Modern Software</h3>
 
 <p align="center">
-204 ready-to-use <b>modules</b>, <b>artifacts</b> &amp; runnable <b>tools</b> &mdash; LLM routing, RAG, agent loops, MCP servers, prompt engineering, fintech ledgers &amp; minting, self-hosted model training, Next.js SaaS, Three.js &mdash; each distilled from a <b>real, running production system</b>. Copy a piece, or run a whole mini-app.
+219 ready-to-use <b>modules</b>, <b>artifacts</b> &amp; runnable <b>tools</b> &mdash; LLM routing, RAG, agent loops &amp; memory, MCP servers, prompt engineering, fintech ledgers &amp; minting, self-hosted model training, Next.js SaaS, Three.js &mdash; each distilled from a <b>real, running production system</b>. Copy a piece, or run a whole mini-app.
 <br/><b>Open source &mdash; use it wisely.</b>
 </p>
 
 <p align="center">
 <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT"/>
-<img src="https://img.shields.io/badge/atoms-204-6366f1" alt="atoms"/>
-<img src="https://img.shields.io/badge/modules-112-22c55e" alt="modules"/>
-<img src="https://img.shields.io/badge/artifacts-70-a855f7" alt="artifacts"/>
-<img src="https://img.shields.io/badge/tools-22-f59e0b" alt="tools"/>
+<img src="https://img.shields.io/badge/atoms-219-6366f1" alt="atoms"/>
+<img src="https://img.shields.io/badge/modules-117-22c55e" alt="modules"/>
+<img src="https://img.shields.io/badge/artifacts-79-a855f7" alt="artifacts"/>
+<img src="https://img.shields.io/badge/tools-23-f59e0b" alt="tools"/>
 <img src="https://img.shields.io/badge/recipes-7-06b6d4" alt="recipes"/>
 </p>
 
@@ -25,7 +25,7 @@
 
 ## 🧠 Use it as a knowledge base (RAG / agent memory)
 
-This library is built to be **queried by agents**, not just read:
+Built to be **queried by agents**, not just read:
 
 - **[`llms.txt`](llms.txt)** &mdash; every atom as a flat, LLM-ingestible list. Drop it into any RAG pipeline.
 - **[`index.json`](index.json)** &mdash; the machine-readable map (id, lane, category, path).
@@ -48,9 +48,9 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, MCP servers, A
 
 ---
 
-## Catalog &mdash; 204 atoms
+## Catalog &mdash; 219 atoms
 
-> `22` tools &middot; `112` modules &middot; `70` artifacts &middot; `7` recipes. Machine-readable: [`index.json`](index.json) &middot; [`llms.txt`](llms.txt).
+> `23` tools &middot; `117` modules &middot; `79` artifacts &middot; `7` recipes. Machine-readable: [`index.json`](index.json) &middot; [`llms.txt`](llms.txt).
 
 ### Recipes &mdash; stitch atoms into a solution (7)
 
@@ -62,7 +62,7 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, MCP servers, A
 - **[ship-an-mcp-server](recipes/ship-an-mcp-server.md)**
 - **[tracked-multitenant-saas](recipes/tracked-multitenant-saas.md)**
 
-### Tools &mdash; runnable mini-apps, CLIs & MCP servers (22)
+### Tools &mdash; runnable mini-apps, CLIs & MCP servers (23)
 
 <details open>
 <summary><b>AI, Agents & LLM</b> (5)</summary>
@@ -104,9 +104,10 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, MCP servers, A
 </details>
 
 <details open>
-<summary><b>Video, Media & Publishing</b> (2)</summary>
+<summary><b>Video, Media & Publishing</b> (3)</summary>
 
 - **[Image to Video](tools/image-to-video)** &mdash; `web-app` &mdash; Animate static images into videos with AI. Add motion prompts, choose from cinematic/anime/3D styles, set duration and FPS, download MP4.
+- **[Motion Director MCP â€” Video Pipeline Tool](tools/motion-director-mcp)** &mdash; `mcp-server` &mdash; MCP server that exposes the Motion Director AI-video pipeline (idea â†’ Visual DNA â†’ storyboard â†’ keyframes â†’ i2v â†’ voiceover â†’...
 - **[Video Editor](tools/video-editor)** &mdash; `web-app` &mdash; Edit videos with trim, text overlay, and audio controls. Multi-track timeline with visual editing. Import, edit, preview, and export videos.
 
 </details>
@@ -135,11 +136,13 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, MCP servers, A
 </details>
 
 
-### Modules &mdash; atomic code (112)
+### Modules &mdash; atomic code (117)
 
 <details open>
-<summary><b>AI, Agents & LLM</b> (23)</summary>
+<summary><b>AI, Agents & LLM</b> (25)</summary>
 
+- **[Agent Cascade Router â€” LLM-based Tool Selection & Executor Dispatch](modules/agent-cascade-router)** &mdash; 2-tier cascade architecture: controller LLM selects tool + executor model, then passes work to specialized executor. Per-agent persona + ...
+- **[Agent Memory RAG â€” Obsidian-style Markdown + Wikilinks](modules/memory-rag)** &mdash; Per-agent memory system with markdown notes, [[wikilink]] retrieval, and knowledge lineage tracking. Keyword-based retrieval with title b...
 - **[Agent Memory: 3-Layer Progressive Retrieval](modules/agent-memory-3layer-retrieval)** &mdash; Memory architecture for agents: index layer (FTS5), timeline layer (recent events), full context layer. Reduces token use 10x via progres...
 - **[Agent Persona Registry](modules/agent-persona-registry)** &mdash; Unified schema for registering NPC identities, personalities, skills, and role mappings in multi-agent systems.
 - **[AI Asset Quality Gate](modules/ai-asset-quality-gate)** &mdash; Automated quality checks for AI-generated content (title/keyword/disclosure validation + scoring)
@@ -167,7 +170,7 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, MCP servers, A
 </details>
 
 <details open>
-<summary><b>Infrastructure & Backend</b> (40)</summary>
+<summary><b>Infrastructure & Backend</b> (41)</summary>
 
 - **[Action Guarded Executor](modules/action-guarded-executor)** &mdash; Wraps any callable with guard layers: health check â†’ circadian check â†’ rate-limit â†’ think delay â†’ execute. Returns structured Act...
 - **[Adaptive Rate Limiter with Warmup](modules/adaptive-rate-limiter-warmup)** &mdash; Per-entity rate limiter with age-based warmup curve (0.08â†’1.0 over 21 days), jittered intervals, daily caps, and persistent state.
@@ -194,6 +197,7 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, MCP servers, A
 - **[Parallel Tool Executor](modules/parallel-tool-executor)** &mdash; Concurrent execution of independent tool calls using ThreadPoolExecutor. Bundle-by-bundle execution with dependency support.
 - **[Password Hashing with Scrypt](modules/password-scrypt-hash)** &mdash; Hash and verify passwords using scrypt (Node built-in crypto). Format: hexSalt:hexKey. No native dependencies. Timing-safe comparison.
 - **[Prisma Lifecycle Service](modules/prisma-lifecycle-service)** &mdash; NestJS injectable Prisma service with automatic connection management. Implements OnModuleInit/OnModuleDestroy for graceful startup and s...
+- **[Provider Registry â€” Data-Driven LLM/Media Provider Config](modules/provider-registry)** &mdash; Catalog of available providers (LLM routers, executors, media services) loaded from JSON config. Zero code changes to add providers. Used...
 - **[Rate-Limited Message Queue Scheduler](modules/message-queue-scheduler)** &mdash; Batching queue with per-destination throttling and retry for scheduled/bulk dispatch.
 - **[Redis Queue Wrapper](modules/redis-queue-wrapper)** &mdash; Factory pattern for Redis connection pooling and RQ queue management. Provides singleton Redis connection and named queues for reliable t...
 - **[Relative Timestamp Formatter](modules/relative-timestamp-formatter)** &mdash; Format dates as human-readable relative timestamps (5m ago, 2h ago) and locale-aware time strings. Zero dependencies; works in browsers a...
@@ -213,7 +217,7 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, MCP servers, A
 </details>
 
 <details open>
-<summary><b>Business, SaaS & Fintech</b> (23)</summary>
+<summary><b>Business, SaaS & Fintech</b> (24)</summary>
 
 - **[Admin Approval Workflow â€” Maker-Checker Pattern](modules/admin-approval-maker-checker)** &mdash; Four-eye approval system for high-value or sensitive operations (withdrawals, rate changes, supply adjustments). Separates initiation (Ma...
 - **[Append-Only Audit Log](modules/audit-log-pattern)** &mdash; Immutable append-only audit trail for fintech/compliance. Dual-track user + admin logs with soft-fail, denormalization, and request metad...
@@ -228,6 +232,7 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, MCP servers, A
 - **[Message Pipeline Router](modules/message-pipeline-router)** &mdash; Inbound webhook message handler with intent parsing and action dispatch. Normalizes multi-channel input (WhatsApp, Telegram) â†’ parses i...
 - **[Minimal Session Cookie Auth](modules/minimal-session-cookie)** &mdash; HMAC-SHA256 signed session tokens (no external auth library). Payload: base64(json).signature. Stores in httpOnly cookie with 14-day TTL.
 - **[Multi-Denomination Wallet Balance](modules/multi-denom-wallet-balance)** &mdash; Track wallet balances across 4+ currency types (GOLD/SILVER/BRONZE/DIAMOND) with real-time fiat conversion. Returns normalized balance ob...
+- **[Multi-Tenant Granular Privilege System (PHP/MySQL)](modules/multi-tenant-privilege)** &mdash; Role-based access control with per-module granular permissions (can_view, can_create, can_edit, can_delete). Supports super admin full ac...
 - **[Nodemailer Email Template](modules/nodemailer-email-template)** &mdash; Email dispatch via nodemailer with SMTP relay. Graceful fallback if SMTP unconfigured. Built-in HTML templates for common SaaS flows (pur...
 - **[Phone Normalization](modules/phone-normalization)** &mdash; Normalize and validate phone numbers for Southeast Asia (Indonesia 62). Handles leading zeros, country codes, and formats for WhatsApp/me...
 - **[Social Post Auto-Scheduler](modules/social-post-scheduler)** &mdash; Background worker (60s interval) that publishes scheduled social posts when scheduled_at <= now(). Supports batch processing, transaction...
@@ -274,8 +279,9 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, MCP servers, A
 </details>
 
 <details open>
-<summary><b>3D, Graphics & Games</b> (10)</summary>
+<summary><b>3D, Graphics & Games</b> (11)</summary>
 
+- **[3D Isometric NPC Agent â€” Random Wander + State Machine](modules/3d-npc-agent)** &mdash; AI agent in 3D isometric world with random movement, state machine (idle/walking/working), spawn points, and wander radius. Supports beha...
 - **[A* Tilemap Pathfinder](modules/astar-tilemap-pathfinder)** &mdash; Classic A* pathfinding algorithm for orthogonal tile grids. Supports 4 or 8-direction movement, configurable heuristics (Manhattan/Euclid...
 - **[Day Night Cycle](modules/day-night-cycle)** &mdash; 24-hour environment cycle for Three.js scenes. Interpolates directional light, ambient light, fog, and clear color through keyframe-defin...
 - **[Game Loop with Fixed Timestep](modules/game-loop-fixed-timestep)** &mdash; requestAnimationFrame game loop with decoupled fixed-rate update (physics/logic) and variable-rate render. Includes frame skip limits, FP...
@@ -298,14 +304,18 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, MCP servers, A
 </details>
 
 
-### Artifacts &mdash; atomic non-code (70)
+### Artifacts &mdash; atomic non-code (79)
 
 <details open>
-<summary><b>AI, Agents & LLM</b> (24)</summary>
+<summary><b>AI, Agents & LLM</b> (31)</summary>
 
 - **[Agent Persona Router](artifacts/agent-persona-router)** &mdash; `method` &mdash; Dispatch tasks to specialized agent personas with isolated memory.
+- **[Agent Session Handoff & Continuity Pattern](artifacts/agent-session-handoff)** &mdash; `method` &mdash; Durable handoff pattern for multi-agent coding work: continuity log (AGENT_CONTINUITY.md) tracks every session with ID, date, agent, chan...
+- **[AI Agent Skill Design Principles & Progressive Disclosure](artifacts/skill-design-principles)** &mdash; `playbook` &mdash; Framework for designing reusable skills for AI agents (Claude, Cursor, OpenCode, Codex). Covers progressive disclosure (metadata â†’ SKIL...
+- **[AI Provider Fallback Chain with Circuit Breaker](artifacts/ai-provider-fallback-chain)** &mdash; `method` &mdash; Graceful degradation pattern for LLM API calls. Primary provider (e.g. Anthropic) fails â†’ fallback to secondary (OpenAI) â†’ tertiary (...
 - **[Asbabun Nuzul: Grounded Brief Pattern](artifacts/asbabun-nuzul-grounded-brief)** &mdash; `playbook` &mdash; Every creative output grounded in specific trigger (Asbabun Nuzul). Extract: trigger event, specific audience, concrete moment, real tens...
 - **[Autonomous Growth Flywheel](artifacts/autonomous-growth-flywheel)** &mdash; `framework` &mdash; Closed-loop architecture for autonomous AI systems: input→process→store→output layers enabling self-improvement without manual training
+- **[Autonomous Task Lifecycle & State Persistence](artifacts/autonomous-task-lifecycle)** &mdash; `method` &mdash; State machine pattern for long-running AI tasks: pending â†’ started â†’ running â†’ done/failed. Persist state to JSON + Socket.io event...
 - **[Autonomy System Pre-Flight Checklist](artifacts/autonomy-preflight-checklist)** &mdash; `checklist` &mdash; Critical reconnaissance checklist before executing tasks in autonomous AI systems to avoid context loss and server/repo confusion.
 - **[Brief to Storyboard to Video Pipeline](artifacts/brief-to-video-storyboard-pipeline)** &mdash; `playbook` &mdash; End-to-end methodology for generating short-form video content (20-30 sec) from a brief, featuring Visual DNA consistency, AI storyboard ...
 - **[Continuous Learning & Self-Evolution: System-Centric Learning Without Catastrophic Forgetting](artifacts/continuous-learning-evolution-methodology)** &mdash; `method` &mdash; Methodology for enabling AI agents to continuously improve through experience without retraining base model, based on Stability-Plasticit...
@@ -313,14 +323,17 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, MCP servers, A
 - **[Creative Brief Intake Framework (IHOS-Aligned)](artifacts/brief-intake-framework)** &mdash; `template` &mdash; Structured intake for creative briefs: capture all 4 semantic layers (Zahir/Batin/Hadd/Mathla), user state (Haal), grounding context (Asb...
 - **[Embedding / RAG Chunking](artifacts/embedding-rag-chunking)** &mdash; `method` &mdash; Split documents semantically for RAG with hierarchical metadata.
 - **[Eval-Gate & Regression-Guard: Model Quality Certification Framework](artifacts/eval-gate-regression-guard)** &mdash; `framework` &mdash; Automated quality assurance system for SLMs that certifies new models are better than baseline before deployment, preventing regressions ...
+- **[Hermes Controller â€” Multi-Agent Orchestration Pattern](artifacts/hermes-controller-pattern)** &mdash; `architecture` &mdash; 2-tier cascade: lightweight controller routes tasks to specialized executors. Each agent has persona + tools + memory. Controller recalls...
 - **[IHOS Epistemology Framework](artifacts/ihos-epistemology-framework)** &mdash; `framework` &mdash; Islamic Epistemology (Ilmu Jariyah, Hifdz, Akses Umat, Sistem) as applied to AI system design. Translates 1400-year-old validation princi...
 - **[LLM Provider Fallback Router](artifacts/llm-provider-fallback)** &mdash; `method` &mdash; Route LLM calls across multiple providers with automatic fallback on error or rate limit.
 - **[LoRA Continual Learning Without Catastrophic Forgetting](artifacts/lora-continual-learning)** &mdash; `method` &mdash; Methodology for incrementally improving SLMs via LoRA adapters while preserving previously learned knowledge, persona, and safety constra...
+- **[Multi-Agent Intent-Based Dispatch Router](artifacts/multi-agent-dispatch-router)** &mdash; `method` &mdash; Intelligent routing system that detects user intent and dispatches to the best specialized agent. Supports command-based routing, LLM-bas...
 - **[Multi-Provider Token & Cost Estimator](artifacts/token-cost-estimator)** &mdash; `method` &mdash; Estimate token counts and cost across LLM providers with caching.
 - **[NPC Agent Identity & World-Object Schema: Gaming AI & Interactive Worlds](artifacts/npc-identity-world-schema)** &mdash; `schema` &mdash; Unified data model for defining NPC identities, world state, and relationships. Supports emergent gameplay where NPCs react based on pers...
 - **[Prompt Chain Orchestration](artifacts/prompt-chain-orchestration)** &mdash; `method` &mdash; Compose multi-step LLM workflows with loops and conditionals.
 - **[Prompt Version Tracking](artifacts/prompt-version-tracking)** &mdash; `method` &mdash; System prompt versioning pattern â€” tag each LLM generation with prompt revision for A/B testing output quality.
 - **[ReAct Agent Loop (Reason + Act + Observe)](artifacts/react-agent-loop-pattern)** &mdash; `playbook` &mdash; Reasoning + Action + Observation loop. Agent generates Thought â†’ Action (tool call) â†’ Observation (result) â†’ loops until sufficient...
+- **[Repository Cartography & Doc Tier Classification](artifacts/repository-cartography-pattern)** &mdash; `method` &mdash; Pattern for mapping large multi-document repositories: tier docs by authority (T0 operational source-of-truth through T5 historical), res...
 - **[Reputation & Trust Scoring: Multi-Signal Agent Credibility Framework](artifacts/reputation-trust-scoring)** &mdash; `framework` &mdash; Framework for scoring agent trustworthiness based on multi-dimensional signals (completion rate, quality, fraud likelihood, financial hea...
 - **[SLM Distillation Pipeline: Teacher-Student Recursive Refinement](artifacts/slm-distillation-pipeline)** &mdash; `method` &mdash; Production-grade methodology for distilling knowledge from larger teachers into smaller SLMs via multi-teacher consensus voting and prefe...
 - **[SLM Identity Training Guide](artifacts/slm-identity-training-guide)** &mdash; `guide` &mdash; End-to-end guide for training small language model identity and behavior via SFT and DPO with contamination prevention and eval gates
@@ -331,13 +344,14 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, MCP servers, A
 </details>
 
 <details open>
-<summary><b>Infrastructure & Backend</b> (18)</summary>
+<summary><b>Infrastructure & Backend</b> (19)</summary>
 
 - **[Connector Base Guard Pattern](artifacts/connector-base-guard-pattern)** &mdash; `architecture` &mdash; Multi-platform integration with automatic guard layers: health check â†’ circadian â†’ rate-limit â†’ think delay â†’ transport. Single s...
 - **[Cost-Aware GPU Training Optimization](artifacts/cost-aware-gpu-training-optimization)** &mdash; `method` &mdash; Methods for reducing cloud GPU training costs through dependency caching, hardware selection, and pre-built images
 - **[Credit Metering System: Real-Time Usage Tracking & Enforcement](artifacts/credit-metering-system)** &mdash; `framework` &mdash; Production system for tracking agent/user service consumption in real-time, enforcing quotas, and preventing over-spend in multi-tenant S...
 - **[ERD & Data Model Design Method](artifacts/erd-data-model-design)** &mdash; `method` &mdash; Structured methodology for designing Entity-Relationship Diagrams and data models for multi-user platforms, covering entity inventory, re...
 - **[exFAT Windows Fix for Next.js / Webpack](artifacts/exfat-windows-fix)** &mdash; `finding` &mdash; Fix EISDIR readlink crashes when building Next.js/Webpack projects on a Windows exFAT drive by shimming fs.readlink before webpack captur...
+- **[Express API Gateway Response Wrapper Pattern](artifacts/api-gateway-pattern)** &mdash; `template` &mdash; Standardized Express.js gateway pattern: all endpoints return {ok:boolean, data|error:string} JSON structure with try/catch wrapping, log...
 - **[Frontend Deploy Bash Pattern](artifacts/frontend-deploy-bash-pattern)** &mdash; `template` &mdash; Parameterized shell script for zero-downtime frontend deployment: git pull, npm build, PM2 restart, rsync sync, health check verification.
 - **[Git Workflow â€” Windows + Private GitHub Repo](artifacts/git-workflow-windows)** &mdash; `playbook` &mdash; Lean git setup and recovery flow tuned for Windows + a private GitHub repo: PAT auth, conventional commits, Windows path pitfalls, and sa...
 - **[How to Build an MCP Server](artifacts/build-mcp-server)** &mdash; `methodology` &mdash; Step-by-step guide to authoring a Model Context Protocol server from scratch. Covers architecture, tool definition, registration, testing...
@@ -400,6 +414,13 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, MCP servers, A
 <summary><b>Video, Media & Publishing</b> (1)</summary>
 
 - **[Storyboard Prompt Variants](artifacts/storyboard-prompt-variants)** &mdash; `template` &mdash; Generate multi-genre video-generation prompts (ads, cinematic, generic) from a storyboard.
+
+</details>
+
+<details open>
+<summary><b>3D, Graphics & Games</b> (1)</summary>
+
+- **[Three.js Scene Architecture & Composition Pattern](artifacts/threejs-scene-architecture)** &mdash; `method` &mdash; Reusable Three.js scene patterns: helper functions (box/cyl builders), material/group composition, warp zones for navigation, and renderi...
 
 </details>
 
