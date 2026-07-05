@@ -1,0 +1,37 @@
+{
+  "id": "audio-chunk-streamer",
+  "name": "Audio Chunk Streamer",
+  "version": "1.0.0",
+  "category": ["infra", "ai"],
+  "description": "HTTP streaming for large audio files with chunked transfer encoding. Supports range requests, pause/resume, and adaptive bitrate.",
+  "input": [
+    {
+      "name": "audioBuffer",
+      "type": "Buffer | Readable",
+      "description": "Audio data source"
+    },
+    {
+      "name": "mimeType",
+      "type": "string",
+      "description": "audio/mpeg, audio/wav, audio/pcm"
+    },
+    {
+      "name": "chunkSize",
+      "type": "number",
+      "description": "Chunk size in bytes (default: 64KB)"
+    }
+  ],
+  "output": [
+    {
+      "name": "stream",
+      "type": "Readable",
+      "description": "Streamed audio chunks"
+    }
+  ],
+  "tags": ["audio", "streaming", "http", "chunked", "range-request"],
+  "compatible_with": ["nodejs", "fastapi"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
