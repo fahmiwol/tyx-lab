@@ -52,15 +52,15 @@ async function getBalance(
 
 ```typescript
 // Transfer out
-const tx = await postLedger('wallet_123', 'PERAK', 'TRANSFER_OUT', 50, 'Payment to merchant');
-// { txId: 'tx_456', walletId, denom: 'PERAK', amount: -50, balance: 200, ... }
+const tx = await postLedger('wallet_123', 'SILVER', 'TRANSFER_OUT', 50, 'Payment to merchant');
+// { txId: 'tx_456', walletId, denom: 'SILVER', amount: -50, balance: 200, ... }
 
 // Get ledger
-const entries = await getLedgerEntries('wallet_123', 'PERAK');
-// All PERAK transactions for this wallet
+const entries = await getLedgerEntries('wallet_123', 'SILVER');
+// All SILVER transactions for this wallet
 
 // Current balance
-const balance = await getBalance('wallet_123', 'PERAK');  // 200
+const balance = await getBalance('wallet_123', 'SILVER');  // 200
 // Computed: previous balance - 50 (latest transfer)
 ```
 
