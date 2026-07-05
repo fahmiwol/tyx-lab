@@ -1,0 +1,14 @@
+{
+  "id": "facebook-domain-verification",
+  "name": "Facebook Business Domain Verification (dual-method)",
+  "version": "1.0.0",
+  "kind": "playbook",
+  "category": "ops",
+  "description": "Verify a domain in Meta Business Manager via BOTH meta-tag and HTML-file methods, with a Next.js middleware exemption so verification files serve verbatim.",
+  "tags": ["meta", "facebook", "domain-verification", "nextjs", "middleware", "seo"],
+  "compatible_with": ["nextjs-subdomain-multitenant"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
