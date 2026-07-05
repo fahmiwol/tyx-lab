@@ -1,0 +1,1 @@
+{"id":"tool-calling-resilient","name":"Resilient Cross-Provider Tool Calling","version":"1.0.0","kind":"method","category":"infra","description":"Cross-provider tool-calling schema with validation and retry.","tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
