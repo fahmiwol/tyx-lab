@@ -6,7 +6,7 @@ Standardized JSON schema for SaaS pricing plans (free, pro, enterprise, custom).
 
 Every SaaS needs to define pricing tiers. Instead of inventing the structure each time, use this template.
 
-Extracted from 3 Tiranyx SaaS products (Peplid, Dokumix, Nirmanix) — they all settled on the same pattern:
+Extracted from 3 Tiranyx SaaS products (an HR/CRM app, a document vault, a project-management app) — they all settled on the same pattern:
 - Tier ID + name
 - Price (in minor units: IDR, cents)
 - Billing period
@@ -198,17 +198,17 @@ app.post('/api/checkout', requireAuth, (req, res) => {
 
 ## Real-World Examples from Tiranyx
 
-**Peplid (HR/CRM):**
+**an HR/CRM app (HR/CRM):**
 - Free: 10 employees, basic dashboard
 - Pro: 100 employees, payroll, absensi
 - Enterprise: unlimited, BPJS sync, custom reports
 
-**Dokumix (Document Vault):**
+**a document vault (Document Vault):**
 - Free: 10 documents, 100MB
 - Pro: 1,000 documents, 10GB, OCR
 - Business: unlimited, team, API
 
-**Nirmanix (Project Manager):**
+**a project-management app (Project Manager):**
 - Free: 3 projects, 20 tasks
 - Pro: 50 projects, Gantt, reporting
 - Enterprise: unlimited, budget tracking, contractor portal
