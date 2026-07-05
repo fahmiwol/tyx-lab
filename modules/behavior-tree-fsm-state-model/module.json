@@ -1,0 +1,15 @@
+{
+  "id": "behavior-tree-fsm-state-model",
+  "name": "Behavior Tree & FSM State Model",
+  "version": "1.0.0",
+  "category": "ai",
+  "description": "Declarative schema for agent behavior: finite state machine (FSM) with states, transitions, conditions, and actions. Serializable and composable.",
+  "input": ["behavior-definition-object"],
+  "output": ["validated-behavior-model"],
+  "tags": ["behavior-tree", "fsm", "state-machine", "npc-ai", "serialization"],
+  "compatible_with": ["agent-persona-registry"],
+  "used_in_recipes": ["npc-agent-ai"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
