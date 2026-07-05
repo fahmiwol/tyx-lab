@@ -69,7 +69,7 @@ export async function POST(req: FastifyRequest) {
       username: "fahmi",  // cache this
       action: "user.transfer",
       amount: 500,
-      denom: "PERAK",
+      denom: "SILVER",
       txId: "tx_abc",
       payload: { from: "wallet_1", to: "wallet_2" },
       ip,
