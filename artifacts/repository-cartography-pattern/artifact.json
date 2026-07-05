@@ -1,0 +1,14 @@
+{
+  "id": "repository-cartography-pattern",
+  "name": "Repository Cartography & Doc Tier Classification",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "ai",
+  "description": "Pattern for mapping large multi-document repositories: tier docs by authority (T0 operational source-of-truth through T5 historical), resolve doc conflicts, list runtime flow, enable consistent agent onboarding across handoffs.",
+  "tags": ["documentation", "cartography", "handoff", "architecture", "repo-mapping"],
+  "compatible_with": ["any"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
