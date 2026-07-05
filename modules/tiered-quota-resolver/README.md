@@ -1,1 +1,162 @@
-IyBUaWVyZWQgUXVvdGEgJiBSYXRlLUxpbWl0IFJlc29sdmVyCgpTYWFTIHF1b3RhIG1hbmFnZW1lbnQ6IEFkbWluICh1bmxpbWl0ZWQpIOKGkiBQcm8gKDUwMC9kYXkpIOKGkiBGcmVlICg1L2RheSkg4oaSIEFub255bW91cyAoMi9kYXkpLgoKIyMgV2h5CgpNb25ldGl6ZSB0b29sIGFjY2VzcyB2aWEgdGllcnM6Ci0gKipBZG1pbioqOiBJbnRlcm5hbCB0ZWFtLCB1bmxpbWl0ZWQKLSAqKlBybyoqOiBQYWlkIGxpY2Vuc2UsIGhpZ2ggcXVvdGEgKyBjb2luIG92ZXJhZ2UKLSAqKkZyZWUqKjogTG9nZ2VkLWluIHVzZXJzLCBsaW1pdGVkIHF1b3RhICsgY29pbiBvcHRpb24KLSAqKkFub255bW91cyoqOiBObyBzaWdudXAsIG1pbmltYWwgcXVvdGEsIG5vIGNvaW5zCgpTaW5nbGUgZnVuY3Rpb24gcmV0dXJucyB0aWVyLCB1c2FnZSwgYW5kIGNoYXJnZSBzdGF0dXMuCgojIyBVc2FnZQoKYGBgdHlwZXNjcmlwdAppbXBvcnQgeyBjaGVja0FuZENoYXJnZVF1b3RhIH0gZnJvbSAnQC9saWIvdGllcmVkLXF1b3RhLXJlc29sdmVyJzsKCi8vIEluIEFQSSByb3V0ZQpleHBvcnQgYXN5bmMgZnVuY3Rpb24gUE9TVChyZXF1ZXN0OiBSZXF1ZXN0KSB7CiAgY29uc3QgaXAgPSByZXF1ZXN0LmhlYWRlcnMuZ2V0KCd4LWZvcndhcmRlZC1mb3InKSB8fCAnMTI3LjAuMC4xJzsKICBjb25zdCByZXN1bHQgPSBhd2FpdCBjaGVja0FuZENoYXJnZVF1b3RhKCdpbWFnZS11cHNjYWxlcicsIGlwKTsKCiAgaWYgKCFyZXN1bHQuYWxsb3dlZCkgewogICAgcmV0dXJuIFJlc3BvbnNlLmpzb24oeyBlcnJvcjogcmVzdWx0LnJlYXNvbiB9LCB7IHN0YXR1czogNDI5IH0pOwogIH0KCiAgY29uc3QgeyB0aWVyLCBjaGFyZ2VkIH0gPSByZXN1bHQ7CiAgY29uc29sZS5sb2coYFRpZXI6ICR7dGllcn0sIENoYXJnZWQ6ICR7Y2hhcmdlZH1gKTsKCiAgLy8gUHJvY2VzcyB0aGUgdG9vbCBjYWxsCiAgcmV0dXJuIFJlc3BvbnNlLmpzb24oeyBzdGF0dXM6ICdvaycgfSk7Cn0KYGBgCgojIyBUaWVycwoKfCBUaWVyIHwgRGFpbHkgRnJlZSB8IE92ZXJhZ2UgfCBBdXRoIHwgTm90ZXMgfAp8LS0tLS0tfC0tLS0tLS0tLS0tfC0tLS0tLS0tLXwtLS0tLS18LS0tLS0tLXwKfCBhZG1pbiB8IFVubGltaXRlZCB8IE4vQSB8IHRyeF9hZG1pbiBjb29raWUgfCBJbnRlcm5hbCB0ZWFtIHwKfCBwcm8gfCA1MDAgfCBWaWEgY29pbnMgfCB0cnhfdXNlciArIGFjdGl2ZSBsaWNlbnNlIHwgUGFpZCB0aWVyIHwKfCBmcmVlIHwgNSB8IFZpYSBjb2lucyB8IHRyeF91c2VyLCBubyBsaWNlbnNlIHwgTG9nZ2VkLWluIHVzZXIgfAp8IGFub24gfCAyIHwgTm9uZSB8IE5vbmUgfCBJUCBoYXNoIG9ubHkgfAoKIyMgQXV0aGVudGljYXRpb24KCkNvb2tpZSByZXNvbHV0aW9uIChwcmlvcml0eSk6CjEuIGB0cnhfYWRtaW5gIOKGkiBhZG1pbiB0b2tlbiAoaW5zdGFudCBhZG1pbiBhY2Nlc3MpCjIuIGB0cnhfdXNlcmAg4oaSIHVzZXIgdG9rZW4gKyBsaWNlbnNlIGNoZWNrCiAgIC0gSWYgYHJvbGVfaWQ9MWAgb3IgYGlzX293bmVyPTFgIOKGkiBhZG1pbgogICAtIElmIGFjdGl2ZSBub24tZGVtbyBgcGxhdGZvcm1fbGljZW5zZWAg4oaSIHBybwogICAtIE90aGVyd2lzZSDihpIgZnJlZQozLiBOb25lIOKGkiBhbm9ueW1vdXMgKElQLWJhc2VkIHF1b3RhKQoKIyMgQ29pbiBCaWxsaW5nCgpXaGVuIHVzZXIgZXhjZWVkcyBkYWlseSBxdW90YToKCmBgYHR5cGVzY3JpcHQKLy8gUHJvIHVzZXI6IDUwMCBmcmVlLCB0aGVuIGNvaW5zCi8vIEZyZWUgdXNlcjogNSBmcmVlLCB0aGVuIGNvaW5zCgpjb25zdCBvayA9IGF3YWl0IGRlZHVjdFRvb2xDb2luKHVzZXJJZCwgdG9vbFNsdWcpOwppZiAoIW9rKSByZXR1cm4geyBhbGxvd2VkOiBmYWxzZSwgcmVhc29uOiAnSW5zdWZmaWNpZW50IGNvaW5zJyB9OwpgYGAKCkNvc3QgcGVyIHRvb2wgZGVmaW5lZCBpbiBgVE9PTF9DT0lOX0NPU1RgIGNvbmZpZy4KCiMjIERhdGFiYXNlIFNjaGVtYQoKYGBgc3FsCi0tIFRyYWNrIGxvZ2dlZC1pbiB1c2VyIHVzYWdlCkNSRUFURSBUQUJMRSB0b29sX3VzYWdlICgKICB1c2VyX2lkIFRFWFQsCiAgdG9vbF9zbHVnIFRFWFQsCiAgdXNhZ2VfZGF0ZSBURVhULAogIGNvdW50IElOVCwKICBQUklNQVJZIEtFWSAodXNlcl9pZCwgdG9vbF9zbHVnLCB1c2FnZV9kYXRlKQopOwoKLS0gVHJhY2sgYW5vbnltb3VzIHVzYWdlIGJ5IElQIGhhc2gKQ1JFQVRFIFRBQkxFIHRvb2xfdXNhZ2VfYW5vbiAoCiAgaXBfaGFzaCBURVhULAogIHRvb2xfc2x1ZyBURVhULAogIHVzYWdlX2RhdGUgVEVYVCwKICBjb3VudCBJTlQsCiAgUFJJTUFSWSBLRVkgKGlwX2hhc2gsIHRvb2xfc2x1ZywgdXNhZ2VfZGF0ZSkKKTsKCi0tIE9wdGlvbmFsOiBkYWlseSBxdW90YSBzbmFwc2hvdCBmb3IgYW5hbHl0aWNzCkNSRUFURSBUQUJMRSBxdW90YV9sb2cgKAogIGlkIFRFWFQgUFJJTUFSWSBLRVksCiAgdXNlcl9pZCBURVhULAogIHRvb2xfc2x1ZyBURVhULAogIHVzYWdlX2RhdGUgVEVYVCwKICBjb3VudCBJTlQsCiAgdGllciBURVhULAogIGNoYXJnZWQgQk9PTEVBTiwKICBjcmVhdGVkX2F0IERBVEVUSU1FIERFRkFVTFQgQ1VSUkVOVF9USU1FU1RBTVAKKTsKYGBgCgojIyBJbnRlZ3JhdGlvbiBFeGFtcGxlIChOZXh0LmpzIEFQSSBSb3V0ZSkKCmBgYHR5cGVzY3JpcHQKaW1wb3J0IHsgY2hlY2tBbmRDaGFyZ2VRdW90YSB9IGZyb20gJ0AvbGliL3RpZXJlZC1xdW90YS1yZXNvbHZlcic7CgpleHBvcnQgYXN5bmMgZnVuY3Rpb24gUE9TVChyZXF1ZXN0OiBSZXF1ZXN0KSB7CiAgY29uc3QgeyBwcm9tcHQgfSA9IGF3YWl0IHJlcXVlc3QuanNvbigpOwogIGNvbnN0IGlwID0gcmVxdWVzdC5oZWFkZXJzLmdldCgneC1mb3J3YXJkZWQtZm9yJykgfHwgJzEyNy4wLjAuMSc7CgogIC8vIENoZWNrIHF1b3RhCiAgY29uc3QgcXVvdGEgPSBhd2FpdCBjaGVja0FuZENoYXJnZVF1b3RhKCd0ZXh0LWdlbmVyYXRvcicsIGlwKTsKCiAgaWYgKCFxdW90YS5hbGxvd2VkKSB7CiAgICByZXR1cm4gUmVzcG9uc2UuanNvbigKICAgICAgeyBlcnJvcjogcXVvdGEucmVhc29uIH0sCiAgICAgIHsgc3RhdHVzOiA0MjkgfQogICAgKTsKICB9CgogIC8vIExvZyBmb3IgYW5hbHl0aWNzCiAgY29uc29sZS5sb2coYFRvb2w6IHRleHQtZ2VuZXJhdG9yLCBUaWVyOiAke3F1b3RhLnRpZXJ9LCBDaGFyZ2VkOiAke3F1b3RhLmNoYXJnZWR9YCk7CgogIC8vIEdlbmVyYXRlIGNvbnRlbnQKICBjb25zdCByZXN1bHQgPSBhd2FpdCBnZW5lcmF0ZUNvbnRlbnQocHJvbXB0KTsKCiAgcmV0dXJuIFJlc3BvbnNlLmpzb24ocmVzdWx0KTsKfQpgYGAKCiMjIENvbmZpZ3VyYXRpb24KCkRlZmluZSBwZXItdG9vbCBjb3N0cyBpbiBgbGliL2JpbGxpbmcudHNgOgoKYGBgdHlwZXNjcmlwdApleHBvcnQgY29uc3QgVE9PTF9DT0lOX0NPU1Q6IFJlY29yZDxzdHJpbmcsIG51bWJlcj4gPSB7CiAgJ2ltYWdlLXVwc2NhbGVyJzogMTAsICAgICAgLy8gMTAgY29pbnMgcGVyIHVzZSBhZnRlciBxdW90YQogICd0ZXh0LWdlbmVyYXRvcic6IDUsCiAgJ3ZpZGVvLWVkaXRvcic6IDI1LAp9OwpgYGAKCkNvaW5zIGNhbiBiZSBwdXJjaGFzZWQgb3IgZWFybmVkLiBEZWR1Y3Rpb24gaXMgbG9nZ2VkIHBlciB1c2VyL3Rvb2wvZGF0ZS4KCiMjIEFuYWx5dGljcwoKUXVlcnkgZGFpbHkgdXNhZ2UgYnkgdGllcjoKCmBgYHNxbApTRUxFQ1QKICBEQVRFKGNyZWF0ZWRfYXQpIGFzIGRhdGUsCiAgdGllciwKICBDT1VOVCgqKSBhcyByZXF1ZXN0cywKICBTVU0oQ0FTRSBXSEVOIGNoYXJnZWQgVEhFTiAxIEVMU0UgMCBFTkQpIGFzIHBhaWRfcmVxdWVzdHMKRlJPTSBxdW90YV9sb2cKR1JPVVAgQlkgZGF0ZSwgdGllcgpPUkRFUiBCWSBkYXRlIERFU0M7CmBgYAoKKk9wZW4gc291cmNlIOKAlCB1c2UgaXQgd2lzZWx5LioK
+# Tiered Quota & Rate-Limit Resolver
+
+SaaS quota management: Admin (unlimited) → Pro (500/day) → Free (5/day) → Anonymous (2/day).
+
+## Why
+
+Monetize tool access via tiers:
+- **Admin**: Internal team, unlimited
+- **Pro**: Paid license, high quota + coin overage
+- **Free**: Logged-in users, limited quota + coin option
+- **Anonymous**: No signup, minimal quota, no coins
+
+Single function returns tier, usage, and charge status.
+
+## Usage
+
+```typescript
+import { checkAndChargeQuota } from '@/lib/tiered-quota-resolver';
+
+// In API route
+export async function POST(request: Request) {
+  const ip = request.headers.get('x-forwarded-for') || '127.0.0.1';
+  const result = await checkAndChargeQuota('image-upscaler', ip);
+
+  if (!result.allowed) {
+    return Response.json({ error: result.reason }, { status: 429 });
+  }
+
+  const { tier, charged } = result;
+  console.log(`Tier: ${tier}, Charged: ${charged}`);
+
+  // Process the tool call
+  return Response.json({ status: 'ok' });
+}
+```
+
+## Tiers
+
+| Tier | Daily Free | Overage | Auth | Notes |
+|------|-----------|---------|------|-------|
+| admin | Unlimited | N/A | trx_admin cookie | Internal team |
+| pro | 500 | Via coins | trx_user + active license | Paid tier |
+| free | 5 | Via coins | trx_user, no license | Logged-in user |
+| anon | 2 | None | None | IP hash only |
+
+## Authentication
+
+Cookie resolution (priority):
+1. `trx_admin` → admin token (instant admin access)
+2. `trx_user` → user token + license check
+   - If `role_id=1` or `is_owner=1` → admin
+   - If active non-demo `platform_license` → pro
+   - Otherwise → free
+3. None → anonymous (IP-based quota)
+
+## Coin Billing
+
+When user exceeds daily quota:
+
+```typescript
+// Pro user: 500 free, then coins
+// Free user: 5 free, then coins
+
+const ok = await deductToolCoin(userId, toolSlug);
+if (!ok) return { allowed: false, reason: 'Insufficient coins' };
+```
+
+Cost per tool defined in `TOOL_COIN_COST` config.
+
+## Database Schema
+
+```sql
+-- Track logged-in user usage
+CREATE TABLE tool_usage (
+  user_id TEXT,
+  tool_slug TEXT,
+  usage_date TEXT,
+  count INT,
+  PRIMARY KEY (user_id, tool_slug, usage_date)
+);
+
+-- Track anonymous usage by IP hash
+CREATE TABLE tool_usage_anon (
+  ip_hash TEXT,
+  tool_slug TEXT,
+  usage_date TEXT,
+  count INT,
+  PRIMARY KEY (ip_hash, tool_slug, usage_date)
+);
+
+-- Optional: daily quota snapshot for analytics
+CREATE TABLE quota_log (
+  id TEXT PRIMARY KEY,
+  user_id TEXT,
+  tool_slug TEXT,
+  usage_date TEXT,
+  count INT,
+  tier TEXT,
+  charged BOOLEAN,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+## Integration Example (Next.js API Route)
+
+```typescript
+import { checkAndChargeQuota } from '@/lib/tiered-quota-resolver';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+  const ip = request.headers.get('x-forwarded-for') || '127.0.0.1';
+
+  // Check quota
+  const quota = await checkAndChargeQuota('text-generator', ip);
+
+  if (!quota.allowed) {
+    return Response.json(
+      { error: quota.reason },
+      { status: 429 }
+    );
+  }
+
+  // Log for analytics
+  console.log(`Tool: text-generator, Tier: ${quota.tier}, Charged: ${quota.charged}`);
+
+  // Generate content
+  const result = await generateContent(prompt);
+
+  return Response.json(result);
+}
+```
+
+## Configuration
+
+Define per-tool costs in `lib/billing.ts`:
+
+```typescript
+export const TOOL_COIN_COST: Record<string, number> = {
+  'image-upscaler': 10,      // 10 coins per use after quota
+  'text-generator': 5,
+  'video-editor': 25,
+};
+```
+
+Coins can be purchased or earned. Deduction is logged per user/tool/date.
+
+## Analytics
+
+Query daily usage by tier:
+
+```sql
+SELECT
+  DATE(created_at) as date,
+  tier,
+  COUNT(*) as requests,
+  SUM(CASE WHEN charged THEN 1 ELSE 0 END) as paid_requests
+FROM quota_log
+GROUP BY date, tier
+ORDER BY date DESC;
+```
+
+*Open source — use it wisely.*
