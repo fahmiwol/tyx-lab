@@ -1,0 +1,26 @@
+{
+  "id": "exchange-rate-oracle-updater",
+  "name": "Exchange Rate Oracle Updater",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Trusted price feed mechanism that updates denomination-to-fiat conversion rates via authenticated oracle transactions. Supports historical rate tracking, rate staleness checks, and fallback rates for circuit-breaker scenarios.",
+  "input": [
+    {"name": "denominationPair", "type": "string", "example": "GOLD/IDR"},
+    {"name": "rateValue", "type": "decimal"},
+    {"name": "source", "type": "enum", "values": ["external_api", "manual_entry", "governance_vote"]},
+    {"name": "oracleOperatorId", "type": "string"}
+  ],
+  "output": [
+    {"name": "rateId", "type": "string"},
+    {"name": "effectiveRate", "type": "decimal"},
+    {"name": "previousRate", "type": "decimal", "nullable": true},
+    {"name": "stalecutoff", "type": "datetime"},
+    {"name": "oracleSignature", "type": "string"}
+  ],
+  "tags": ["pricing", "oracle", "fiat-bridge", "rate-feed"],
+  "compatible_with": ["denomination-unit-price-resolver", "token-supply-cap-accounting"],
+  "used_in_recipes": ["b2b-payment-settlement", "fx-conversion-gateway"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
