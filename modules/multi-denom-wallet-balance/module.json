@@ -1,0 +1,15 @@
+{
+  "id": "multi-denom-wallet-balance",
+  "name": "Multi-Denomination Wallet Balance",
+  "version": "1.0.0",
+  "category": "business",
+  "description": "Track wallet balances across 4+ currency types (EMAS/PERAK/PERUNGGU/BERLIAN) with real-time fiat conversion. Returns normalized balance object: { walletId, userId, balances: Record<Denom, number>, totalIDR: number }. Supports partial updates and balance verification against ledger.",
+  "input": ["walletId: string"],
+  "output": ["{ walletId, userId, balances, totalIDR, lastUpdated }"],
+  "tags": ["wallet","multi-currency","balance","ledger","fintech"],
+  "compatible_with": ["denomination-unit-price-resolver","double-entry-ledger","wallet-denomination-ledger"],
+  "used_in_recipes": ["wallet-dashboard","transfer-flow","settlement-reporting"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
