@@ -1,0 +1,15 @@
+{
+  "id": "action-guarded-executor",
+  "name": "Action Guarded Executor",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Wraps any callable with guard layers: health check → circadian check → rate-limit → think delay → execute. Returns structured ActionResult with timing and signal.",
+  "input": [{"name": "entity_id", "type": "string"}, {"name": "action", "type": "string"}, {"name": "fn", "type": "Callable"}],
+  "output": [{"name": "result", "type": "ActionResult"}],
+  "tags": ["executor", "guarding", "retry-logic", "anti-detection"],
+  "compatible_with": ["python3.9+"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
