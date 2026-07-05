@@ -1,0 +1,57 @@
+{
+  "id": "double-entry-ledger",
+  "name": "Double-Entry Ledger",
+  "version": "1.0.0",
+  "category": ["business"],
+  "description": "Immutable transaction ledger for fintech: P2P transfers, conversions with fees, mint/reward/withdraw operations. Includes denormalized balances and coin-level genealogy.",
+  "input": [
+    {
+      "name": "fromWalletId",
+      "type": "string | null",
+      "description": "Source wallet (null for MINT operations)"
+    },
+    {
+      "name": "toWalletId",
+      "type": "string | null",
+      "description": "Destination wallet (null for WITHDRAW operations)"
+    },
+    {
+      "name": "amount",
+      "type": "BigInt",
+      "description": "Amount in minor units (cents/satoshis), never floating point"
+    },
+    {
+      "name": "type",
+      "type": "enum: MINT | TRANSFER | CONVERT | REWARD | WITHDRAW",
+      "description": "Transaction type"
+    },
+    {
+      "name": "fee",
+      "type": "BigInt",
+      "description": "Margin or platform fee (captured separately for revenue tracking)"
+    }
+  ],
+  "output": [
+    {
+      "name": "txId",
+      "type": "string",
+      "description": "Unique transaction ID (CUID)"
+    },
+    {
+      "name": "status",
+      "type": "enum: PENDING | COMPLETED | FAILED | REVERSED",
+      "description": "Transaction state"
+    },
+    {
+      "name": "balances",
+      "type": "Record<walletId, Record<denomination, BigInt>>",
+      "description": "Updated wallet balances after transaction"
+    }
+  ],
+  "tags": ["fintech", "ledger", "accounting", "reconciliation", "atomicity"],
+  "compatible_with": ["prisma", "postgresql", "mysql"],
+  "used_in_recipes": ["payment-processing", "money-transfer"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
