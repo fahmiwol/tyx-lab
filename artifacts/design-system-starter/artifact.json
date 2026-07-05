@@ -1,0 +1,14 @@
+{
+  "id": "design-system-starter",
+  "name": "Design System Starter",
+  "version": "1.0.0",
+  "kind": "framework",
+  "category": "business",
+  "description": "Comprehensive design system template with color palette, typography scale, component specs, spacing, interactions, responsive guidelines, accessibility standards, and implementation guide for Figma, CSS, and Storybook.",
+  "tags": ["design-system", "ui-kit", "colors", "typography", "components", "tokens", "figma", "responsive", "accessibility"],
+  "compatible_with": ["figma", "tailwind", "storybook", "css", "tailwind-css"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
