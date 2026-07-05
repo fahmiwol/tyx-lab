@@ -5,7 +5,7 @@ Dynamic pricing based on quantity tiers or customer segments. Used for top-up pa
 ## Pattern: Lookup Table
 
 ```typescript
-// from bank-tiranyx: TOPUP_PACKAGES
+// from a production ledger service: TOPUP_PACKAGES
 export const TOPUP_PACKAGES = [
   { id: "starter",  label: "STARTER",  perak: 100,  bonus: 0,    idr: 800_000   },
   { id: "regular",  label: "REGULAR",  perak: 500,  bonus: 50,   idr: 3_800_000 },
