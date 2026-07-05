@@ -1,0 +1,14 @@
+{
+  "id": "rbac-role-permission-matrix",
+  "name": "RBAC Role/Permission Matrix Template",
+  "version": "1.0.0",
+  "kind": "template",
+  "category": "ops",
+  "description": "Role-Based Access Control framework for multi-tier platforms, featuring role hierarchy, permission matrices, field-level masking, role transitions, audit trails, and testing patterns.",
+  "tags": ["rbac", "permissions", "roles", "access-control", "authorization", "governance"],
+  "compatible_with": ["postgres", "mongodb", "auth0", "supabase"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
