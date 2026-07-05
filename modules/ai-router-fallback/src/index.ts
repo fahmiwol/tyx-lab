@@ -1,1 +1,162 @@
-LyoqCiAqIE11bHRpLXByb3ZpZGVyIEFJIHJvdXRlciB3aXRoIGZhbGxiYWNrIHN0cmF0ZWd5LgogKiBQcmlvcml0eTogR3JvcSAoZnJlZTogMTQ0MDAgcmVxL2RheSkg4oaSIEdlbWluaSAoZnJlZTogMU0gdG9rZW5zL2RheSkg4oaSIE9sbGFtYSAobG9jYWwpIOKGkiBBbnRocm9waWMKICoKICogRWFjaCBwcm92aWRlciBpcyB3cmFwcGVkOyBlcnJvcnMgdHJpZ2dlciBmYWxsYmFjay4KICogVXNhZ2U6CiAqICAgY29uc3QgcmVzdWx0ID0gYXdhaXQgYWlSb3V0ZXIocHJvbXB0LCB7IG1heFRva2VuczogNjAwLCBzeXN0ZW1Qcm9tcHQ6ICcuLi4nIH0pOwogKiAgIGNvbnNvbGUubG9nKHJlc3VsdC50ZXh0LCByZXN1bHQucHJvdmlkZXIpOyAvLyAiaGVsbG8gd29ybGQiLCAiZ3JvcSIKICovCgppbXBvcnQgQW50aHJvcGljIGZyb20gIkBhbnRocm9waWMtYWkvc2RrIjsKaW1wb3J0IHsgR29vZ2xlR2VuQUkgfSBmcm9tICJAZ29vZ2xlL2dlbmFpIjsKCmV4cG9ydCBpbnRlcmZhY2UgQUlSb3V0ZXJPcHRpb25zIHsKICBtYXhUb2tlbnM/OiBudW1iZXI7CiAgdGVtcGVyYXR1cmU/OiBudW1iZXI7CiAgc3lzdGVtUHJvbXB0Pzogc3RyaW5nOwp9CgpleHBvcnQgaW50ZXJmYWNlIEFJUm91dGVyUmVzdWx0IHsKICB0ZXh0OiBzdHJpbmc7CiAgcHJvdmlkZXI6IHN0cmluZzsKICBtb2RlbDogc3RyaW5nOwp9CgovLyDilIDilIDilIAgR1JPUSAoZnJlZTogMTQ0MDAgcmVxL2RheSwgbGxhbWEtMy4xLThiLWluc3RhbnQpIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAphc3luYyBmdW5jdGlvbiBjYWxsR3JvcShwcm9tcHQ6IHN0cmluZywgb3B0czogQUlSb3V0ZXJPcHRpb25zKTogUHJvbWlzZTxzdHJpbmcgfCBudWxsPiB7CiAgdHJ5IHsKICAgIGNvbnN0IGFwaUtleSA9IHByb2Nlc3MuZW52LkdST1FfQVBJX0tFWTsKICAgIGlmICghYXBpS2V5KSByZXR1cm4gbnVsbDsKCiAgICBjb25zdCBtZXNzYWdlczogYW55W10gPSBbXTsKICAgIGlmIChvcHRzLnN5c3RlbVByb21wdCkgbWVzc2FnZXMucHVzaCh7IHJvbGU6ICJzeXN0ZW0iLCBjb250ZW50OiBvcHRzLnN5c3RlbVByb21wdCB9KTsKICAgIG1lc3NhZ2VzLnB1c2goeyByb2xlOiAidXNlciIsIGNvbnRlbnQ6IHByb21wdCB9KTsKCiAgICBjb25zdCByZXMgPSBhd2FpdCBmZXRjaCgiaHR0cHM6Ly9hcGkuZ3JvcS5jb20vb3BlbmFpL3YxL2NoYXQvY29tcGxldGlvbnMiLCB7CiAgICAgIG1ldGhvZDogIlBPU1QiLAogICAgICBoZWFkZXJzOiB7CiAgICAgICAgQXV0aG9yaXphdGlvbjogYEJlYXJlciAke2FwaUtleX1gLAogICAgICAgICJDb250ZW50LVR5cGUiOiAiYXBwbGljYXRpb24vanNvbiIsCiAgICAgIH0sCiAgICAgIGJvZHk6IEpTT04uc3RyaW5naWZ5KHsKICAgICAgICBtb2RlbDogcHJvY2Vzcy5lbnYuR1JPUV9NT0RFTCB8fCAibGxhbWEtMy4xLThiLWluc3RhbnQiLAogICAgICAgIG1lc3NhZ2VzLAogICAgICAgIG1heF90b2tlbnM6IG9wdHMubWF4VG9rZW5zIHx8IDYwMCwKICAgICAgICB0ZW1wZXJhdHVyZTogb3B0cy50ZW1wZXJhdHVyZSA/PyAwLjcsCiAgICAgIH0pLAogICAgICBzaWduYWw6IEFib3J0U2lnbmFsLnRpbWVvdXQoMjAwMDApLAogICAgfSk7CgogICAgaWYgKCFyZXMub2spIHJldHVybiBudWxsOwogICAgY29uc3QgZGF0YTogYW55ID0gYXdhaXQgcmVzLmpzb24oKTsKICAgIHJldHVybiBkYXRhLmNob2ljZXNbMF0/Lm1lc3NhZ2U/LmNvbnRlbnQ/LnRyaW0oKSB8fCBudWxsOwogIH0gY2F0Y2ggewogICAgcmV0dXJuIG51bGw7CiAgfQp9CgovLyDilIDilIDilIAgR0VNSU5JIChmcmVlOiAxTSB0b2tlbi9kYXksIGdlbWluaS0xLjUtZmxhc2gpIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAphc3luYyBmdW5jdGlvbiBjYWxsR2VtaW5pKHByb21wdDogc3RyaW5nLCBvcHRzOiBBSVJvdXRlck9wdGlvbnMpOiBQcm9taXNlPHN0cmluZyB8IG51bGw+IHsKICB0cnkgewogICAgY29uc3QgYXBpS2V5ID0gcHJvY2Vzcy5lbnYuR0VNSU5JX0FQSV9LRVk7CiAgICBpZiAoIWFwaUtleSkgcmV0dXJuIG51bGw7CgogICAgY29uc3QgYWkgPSBuZXcgR29vZ2xlR2VuQUkoeyBhcGlLZXkgfSk7CiAgICBjb25zdCBmdWxsUHJvbXB0ID0gb3B0cy5zeXN0ZW1Qcm9tcHQgPyBgJHtvcHRzLnN5c3RlbVByb21wdH1cblxuJHtwcm9tcHR9YCA6IHByb21wdDsKCiAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGFpLm1vZGVscy5nZW5lcmF0ZUNvbnRlbnQoewogICAgICBtb2RlbDogcHJvY2Vzcy5lbnYuR0VNSU5JX01PREVMIHx8ICJnZW1pbmktMS41LWZsYXNoIiwKICAgICAgY29udGVudHM6IGZ1bGxQcm9tcHQsCiAgICAgIGNvbmZpZzogewogICAgICAgIG1heE91dHB1dFRva2Vuczogb3B0cy5tYXhUb2tlbnMgfHwgNjAwLAogICAgICAgIHRlbXBlcmF0dXJlOiBvcHRzLnRlbXBlcmF0dXJlID8/IDAuNywKICAgICAgfSwKICAgIH0pOwoKICAgIHJldHVybiByZXNwb25zZS50ZXh0Py50cmltKCkgfHwgbnVsbDsKICB9IGNhdGNoIHsKICAgIHJldHVybiBudWxsOwogIH0KfQoKLy8g4pSA4pSA4pSAIE9MTEFNQSAobG9jYWwsIHVubGltaXRlZCkg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSACmFzeW5jIGZ1bmN0aW9uIGNhbGxPbGxhbWEocHJvbXB0OiBzdHJpbmcsIG9wdHM6IEFJUm91dGVyT3B0aW9ucyk6IFByb21pc2U8c3RyaW5nIHwgbnVsbD4gewogIHRyeSB7CiAgICBjb25zdCBiYXNlVXJsID0gcHJvY2Vzcy5lbnYuT0xMQU1BX1VSTCB8fCAiaHR0cDovL2xvY2FsaG9zdDoxMTQzNCI7CiAgICBjb25zdCBtb2RlbCA9IHByb2Nlc3MuZW52Lk9MTEFNQV9NT0RFTCB8fCAibGxhbWEzLjEiOwoKICAgIGNvbnN0IG1lc3NhZ2VzOiBhbnlbXSA9IFtdOwogICAgaWYgKG9wdHMuc3lzdGVtUHJvbXB0KSBtZXNzYWdlcy5wdXNoKHsgcm9sZTogInN5c3RlbSIsIGNvbnRlbnQ6IG9wdHMuc3lzdGVtUHJvbXB0IH0pOwogICAgbWVzc2FnZXMucHVzaCh7IHJvbGU6ICJ1c2VyIiwgY29udGVudDogcHJvbXB0IH0pOwoKICAgIGNvbnN0IHJlcyA9IGF3YWl0IGZldGNoKGAke2Jhc2VVcmx9L2FwaS9jaGF0YCwgewogICAgICBtZXRob2Q6ICJQT1NUIiwKICAgICAgaGVhZGVyczogeyAiQ29udGVudC1UeXBlIjogImFwcGxpY2F0aW9uL2pzb24iIH0sCiAgICAgIGJvZHk6IEpTT04uc3RyaW5naWZ5KHsKICAgICAgICBtb2RlbCwKICAgICAgICBtZXNzYWdlcywKICAgICAgICBzdHJlYW06IGZhbHNlLAogICAgICB9KSwKICAgICAgc2lnbmFsOiBBYm9ydFNpZ25hbC50aW1lb3V0KDMwMDAwKSwKICAgIH0pOwoKICAgIGlmICghcmVzLm9rKSByZXR1cm4gbnVsbDsKICAgIGNvbnN0IGRhdGE6IGFueSA9IGF3YWl0IHJlcy5qc29uKCk7CiAgICByZXR1cm4gZGF0YS5tZXNzYWdlPy5jb250ZW50Py50cmltKCkgfHwgbnVsbDsKICB9IGNhdGNoIHsKICAgIHJldHVybiBudWxsOwogIH0KfQoKLy8g4pSA4pSA4pSAIEFOVEhST1BJQyAocGFpZCwgZmFsbGJhY2spIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAphc3luYyBmdW5jdGlvbiBjYWxsQW50aHJvcGljKHByb21wdDogc3RyaW5nLCBvcHRzOiBBSVJvdXRlck9wdGlvbnMpOiBQcm9taXNlPHN0cmluZyB8IG51bGw+IHsKICB0cnkgewogICAgY29uc3QgYXBpS2V5ID0gcHJvY2Vzcy5lbnYuQU5USFJPUElDX0FQSV9LRVk7CiAgICBpZiAoIWFwaUtleSkgcmV0dXJuIG51bGw7CgogICAgY29uc3QgY2xpZW50ID0gbmV3IEFudGhyb3BpYyh7IGFwaUtleSB9KTsKCiAgICBjb25zdCBzeXN0ZW1Qcm9tcHQgPSBvcHRzLnN5c3RlbVByb21wdCB8fCAiWW91IGFyZSBhIGhlbHBmdWwgYXNzaXN0YW50LiI7CiAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGNsaWVudC5tZXNzYWdlcy5jcmVhdGUoewogICAgICBtb2RlbDogcHJvY2Vzcy5lbnYuQU5USFJPUElDX01PREVMIHx8ICJjbGF1ZGUtMy01LXNvbm5ldC0yMDI0MTAyMiIsCiAgICAgIG1heF90b2tlbnM6IG9wdHMubWF4VG9rZW5zIHx8IDYwMCwKICAgICAgc3lzdGVtOiBzeXN0ZW1Qcm9tcHQsCiAgICAgIG1lc3NhZ2VzOiBbeyByb2xlOiAidXNlciIsIGNvbnRlbnQ6IHByb21wdCB9XSwKICAgICAgdGVtcGVyYXR1cmU6IG9wdHMudGVtcGVyYXR1cmUgPz8gMC43LAogICAgfSk7CgogICAgcmV0dXJuIHJlc3BvbnNlLmNvbnRlbnRbMF0/LnR5cGUgPT09ICJ0ZXh0IiA/IHJlc3BvbnNlLmNvbnRlbnRbMF0udGV4dC50cmltKCkgOiBudWxsOwogIH0gY2F0Y2ggewogICAgcmV0dXJuIG51bGw7CiAgfQp9CgovKioKICogUm91dGUgdG8gZmlyc3QgYXZhaWxhYmxlIHByb3ZpZGVyIGluIHByaW9yaXR5IG9yZGVyLgogKiBUaHJvd3MgaWYgYWxsIHByb3ZpZGVycyBmYWlsIG9yIG5vIEFQSSBrZXlzIGNvbmZpZ3VyZWQuCiAqLwpleHBvcnQgYXN5bmMgZnVuY3Rpb24gYWlSb3V0ZXIoCiAgcHJvbXB0OiBzdHJpbmcsCiAgb3B0czogQUlSb3V0ZXJPcHRpb25zID0ge30KKTogUHJvbWlzZTxBSVJvdXRlclJlc3VsdD4gewogIGNvbnN0IGF0dGVtcHRzID0gWwogICAgeyBuYW1lOiAiZ3JvcSIsIGZuOiBjYWxsR3JvcSB9LAogICAgeyBuYW1lOiAiZ2VtaW5pIiwgZm46IGNhbGxHZW1pbmkgfSwKICAgIHsgbmFtZTogIm9sbGFtYSIsIGZuOiBjYWxsT2xsYW1hIH0sCiAgICB7IG5hbWU6ICJhbnRocm9waWMiLCBmbjogY2FsbEFudGhyb3BpYyB9LAogIF07CgogIGZvciAoY29uc3QgeyBuYW1lLCBmbiB9IG9mIGF0dGVtcHRzKSB7CiAgICBjb25zdCByZXN1bHQgPSBhd2FpdCBmbihwcm9tcHQsIG9wdHMpOwogICAgaWYgKHJlc3VsdCkgewogICAgICByZXR1cm4gewogICAgICAgIHRleHQ6IHJlc3VsdCwKICAgICAgICBwcm92aWRlcjogbmFtZSwKICAgICAgICBtb2RlbDogcHJvY2Vzcy5lbnZbYCR7bmFtZS50b1VwcGVyQ2FzZSgpfV9NT0RFTGBdIHx8IGBkZWZhdWx0LSR7bmFtZX1gLAogICAgICB9OwogICAgfQogIH0KCiAgdGhyb3cgbmV3IEVycm9yKCJBbGwgQUkgcHJvdmlkZXJzIGZhaWxlZCBvciBub3QgY29uZmlndXJlZCIpOwp9Cg==
+/**
+ * Multi-provider AI router with fallback strategy.
+ * Priority: Groq (free: 14400 req/day) → Gemini (free: 1M tokens/day) → Ollama (local) → Anthropic
+ *
+ * Each provider is wrapped; errors trigger fallback.
+ * Usage:
+ *   const result = await aiRouter(prompt, { maxTokens: 600, systemPrompt: '...' });
+ *   console.log(result.text, result.provider); // "hello world", "groq"
+ */
+
+import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenAI } from "@google/genai";
+
+export interface AIRouterOptions {
+  maxTokens?: number;
+  temperature?: number;
+  systemPrompt?: string;
+}
+
+export interface AIRouterResult {
+  text: string;
+  provider: string;
+  model: string;
+}
+
+// ─── GROQ (free: 14400 req/day, llama-3.1-8b-instant) ───────────────────────
+async function callGroq(prompt: string, opts: AIRouterOptions): Promise<string | null> {
+  try {
+    const apiKey = process.env.GROQ_API_KEY;
+    if (!apiKey) return null;
+
+    const messages: any[] = [];
+    if (opts.systemPrompt) messages.push({ role: "system", content: opts.systemPrompt });
+    messages.push({ role: "user", content: prompt });
+
+    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: process.env.GROQ_MODEL || "llama-3.1-8b-instant",
+        messages,
+        max_tokens: opts.maxTokens || 600,
+        temperature: opts.temperature ?? 0.7,
+      }),
+      signal: AbortSignal.timeout(20000),
+    });
+
+    if (!res.ok) return null;
+    const data: any = await res.json();
+    return data.choices[0]?.message?.content?.trim() || null;
+  } catch {
+    return null;
+  }
+}
+
+// ─── GEMINI (free: 1M token/day, gemini-1.5-flash) ─────────────────────────
+async function callGemini(prompt: string, opts: AIRouterOptions): Promise<string | null> {
+  try {
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) return null;
+
+    const ai = new GoogleGenAI({ apiKey });
+    const fullPrompt = opts.systemPrompt ? `${opts.systemPrompt}\n\n${prompt}` : prompt;
+
+    const response = await ai.models.generateContent({
+      model: process.env.GEMINI_MODEL || "gemini-1.5-flash",
+      contents: fullPrompt,
+      config: {
+        maxOutputTokens: opts.maxTokens || 600,
+        temperature: opts.temperature ?? 0.7,
+      },
+    });
+
+    return response.text?.trim() || null;
+  } catch {
+    return null;
+  }
+}
+
+// ─── OLLAMA (local, unlimited) ──────────────────────────────────────────────
+async function callOllama(prompt: string, opts: AIRouterOptions): Promise<string | null> {
+  try {
+    const baseUrl = process.env.OLLAMA_URL || "http://localhost:11434";
+    const model = process.env.OLLAMA_MODEL || "llama3.1";
+
+    const messages: any[] = [];
+    if (opts.systemPrompt) messages.push({ role: "system", content: opts.systemPrompt });
+    messages.push({ role: "user", content: prompt });
+
+    const res = await fetch(`${baseUrl}/api/chat`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model,
+        messages,
+        stream: false,
+      }),
+      signal: AbortSignal.timeout(30000),
+    });
+
+    if (!res.ok) return null;
+    const data: any = await res.json();
+    return data.message?.content?.trim() || null;
+  } catch {
+    return null;
+  }
+}
+
+// ─── ANTHROPIC (paid, fallback) ──────────────────────────────────────────────
+async function callAnthropic(prompt: string, opts: AIRouterOptions): Promise<string | null> {
+  try {
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+    if (!apiKey) return null;
+
+    const client = new Anthropic({ apiKey });
+
+    const systemPrompt = opts.systemPrompt || "You are a helpful assistant.";
+    const response = await client.messages.create({
+      model: process.env.ANTHROPIC_MODEL || "claude-3-5-sonnet-20241022",
+      max_tokens: opts.maxTokens || 600,
+      system: systemPrompt,
+      messages: [{ role: "user", content: prompt }],
+      temperature: opts.temperature ?? 0.7,
+    });
+
+    return response.content[0]?.type === "text" ? response.content[0].text.trim() : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Route to first available provider in priority order.
+ * Throws if all providers fail or no API keys configured.
+ */
+export async function aiRouter(
+  prompt: string,
+  opts: AIRouterOptions = {}
+): Promise<AIRouterResult> {
+  const attempts = [
+    { name: "groq", fn: callGroq },
+    { name: "gemini", fn: callGemini },
+    { name: "ollama", fn: callOllama },
+    { name: "anthropic", fn: callAnthropic },
+  ];
+
+  for (const { name, fn } of attempts) {
+    const result = await fn(prompt, opts);
+    if (result) {
+      return {
+        text: result,
+        provider: name,
+        model: process.env[`${name.toUpperCase()}_MODEL`] || `default-${name}`,
+      };
+    }
+  }
+
+  throw new Error("All AI providers failed or not configured");
+}
