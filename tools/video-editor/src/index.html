@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mighan Design Studio — Video Editor</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d0d0f; --surface: #16181c; --border: #2a2d35;
+      --accent: #6c63ff; --accent2: #00d4aa; --text: #e8eaf0; --muted: #6b7280;
+      --danger: #ff4757; --success: #2ed573;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
+    header {
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 12px 24px; display: flex; align-items: center; gap: 16px;
+    }
+    header .logo { font-size: 18px; font-weight: 700; }
+    header .logo span { color: var(--accent); }
+    header .back-btn { margin-left: auto; background: var(--border); border: none; border-radius: 8px; color: var(--text); cursor: pointer; padding: 8px 16px; font-size: 13px; text-decoration: none; display: inline-block; }
+    header .back-btn:hover { background: var(--accent); }
+
+    .workspace { flex: 1; display: grid; grid-template-columns: 260px 1fr 280px; gap: 1px; background: var(--border); }
+    @media (max-width: 1000px) { .workspace { grid-template-columns: 200px 1fr; } .right-panel { display: none; } }
+
+    .panel { background: var(--bg); padding: 16px; overflow-y: auto; }
+    .panel h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 12px; }
+
+    .tool-btn {
+      width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text); font-size: 13px; cursor: pointer;
+      margin-bottom: 8px; text-align: left; display: flex; align-items: center; gap: 8px;
+    }
+    .tool-btn:hover { border-color: var(--accent); }
+    .tool-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    .preview-area {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: #000; border-radius: 12px; aspect-ratio: 16/9; margin-bottom: 16px;
+      position: relative; overflow: hidden;
+    }
+    .preview-area video, .preview-area canvas { width: 100%; height: 100%; object-fit: contain; }
+    .preview-placeholder { color: var(--muted); font-size: 14px; text-align: center; }
+
+    .timeline {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+      height: 160px; padding: 10px; position: relative; overflow-x: auto;
+    }
+    .timeline-ruler { height: 20px; border-bottom: 1px solid var(--border); margin-bottom: 8px; display: flex; }
+    .timeline-track {
+      height: 36px; background: rgba(108,99,255,0.08); border-radius: 6px;
+      margin-bottom: 6px; position: relative; border: 1px dashed var(--border);
+    }
+    .timeline-clip {
+      position: absolute; top: 2px; bottom: 2px; left: 20px; width: 120px;
+      background: var(--accent); border-radius: 4px; font-size: 10px;
+      display: flex; align-items: center; padding: 0 8px; color: #fff; cursor: move;
+    }
+    .timeline-cursor {
+      position: absolute; top: 0; bottom: 0; width: 2px; background: var(--danger);
+      pointer-events: none;
+    }
+
+    .prop-row { margin-bottom: 14px; }
+    .prop-row label { display: block; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+    .prop-row input, .prop-row select {
+      width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text); font-size: 13px;
+    }
+    .prop-row input:focus, .prop-row select:focus { outline: none; border-color: var(--accent); }
+
+    .action-bar {
+      display: flex; gap: 8px; margin-top: auto; padding-top: 12px;
+    }
+    .btn {
+      flex: 1; padding: 10px; border-radius: 8px; border: none;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    .btn:hover { opacity: 0.9; }
+
+    .toast {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      background: var(--surface); border: 1px solid var(--border); color: var(--text);
+      padding: 10px 20px; border-radius: 10px; font-size: 13px; z-index: 9999; display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Mighan<span>Studio</span> — Video Editor</div>
+    <a class="back-btn" href="index.html">← Kembali</a>
+  </header>
+
+  <div class="workspace">
+    <div class="panel left-panel">
+      <h3>🧰 Tools</h3>
+      <button class="tool-btn active" data-tool="select">↖️ Select</button>
+      <button class="tool-btn" data-tool="trim">✂️ Trim</button>
+      <button class="tool-btn" data-tool="text">📝 Text Overlay</button>
+      <button class="tool-btn" data-tool="merge">🔗 Merge</button>
+      <button class="tool-btn" data-tool="audio">🔊 Audio</button>
+
+      <h3 style="margin-top:18px">📁 Media</h3>
+      <button class="tool-btn" id="btn-import">➕ Import Video</button>
+      <input type="file" id="import-input" accept="video/*" style="display:none">
+      <div id="media-list" style="margin-top:8px"></div>
+    </div>
+
+    <div class="panel center-panel">
+      <div class="preview-area" id="preview">
+        <div class="preview-placeholder">
+          <div style="font-size:36px;margin-bottom:8px">🎬</div>
+          Import video untuk mulai editing
+        </div>
+      </div>
+      <div class="timeline" id="timeline">
+        <div class="timeline-ruler"></div>
+        <div class="timeline-track" data-track="video">
+          <div class="timeline-cursor" style="left:0%"></div>
+        </div>
+        <div class="timeline-track" data-track="audio"></div>
+        <div class="timeline-track" data-track="text"></div>
+      </div>
+    </div>
+
+    <div class="panel right-panel">
+      <h3>⚙️ Properties</h3>
+      <div id="prop-panel">
+        <div class="prop-row">
+          <label>Project Name</label>
+          <input type="text" id="proj-name" value="Project-1">
+        </div>
+        <div class="prop-row" id="trim-props" style="display:none">
+          <label>Trim Start (s)</label>
+          <input type="number" id="trim-start" value="0" min="0" step="0.5">
+          <label style="margin-top:8px">Trim End (s)</label>
+          <input type="number" id="trim-end" value="5" min="0" step="0.5">
+          <button class="btn btn-primary" style="margin-top:10px" id="btn-trim-apply">Apply Trim</button>
+        </div>
+        <div class="prop-row" id="text-props" style="display:none">
+          <label>Text</label>
+          <input type="text" id="text-val" placeholder="Hello World">
+          <label style="margin-top:8px">X Position</label>
+          <input type="number" id="text-x" value="50">
+          <label style="margin-top:8px">Y Position</label>
+          <input type="number" id="text-y" value="50">
+          <button class="btn btn-primary" style="margin-top:10px" id="btn-text-apply">Apply Text</button>
+        </div>
+        <div class="prop-row">
+          <label>Duration</label>
+          <input type="text" id="dur-display" value="0.0s" readonly>
+        </div>
+      </div>
+      <div class="action-bar">
+        <button class="btn btn-secondary" id="btn-preview">▶ Preview</button>
+        <button class="btn btn-primary" id="btn-export">Export</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script type="module">
+    import { skillLoader } from '../src/skills/skill-loader.js';
+
+    const preview = document.getElementById('preview');
+    const importBtn = document.getElementById('btn-import');
+    const importInput = document.getElementById('import-input');
+    const mediaList = document.getElementById('media-list');
+    const toast = document.getElementById('toast');
+    let project = null;
+    let currentVideo = null;
+
+    importBtn.onclick = () => importInput.click();
+    importInput.onchange = (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      addMedia(file);
+    };
+
+    async function addMedia(file) {
+      await skillLoader.init();
+      await skillLoader.loadSkills(['video-editor']);
+      const skill = skillLoader.loaded.get('video-editor');
+      if (!project) project = skill.createProject(document.getElementById('proj-name').value);
+
+      const url = URL.createObjectURL(file);
+      currentVideo = document.createElement('video');
+      currentVideo.src = url;
+      currentVideo.controls = true;
+      preview.innerHTML = '';
+      preview.appendChild(currentVideo);
+
+      const item = document.createElement('div');
+      item.style.cssText = 'padding:8px;border-radius:6px;background:var(--surface);border:1px solid var(--border);font-size:12px;margin-bottom:6px;cursor:pointer';
+      item.textContent = file.name;
+      item.onclick = () => { currentVideo.src = url; currentVideo.play(); };
+      mediaList.appendChild(item);
+
+      skill.addTrack(project.id, { type: 'video', src: url, start: 0, duration: 5 });
+      document.getElementById('dur-display').value = project.duration + 's';
+      showToast('Imported: ' + file.name);
+    }
+
+    let activeTool = 'select';
+    document.querySelectorAll('.tool-btn[data-tool]').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.tool-btn[data-tool]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeTool = btn.dataset.tool;
+        document.getElementById('trim-props').style.display = activeTool === 'trim' ? 'block' : 'none';
+        document.getElementById('text-props').style.display = activeTool === 'text' ? 'block' : 'none';
+      };
+    });
+
+    document.getElementById('btn-trim-apply').onclick = async () => {
+      if (!currentVideo?.src) { showToast('Import video dulu'); return; }
+      const start = parseFloat(document.getElementById('trim-start').value) || 0;
+      const end = parseFloat(document.getElementById('trim-end').value) || 5;
+      showToast('Trimming...');
+      try {
+        await skillLoader.init();
+        await skillLoader.loadSkills(['video-editor']);
+        const skill = skillLoader.loaded.get('video-editor');
+        const response = await fetch(currentVideo.src);
+        const blob = await response.blob();
+        const trimmed = await skill.trim(blob, start, end);
+        const url = URL.createObjectURL(trimmed);
+        currentVideo.src = url;
+        currentVideo.play();
+        showToast('Trim selesai!');
+      } catch (e) { showToast('Trim error: ' + e.message); }
+    };
+
+    document.getElementById('btn-text-apply').onclick = async () => {
+      if (!currentVideo?.src) { showToast('Import video dulu'); return; }
+      const text = document.getElementById('text-val').value || 'Hello';
+      const x = parseInt(document.getElementById('text-x').value) || 50;
+      const y = parseInt(document.getElementById('text-y').value) || 50;
+      showToast('Adding text...');
+      try {
+        await skillLoader.init();
+        await skillLoader.loadSkills(['video-editor']);
+        const skill = skillLoader.loaded.get('video-editor');
+        const response = await fetch(currentVideo.src);
+        const blob = await response.blob();
+        const overlayed = await skill.addTextOverlay(blob, text, { x, y, font: '48px sans-serif' });
+        const url = URL.createObjectURL(overlayed);
+        currentVideo.src = url;
+        currentVideo.play();
+        showToast('Text overlay selesai!');
+      } catch (e) { showToast('Text error: ' + e.message); }
+    };
+
+    document.getElementById('btn-export').onclick = async () => {
+      if (!project) { showToast('Tidak ada project'); return; }
+      await skillLoader.init();
+      await skillLoader.loadSkills(['video-editor']);
+      const skill = skillLoader.loaded.get('video-editor');
+      const res = await skill.exportProject(project.id);
+      showToast(res.note || 'Exported');
+    };
+
+    function showToast(msg) {
+      toast.textContent = msg; toast.style.display = 'block';
+      setTimeout(() => toast.style.display = 'none', 3000);
+    }
+  </script>
+</body>
+</html>
