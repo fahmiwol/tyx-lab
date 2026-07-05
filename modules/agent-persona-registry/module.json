@@ -1,0 +1,15 @@
+{
+  "id": "agent-persona-registry",
+  "name": "Agent Persona Registry",
+  "version": "1.0.0",
+  "category": "ai",
+  "description": "Unified schema for registering NPC identities, personalities, skills, and role mappings in multi-agent systems.",
+  "input": ["agent-config-object"],
+  "output": ["registered-agent-entity"],
+  "tags": ["agent", "persona", "registry", "identity", "skill-assignment", "npc"],
+  "compatible_with": ["tools-catalogue-schema", "skill-registry-contract"],
+  "used_in_recipes": ["agent-world-orchestration"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
