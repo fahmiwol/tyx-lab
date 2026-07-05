@@ -1,0 +1,21 @@
+{
+  "id": "astar-tilemap-pathfinder",
+  "name": "A* Tilemap Pathfinder",
+  "version": "1.0.0",
+  "category": "3d",
+  "description": "Classic A* pathfinding algorithm for orthogonal tile grids. Supports 4 or 8-direction movement, configurable heuristics (Manhattan/Euclidean), and iteration limits. Returns shortest walkable path or empty array if unreachable.",
+  "input": [
+    { "name": "tileMap", "type": "Object", "description": "Map object with isWalkable(x, y) method" },
+    { "name": "startX, startY", "type": "number", "description": "Starting tile coordinates" },
+    { "name": "goalX, goalY", "type": "number", "description": "Destination tile coordinates" }
+  ],
+  "output": [
+    { "name": "path", "type": "Array<[number, number]>", "description": "Array of [x, y] tiles from start to goal" }
+  ],
+  "tags": ["3d", "game-dev", "ai", "pathfinding", "tilemap", "algorithm"],
+  "compatible_with": ["browser", "nodejs", "typescript", "game-engines"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
