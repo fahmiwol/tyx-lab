@@ -1,1 +1,181 @@
-IyBQYXNzd29yZCBIYXNoaW5nIHdpdGggU2NyeXB0CgpOYXRpdmUgTm9kZS5qcyBwYXNzd29yZCBoYXNoaW5nIHZpYSBzY3J5cHQuIE5vIGV4dGVybmFsIGRlcGVuZGVuY2llcy4gVGltaW5nLXNhZmUgdmVyaWZpY2F0aW9uLgoKIyMgV2h5CgotICoqTm8gZXh0ZXJuYWwgZGVwcyoqOiBVc2VzIE5vZGUuanMgYnVpbHQtaW4gYGNyeXB0b2AgbW9kdWxlCi0gKipTY3J5cHQgb3ZlciBiY3J5cHQqKjogRmFzdGVyIGluIHByb2R1Y3Rpb24sIHN0aWxsIG1lbW9yeS1oYXJkCi0gKipUaW1pbmctc2FmZSoqOiBQcm90ZWN0aW9uIGFnYWluc3QgdGltaW5nIGF0dGFja3MKLSAqKlNpbXBsZSBmb3JtYXQqKjogYHNhbHQ6a2V5YCBoZXggc3RyaW5nLCBlYXN5IHRvIHN0b3JlIGluIERCCgojIyBVc2FnZQoKYGBgdHlwZXNjcmlwdAppbXBvcnQgeyBoYXNoUGFzc3dvcmQsIHZlcmlmeVBhc3N3b3JkIH0gZnJvbSAnQC9saWIvcGFzc3dvcmQtc2NyeXB0LWhhc2gnOwoKLy8gUmVnaXN0cmF0aW9uCmNvbnN0IHBhc3N3b3JkID0gJ015U2VjdXJlUGFzc3dvcmQxMjMhJzsKY29uc3QgaGFzaCA9IGhhc2hQYXNzd29yZChwYXNzd29yZCk7Ci8vIOKGkiAnYTFiMmMzZDRlNWY2Li4uLjo5ZjhlN2Q2YzViNGEzLi4uLicKCi8vIFN0b3JlIGhhc2ggaW4gREIKZGIucHJlcGFyZSgnVVBEQVRFIHVzZXJzIFNFVCBwYXNzd29yZF9oYXNoID0gPyBXSEVSRSBpZCA9ID8nKQogIC5ydW4oaGFzaCwgdXNlcklkKTsKCi8vIExvZ2luOiB2ZXJpZnkKY29uc3Qgc3RvcmVkSGFzaCA9IGRiLnByZXBhcmUoJ1NFTEVDVCBwYXNzd29yZF9oYXNoIEZST00gdXNlcnMgV0hFUkUgaWQgPSA/JykuZ2V0KHVzZXJJZCkucGFzc3dvcmRfaGFzaDsKY29uc3Qgb2sgPSB2ZXJpZnlQYXNzd29yZChwYXNzd29yZCwgc3RvcmVkSGFzaCk7Ci8vIOKGkiB0cnVlIG9yIGZhbHNlCmBgYAoKIyMgSG93IEl0IFdvcmtzCgoxLiAqKkhhc2gqKjogUmFuZG9tIDE2LWJ5dGUgc2FsdCArIHNjcnlwdFN5bmMocGFzc3dvcmQsIHNhbHQsIDY0IGJ5dGVzKQoyLiAqKk91dHB1dCoqOiBIZXgtZW5jb2RlZCBzYWx0IGFuZCBrZXksIHNlcGFyYXRlZCBieSBgOmAKMy4gKipWZXJpZnkqKjogU3BsaXQgc3RvcmVkIGhhc2gsIHJlLWRlcml2ZSB3aXRoIHByb3ZpZGVkIHBhc3N3b3JkLCBjb21wYXJlIHRpbWluZy1zYWZlbHkKCkVhY2ggaGFzaCBpcyB1bmlxdWUgKHJhbmRvbSBzYWx0KSBldmVuIGZvciBzYW1lIHBhc3N3b3JkLgoKIyMgRGF0YWJhc2UgU2NoZW1hCgpgYGBzcWwKQ1JFQVRFIFRBQkxFIHVzZXJzICgKICBpZCBURVhUIFBSSU1BUlkgS0VZLAogIGVtYWlsIFRFWFQgTk9UIE5VTEwgVU5JUVVFLAogIHBhc3N3b3JkX2hhc2ggVEVYVCBOT1QgTlVMTCwKICBjcmVhdGVkX2F0IERBVEVUSU1FIERFRkFVTFQgQ1VSUkVOVF9USU1FU1RBTVAKKTsKYGBgCgojIyBSZWdpc3RyYXRpb24gRXhhbXBsZQoKYGBgdHlwZXNjcmlwdAppbXBvcnQgeyBoYXNoUGFzc3dvcmQgfSBmcm9tICdAL2xpYi9wYXNzd29yZC1zY3J5cHQtaGFzaCc7CgpleHBvcnQgYXN5bmMgZnVuY3Rpb24gUE9TVChyZXF1ZXN0OiBSZXF1ZXN0KSB7CiAgY29uc3QgeyBlbWFpbCwgcGFzc3dvcmQgfSA9IGF3YWl0IHJlcXVlc3QuanNvbigpOwoKICAvLyBWYWxpZGF0ZQogIGlmIChwYXNzd29yZC5sZW5ndGggPCA4KSB7CiAgICByZXR1cm4gUmVzcG9uc2UuanNvbigKICAgICAgeyBlcnJvcjogJ1Bhc3N3b3JkIHRvbyBzaG9ydCcgfSwKICAgICAgeyBzdGF0dXM6IDQwMCB9CiAgICApOwogIH0KCiAgY29uc3QgZGIgPSBnZXREYigpOwoKICAvLyBDaGVjayBpZiB1c2VyIGV4aXN0cwogIGNvbnN0IGV4aXN0aW5nID0gZGIKICAgIC5wcmVwYXJlKCdTRUxFQ1QgaWQgRlJPTSB1c2VycyBXSEVSRSBlbWFpbCA9ID8nKQogICAgLmdldChlbWFpbCk7CgogIGlmIChleGlzdGluZykgewogICAgcmV0dXJuIFJlc3BvbnNlLmpzb24oCiAgICAgIHsgZXJyb3I6ICdFbWFpbCBhbHJlYWR5IHJlZ2lzdGVyZWQnIH0sCiAgICAgIHsgc3RhdHVzOiA0MDkgfQogICAgKTsKICB9CgogIC8vIEhhc2ggYW5kIHN0b3JlCiAgY29uc3QgaGFzaCA9IGhhc2hQYXNzd29yZChwYXNzd29yZCk7CiAgY29uc3QgdXNlcklkID0gY3J5cHRvLnJhbmRvbVVVSUQoKTsKCiAgZGIucHJlcGFyZSgKICAgICdJTlNFUlQgSU5UTyB1c2VycyAoaWQsIGVtYWlsLCBwYXNzd29yZF9oYXNoKSBWQUxVRVMgKD8sID8sID8pJwogICkucnVuKHVzZXJJZCwgZW1haWwsIGhhc2gpOwoKICByZXR1cm4gUmVzcG9uc2UuanNvbih7IG9rOiB0cnVlLCB1c2VySWQgfSk7Cn0KYGBgCgojIyBMb2dpbiBFeGFtcGxlCgpgYGB0eXBlc2NyaXB0CmltcG9ydCB7IHZlcmlmeVBhc3N3b3JkIH0gZnJvbSAnQC9saWIvcGFzc3dvcmQtc2NyeXB0LWhhc2gnOwoKZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIFBPU1QocmVxdWVzdDogUmVxdWVzdCkgewogIGNvbnN0IHsgZW1haWwsIHBhc3N3b3JkIH0gPSBhd2FpdCByZXF1ZXN0Lmpzb24oKTsKCiAgY29uc3QgZGIgPSBnZXREYigpOwogIGNvbnN0IHVzZXIgPSBkYgogICAgLnByZXBhcmUoJ1NFTEVDVCBpZCwgcGFzc3dvcmRfaGFzaCBGUk9NIHVzZXJzIFdIRVJFIGVtYWlsID0gPycpCiAgICAuZ2V0KGVtYWlsKSBhcyB7IGlkOiBzdHJpbmc7IHBhc3N3b3JkX2hhc2g6IHN0cmluZyB9IHwgdW5kZWZpbmVkOwoKICBpZiAoIXVzZXIpIHsKICAgIHJldHVybiBSZXNwb25zZS5qc29uKAogICAgICB7IGVycm9yOiAnSW52YWxpZCBlbWFpbCBvciBwYXNzd29yZCcgfSwKICAgICAgeyBzdGF0dXM6IDQwMSB9CiAgICApOwogIH0KCiAgLy8gVmVyaWZ5IHBhc3N3b3JkCiAgaWYgKCF2ZXJpZnlQYXNzd29yZChwYXNzd29yZCwgdXNlci5wYXNzd29yZF9oYXNoKSkgewogICAgcmV0dXJuIFJlc3BvbnNlLmpzb24oCiAgICAgIHsgZXJyb3I6ICdJbnZhbGlkIGVtYWlsIG9yIHBhc3N3b3JkJyB9LAogICAgICB7IHN0YXR1czogNDAxIH0KICAgICk7CiAgfQoKICAvLyBDcmVhdGUgc2Vzc2lvbiAvIEpXVAogIGNvbnN0IHRva2VuID0gY3JlYXRlU2Vzc2lvblRva2VuKHVzZXIuaWQpOwoKICByZXR1cm4gUmVzcG9uc2UuanNvbih7IG9rOiB0cnVlLCB0b2tlbiB9KTsKfQpgYGAKCiMjIFBhc3N3b3JkIFJlc2V0IEZsb3cKCmBgYHR5cGVzY3JpcHQKaW1wb3J0IHsgaGFzaFBhc3N3b3JkIH0gZnJvbSAnQC9saWIvcGFzc3dvcmQtc2NyeXB0LWhhc2gnOwoKZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIFBPU1QocmVxdWVzdDogUmVxdWVzdCkgewogIGNvbnN0IHsgdXNlcklkLCBuZXdQYXNzd29yZCB9ID0gYXdhaXQgcmVxdWVzdC5qc29uKCk7CgogIC8vIFZhbGlkYXRlCiAgaWYgKG5ld1Bhc3N3b3JkLmxlbmd0aCA8IDgpIHsKICAgIHJldHVybiBSZXNwb25zZS5qc29uKHsgZXJyb3I6ICdQYXNzd29yZCB0b28gc2hvcnQnIH0sIHsgc3RhdHVzOiA0MDAgfSk7CiAgfQoKICAvLyBIYXNoIGFuZCB1cGRhdGUKICBjb25zdCBoYXNoID0gaGFzaFBhc3N3b3JkKG5ld1Bhc3N3b3JkKTsKICBjb25zdCBkYiA9IGdldERiKCk7CgogIGRiLnByZXBhcmUoJ1VQREFURSB1c2VycyBTRVQgcGFzc3dvcmRfaGFzaCA9ID8gV0hFUkUgaWQgPSA/JykKICAgIC5ydW4oaGFzaCwgdXNlcklkKTsKCiAgcmV0dXJuIFJlc3BvbnNlLmpzb24oeyBvazogdHJ1ZSB9KTsKfQpgYGAKCiMjIFNjcnlwdCB2cyBCY3J5cHQKCnwgQXNwZWN0IHwgU2NyeXB0IHwgQmNyeXB0IHwKfC0tLS0tLS0tfC0tLS0tLS0tfC0tLS0tLS0tfAp8IFNwZWVkIHwgRmFzdCAobXMpIHwgU2xvdyAoaW50ZW50aW9uYWwsIDEwMG1zKykgfAp8IE1lbW9yeSB8IFllcyAobWVtb3J5LWhhcmQpIHwgTm8gfAp8IEJ1aWx0LWluIHwgTm9kZS5qcyBgY3J5cHRvYCB8IEV4dGVybmFsIGRlcGVuZGVuY3kgfAp8IFVzZSBjYXNlIHwgR2VuZXJhbCBhdXRoIHwgRGVmZW5zZSBhZ2FpbnN0IEdQVSBhdHRhY2tzIHwKCkZvciB0eXBpY2FsIFNhYVM6IHNjcnlwdCBpcyBzdWZmaWNpZW50IGFuZCBmYXN0ZXIuIEJjcnlwdCBpcyBtb3JlIGRlZmVuc2libGUgYWdhaW5zdCBzcGVjaWFsaXplZCBoYXJkd2FyZS4KCiMjIFNlY3VyaXR5IE5vdGVzCgotICoqVGltaW5nLXNhZmUqKjogQ29tcGFyaXNvbiB1c2VzIGB0aW1pbmdTYWZlRXF1YWxgIHRvIHByZXZlbnQgdGltaW5nIGxlYWtzCi0gKipSYW5kb20gc2FsdCoqOiBFdmVyeSBoYXNoIHVuaXF1ZSwgc2FmZSBldmVuIGlmIERCIGxlYWtlZAotICoqTm8gcGVwcGVycyoqOiBTYWx0IGlzIHN1ZmZpY2llbnQ7IG5vIG5lZWQgZm9yIGFwcC1sZXZlbCBwZXBwZXIKLSAqKlNjcnlwdCBwYXJhbXMqKjogMTYtYnl0ZSBzYWx0LCA2NC1ieXRlIGtleSAoaW5kdXN0cnkgc3RhbmRhcmQpCi0gKipQYXNzd29yZCB2YWxpZGF0aW9uKio6IEVuZm9yY2UgbWluIGxlbmd0aCAoOCsgY2hhcnMpIGF0IGFwcGxpY2F0aW9uIGxldmVsCgojIyBIYXNoIEZvcm1hdAoKYGBgCmExYjJjM2Q0ZTVmNmc3aDhpOWowazFsMm0zbjRvNXA2OjlmOGU3ZDZjNWI0YTMyOTE4MjczNjQuLi4KIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCDilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJgKICAgICAgICAgMTYtYnl0ZSBzYWx0IChoZXgpICAgICAgICA2NC1ieXRlIGtleSAoaGV4KQpgYGAKCkNvbG9uIHNlcGFyYXRvciBpcyB1bmFtYmlndW91cyAoaGV4IGNoYXJzIGFyZSAwLTlhLWYpLgoKKk9wZW4gc291cmNlIOKAlCB1c2UgaXQgd2lzZWx5LioK
+# Password Hashing with Scrypt
+
+Native Node.js password hashing via scrypt. No external dependencies. Timing-safe verification.
+
+## Why
+
+- **No external deps**: Uses Node.js built-in `crypto` module
+- **Scrypt over bcrypt**: Faster in production, still memory-hard
+- **Timing-safe**: Protection against timing attacks
+- **Simple format**: `salt:key` hex string, easy to store in DB
+
+## Usage
+
+```typescript
+import { hashPassword, verifyPassword } from '@/lib/password-scrypt-hash';
+
+// Registration
+const password = 'MySecurePassword123!';
+const hash = hashPassword(password);
+// → 'a1b2c3d4e5f6....:9f8e7d6c5b4a3....'
+
+// Store hash in DB
+db.prepare('UPDATE users SET password_hash = ? WHERE id = ?')
+  .run(hash, userId);
+
+// Login: verify
+const storedHash = db.prepare('SELECT password_hash FROM users WHERE id = ?').get(userId).password_hash;
+const ok = verifyPassword(password, storedHash);
+// → true or false
+```
+
+## How It Works
+
+1. **Hash**: Random 16-byte salt + scryptSync(password, salt, 64 bytes)
+2. **Output**: Hex-encoded salt and key, separated by `:`
+3. **Verify**: Split stored hash, re-derive with provided password, compare timing-safely
+
+Each hash is unique (random salt) even for same password.
+
+## Database Schema
+
+```sql
+CREATE TABLE users (
+  id TEXT PRIMARY KEY,
+  email TEXT NOT NULL UNIQUE,
+  password_hash TEXT NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+## Registration Example
+
+```typescript
+import { hashPassword } from '@/lib/password-scrypt-hash';
+
+export async function POST(request: Request) {
+  const { email, password } = await request.json();
+
+  // Validate
+  if (password.length < 8) {
+    return Response.json(
+      { error: 'Password too short' },
+      { status: 400 }
+    );
+  }
+
+  const db = getDb();
+
+  // Check if user exists
+  const existing = db
+    .prepare('SELECT id FROM users WHERE email = ?')
+    .get(email);
+
+  if (existing) {
+    return Response.json(
+      { error: 'Email already registered' },
+      { status: 409 }
+    );
+  }
+
+  // Hash and store
+  const hash = hashPassword(password);
+  const userId = crypto.randomUUID();
+
+  db.prepare(
+    'INSERT INTO users (id, email, password_hash) VALUES (?, ?, ?)'
+  ).run(userId, email, hash);
+
+  return Response.json({ ok: true, userId });
+}
+```
+
+## Login Example
+
+```typescript
+import { verifyPassword } from '@/lib/password-scrypt-hash';
+
+export async function POST(request: Request) {
+  const { email, password } = await request.json();
+
+  const db = getDb();
+  const user = db
+    .prepare('SELECT id, password_hash FROM users WHERE email = ?')
+    .get(email) as { id: string; password_hash: string } | undefined;
+
+  if (!user) {
+    return Response.json(
+      { error: 'Invalid email or password' },
+      { status: 401 }
+    );
+  }
+
+  // Verify password
+  if (!verifyPassword(password, user.password_hash)) {
+    return Response.json(
+      { error: 'Invalid email or password' },
+      { status: 401 }
+    );
+  }
+
+  // Create session / JWT
+  const token = createSessionToken(user.id);
+
+  return Response.json({ ok: true, token });
+}
+```
+
+## Password Reset Flow
+
+```typescript
+import { hashPassword } from '@/lib/password-scrypt-hash';
+
+export async function POST(request: Request) {
+  const { userId, newPassword } = await request.json();
+
+  // Validate
+  if (newPassword.length < 8) {
+    return Response.json({ error: 'Password too short' }, { status: 400 });
+  }
+
+  // Hash and update
+  const hash = hashPassword(newPassword);
+  const db = getDb();
+
+  db.prepare('UPDATE users SET password_hash = ? WHERE id = ?')
+    .run(hash, userId);
+
+  return Response.json({ ok: true });
+}
+```
+
+## Scrypt vs Bcrypt
+
+| Aspect | Scrypt | Bcrypt |
+|--------|--------|--------|
+| Speed | Fast (ms) | Slow (intentional, 100ms+) |
+| Memory | Yes (memory-hard) | No |
+| Built-in | Node.js `crypto` | External dependency |
+| Use case | General auth | Defense against GPU attacks |
+
+For typical SaaS: scrypt is sufficient and faster. Bcrypt is more defensible against specialized hardware.
+
+## Security Notes
+
+- **Timing-safe**: Comparison uses `timingSafeEqual` to prevent timing leaks
+- **Random salt**: Every hash unique, safe even if DB leaked
+- **No peppers**: Salt is sufficient; no need for app-level pepper
+- **Scrypt params**: 16-byte salt, 64-byte key (industry standard)
+- **Password validation**: Enforce min length (8+ chars) at application level
+
+## Hash Format
+
+```
+a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6:9f8e7d6c5b4a3291827364...
+ └─────────────────────────────┘ └──────────────────────┘
+         16-byte salt (hex)        64-byte key (hex)
+```
+
+Colon separator is unambiguous (hex chars are 0-9a-f).
+
+*Open source — use it wisely.*
