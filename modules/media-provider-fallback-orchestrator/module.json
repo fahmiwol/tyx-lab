@@ -1,0 +1,15 @@
+{
+  "id": "media-provider-fallback-orchestrator",
+  "name": "Media Provider Fallback Orchestrator",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Orchestrate calls to media providers (image, video, audio, design) with automatic fallback on failure and cost/quota tracking.",
+  "input": ["request-object", "provider-catalogue"],
+  "output": ["media-result", "usage-stats"],
+  "tags": ["media", "provider", "fallback", "orchestration", "cost-tracking", "retry"],
+  "compatible_with": ["tools-catalogue-schema"],
+  "used_in_recipes": ["image-generation-pipeline", "video-rendering-pipeline"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
