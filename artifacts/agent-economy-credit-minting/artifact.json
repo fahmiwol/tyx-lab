@@ -1,0 +1,14 @@
+{
+  "id": "agent-economy-credit-minting",
+  "name": "Agent-Economy Credit-Minting Design: Service Credits & Internal Currency",
+  "version": "1.0.0",
+  "kind": "framework",
+  "category": "business",
+  "description": "Framework for designing internal service credit systems that incentivize agent collaboration, prevent abuse, and enable frictionless service exchanges in multi-agent ecosystems.",
+  "tags": ["economy", "credit-system", "agent-marketplace", "minting", "double-entry-ledger", "incentive-alignment"],
+  "compatible_with": ["reputation-trust-scoring"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
