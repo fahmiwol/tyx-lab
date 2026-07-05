@@ -1,0 +1,17 @@
+{
+  "grid": { "w": 12, "h": 12, "tile": 1 },
+  "theme": { "bg": "#0c0e14", "floor": "#1c2030" },
+  "objects": [
+    { "type": "desk", "tile": [3, 3] },
+    { "type": "chair", "tile": [3, 4] }
+  ],
+  "agents": [
+    { "id": "designer-npc", "name": "Dina", "tile": [4, 6], "color": 13458314 }
+  ],
+  "zones": [
+    { "x": 0, "y": 0, "w": 4, "h": 4, "label": "Design Area", "color": "#00f5ff" }
+  ],
+  "floors": [
+    { "tile": [1, 1], "color": "#ff00ff" }
+  ]
+}
