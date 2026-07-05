@@ -1,0 +1,14 @@
+{
+  "id": "haal-conditioning-pattern",
+  "name": "Haal Conditioning: User State as Computation",
+  "version": "1.0.0",
+  "kind": "framework",
+  "category": ["ai", "nlp"],
+  "description": "User's Haal (current state/condition) is not metadata passed to LLM—it IS the computation. Same task generates radically different output for different Haal. Platform (TikTok vs LinkedIn), timing (Ramadan vs crisis), culture, audience psychology: all shape generation.",
+  "tags": ["haal", "user-state", "conditioning", "context-awareness", "personalization"],
+  "compatible_with": ["generation-models", "multi-platform-systems", "cultural-adaptation"],
+  "used_in_recipes": ["platform-native-content"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
