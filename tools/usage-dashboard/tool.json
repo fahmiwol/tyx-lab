@@ -1,0 +1,17 @@
+{
+  "id": "usage-dashboard",
+  "name": "Credit & Usage Dashboard",
+  "version": "1.0.0",
+  "kind": "web-app",
+  "category": "business",
+  "description": "Real-time credit balance and usage tracking dashboard. Polls backend for credit status, displays 30-day trends with mock data fallback, cost visualization.",
+  "run": "cd tools/usage-dashboard && npm install && npm run dev",
+  "input": [{"name": "GATEWAY_URL", "type": "string", "description": "Backend gateway URL for credit API"}],
+  "output": [{"name": "credit_status", "type": "object", "description": "Current credit balance and usage data"}],
+  "tags": ["billing", "usage-tracking", "dashboard", "react", "vite"],
+  "compatible_with": ["billing-backend", "cost-analyzer"],
+  "used_in_recipes": ["financial-dashboard", "usage-reporting"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
