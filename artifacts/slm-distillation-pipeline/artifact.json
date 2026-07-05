@@ -1,0 +1,14 @@
+{
+  "id": "slm-distillation-pipeline",
+  "name": "SLM Distillation Pipeline: Teacher-Student Recursive Refinement",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "ai",
+  "description": "Production-grade methodology for distilling knowledge from larger teachers into smaller SLMs via multi-teacher consensus voting and preference pair collection.",
+  "tags": ["distillation", "dpo", "preference-optimization", "slm", "teacher-student", "budget-gating"],
+  "compatible_with": ["any-7b-model", "qlora-training", "dpo-trainer"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
