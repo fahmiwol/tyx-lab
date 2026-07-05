@@ -1,0 +1,15 @@
+{
+  "id": "jungian-archetype-selector",
+  "name": "Jungian Archetype Selector",
+  "version": "1.0.0",
+  "category": "ai",
+  "description": "Canonical 12 Jungian brand archetypes mapped to quadrants with voice markers, core desires, and brand examples — for strategic positioning and narrative consistency.",
+  "input": ["archetype-name"],
+  "output": ["archetype-profile", "quadrant", "voice-markers"],
+  "tags": ["branding", "positioning", "personality", "strategy", "jungian"],
+  "compatible_with": ["brand-schema-validator", "brand-identity-framework"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
