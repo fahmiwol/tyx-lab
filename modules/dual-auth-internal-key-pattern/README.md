@@ -60,7 +60,7 @@ if (!auth.authorized) res.status(401).send('Unauthorized');
 ## Configuration
 
 ```env
-INTERNAL_API_KEY="raumah-internal-key-2026"  # In production, strong random
+INTERNAL_API_KEY="CHANGE_ME_STRONG_RANDOM"  # In production, strong random
 JWT_SECRET="..."  # Standard JWT signing key
 ```
 
