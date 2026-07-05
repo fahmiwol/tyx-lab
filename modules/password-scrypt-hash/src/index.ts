@@ -1,1 +1,62 @@
-aW1wb3J0IHsgcmFuZG9tQnl0ZXMsIHNjcnlwdFN5bmMsIHRpbWluZ1NhZmVFcXVhbCB9IGZyb20gJ2NyeXB0byc7CgovKioKICogUGFzc3dvcmQgaGFzaGluZyB3aXRoIHNjcnlwdCAoTm9kZS5qcyBidWlsdC1pbiwgbm8gZXh0ZXJuYWwgZGVwZW5kZW5jaWVzKS4KICoKICogSGFzaCBmb3JtYXQ6IGhleFNhbHQ6aGV4S2V5CiAqICAgLSBTYWx0OiAxNiByYW5kb20gYnl0ZXMKICogICAtIEtleTogNjQtYnl0ZSBkZXJpdmVkIGtleQogKgogKiBVc2FnZToKICogICBjb25zdCBoYXNoID0gaGFzaFBhc3N3b3JkKCdteXBhc3N3b3JkJyk7CiAqICAgY29uc3Qgb2sgPSB2ZXJpZnlQYXNzd29yZCgnbXlwYXNzd29yZCcsIGhhc2gpOwogKi8KCmNvbnN0IFNBTFRfTEVOID0gMTY7ICAvLyAxNi1ieXRlIHJhbmRvbSBzYWx0CmNvbnN0IEtFWV9MRU4gPSA2NDsgICAvLyA2NC1ieXRlIGRlcml2ZWQga2V5CgovKioKICogSGFzaCBhIHBsYWluLXRleHQgcGFzc3dvcmQuCiAqIFJldHVybnMgImhleFNhbHQ6aGV4S2V5IiBmb3JtYXQuCiAqLwpleHBvcnQgZnVuY3Rpb24gaGFzaFBhc3N3b3JkKHBhc3N3b3JkOiBzdHJpbmcpOiBzdHJpbmcgewogIGNvbnN0IHNhbHQgPSByYW5kb21CeXRlcyhTQUxUX0xFTik7CiAgY29uc3Qga2V5ID0gc2NyeXB0U3luYyhwYXNzd29yZCwgc2FsdCwgS0VZX0xFTik7CiAgcmV0dXJuIGAke3NhbHQudG9TdHJpbmcoJ2hleCcpfToke2tleS50b1N0cmluZygnaGV4Jyl9YDsKfQoKLyoqCiAqIFZlcmlmeSBhIHBhc3N3b3JkIGFnYWluc3QgYSBzdG9yZWQgaGFzaC4KICogVGltaW5nLXNhZmUgY29tcGFyaXNvbiBwcmV2ZW50cyB0aW1pbmcgYXR0YWNrcy4KICogUmV0dXJucyBmYWxzZSBpZiBoYXNoIGZvcm1hdCBpbnZhbGlkLgogKi8KZXhwb3J0IGZ1bmN0aW9uIHZlcmlmeVBhc3N3b3JkKHBhc3N3b3JkOiBzdHJpbmcsIHN0b3JlZDogc3RyaW5nKTogYm9vbGVhbiB7CiAgY29uc3QgY29sb25JZHggPSBzdG9yZWQuaW5kZXhPZignOicpOwoKICAvLyBWYWxpZGF0ZSBmb3JtYXQKICBpZiAoY29sb25JZHggPD0gMCkgewogICAgcmV0dXJuIGZhbHNlOwogIH0KCiAgY29uc3Qgc2FsdEhleCA9IHN0b3JlZC5zbGljZSgwLCBjb2xvbklkeCk7CiAgY29uc3Qga2V5SGV4ID0gc3RvcmVkLnNsaWNlKGNvbG9uSWR4ICsgMSk7CgogIHRyeSB7CiAgICAvLyBSZWNvbnN0cnVjdCBidWZmZXJzCiAgICBjb25zdCBzYWx0ID0gQnVmZmVyLmZyb20oc2FsdEhleCwgJ2hleCcpOwogICAgY29uc3Qgc3RvcmVkS2V5ID0gQnVmZmVyLmZyb20oa2V5SGV4LCAnaGV4Jyk7CgogICAgLy8gVmFsaWRhdGUgbGVuZ3RocwogICAgaWYgKHNhbHQubGVuZ3RoICE9PSBTQUxUX0xFTiB8fCBzdG9yZWRLZXkubGVuZ3RoICE9PSBLRVlfTEVOKSB7CiAgICAgIHJldHVybiBmYWxzZTsKICAgIH0KCiAgICAvLyBEZXJpdmUgY2FuZGlkYXRlIGtleQogICAgY29uc3QgY2FuZGlkYXRlS2V5ID0gc2NyeXB0U3luYyhwYXNzd29yZCwgc2FsdCwgS0VZX0xFTik7CgogICAgLy8gVGltaW5nLXNhZmUgY29tcGFyaXNvbgogICAgcmV0dXJuIHRpbWluZ1NhZmVFcXVhbChzdG9yZWRLZXksIGNhbmRpZGF0ZUtleSk7CiAgfSBjYXRjaCB7CiAgICByZXR1cm4gZmFsc2U7CiAgfQp9Cg==
+import { randomBytes, scryptSync, timingSafeEqual } from 'crypto';
+
+/**
+ * Password hashing with scrypt (Node.js built-in, no external dependencies).
+ *
+ * Hash format: hexSalt:hexKey
+ *   - Salt: 16 random bytes
+ *   - Key: 64-byte derived key
+ *
+ * Usage:
+ *   const hash = hashPassword('mypassword');
+ *   const ok = verifyPassword('mypassword', hash);
+ */
+
+const SALT_LEN = 16;  // 16-byte random salt
+const KEY_LEN = 64;   // 64-byte derived key
+
+/**
+ * Hash a plain-text password.
+ * Returns "hexSalt:hexKey" format.
+ */
+export function hashPassword(password: string): string {
+  const salt = randomBytes(SALT_LEN);
+  const key = scryptSync(password, salt, KEY_LEN);
+  return `${salt.toString('hex')}:${key.toString('hex')}`;
+}
+
+/**
+ * Verify a password against a stored hash.
+ * Timing-safe comparison prevents timing attacks.
+ * Returns false if hash format invalid.
+ */
+export function verifyPassword(password: string, stored: string): boolean {
+  const colonIdx = stored.indexOf(':');
+
+  // Validate format
+  if (colonIdx <= 0) {
+    return false;
+  }
+
+  const saltHex = stored.slice(0, colonIdx);
+  const keyHex = stored.slice(colonIdx + 1);
+
+  try {
+    // Reconstruct buffers
+    const salt = Buffer.from(saltHex, 'hex');
+    const storedKey = Buffer.from(keyHex, 'hex');
+
+    // Validate lengths
+    if (salt.length !== SALT_LEN || storedKey.length !== KEY_LEN) {
+      return false;
+    }
+
+    // Derive candidate key
+    const candidateKey = scryptSync(password, salt, KEY_LEN);
+
+    // Timing-safe comparison
+    return timingSafeEqual(storedKey, candidateKey);
+  } catch {
+    return false;
+  }
+}
