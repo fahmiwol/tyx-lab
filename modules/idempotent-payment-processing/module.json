@@ -1,0 +1,42 @@
+{
+  "id": "idempotent-payment-processing",
+  "name": "Idempotent Payment Processing",
+  "version": "1.0.0",
+  "category": ["business", "infra"],
+  "description": "Prevent duplicate transactions from webhook retries using deterministic idempotency keys. Guards against double-crediting users.",
+  "input": [
+    {
+      "name": "externalEventId",
+      "type": "string",
+      "description": "Unique ID from payment provider (Midtrans transactionId, Stripe paymentIntentId, etc.)"
+    },
+    {
+      "name": "idempotencyKey",
+      "type": "string",
+      "description": "Deterministic key derived from external event (e.g., 'midtrans_orderId_transactionId')"
+    },
+    {
+      "name": "payload",
+      "type": "JSON",
+      "description": "External webhook payload to store for audit"
+    }
+  ],
+  "output": [
+    {
+      "name": "txId",
+      "type": "string",
+      "description": "Transaction ID (new or cached from existing)"
+    },
+    {
+      "name": "cached",
+      "type": "boolean",
+      "description": "True if this was a retry (idempotent return), false if first-time processing"
+    }
+  ],
+  "tags": ["fintech", "idempotency", "webhooks", "atomicity", "deduplication"],
+  "compatible_with": ["prisma", "postgresql", "mysql", "stripe", "midtrans"],
+  "used_in_recipes": ["payment-processing", "topup-flow"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
