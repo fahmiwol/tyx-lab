@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MighanRemove — Background Removal</title>
+  <title>BG Remover — Background Removal</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -222,7 +222,7 @@
 <body>
 
 <header>
-  <div class="logo">✂️ Mighan<span>Remove</span></div>
+  <div class="logo">✂️ Studio<span>Remove</span></div>
   <div id="server-badge"><div class="dot yellow" id="srv-dot"></div><span id="srv-text">Checking rembg...</span></div>
   <a href="/design-studio/index.html" class="back-btn">← Design Studio</a>
 </header>
@@ -313,7 +313,7 @@
 
   <!-- Tips -->
   <div class="tips">
-    <h3>💡 Tips MighanRemove</h3>
+    <h3>💡 Tips BG Remover</h3>
     <ul>
       <li>Gambar dengan kontras tinggi antara subjek dan background menghasilkan hasil terbaik</li>
       <li>Model BiRefNet sangat baik untuk rambut, bulu, dan detail halus</li>
@@ -328,7 +328,7 @@
 <div id="toast"></div>
 
 <script>
-  const GATEWAY = localStorage.getItem('mighan_gateway_url') || 'http://localhost:9797';
+  const GATEWAY = localStorage.getItem('Studio_gateway_url') || 'http://localhost:9797';
   let _resultBlob = null;
   let _resultFilename = 'nobg.png';
   let _origDataUrl = null;
@@ -603,7 +603,7 @@
       const zip = new JSZip();
       for (const p of zipParts) zip.file(p.name, p.blob);
       const content = await zip.generateAsync({ type: 'blob' });
-      const a = document.createElement('a'); a.href = URL.createObjectURL(content); a.download = 'mighan_nobg_batch.zip'; a.click();
+      const a = document.createElement('a'); a.href = URL.createObjectURL(content); a.download = 'Studio_nobg_batch.zip'; a.click();
     } else {
       // Fallback: download each separately
       for (const p of zipParts) {
