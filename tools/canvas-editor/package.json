@@ -1,8 +1,8 @@
 {
-  "name": "cursor-001-mighan-canvas",
+  "name": "canvas-editor",
   "version": "0.1.0",
   "private": true,
-  "description": "by Cursor — MighanCanvas: React + Fabric.js + Express",
+  "description": "Tool: CanvasEditor: React + Fabric.js + Express",
   "scripts": {
     "server": "node server/index.js",
     "client": "npm run dev --prefix client",
