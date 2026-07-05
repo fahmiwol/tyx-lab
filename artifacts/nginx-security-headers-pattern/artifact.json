@@ -1,0 +1,13 @@
+{
+  "id": "nginx-security-headers-pattern",
+  "name": "Nginx Security Headers Pattern",
+  "kind": "template",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Production nginx config snippet for security headers, TLS hardening, compression, cache control, and PWA/Service Worker handling.",
+  "tags": ["nginx", "security", "https", "pwa", "headers", "performance"],
+  "compatible_with": ["nginx"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
