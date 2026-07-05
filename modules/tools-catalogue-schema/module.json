@@ -1,0 +1,15 @@
+{
+  "id": "tools-catalogue-schema",
+  "name": "Tools Catalogue Schema",
+  "version": "1.0.0",
+  "category": "ai",
+  "description": "Unified registry schema for media providers, LLM vendors, and callable tools with free/paid status, fallback chains, and compatibility.",
+  "input": ["provider-config-object"],
+  "output": ["registered-provider-entry"],
+  "tags": ["registry", "provider", "tools", "media", "api-integration", "fallback-chain"],
+  "compatible_with": ["agent-persona-registry", "skill-registry-contract"],
+  "used_in_recipes": ["multi-provider-fallback"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
