@@ -1,0 +1,22 @@
+{
+  "id": "safe-localstorage-wrapper",
+  "name": "Safe localStorage Wrapper",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Browser localStorage with graceful fallback on quota exceeded or unavailability. JSON serialization, prefixed keys, silent error handling, returns defaults on load failure.",
+  "input": [
+    { "name": "key", "type": "string", "description": "Storage key (will be prefixed)" },
+    { "name": "data", "type": "unknown", "description": "Any JSON-serializable value to store" },
+    { "name": "defaultValue", "type": "unknown", "description": "Fallback if load fails" }
+  ],
+  "output": [
+    { "name": "success", "type": "boolean", "description": "Whether save succeeded" },
+    { "name": "value", "type": "unknown", "description": "Loaded value or default" }
+  ],
+  "tags": ["storage", "browser", "json", "error-handling", "fallback"],
+  "compatible_with": ["browser", "typescript", "react", "vue", "svelte"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
