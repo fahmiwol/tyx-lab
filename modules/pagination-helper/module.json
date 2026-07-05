@@ -1,0 +1,1 @@
+{"id":"pagination-helper","name":"Pagination Helper","version":"1.0.0","category":"ops","description":"Compute pagination windows (page, total, offset, page links) for lists and APIs.","input":[],"output":[],"tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
