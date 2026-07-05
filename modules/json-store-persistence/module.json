@@ -1,1 +1,1 @@
-
+{"id":"json-store-persistence","name":"Atomic JSON File Store","version":"1.0.0","category":"infra","description":"Concurrency-safe file-based JSON storage with atomic write (temp+rename), read, and update.","input":[],"output":[],"tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
