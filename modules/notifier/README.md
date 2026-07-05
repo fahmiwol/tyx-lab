@@ -30,7 +30,7 @@ await notifier.dispatch({
 ```bash
 ALERT_WA_NUMBER=628xxxxx
 ALERT_WA_RECIPIENTS_JSON='["628xxx","628yyy"]'
-COSMIX_INTERNAL_URL=http://127.0.0.1:5104
+whatsapp_gw_INTERNAL_URL=http://127.0.0.1:5104
 INTERNAL_CONFIG_TOKEN=...
 ```
 
