@@ -1,10 +1,11 @@
 {
-    "version":  "2.0.0",
+    "version":  "2.1.0",
     "last_updated":  "2026-07-05",
-    "total_modules":  98,
-    "total_artifacts":  69,
-    "total_tools":  21,
-    "total_atoms":  188,
+    "total_modules":  112,
+    "total_artifacts":  70,
+    "total_tools":  22,
+    "total_recipes":  7,
+    "total_atoms":  204,
     "atoms":  [
                   {
                       "id":  "agent-economy-credit-minting",
@@ -95,6 +96,15 @@
                       "path":  "artifacts/build-mcp-server",
                       "status":  "stable",
                       "kind":  "methodology"
+                  },
+                  {
+                      "id":  "connector-base-guard-pattern",
+                      "name":  "Connector Base Guard Pattern",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/connector-base-guard-pattern",
+                      "status":  "stable",
+                      "kind":  "architecture"
                   },
                   {
                       "id":  "continuous-learning-evolution-methodology",
@@ -628,6 +638,22 @@
                       "kind":  "framework"
                   },
                   {
+                      "id":  "action-guarded-executor",
+                      "name":  "Action Guarded Executor",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/action-guarded-executor",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "adaptive-rate-limiter-warmup",
+                      "name":  "Adaptive Rate Limiter with Warmup",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/adaptive-rate-limiter-warmup",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "admin-approval-maker-checker",
                       "name":  "Admin Approval Workflow â€” Maker-Checker Pattern",
                       "lane":  "module",
@@ -796,6 +822,14 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "cot-extractor",
+                      "name":  "CoT Extractor \u0026 Quality Scorer",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/cot-extractor",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "csrf-security-guard",
                       "name":  "CSRF Security Guard",
                       "lane":  "module",
@@ -884,11 +918,35 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "embedding-model-loader",
+                      "name":  "Embedding Model Loader (3-Way)",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/embedding-model-loader",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "env-config-schema",
                       "name":  "Environment Config Schema",
                       "lane":  "module",
                       "category":  "infra",
                       "path":  "modules/env-config-schema",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "epistemology-framework",
+                      "name":  "Epistemology Framework (Islamic)",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/epistemology-framework",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "eval-benchmark-harness",
+                      "name":  "Eval Benchmark Harness",
+                      "lane":  "module",
+                      "category":  "research",
+                      "path":  "modules/eval-benchmark-harness",
                       "status":  "stable"
                   },
                   {
@@ -905,6 +963,14 @@
                       "lane":  "module",
                       "category":  "infra",
                       "path":  "modules/exponential-backoff-queue",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "flow-dag-executor",
+                      "name":  "Flow DAG Executor",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/flow-dag-executor",
                       "status":  "stable"
                   },
                   {
@@ -1060,6 +1126,14 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "multi-entity-scheduler",
+                      "name":  "Multi-Entity Scheduler",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/multi-entity-scheduler",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "multi-platform-publisher-adapter",
                       "name":  "Multi-Platform Publisher Adapter",
                       "lane":  "module",
@@ -1108,6 +1182,14 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "parallel-tool-executor",
+                      "name":  "Parallel Tool Executor",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/parallel-tool-executor",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "password-scrypt-hash",
                       "name":  "Password Hashing with Scrypt",
                       "lane":  "module",
@@ -1148,6 +1230,14 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "react-reasoning-loop",
+                      "name":  "ReAct Reasoning Loop",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/react-reasoning-loop",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "redis-queue-wrapper",
                       "name":  "Redis Queue Wrapper",
                       "lane":  "module",
@@ -1161,6 +1251,14 @@
                       "lane":  "module",
                       "category":  "infra",
                       "path":  "modules/relative-timestamp-formatter",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "request-guard-sentinel",
+                      "name":  "Request Guard Sentinel",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/request-guard-sentinel",
                       "status":  "stable"
                   },
                   {
@@ -1193,6 +1291,22 @@
                       "lane":  "module",
                       "category":  "crm",
                       "path":  "modules/sale-pipeline-stages",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "sanad-verifier",
+                      "name":  "Sanad Verifier (Multi-Source)",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/sanad-verifier",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "semantic-response-cache",
+                      "name":  "Semantic Response Cache (2-Tier)",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/semantic-response-cache",
                       "status":  "stable"
                   },
                   {
@@ -1249,6 +1363,14 @@
                       "lane":  "module",
                       "category":  "infra",
                       "path":  "modules/stealth-fetch-engine",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "sticky-proxy-pool-manager",
+                      "name":  "Sticky Proxy Pool Manager",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/sticky-proxy-pool-manager",
                       "status":  "stable"
                   },
                   {
@@ -1554,6 +1676,15 @@
                       "path":  "tools/tts-module",
                       "status":  "stable",
                       "kind":  "script"
+                  },
+                  {
+                      "id":  "tyx-lab-mcp",
+                      "name":  "tyx-lab MCP Server (library brain)",
+                      "lane":  "tool",
+                      "category":  "ai",
+                      "path":  "tools/tyx-lab-mcp",
+                      "status":  "beta",
+                      "kind":  "mcp-server"
                   },
                   {
                       "id":  "upload-monitor",
