@@ -1,1 +1,1 @@
-
+{"id":"message-queue-scheduler","name":"Rate-Limited Message Queue Scheduler","version":"1.0.0","category":"infra","description":"Batching queue with per-destination throttling and retry for scheduled/bulk dispatch.","input":[],"output":[],"tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
