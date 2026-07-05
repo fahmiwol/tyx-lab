@@ -1,0 +1,27 @@
+{
+  "id": "b2b-api-key-gateway-pattern",
+  "name": "B2B API-Key Gateway Pattern",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Multi-tier API key management for platform partners. Supports key rotation, rate limiting per API key, transaction signing with shared secrets, and read-only vs. write permission scopes for partner integrations.",
+  "input": [
+    {"name": "partnerId", "type": "string"},
+    {"name": "action", "type": "enum", "values": ["create_key", "rotate_key", "revoke_key", "list_keys"]},
+    {"name": "scope", "type": "enum", "values": ["read", "write", "admin"], "optional": true},
+    {"name": "rateLimitPerMinute", "type": "integer", "optional": true}
+  ],
+  "output": [
+    {"name": "apiKeyId", "type": "string"},
+    {"name": "secretKey", "type": "string"},
+    {"name": "scope", "type": "enum"},
+    {"name": "rotatedAt", "type": "datetime", "nullable": true},
+    {"name": "lastUsed", "type": "datetime", "nullable": true},
+    {"name": "rateLimitConfig", "type": "object"}
+  ],
+  "tags": ["api-gateway", "authentication", "partner-integration", "rate-limiting"],
+  "compatible_with": ["dual-auth-internal-key-pattern", "transfer-intent-checkout-state"],
+  "used_in_recipes": ["b2b-payment-settlement", "platform-white-label"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
