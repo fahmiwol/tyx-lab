@@ -44,12 +44,12 @@ async function getIntent(intentId: string): Promise<TransferIntent>;
 
 ```html
 <!-- Merchant widget -->
-<script src="https://bank-tiranyx.com/widget.js"></script>
+<script src="https://example.com/widget.js"></script>
 <script>
   createIntent({
     apiKey: 'BRK-123-SUP-456',
     amount: 500,
-    denom: 'PERAK',
+    denom: 'SILVER',
     description: 'Membership Fee',
     successUrl: 'https://merchant.com/success',
     cancelUrl: 'https://merchant.com/cancel'
