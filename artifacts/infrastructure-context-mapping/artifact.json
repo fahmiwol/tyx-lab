@@ -1,0 +1,21 @@
+{
+  "id": "infrastructure-context-mapping",
+  "name": "Infrastructure Context Mapping",
+  "version": "1.0.0",
+  "kind": "playbook",
+  "category": "infra",
+  "description": "Method for mapping multi-server, multi-repo projects to prevent execution confusion and ensure correct deployments",
+  "tags": [
+    "infrastructure",
+    "devops",
+    "multi-project",
+    "context"
+  ],
+  "compatible_with": [
+    "generic-ai-systems"
+  ],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
