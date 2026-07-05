@@ -1,0 +1,17 @@
+{
+  "id": "world-editor",
+  "name": "World Config Editor",
+  "version": "1.0.0",
+  "kind": "web-app",
+  "category": "ops",
+  "description": "Monaco-based JSON editor for world.json configuration files. Direct load/save from gateway backend with syntax highlighting and validation.",
+  "run": "cd tools/world-editor && npm install && npm run dev",
+  "input": [{"name": "GATEWAY_URL", "type": "string", "description": "Backend gateway URL for world.json access"}],
+  "output": [{"name": "world_config", "type": "object", "description": "World configuration JSON"}],
+  "tags": ["config-editor", "monaco", "json", "vite", "react"],
+  "compatible_with": ["ops-gateway", "world-engine"],
+  "used_in_recipes": ["world-provisioning", "config-deployment"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
