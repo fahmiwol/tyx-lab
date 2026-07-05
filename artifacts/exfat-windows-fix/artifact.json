@@ -1,0 +1,14 @@
+{
+  "id": "exfat-windows-fix",
+  "name": "exFAT Windows Fix for Next.js / Webpack",
+  "version": "1.0.0",
+  "kind": "finding",
+  "category": "infra",
+  "description": "Fix EISDIR readlink crashes when building Next.js/Webpack projects on a Windows exFAT drive by shimming fs.readlink before webpack captures it.",
+  "tags": ["windows", "exfat", "nextjs", "webpack", "build-error", "eisdir"],
+  "compatible_with": [],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
