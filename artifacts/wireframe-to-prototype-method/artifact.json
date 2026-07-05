@@ -1,0 +1,14 @@
+{
+  "id": "wireframe-to-prototype-method",
+  "name": "Wireframe to Prototype Method",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "business",
+  "description": "Step-by-step methodology for converting wireframes into interactive prototypes, covering component hierarchy, data structure, interaction patterns, responsive design, performance optimization, and handoff to development.",
+  "tags": ["wireframe", "prototype", "component-hierarchy", "interaction-design", "responsive", "react", "vue", "figma"],
+  "compatible_with": ["react", "vue", "figma", "storybook"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
