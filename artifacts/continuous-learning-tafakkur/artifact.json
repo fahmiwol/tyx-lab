@@ -1,0 +1,14 @@
+{
+  "id": "continuous-learning-tafakkur",
+  "name": "Continuous Learning via Reflective Loop (Tafakkur)",
+  "version": "1.0.0",
+  "kind": "framework",
+  "category": ["ai", "machine-learning"],
+  "description": "Self-evolution without catastrophic forgetting: frozen core + dynamic LoRA adapters + episodic memory (error traces) + semantic memory (learned patterns). Agents avoid retraining and instead grow skill layers.",
+  "tags": ["continuous-learning", "self-improvement", "lora", "memory", "evolution", "stability-plasticity"],
+  "compatible_with": ["lora-training", "rag-systems", "agent-frameworks"],
+  "used_in_recipes": ["autonomous-agent-growth"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
