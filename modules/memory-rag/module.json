@@ -1,0 +1,21 @@
+{
+  "id": "memory-rag",
+  "name": "Agent Memory RAG — Obsidian-style Markdown + Wikilinks",
+  "version": "1.0.0",
+  "category": "ai",
+  "description": "Per-agent memory system with markdown notes, [[wikilink]] retrieval, and knowledge lineage tracking. Keyword-based retrieval with title boost. Production-ready for vector embeddings upgrade.",
+  "input": [
+    { "name": "agentId", "type": "string", "description": "Agent identifier for isolated memory" },
+    { "name": "query", "type": "string", "description": "Retrieval query" },
+    { "name": "k", "type": "number", "description": "Result limit (default 3)" }
+  ],
+  "output": [
+    { "name": "notes", "type": "array", "description": "Retrieved notes with title, body, score, and linked notes" }
+  ],
+  "tags": ["memory", "rag", "knowledge-graph", "agent", "retrieval"],
+  "compatible_with": ["hermes-controller", "agent-orchestrator"],
+  "used_in_recipes": ["multi-agent-cognition", "knowledge-cascade"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
