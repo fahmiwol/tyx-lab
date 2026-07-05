@@ -1,0 +1,22 @@
+{
+  "id": "multi-tenant-privilege",
+  "name": "Multi-Tenant Granular Privilege System (PHP/MySQL)",
+  "version": "1.0.0",
+  "category": "business",
+  "description": "Role-based access control with per-module granular permissions (can_view, can_create, can_edit, can_delete). Supports super admin full access and caching in session. PDO-based, multi-tenant ready.",
+  "input": [
+    { "name": "userId", "type": "string", "description": "User ID from session" },
+    { "name": "roleId", "type": "number", "description": "Role ID" },
+    { "name": "module", "type": "string", "description": "Module name (leads, orders, etc.)" },
+    { "name": "action", "type": "string", "description": "Action: view|create|edit|delete" }
+  ],
+  "output": [
+    { "name": "allowed", "type": "boolean", "description": "Permission granted" }
+  ],
+  "tags": ["auth", "permission", "rbac", "php", "multi-tenant"],
+  "compatible_with": ["foundation-layer", "crm", "saas-platform"],
+  "used_in_recipes": ["business-platform", "micro-saas"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
