@@ -1,0 +1,1 @@
+{"id":"prompt-chain-orchestration","name":"Prompt Chain Orchestration","version":"1.0.0","kind":"method","category":"ai","description":"Compose multi-step LLM workflows with loops and conditionals.","tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
