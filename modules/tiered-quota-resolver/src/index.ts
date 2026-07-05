@@ -1,1 +1,195 @@
-aW1wb3J0IHsgY3JlYXRlSG1hYyB9IGZyb20gJ2NyeXB0byc7CmltcG9ydCB7IGNvb2tpZXMgfSBmcm9tICduZXh0L2hlYWRlcnMnOwppbXBvcnQgZ2V0RGIgZnJvbSAnQC9saWIvZGInOwppbXBvcnQgeyB2ZXJpZnlVc2VyVG9rZW4gfSBmcm9tICdAL2xpYi91c2VyLWF1dGgnOwppbXBvcnQgeyB2ZXJpZnlUb2tlbiBhcyB2ZXJpZnlBZG1pblRva2VuIH0gZnJvbSAnQC9saWIvYXV0aCc7CmltcG9ydCB7IGdldFVzZXJCeUVtYWlsIH0gZnJvbSAnQC9saWIvYXV0aC11c2Vycyc7CmltcG9ydCB7IGRlZHVjdFRvb2xDb2luLCBUT09MX0NPSU5fQ09TVCB9IGZyb20gJ0AvbGliL2JpbGxpbmcnOwoKLyoqCiAqIFRpZXJlZCBxdW90YSByZXNvbHZlcjogQWRtaW4gKHVubGltaXRlZCkg4oaSIFBybyAoNTAwL2RheSBmcmVlICsgY29pbikg4oaSCiAqIEZyZWUgKDUvZGF5IGZyZWUgKyBjb2luKSDihpIgQW5vbnltb3VzICgyL2RheSBJUC1iYXNlZCwgbm8gY29pbikuCiAqLwoKY29uc3QgRlJFRV9RVU9UQSA9IDU7ICAgICAgLy8gRnJlZSB1c2VyczogNS9kYXkKY29uc3QgUFJPX1FVT1RBID0gNTAwOyAgICAgLy8gUHJvIHVzZXJzOiA1MDAvZGF5CmNvbnN0IEFOT05fUVVPVEEgPSAyOyAgICAgIC8vIEFub255bW91czogMi9kYXkKCmZ1bmN0aW9uIHRvZGF5SVNPKCk6IHN0cmluZyB7CiAgcmV0dXJuIG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKS5zbGljZSgwLCAxMCk7Cn0KCmZ1bmN0aW9uIGhhc2hJUChpcDogc3RyaW5nKTogc3RyaW5nIHsKICByZXR1cm4gY3JlYXRlSG1hYygnc2hhMjU2JywgcHJvY2Vzcy5lbnYuQ09PS0lFX1NFQ1JFVCA/PyAnYW5vbicpCiAgICAudXBkYXRlKGlwKQogICAgLmRpZ2VzdCgnaGV4JykKICAgIC5zbGljZSgwLCAxNik7Cn0KCmV4cG9ydCB0eXBlIFF1b3RhUmVzdWx0ID0KICB8IHsgYWxsb3dlZDogdHJ1ZTsgdXNlcklkOiBzdHJpbmcgfCBudWxsOyBjaGFyZ2VkOiBib29sZWFuOyB0aWVyOiAnYWRtaW4nIHwgJ3BybycgfCAnZnJlZScgfCAnYW5vbicgfQogIHwgeyBhbGxvd2VkOiBmYWxzZTsgcmVhc29uOiBzdHJpbmcgfTsKCi8qKgogKiBSZXNvbHZlIHVzZXI6IHRyeF9hZG1pbiBjb29raWUgKGhpZ2hlc3QgcHJpb3JpdHkpIOKGkiB0cnhfdXNlciBjb29raWUg4oaSIGFub255bW91cwogKi8KYXN5bmMgZnVuY3Rpb24gcmVzb2x2ZVVzZXIoKTogUHJvbWlzZTx7CiAgdXNlcklkOiBzdHJpbmcgfCBudWxsOwogIGlzQWRtaW46IGJvb2xlYW47CiAgaGFzUHJvOiBib29sZWFuOwp9PiB7CiAgY29uc3QgZGIgPSBnZXREYigpOwogIGNvbnN0IGphciA9IGF3YWl0IGNvb2tpZXMoKTsKCiAgLy8gVHJ5IGFkbWluIHRva2VuCiAgdHJ5IHsKICAgIGNvbnN0IGFkbWluVG9rZW4gPSBqYXIuZ2V0KCd0cnhfYWRtaW4nKT8udmFsdWU7CiAgICBpZiAoYWRtaW5Ub2tlbikgewogICAgICBjb25zdCB2ID0gdmVyaWZ5QWRtaW5Ub2tlbihhZG1pblRva2VuKTsKICAgICAgaWYgKHYudmFsaWQgJiYgdi5lbWFpbCkgewogICAgICAgIGNvbnN0IHVzZXIgPSBnZXRVc2VyQnlFbWFpbCh2LmVtYWlsKTsKICAgICAgICBpZiAodXNlcikgcmV0dXJuIHsgdXNlcklkOiB1c2VyLmlkLCBpc0FkbWluOiB0cnVlLCBoYXNQcm86IHRydWUgfTsKICAgICAgICByZXR1cm4geyB1c2VySWQ6IG51bGwsIGlzQWRtaW46IHRydWUsIGhhc1BybzogdHJ1ZSB9OwogICAgICB9CiAgICB9CiAgfSBjYXRjaCB7CiAgICAvLyBDb250aW51ZSB0byB0cnhfdXNlcgogIH0KCiAgLy8gVHJ5IHVzZXIgdG9rZW4KICB0cnkgewogICAgY29uc3QgdXNlclRva2VuID0gamFyLmdldCgndHJ4X3VzZXInKT8udmFsdWU7CiAgICBpZiAodXNlclRva2VuKSB7CiAgICAgIGNvbnN0IHYgPSB2ZXJpZnlVc2VyVG9rZW4odXNlclRva2VuKTsKICAgICAgaWYgKHYudmFsaWQgJiYgdi51c2VySWQpIHsKICAgICAgICBjb25zdCB1c2VySWQgPSB2LnVzZXJJZDsKCiAgICAgICAgLy8gQ2hlY2sgaWYgYWRtaW4gb3Igb3duZXIKICAgICAgICBjb25zdCB1c2VyUm93ID0gZGIKICAgICAgICAgIC5wcmVwYXJlKCdTRUxFQ1Qgcm9sZV9pZCwgaXNfb3duZXIgRlJPTSB1c2VycyBXSEVSRSBpZCA9ID8nKQogICAgICAgICAgLmdldCh1c2VySWQpIGFzIHsgcm9sZV9pZDogbnVtYmVyOyBpc19vd25lcjogbnVtYmVyIH0gfCB1bmRlZmluZWQ7CgogICAgICAgIGlmICh1c2VyUm93Py5yb2xlX2lkID09PSAxIHx8IHVzZXJSb3c/LmlzX293bmVyID09PSAxKSB7CiAgICAgICAgICByZXR1cm4geyB1c2VySWQsIGlzQWRtaW46IHRydWUsIGhhc1BybzogdHJ1ZSB9OwogICAgICAgIH0KCiAgICAgICAgLy8gQ2hlY2sgYWN0aXZlIHBybyBsaWNlbnNlIChub24tZGVtbyBwbGFuKQogICAgICAgIGNvbnN0IHByb0xpYyA9IGRiCiAgICAgICAgICAucHJlcGFyZSgKICAgICAgICAgICAgYFNFTEVDVCBsLmlkIEZST00gcGxhdGZvcm1fbGljZW5zZXMgbAogICAgICAgICAgICAgSk9JTiBwbGF0Zm9ybV9hcHBfcGxhbnMgcCBPTiBsLnBsYW5faWQgPSBwLmlkCiAgICAgICAgICAgICBXSEVSRSBsLnVzZXJfaWQgPSA/IEFORCBsLnN0YXR1cyA9ICdhY3RpdmUnIEFORCBwLnBsYW5fY29kZSAhPSAnZGVtbycKICAgICAgICAgICAgIExJTUlUIDFgCiAgICAgICAgICApCiAgICAgICAgICAuZ2V0KHVzZXJJZCk7CgogICAgICAgIHJldHVybiB7IHVzZXJJZCwgaXNBZG1pbjogZmFsc2UsIGhhc1BybzogISFwcm9MaWMgfTsKICAgICAgfQogICAgfQogIH0gY2F0Y2ggewogICAgLy8gQ29udGludWUgdG8gYW5vbnltb3VzCiAgfQoKICByZXR1cm4geyB1c2VySWQ6IG51bGwsIGlzQWRtaW46IGZhbHNlLCBoYXNQcm86IGZhbHNlIH07Cn0KCi8qKgogKiBDaGVjayBxdW90YSBhbmQgb3B0aW9uYWxseSBkZWR1Y3QgY29pbnMuCiAqIFJldHVybnMgeyBhbGxvd2VkOiB0cnVlLCAuLi4gfSBvciB7IGFsbG93ZWQ6IGZhbHNlLCByZWFzb246ICcuLi4nIH0KICovCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBjaGVja0FuZENoYXJnZVF1b3RhKAogIHRvb2xTbHVnOiBzdHJpbmcsCiAgY2xpZW50SXA6IHN0cmluZwopOiBQcm9taXNlPFF1b3RhUmVzdWx0PiB7CiAgY29uc3QgZGIgPSBnZXREYigpOwogIGNvbnN0IHRvZGF5ID0gdG9kYXlJU08oKTsKICBjb25zdCB7IHVzZXJJZCwgaXNBZG1pbiwgaGFzUHJvIH0gPSBhd2FpdCByZXNvbHZlVXNlcigpOwoKICAvLyDilIDilIDilIAgQURNSU46IHVubGltaXRlZCDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKICBpZiAoaXNBZG1pbikgewogICAgaWYgKHVzZXJJZCkgewogICAgICB0cnkgewogICAgICAgIGRiLnByZXBhcmUoCiAgICAgICAgICBgSU5TRVJUIElOVE8gdG9vbF91c2FnZSAodXNlcl9pZCwgdG9vbF9zbHVnLCB1c2FnZV9kYXRlLCBjb3VudCkKICAgICAgICAgICBWQUxVRVMgKD8sID8sID8sIDEpCiAgICAgICAgICAgT04gQ09ORkxJQ1QodXNlcl9pZCwgdG9vbF9zbHVnLCB1c2FnZV9kYXRlKQogICAgICAgICAgIERPIFVQREFURSBTRVQgY291bnQgPSBjb3VudCArIDFgCiAgICAgICAgKS5ydW4odXNlcklkLCB0b29sU2x1ZywgdG9kYXkpOwogICAgICB9IGNhdGNoIHsKICAgICAgICAvLyBOb24tZmF0YWwKICAgICAgfQogICAgfQogICAgcmV0dXJuIHsgYWxsb3dlZDogdHJ1ZSwgdXNlcklkLCBjaGFyZ2VkOiBmYWxzZSwgdGllcjogJ2FkbWluJyB9OwogIH0KCiAgLy8g4pSA4pSA4pSAIExPR0dFRC1JTiBVU0VSOiBmcmVlIG9yIHBybyB0aWVyIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAogIGlmICh1c2VySWQpIHsKICAgIGNvbnN0IGRhaWx5TGltaXQgPSBoYXNQcm8gPyBQUk9fUVVPVEEgOiBGUkVFX1FVT1RBOwoKICAgIGNvbnN0IHJvdyA9IGRiCiAgICAgIC5wcmVwYXJlKAogICAgICAgICdTRUxFQ1QgY291bnQgRlJPTSB0b29sX3VzYWdlIFdIRVJFIHVzZXJfaWQgPSA/IEFORCB0b29sX3NsdWcgPSA/IEFORCB1c2FnZV9kYXRlID0gPycKICAgICAgKQogICAgICAuZ2V0KHVzZXJJZCwgdG9vbFNsdWcsIHRvZGF5KSBhcyB7IGNvdW50OiBudW1iZXIgfSB8IHVuZGVmaW5lZDsKCiAgICBjb25zdCB1c2VkID0gcm93Py5jb3VudCA/PyAwOwoKICAgIC8vIFdpdGhpbiBmcmVlIHF1b3RhCiAgICBpZiAodXNlZCA8IGRhaWx5TGltaXQpIHsKICAgICAgZGIucHJlcGFyZSgKICAgICAgICBgSU5TRVJUIElOVE8gdG9vbF91c2FnZSAodXNlcl9pZCwgdG9vbF9zbHVnLCB1c2FnZV9kYXRlLCBjb3VudCkKICAgICAgICAgVkFMVUVTICg/LCA/LCA/LCAxKQogICAgICAgICBPTiBDT05GTElDVCh1c2VyX2lkLCB0b29sX3NsdWcsIHVzYWdlX2RhdGUpCiAgICAgICAgIERPIFVQREFURSBTRVQgY291bnQgPSBjb3VudCArIDFgCiAgICAgICkucnVuKHVzZXJJZCwgdG9vbFNsdWcsIHRvZGF5KTsKICAgICAgcmV0dXJuIHsgYWxsb3dlZDogdHJ1ZSwgdXNlcklkLCBjaGFyZ2VkOiBmYWxzZSwgdGllcjogaGFzUHJvID8gJ3BybycgOiAnZnJlZScgfTsKICAgIH0KCiAgICAvLyBPdmVyIHF1b3RhOiB0cnkgY29pbiBkZWR1Y3Rpb24KICAgIGNvbnN0IGNvc3QgPSBUT09MX0NPSU5fQ09TVFt0b29sU2x1Z107CiAgICBpZiAoIWNvc3QpIHsKICAgICAgLy8gTm8gY29zdCBkZWZpbmVkLCBhbGxvdyBmcmVlCiAgICAgIHJldHVybiB7IGFsbG93ZWQ6IHRydWUsIHVzZXJJZCwgY2hhcmdlZDogZmFsc2UsIHRpZXI6IGhhc1BybyA/ICdwcm8nIDogJ2ZyZWUnIH07CiAgICB9CgogICAgY29uc3Qgb2sgPSBhd2FpdCBkZWR1Y3RUb29sQ29pbih1c2VySWQsIHRvb2xTbHVnKTsKICAgIGlmICghb2spIHsKICAgICAgY29uc3QgbXNnID0gaGFzUHJvCiAgICAgICAgPyAnRGFpbHkgcXVvdGEgZXhjZWVkZWQuIEluc3VmZmljaWVudCBjb2lucy4nCiAgICAgICAgOiAnRGFpbHkgZnJlZSBxdW90YSBleGNlZWRlZC4gUHVyY2hhc2UgY29pbnMgb3IgdXBncmFkZSB0byBQcm8uJzsKICAgICAgcmV0dXJuIHsgYWxsb3dlZDogZmFsc2UsIHJlYXNvbjogbXNnIH07CiAgICB9CgogICAgZGIucHJlcGFyZSgKICAgICAgYElOU0VSVCBJTlRPIHRvb2xfdXNhZ2UgKHVzZXJfaWQsIHRvb2xfc2x1ZywgdXNhZ2VfZGF0ZSwgY291bnQpCiAgICAgICBWQUxVRVMgKD8sID8sID8sIDEpCiAgICAgICBPTiBDT05GTElDVCh1c2VyX2lkLCB0b29sX3NsdWcsIHVzYWdlX2RhdGUpCiAgICAgICBETyBVUERBVEUgU0VUIGNvdW50ID0gY291bnQgKyAxYAogICAgKS5ydW4odXNlcklkLCB0b29sU2x1ZywgdG9kYXkpOwoKICAgIHJldHVybiB7IGFsbG93ZWQ6IHRydWUsIHVzZXJJZCwgY2hhcmdlZDogdHJ1ZSwgdGllcjogaGFzUHJvID8gJ3BybycgOiAnZnJlZScgfTsKICB9CgogIC8vIOKUgOKUgOKUgCBBTk9OWU1PVVM6IElQLWJhc2VkLCAyL2RheSwgbm8gY29pbiBzdXBwb3J0IOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAogIGNvbnN0IGlwSGFzaCA9IGhhc2hJUChjbGllbnRJcCk7CiAgY29uc3QgYW5vblJvdyA9IGRiCiAgICAucHJlcGFyZSgKICAgICAgJ1NFTEVDVCBjb3VudCBGUk9NIHRvb2xfdXNhZ2VfYW5vbiBXSEVSRSBpcF9oYXNoID0gPyBBTkQgdG9vbF9zbHVnID0gPyBBTkQgdXNhZ2VfZGF0ZSA9ID8nCiAgICApCiAgICAuZ2V0KGlwSGFzaCwgdG9vbFNsdWcsIHRvZGF5KSBhcyB7IGNvdW50OiBudW1iZXIgfSB8IHVuZGVmaW5lZDsKCiAgY29uc3QgYW5vblVzZWQgPSBhbm9uUm93Py5jb3VudCA/PyAwOwoKICBpZiAoYW5vblVzZWQgPj0gQU5PTl9RVU9UQSkgewogICAgcmV0dXJuIHsgYWxsb3dlZDogZmFsc2UsIHJlYXNvbjogJ0RhaWx5IHF1b3RhIGV4Y2VlZGVkLiBTaWduIHVwIGZyZWUgZm9yIDUvZGF5LicgfTsKICB9CgogIGRiLnByZXBhcmUoCiAgICBgSU5TRVJUIElOVE8gdG9vbF91c2FnZV9hbm9uIChpcF9oYXNoLCB0b29sX3NsdWcsIHVzYWdlX2RhdGUsIGNvdW50KQogICAgIFZBTFVFUyAoPywgPywgPywgMSkKICAgICBPTiBDT05GTElDVChpcF9oYXNoLCB0b29sX3NsdWcsIHVzYWdlX2RhdGUpCiAgICAgRE8gVVBEQVRFIFNFVCBjb3VudCA9IGNvdW50ICsgMWAKICApLnJ1bihpcEhhc2gsIHRvb2xTbHVnLCB0b2RheSk7CgogIHJldHVybiB7IGFsbG93ZWQ6IHRydWUsIHVzZXJJZDogbnVsbCwgY2hhcmdlZDogZmFsc2UsIHRpZXI6ICdhbm9uJyB9Owp9Cg==
+import { createHmac } from 'crypto';
+import { cookies } from 'next/headers';
+import getDb from '@/lib/db';
+import { verifyUserToken } from '@/lib/user-auth';
+import { verifyToken as verifyAdminToken } from '@/lib/auth';
+import { getUserByEmail } from '@/lib/auth-users';
+import { deductToolCoin, TOOL_COIN_COST } from '@/lib/billing';
+
+/**
+ * Tiered quota resolver: Admin (unlimited) → Pro (500/day free + coin) →
+ * Free (5/day free + coin) → Anonymous (2/day IP-based, no coin).
+ */
+
+const FREE_QUOTA = 5;      // Free users: 5/day
+const PRO_QUOTA = 500;     // Pro users: 500/day
+const ANON_QUOTA = 2;      // Anonymous: 2/day
+
+function todayISO(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function hashIP(ip: string): string {
+  return createHmac('sha256', process.env.COOKIE_SECRET ?? 'anon')
+    .update(ip)
+    .digest('hex')
+    .slice(0, 16);
+}
+
+export type QuotaResult =
+  | { allowed: true; userId: string | null; charged: boolean; tier: 'admin' | 'pro' | 'free' | 'anon' }
+  | { allowed: false; reason: string };
+
+/**
+ * Resolve user: trx_admin cookie (highest priority) → trx_user cookie → anonymous
+ */
+async function resolveUser(): Promise<{
+  userId: string | null;
+  isAdmin: boolean;
+  hasPro: boolean;
+}> {
+  const db = getDb();
+  const jar = await cookies();
+
+  // Try admin token
+  try {
+    const adminToken = jar.get('trx_admin')?.value;
+    if (adminToken) {
+      const v = verifyAdminToken(adminToken);
+      if (v.valid && v.email) {
+        const user = getUserByEmail(v.email);
+        if (user) return { userId: user.id, isAdmin: true, hasPro: true };
+        return { userId: null, isAdmin: true, hasPro: true };
+      }
+    }
+  } catch {
+    // Continue to trx_user
+  }
+
+  // Try user token
+  try {
+    const userToken = jar.get('trx_user')?.value;
+    if (userToken) {
+      const v = verifyUserToken(userToken);
+      if (v.valid && v.userId) {
+        const userId = v.userId;
+
+        // Check if admin or owner
+        const userRow = db
+          .prepare('SELECT role_id, is_owner FROM users WHERE id = ?')
+          .get(userId) as { role_id: number; is_owner: number } | undefined;
+
+        if (userRow?.role_id === 1 || userRow?.is_owner === 1) {
+          return { userId, isAdmin: true, hasPro: true };
+        }
+
+        // Check active pro license (non-demo plan)
+        const proLic = db
+          .prepare(
+            `SELECT l.id FROM platform_licenses l
+             JOIN platform_app_plans p ON l.plan_id = p.id
+             WHERE l.user_id = ? AND l.status = 'active' AND p.plan_code != 'demo'
+             LIMIT 1`
+          )
+          .get(userId);
+
+        return { userId, isAdmin: false, hasPro: !!proLic };
+      }
+    }
+  } catch {
+    // Continue to anonymous
+  }
+
+  return { userId: null, isAdmin: false, hasPro: false };
+}
+
+/**
+ * Check quota and optionally deduct coins.
+ * Returns { allowed: true, ... } or { allowed: false, reason: '...' }
+ */
+export async function checkAndChargeQuota(
+  toolSlug: string,
+  clientIp: string
+): Promise<QuotaResult> {
+  const db = getDb();
+  const today = todayISO();
+  const { userId, isAdmin, hasPro } = await resolveUser();
+
+  // ─── ADMIN: unlimited ───────────────────────────────────────────────────
+  if (isAdmin) {
+    if (userId) {
+      try {
+        db.prepare(
+          `INSERT INTO tool_usage (user_id, tool_slug, usage_date, count)
+           VALUES (?, ?, ?, 1)
+           ON CONFLICT(user_id, tool_slug, usage_date)
+           DO UPDATE SET count = count + 1`
+        ).run(userId, toolSlug, today);
+      } catch {
+        // Non-fatal
+      }
+    }
+    return { allowed: true, userId, charged: false, tier: 'admin' };
+  }
+
+  // ─── LOGGED-IN USER: free or pro tier ──────────────────────────────────
+  if (userId) {
+    const dailyLimit = hasPro ? PRO_QUOTA : FREE_QUOTA;
+
+    const row = db
+      .prepare(
+        'SELECT count FROM tool_usage WHERE user_id = ? AND tool_slug = ? AND usage_date = ?'
+      )
+      .get(userId, toolSlug, today) as { count: number } | undefined;
+
+    const used = row?.count ?? 0;
+
+    // Within free quota
+    if (used < dailyLimit) {
+      db.prepare(
+        `INSERT INTO tool_usage (user_id, tool_slug, usage_date, count)
+         VALUES (?, ?, ?, 1)
+         ON CONFLICT(user_id, tool_slug, usage_date)
+         DO UPDATE SET count = count + 1`
+      ).run(userId, toolSlug, today);
+      return { allowed: true, userId, charged: false, tier: hasPro ? 'pro' : 'free' };
+    }
+
+    // Over quota: try coin deduction
+    const cost = TOOL_COIN_COST[toolSlug];
+    if (!cost) {
+      // No cost defined, allow free
+      return { allowed: true, userId, charged: false, tier: hasPro ? 'pro' : 'free' };
+    }
+
+    const ok = await deductToolCoin(userId, toolSlug);
+    if (!ok) {
+      const msg = hasPro
+        ? 'Daily quota exceeded. Insufficient coins.'
+        : 'Daily free quota exceeded. Purchase coins or upgrade to Pro.';
+      return { allowed: false, reason: msg };
+    }
+
+    db.prepare(
+      `INSERT INTO tool_usage (user_id, tool_slug, usage_date, count)
+       VALUES (?, ?, ?, 1)
+       ON CONFLICT(user_id, tool_slug, usage_date)
+       DO UPDATE SET count = count + 1`
+    ).run(userId, toolSlug, today);
+
+    return { allowed: true, userId, charged: true, tier: hasPro ? 'pro' : 'free' };
+  }
+
+  // ─── ANONYMOUS: IP-based, 2/day, no coin support ────────────────────────
+  const ipHash = hashIP(clientIp);
+  const anonRow = db
+    .prepare(
+      'SELECT count FROM tool_usage_anon WHERE ip_hash = ? AND tool_slug = ? AND usage_date = ?'
+    )
+    .get(ipHash, toolSlug, today) as { count: number } | undefined;
+
+  const anonUsed = anonRow?.count ?? 0;
+
+  if (anonUsed >= ANON_QUOTA) {
+    return { allowed: false, reason: 'Daily quota exceeded. Sign up free for 5/day.' };
+  }
+
+  db.prepare(
+    `INSERT INTO tool_usage_anon (ip_hash, tool_slug, usage_date, count)
+     VALUES (?, ?, ?, 1)
+     ON CONFLICT(ip_hash, tool_slug, usage_date)
+     DO UPDATE SET count = count + 1`
+  ).run(ipHash, toolSlug, today);
+
+  return { allowed: true, userId: null, charged: false, tier: 'anon' };
+}
