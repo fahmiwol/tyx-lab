@@ -64,13 +64,13 @@ const net = gross - feeAmount;  // 97500 (975.00)
 
 ### 3. Conversion (Different Denomination)
 ```typescript
-// Rule: 1 Perak = 1 Perunggu (in this system)
-// But: Perak worth Rp 8,000 vs Perunggu worth Rp 5,000 (per TierValueIDR)
+// Rule: 1 Silver = 1 Bronze (in this system)
+// But: Silver worth Rp 8,000 vs Bronze worth Rp 5,000 (per TierValueIDR)
 const perakAmount = BigInt(100);
-const exchangeRatio = 1;  // 1 Perak → 1 Perunggu
+const exchangeRatio = 1;  // 1 Silver → 1 Bronze
 
 const perungguAmount = perakAmount * BigInt(exchangeRatio);
-// Result: 100 Perunggu
+// Result: 100 Bronze
 ```
 
 ### 4. Rounding (Critical for Division)
@@ -104,10 +104,10 @@ const result = (amount * BigInt(25)) / BigInt(1000);
 
 ```typescript
 export const TIER_VALUE_IDR: Record<string, number> = {
-  EMAS: 10_000,      // 1 Gold coin = Rp 10,000
-  PERAK: 8_000,      // 1 Silver coin = Rp 8,000
-  PERUNGGU: 5_000,   // 1 Bronze coin = Rp 5,000
-  BERLIAN: 0,        // Reward coin (no monetary value)
+  GOLD: 10_000,      // 1 Gold coin = Rp 10,000
+  SILVER: 8_000,      // 1 Silver coin = Rp 8,000
+  BRONZE: 5_000,   // 1 Bronze coin = Rp 5,000
+  DIAMOND: 0,        // Reward coin (no monetary value)
 };
 
 // To convert: multiply amount by tier value
@@ -116,8 +116,8 @@ function getIdrValue(amount: BigInt, denomination: string): BigInt {
   return (amount * BigInt(idrValue)) / BigInt(100);  // Convert from cents to IDR
 }
 
-const userBalance = BigInt(100);  // 100 PERAK
-const idrEquivalent = getIdrValue(userBalance, "PERAK");
+const userBalance = BigInt(100);  // 100 SILVER
+const idrEquivalent = getIdrValue(userBalance, "SILVER");
 // (100 * 8_000) / 100 = 8_000 IDR
 ```
 
