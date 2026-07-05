@@ -1,0 +1,1 @@
+{"id":"db-numseq-generator","name":"Database Sequential Number Generator","version":"1.0.0","category":["ops","business"],"description":"Generate sequential document/invoice numbers with prefix, period (YYYYMM), and auto-increment. Useful for invoices, orders, leads.","status":"stable","author":"Tiranyx","license":"MIT"}
