@@ -144,9 +144,9 @@ app.get('/api/admin/users', requireAdmin, (req, res) => {
 
 ## Real-World Patterns from Tiranyx
 
-- **HR/CRM app (Peplid):** admin store = users/subscriptions, tenant store = employees/departments
-- **Document vault (Dokumix):** admin store = billing, tenant store = documents/templates
-- **Project manager (Nirmanix):** admin store = accounts, tenant store = projects/tasks/milestones
+- **HR/CRM app (an HR/CRM app):** admin store = users/subscriptions, tenant store = employees/departments
+- **Document vault (a document vault):** admin store = billing, tenant store = documents/templates
+- **Project manager (a project-management app):** admin store = accounts, tenant store = projects/tasks/milestones
 
 Each started with this pattern, then graduated to databases as user count grew.
 
