@@ -1,1 +1,75 @@
-IyBNdWx0aS1Qcm92aWRlciBBSSBSb3V0ZXIKCkZhbGxiYWNrLWF3YXJlIEFJIGNvbnRlbnQgZ2VuZXJhdGlvbiB3aXRoIGF1dG9tYXRpYyBwcm92aWRlciBmYWlsb3Zlci4gUm91dGUgdG8gR3JvcSDihpIgR2VtaW5pIOKGkiBPbGxhbWEg4oaSIEFudGhyb3BpYy4KCiMjIFdoeQoKT3B0aW1pemUgY29zdCBhbmQgbGF0ZW5jeToKLSAqKkdyb3EqKiAoZnJlZSBxdW90YSk6IEZhc3Rlc3QgaW5mZXJlbmNlLCBpZGVhbCBmb3IgbGlnaHQgY29udGVudCB0YXNrcwotICoqR2VtaW5pKiogKGZyZWUgcXVvdGEpOiBIaWdoIHF1b3RhLCBnb29kIGZvciB2b2x1bWUKLSAqKk9sbGFtYSoqIChsb2NhbCk6IFplcm8gY29zdCwgZnVsbCBwcml2YWN5Ci0gKipBbnRocm9waWMqKiAocGFpZCk6IEZhbGxiYWNrIGlmIG90aGVycyBleGhhdXN0ZWQKClNpbmdsZSBpbnRlcmZhY2U7IHN3YXAgcHJvdmlkZXJzIHdpdGhvdXQgY2hhbmdpbmcgY2FsbCBzaXRlcy4KCiMjIFVzYWdlCgpgYGB0eXBlc2NyaXB0CmltcG9ydCB7IGFpUm91dGVyIH0gZnJvbSAnQC9saWIvYWktcm91dGVyJzsKCmNvbnN0IHJlc3VsdCA9IGF3YWl0IGFpUm91dGVyKAogICdXcml0ZSBhIDUwLXdvcmQgcHJvZHVjdCBkZXNjcmlwdGlvbiBmb3IgYSBjb2ZmZWUgbXVnLicsCiAgewogICAgbWF4VG9rZW5zOiAxNTAsCiAgICB0ZW1wZXJhdHVyZTogMC44LAogICAgc3lzdGVtUHJvbXB0OiAnWW91IGFyZSBhIGNvcHl3cml0ZXIuJywKICB9Cik7Cgpjb25zb2xlLmxvZyhyZXN1bHQudGV4dCk7ICAgICAgLy8gIlNpcCBpbiBzdHlsZS4uLiIKY29uc29sZS5sb2cocmVzdWx0LnByb3ZpZGVyKTsgIC8vICJncm9xIgpjb25zb2xlLmxvZyhyZXN1bHQubW9kZWwpOyAgICAgLy8gImxsYW1hLTMuMS04Yi1pbnN0YW50IgpgYGAKCiMjIEVudmlyb25tZW50IFZhcmlhYmxlcwoKYGBgYmFzaAojIEdyb3EgKGZyZWU6IDE0NDAwIHJlcS9kYXkpCkdST1FfQVBJX0tFWT0uLi4KR1JPUV9NT0RFTD1sbGFtYS0zLjEtOGItaW5zdGFudCAgIyBvcHRpb25hbAoKIyBHZW1pbmkgKGZyZWU6IDFNIHRva2Vucy9kYXkpCkdFTUlOSV9BUElfS0VZPS4uLgpHRU1JTklfTU9ERUw9Z2VtaW5pLTEuNS1mbGFzaCAgICAjIG9wdGlvbmFsCgojIE9sbGFtYSAobG9jYWwsIHplcm8gY29zdCkKT0xMQU1BX1VSTD1odHRwOi8vbG9jYWxob3N0OjExNDM0Ck9MTEFNQV9NT0RFTD1sbGFtYTMuMQoKIyBBbnRocm9waWMgKHBhaWQgZmFsbGJhY2spCkFOVEhST1BJQ19BUElfS0VZPS4uLgpBTlRIUk9QSUNfTU9ERUw9Y2xhdWRlLTMtNS1zb25uZXQtMjAyNDEwMjIKYGBgCgojIyBCZWhhdmlvcgoKMS4gVHJpZXMgR3JvcSDihpIgR2VtaW5pIOKGkiBPbGxhbWEg4oaSIEFudGhyb3BpYyBpbiBvcmRlcgoyLiBTa2lwcyBwcm92aWRlciBpZiBBUEkga2V5IG1pc3NpbmcKMy4gT24gdGltZW91dCBvciBlcnJvciwgdHJpZXMgbmV4dCBwcm92aWRlcgo0LiBSZXR1cm5zIGB7IHRleHQsIHByb3ZpZGVyLCBtb2RlbCB9YCBvbiBzdWNjZXNzCjUuIFRocm93cyBpZiBhbGwgcHJvdmlkZXJzIGZhaWwKCiMjIEludGVncmF0aW9uCgotIEFQSSByb3V0ZXM6IHVzZSBgYWlSb3V0ZXIoKWAgdG8gZ2VuZXJhdGUgY29udGVudCBzZXJ2ZXItc2lkZQotIEJhdGNoIGpvYnM6IHByb2Nlc3MgaW4gcGFyYWxsZWwgd2l0aCBkaWZmZXJlbnQgcHJvbXB0cwotIFN0cmVhbWluZzogd3JhcCB3aXRoIEFzeW5jR2VuZXJhdG9yIGZvciBpbmNyZW1lbnRhbCBvdXRwdXQKCiMjIENvc3QgTm90ZXMKCi0gKipGcmVlIHRpZXIqKjogR3JvcSArIEdlbWluaSBjb3ZlciBtb3N0IHVzZSBjYXNlcwotICoqVm9sdW1lIGxpbWl0cyoqOiBHcm9xIGhhcyBkYWlseSByZXEgY2FwLCBHZW1pbmkgaGFzIHRva2VuIGNhcAotICoqRmFsbGJhY2sgY29zdCoqOiBPbmx5IGhpdHMgQW50aHJvcGljIGlmIG90aGVycyBleGhhdXN0ZWQKLSAqKkxvY2FsIG9wdGlvbioqOiBSdW4gT2xsYW1hIGxvY2FsbHkgZm9yIHplcm8gbWFyZ2luYWwgY29zdAoKKk9wZW4gc291cmNlIOKAlCB1c2UgaXQgd2lzZWx5LioK
+# Multi-Provider AI Router
+
+Fallback-aware AI content generation with automatic provider failover. Route to Groq → Gemini → Ollama → Anthropic.
+
+## Why
+
+Optimize cost and latency:
+- **Groq** (free quota): Fastest inference, ideal for light content tasks
+- **Gemini** (free quota): High quota, good for volume
+- **Ollama** (local): Zero cost, full privacy
+- **Anthropic** (paid): Fallback if others exhausted
+
+Single interface; swap providers without changing call sites.
+
+## Usage
+
+```typescript
+import { aiRouter } from '@/lib/ai-router';
+
+const result = await aiRouter(
+  'Write a 50-word product description for a coffee mug.',
+  {
+    maxTokens: 150,
+    temperature: 0.8,
+    systemPrompt: 'You are a copywriter.',
+  }
+);
+
+console.log(result.text);      // "Sip in style..."
+console.log(result.provider);  // "groq"
+console.log(result.model);     // "llama-3.1-8b-instant"
+```
+
+## Environment Variables
+
+```bash
+# Groq (free: 14400 req/day)
+GROQ_API_KEY=...
+GROQ_MODEL=llama-3.1-8b-instant  # optional
+
+# Gemini (free: 1M tokens/day)
+GEMINI_API_KEY=...
+GEMINI_MODEL=gemini-1.5-flash    # optional
+
+# Ollama (local, zero cost)
+OLLAMA_URL=http://localhost:11434
+OLLAMA_MODEL=llama3.1
+
+# Anthropic (paid fallback)
+ANTHROPIC_API_KEY=...
+ANTHROPIC_MODEL=claude-3-5-sonnet-20241022
+```
+
+## Behavior
+
+1. Tries Groq → Gemini → Ollama → Anthropic in order
+2. Skips provider if API key missing
+3. On timeout or error, tries next provider
+4. Returns `{ text, provider, model }` on success
+5. Throws if all providers fail
+
+## Integration
+
+- API routes: use `aiRouter()` to generate content server-side
+- Batch jobs: process in parallel with different prompts
+- Streaming: wrap with AsyncGenerator for incremental output
+
+## Cost Notes
+
+- **Free tier**: Groq + Gemini cover most use cases
+- **Volume limits**: Groq has daily req cap, Gemini has token cap
+- **Fallback cost**: Only hits Anthropic if others exhausted
+- **Local option**: Run Ollama locally for zero marginal cost
+
+*Open source — use it wisely.*
