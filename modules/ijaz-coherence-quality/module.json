@@ -1,0 +1,23 @@
+{
+  "id": "ijaz-coherence-quality",
+  "name": "I'jaz Multi-Scale Coherence Evaluator",
+  "version": "1.0.0",
+  "category": ["ai", "quality-assurance"],
+  "description": "Evaluates creative output across 6 scales: word, element, piece, campaign, brand, audience. Harmonic mean; weakest link drags result.",
+  "input": [
+    {"name": "output", "type": "string|object"},
+    {"name": "brand_context", "type": "object"},
+    {"name": "campaign_context", "type": "object"}
+  ],
+  "output": [
+    {"name": "overall_score", "type": "number", "description": "0.0-1.0"},
+    {"name": "scale_scores", "type": "object"},
+    {"name": "weakest_link", "type": "string"}
+  ],
+  "tags": ["coherence", "quality", "ijaz", "brand-alignment"],
+  "compatible_with": ["creative-agents", "quality-gates"],
+  "used_in_recipes": ["creative-pipeline"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
