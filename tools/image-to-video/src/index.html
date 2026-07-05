@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MighanAI — Image to Video</title>
+  <title>AI Studio — Image to Video</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -90,7 +90,7 @@
 </head>
 <body>
   <header>
-    <div class="logo">Mighan<span>AI</span> — Image to Video</div>
+    <div class="logo">Studio<span>AI</span> — Image to Video</div>
     <a class="back-btn" href="index.html">← Kembali</a>
   </header>
 
@@ -260,11 +260,11 @@
 
     document.getElementById('download').onclick = () => {
       if (resultVideo.src) {
-        const a = document.createElement('a'); a.href = resultVideo.src; a.download = 'mighan-video-' + Date.now() + '.mp4'; a.click();
+        const a = document.createElement('a'); a.href = resultVideo.src; a.download = 'Studio-video-' + Date.now() + '.mp4'; a.click();
       }
     };
     document.getElementById('send-canvas').onclick = () => {
-      showToast('Dikirim ke MighanCanvas (mock)');
+      showToast('Dikirim ke Canvas Editor (mock)');
     };
 
     function showToast(msg) {
