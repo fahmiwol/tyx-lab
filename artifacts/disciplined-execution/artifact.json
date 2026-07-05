@@ -1,0 +1,14 @@
+{
+  "id": "disciplined-execution",
+  "name": "Disciplined Execution — the 8-gate loop",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "ops",
+  "description": "A test-driven execution discipline: decompose into epics/episodes and gate every episode through 8 validation steps so regressions never ship.",
+  "tags": ["methodology", "engineering-discipline", "testing", "deploy", "verification", "agents"],
+  "compatible_with": ["repo-cartography-handoff"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
