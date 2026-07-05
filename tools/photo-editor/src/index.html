@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>MighanPhoto — Design Studio</title>
+<title>Photo Editor — Design Studio</title>
 <style>
 :root {
   --bg: #0d0d11; --card: #16161e; --border: #2a2a38;
@@ -135,7 +135,7 @@ input#file-input { display: none; }
 <div id="topbar">
   <a href="/design-studio/">Design Studio</a>
   <span class="sep">›</span>
-  <span class="title">📷 MighanPhoto</span>
+  <span class="title">📷 Photo Editor</span>
   <span style="margin-left:auto;color:var(--muted);font-size:11px">CSS + Canvas</span>
 </div>
 
@@ -463,7 +463,7 @@ function downloadImage() {
     const url = canvas.toDataURL(mimeType, q);
 
     const a = document.createElement('a');
-    a.download = 'mighan-photo-' + Date.now() + '.' + fmt;
+    a.download = 'Studio-photo-' + Date.now() + '.' + fmt;
     a.href = url;
     a.click();
   };
