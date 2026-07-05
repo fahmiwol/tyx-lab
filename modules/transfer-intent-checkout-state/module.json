@@ -1,0 +1,15 @@
+{
+  "id": "transfer-intent-checkout-state",
+  "name": "Transfer Intent Checkout State",
+  "version": "1.0.0",
+  "category": "business",
+  "description": "Embeddable payment checkout lifecycle: (1) Client creates intent via public API key, (2) Proxy forwards to bank with internal key (CORS-safe), (3) User confirms on checkout URL, (4) Server settles if confirmed. Transitions: PENDING → COMPLETED or EXPIRED/CANCELED. Includes expiryMinutes, successUrl/cancelUrl redirects.",
+  "input": ["{ apiKey, amount, denom, description, metadata, successUrl, cancelUrl }"],
+  "output": ["{ id, status, checkoutUrl, expiresAt }"],
+  "tags": ["payment","checkout","intent","settlement","widget"],
+  "compatible_with": ["dual-auth-internal-key-pattern","idempotent-payment-processing"],
+  "used_in_recipes": ["embedded-payment-widget","merchant-checkout"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
