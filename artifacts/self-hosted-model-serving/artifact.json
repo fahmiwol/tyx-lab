@@ -1,0 +1,14 @@
+{
+  "id": "self-hosted-model-serving",
+  "name": "Self-Hosted Model Serving Architecture: Local-First SLM Deployment",
+  "version": "1.0.0",
+  "kind": "framework",
+  "category": "infra",
+  "description": "Production-grade architecture for deploying SLMs on commodity hardware without cloud APIs. Covers inference serving, model versioning, hot-swap deployment, and cost management.",
+  "tags": ["model-serving", "ollama", "vllm", "inference", "deployment", "blue-green", "hot-swap", "self-hosted"],
+  "compatible_with": ["lora-continual-learning", "eval-gate-regression-guard"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
