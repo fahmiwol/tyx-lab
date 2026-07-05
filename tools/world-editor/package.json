@@ -1,0 +1,26 @@
+{
+  "name": "cursor-036-world-editor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "by Cursor — world.json editor via gateway",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3060",
+    "build": "vite build",
+    "preview": "vite preview --port 3060 --host",
+    "start": "vite preview --port 3060 --host"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.6.0",
+    "monaco-editor": "^0.52.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "vite": "^5.4.10"
+  }
+}
