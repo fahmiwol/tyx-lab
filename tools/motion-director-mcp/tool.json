@@ -1,0 +1,23 @@
+{
+  "id": "motion-director-mcp",
+  "name": "Motion Director MCP — Video Pipeline Tool",
+  "version": "0.2.0",
+  "kind": "mcp-server",
+  "category": "video",
+  "description": "MCP server that exposes the Motion Director AI-video pipeline (idea → Visual DNA → storyboard → keyframes → i2v → voiceover → render) as 18 tools. Thin facade over Motion Director REST API. Works with Claude Desktop, Cursor, Hermes agents.",
+  "run": "MOTION_API=http://localhost:3201 node server.mjs",
+  "input": [
+    { "name": "projectId", "type": "string", "description": "Project identifier" },
+    { "name": "idea", "type": "string", "description": "Video concept/brief" },
+    { "name": "sceneId", "type": "string", "description": "Scene identifier for asset generation" }
+  ],
+  "output": [
+    { "name": "result", "type": "object", "description": "Pipeline result (project/storyboard/video job)" }
+  ],
+  "tags": ["video", "mcp", "pipeline", "ai-video", "orchestration"],
+  "compatible_with": ["motion-director-api", "agent-cascade-router"],
+  "used_in_recipes": ["video-production-pipeline", "content-creation"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
