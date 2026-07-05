@@ -1,19 +1,72 @@
 {
-    "version":  "1.0.0",
+    "version":  "1.1.0",
     "last_updated":  "2026-07-05",
-    "total_modules":  20,
-    "total_artifacts":  27,
-    "total_atoms":  47,
+    "total_modules":  55,
+    "total_artifacts":  37,
+    "total_atoms":  92,
     "atoms":  [
+                  {
+                      "id":  "aes-256-gcm-secret",
+                      "name":  "AES-256-GCM Secret Encrypt/Decrypt",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/aes-256-gcm-secret",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "agent-self-refine-loop",
+                      "name":  "Self-Refining Agent Loop (Tafakkur Pattern)",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/agent-self-refine-loop",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "ai-router-fallback",
+                      "name":  "Multi-Provider AI Router",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/ai-router-fallback",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "astar-tilemap-pathfinder",
+                      "name":  "A* Tilemap Pathfinder",
+                      "lane":  "module",
+                      "category":  "3d",
+                      "path":  "modules/astar-tilemap-pathfinder",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "audio-chunk-streamer",
+                      "name":  "Audio Chunk Streamer",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/audio-chunk-streamer",
+                      "status":  "stable"
+                  },
                   {
                       "id":  "audit-log-pattern",
                       "name":  "Append-Only Audit Log",
                       "lane":  "module",
-                      "category":  [
-                                       "business",
-                                       "ops"
-                                   ],
+                      "category":  "business",
                       "path":  "modules/audit-log-pattern",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "brute-force-login-guard",
+                      "name":  "Brute Force Login Guard",
+                      "lane":  "module",
+                      "category":  "ops",
+                      "path":  "modules/brute-force-login-guard",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "bullmq-job-enqueuer",
+                      "name":  "BullMQ Job Enqueuer",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/bullmq-job-enqueuer",
                       "status":  "stable"
                   },
                   {
@@ -25,12 +78,50 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "command-intent-router",
+                      "name":  "Command Intent Router",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/command-intent-router",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "csrf-security-guard",
+                      "name":  "CSRF Security Guard",
+                      "lane":  "module",
+                      "category":  "ops",
+                      "path":  "modules/csrf-security-guard",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "currency-formatter",
+                      "name":  "Currency Formatter \u0026 Conversion",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/currency-formatter",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "day-night-cycle",
+                      "name":  "Day Night Cycle",
+                      "lane":  "module",
+                      "category":  "3d",
+                      "path":  "modules/day-night-cycle",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "db-numseq-generator",
+                      "name":  "Database Sequential Number Generator",
+                      "lane":  "module",
+                      "category":  "ops",
+                      "path":  "modules/db-numseq-generator",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "double-entry-ledger",
                       "name":  "Double-Entry Ledger",
                       "lane":  "module",
-                      "category":  [
-                                       "business"
-                                   ],
+                      "category":  "business",
                       "path":  "modules/double-entry-ledger",
                       "status":  "stable"
                   },
@@ -38,9 +129,7 @@
                       "id":  "env-config-schema",
                       "name":  "Environment Config Schema",
                       "lane":  "module",
-                      "category":  [
-                                       "infra"
-                                   ],
+                      "category":  "infra",
                       "path":  "modules/env-config-schema",
                       "status":  "stable"
                   },
@@ -48,43 +137,80 @@
                       "id":  "exponential-backoff-queue",
                       "name":  "Exponential Backoff Queue",
                       "lane":  "module",
-                      "category":  [
-                                       "infra",
-                                       "ops"
-                                   ],
+                      "category":  "infra",
                       "path":  "modules/exponential-backoff-queue",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "game-loop-fixed-timestep",
+                      "name":  "Game Loop with Fixed Timestep",
+                      "lane":  "module",
+                      "category":  "3d",
+                      "path":  "modules/game-loop-fixed-timestep",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "haal-user-state-conditioning",
+                      "name":  "Haal: User-State Conditioning",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/haal-user-state-conditioning",
                       "status":  "stable"
                   },
                   {
                       "id":  "idempotent-payment-processing",
                       "name":  "Idempotent Payment Processing",
                       "lane":  "module",
-                      "category":  [
-                                       "business",
-                                       "infra"
-                                   ],
+                      "category":  "business",
                       "path":  "modules/idempotent-payment-processing",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "ijaz-coherence-quality",
+                      "name":  "I\u0027jaz Multi-Scale Coherence Evaluator",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/ijaz-coherence-quality",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "image-with-fallback",
+                      "name":  "Image with Fallback Component",
+                      "lane":  "module",
+                      "category":  "3d",
+                      "path":  "modules/image-with-fallback",
                       "status":  "stable"
                   },
                   {
                       "id":  "intent-pattern-matcher",
                       "name":  "Intent Pattern Matcher",
                       "lane":  "module",
-                      "category":  [
-                                       "business",
-                                       "ai"
-                                   ],
+                      "category":  "business",
                       "path":  "modules/intent-pattern-matcher",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "jwt-auth-cookies",
+                      "name":  "JWT Auth Cookies",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/jwt-auth-cookies",
                       "status":  "stable"
                   },
                   {
                       "id":  "jwt-token-helper",
                       "name":  "JWT Token Helper",
                       "lane":  "module",
-                      "category":  [
-                                       "infra"
-                                   ],
+                      "category":  "infra",
                       "path":  "modules/jwt-token-helper",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "ken-burns-ffmpeg-renderer",
+                      "name":  "Ken Burns FFmpeg Renderer",
+                      "lane":  "module",
+                      "category":  "video",
+                      "path":  "modules/ken-burns-ffmpeg-renderer",
                       "status":  "stable"
                   },
                   {
@@ -96,6 +222,46 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "message-pipeline-router",
+                      "name":  "Message Pipeline Router",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/message-pipeline-router",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "minimal-session-cookie",
+                      "name":  "Minimal Session Cookie Auth",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/minimal-session-cookie",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "nodemailer-email-template",
+                      "name":  "Nodemailer Email Template",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/nodemailer-email-template",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "orthographic-camera-rig",
+                      "name":  "Orthographic Camera Rig",
+                      "lane":  "module",
+                      "category":  "3d",
+                      "path":  "modules/orthographic-camera-rig",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "pagination-helper",
+                      "name":  "Pagination Helper",
+                      "lane":  "module",
+                      "category":  "ops",
+                      "path":  "modules/pagination-helper",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "particle-avatar-engine",
                       "name":  "Particle Avatar Engine",
                       "lane":  "module",
@@ -104,13 +270,18 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "password-scrypt-hash",
+                      "name":  "Password Hashing with Scrypt",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/password-scrypt-hash",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "phone-normalization",
                       "name":  "Phone Normalization",
                       "lane":  "module",
-                      "category":  [
-                                       "business",
-                                       "infra"
-                                   ],
+                      "category":  "business",
                       "path":  "modules/phone-normalization",
                       "status":  "stable"
                   },
@@ -118,21 +289,23 @@
                       "id":  "prisma-lifecycle-service",
                       "name":  "Prisma Lifecycle Service",
                       "lane":  "module",
-                      "category":  [
-                                       "infra",
-                                       "ops"
-                                   ],
+                      "category":  "infra",
                       "path":  "modules/prisma-lifecycle-service",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "raycaster-object-picker",
+                      "name":  "Raycaster Object Picker",
+                      "lane":  "module",
+                      "category":  "3d",
+                      "path":  "modules/raycaster-object-picker",
                       "status":  "stable"
                   },
                   {
                       "id":  "redis-queue-wrapper",
                       "name":  "Redis Queue Wrapper",
                       "lane":  "module",
-                      "category":  [
-                                       "infra",
-                                       "ops"
-                                   ],
+                      "category":  "infra",
                       "path":  "modules/redis-queue-wrapper",
                       "status":  "stable"
                   },
@@ -140,10 +313,16 @@
                       "id":  "relative-timestamp-formatter",
                       "name":  "Relative Timestamp Formatter",
                       "lane":  "module",
-                      "category":  [
-                                       "infra"
-                                   ],
+                      "category":  "infra",
                       "path":  "modules/relative-timestamp-formatter",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "rupiah-formatter",
+                      "name":  "Rupiah Currency \u0026 Text Formatter",
+                      "lane":  "module",
+                      "category":  "ops",
+                      "path":  "modules/rupiah-formatter",
                       "status":  "stable"
                   },
                   {
@@ -155,11 +334,43 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "sale-pipeline-stages",
+                      "name":  "Sales Pipeline Stage Machine",
+                      "lane":  "module",
+                      "category":  "crm",
+                      "path":  "modules/sale-pipeline-stages",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "semantic-layers-decompose",
+                      "name":  "Hierarchical Semantic Layers (Zahir/Batin/Hadd/Mathla)",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/semantic-layers-decompose",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "server-auth-token-cache",
                       "name":  "Server Auth Token Cache",
                       "lane":  "module",
                       "category":  "infra",
                       "path":  "modules/server-auth-token-cache",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "social-post-scheduler",
+                      "name":  "Social Post Auto-Scheduler",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/social-post-scheduler",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "sprite-sheet-animator",
+                      "name":  "Sprite Sheet Animator",
+                      "lane":  "module",
+                      "category":  "3d",
+                      "path":  "modules/sprite-sheet-animator",
                       "status":  "stable"
                   },
                   {
@@ -171,6 +382,22 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "three-scene-bootstrap",
+                      "name":  "Three.js Scene Bootstrap",
+                      "lane":  "module",
+                      "category":  "3d",
+                      "path":  "modules/three-scene-bootstrap",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "tiered-quota-resolver",
+                      "name":  "Tiered Quota \u0026 Rate-Limit Resolver",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/tiered-quota-resolver",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "tile-grid-coordinator",
                       "name":  "Tile Grid Coordinator",
                       "lane":  "module",
@@ -179,24 +406,42 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "tool-registry-dispatch",
+                      "name":  "Tool Registry \u0026 Dispatch Pattern",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/tool-registry-dispatch",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "tts-provider-wrapper",
+                      "name":  "TTS Provider Wrapper",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/tts-provider-wrapper",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "webhook-dispatcher",
                       "name":  "Webhook Dispatcher",
                       "lane":  "module",
-                      "category":  [
-                                       "infra",
-                                       "business"
-                                   ],
+                      "category":  "infra",
                       "path":  "modules/webhook-dispatcher",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "webhook-meta-header-validator",
+                      "name":  "Webhook Meta Header Validator",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/webhook-meta-header-validator",
                       "status":  "stable"
                   },
                   {
                       "id":  "webhook-meta-verify",
                       "name":  "Meta Webhook Verifier",
                       "lane":  "module",
-                      "category":  [
-                                       "infra",
-                                       "business"
-                                   ],
+                      "category":  "infra",
                       "path":  "modules/webhook-meta-verify",
                       "status":  "stable"
                   },
@@ -208,6 +453,33 @@
                       "path":  "artifacts/agent-persona-router",
                       "status":  "stable",
                       "kind":  "method"
+                  },
+                  {
+                      "id":  "asbabun-nuzul-grounded-brief",
+                      "name":  "Asbabun Nuzul: Grounded Brief Pattern",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/asbabun-nuzul-grounded-brief",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "brief-intake-framework",
+                      "name":  "Creative Brief Intake Framework (IHOS-Aligned)",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/brief-intake-framework",
+                      "status":  "stable",
+                      "kind":  "template"
+                  },
+                  {
+                      "id":  "continuous-learning-tafakkur",
+                      "name":  "Continuous Learning via Reflective Loop (Tafakkur)",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/continuous-learning-tafakkur",
+                      "status":  "stable",
+                      "kind":  "framework"
                   },
                   {
                       "id":  "disciplined-execution",
@@ -258,10 +530,7 @@
                       "id":  "finite-state-machine-workflows",
                       "name":  "Finite State Machine for Workflows",
                       "lane":  "artifact",
-                      "category":  [
-                                       "business",
-                                       "ops"
-                                   ],
+                      "category":  "business",
                       "path":  "artifacts/finite-state-machine-workflows",
                       "status":  "stable",
                       "kind":  "framework"
@@ -285,6 +554,33 @@
                       "kind":  "playbook"
                   },
                   {
+                      "id":  "haal-conditioning-pattern",
+                      "name":  "Haal Conditioning: User State as Computation",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/haal-conditioning-pattern",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "ihos-epistemology-framework",
+                      "name":  "IHOS Epistemology Framework",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/ihos-epistemology-framework",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "ijaz-quality-coherence-gate",
+                      "name":  "I\u0027jaz Multi-Scale Coherence Quality Gate",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/ijaz-quality-coherence-gate",
+                      "status":  "stable",
+                      "kind":  "formula"
+                  },
+                  {
                       "id":  "json-repair-fallback",
                       "name":  "LLM JSON Repair \u0026 Fallback",
                       "lane":  "artifact",
@@ -292,6 +588,15 @@
                       "path":  "artifacts/json-repair-fallback",
                       "status":  "stable",
                       "kind":  "method"
+                  },
+                  {
+                      "id":  "lead-source-classifier",
+                      "name":  "Lead Source \u0026 Bounce Reason Taxonomy",
+                      "lane":  "artifact",
+                      "category":  "crm",
+                      "path":  "artifacts/lead-source-classifier",
+                      "status":  null,
+                      "kind":  "framework"
                   },
                   {
                       "id":  "llm-provider-fallback",
@@ -315,9 +620,7 @@
                       "id":  "money-math-minor-units",
                       "name":  "Money Math in Minor Units",
                       "lane":  "artifact",
-                      "category":  [
-                                       "business"
-                                   ],
+                      "category":  "business",
                       "path":  "artifacts/money-math-minor-units",
                       "status":  "stable",
                       "kind":  "formula"
@@ -368,6 +671,15 @@
                       "kind":  "method"
                   },
                   {
+                      "id":  "react-agent-loop-pattern",
+                      "name":  "ReAct Agent Loop (Reason + Act + Observe)",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/react-agent-loop-pattern",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
                       "id":  "repo-cartography-handoff",
                       "name":  "Repository Cartography \u0026 Agent Handoff",
                       "lane":  "artifact",
@@ -380,12 +692,19 @@
                       "id":  "reward-gamification-system",
                       "name":  "Reward \u0026 Gamification System",
                       "lane":  "artifact",
-                      "category":  [
-                                       "business"
-                                   ],
+                      "category":  "business",
                       "path":  "artifacts/reward-gamification-system",
                       "status":  "stable",
                       "kind":  "template"
+                  },
+                  {
+                      "id":  "selective-adoption-doctrine",
+                      "name":  "Selective Adoption Doctrine",
+                      "lane":  "artifact",
+                      "category":  "research",
+                      "path":  "artifacts/selective-adoption-doctrine",
+                      "status":  "stable",
+                      "kind":  "method"
                   },
                   {
                       "id":  "shopee-data-import",
@@ -418,9 +737,7 @@
                       "id":  "tiered-pricing-package-resolution",
                       "name":  "Tiered Pricing \u0026 Package Resolution",
                       "lane":  "artifact",
-                      "category":  [
-                                       "business"
-                                   ],
+                      "category":  "business",
                       "path":  "artifacts/tiered-pricing-package-resolution",
                       "status":  "stable",
                       "kind":  "formula"
@@ -442,6 +759,15 @@
                       "path":  "artifacts/tool-calling-resilient",
                       "status":  "stable",
                       "kind":  "method"
+                  },
+                  {
+                      "id":  "tool-registry-pattern",
+                      "name":  "Tool Registry \u0026 Discovery Pattern",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/tool-registry-pattern",
+                      "status":  "stable",
+                      "kind":  "playbook"
                   },
                   {
                       "id":  "workflow-node-schema",
