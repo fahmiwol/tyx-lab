@@ -1,0 +1,15 @@
+{
+  "id": "dialogue-tree-branching-narrative",
+  "name": "Dialogue Tree: Branching Narrative Model",
+  "version": "1.0.0",
+  "category": "ai",
+  "description": "Declarative dialogue tree for NPC conversations: branches, conditions, player choices, dialogue outcomes. Serializable for save/load and branching narratives.",
+  "input": ["dialogue-definition-object"],
+  "output": ["validated-dialogue-tree"],
+  "tags": ["dialogue", "conversation", "narrative", "branching", "choice", "npc-talk"],
+  "compatible_with": ["agent-persona-registry", "behavior-tree-fsm-state-model"],
+  "used_in_recipes": ["npc-conversation-flow"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
