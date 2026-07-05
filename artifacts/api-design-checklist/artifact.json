@@ -1,0 +1,14 @@
+{
+  "id": "api-design-checklist",
+  "name": "API Design & Contract Checklist",
+  "version": "1.0.0",
+  "kind": "checklist",
+  "category": "ops",
+  "description": "Comprehensive checklist for REST API and async API design, covering endpoints, validation, HTTP status codes, auth, security, documentation, testing, versioning, provider abstraction, and monitoring.",
+  "tags": ["api", "rest", "contract", "design", "checklist", "async-jobs", "webhook"],
+  "compatible_with": ["openapi", "swagger", "postman", "insomnia"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
