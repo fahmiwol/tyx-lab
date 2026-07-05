@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MighanAI — Design Studio</title>
+<style>
+  :root {
+    --accent: #6c63ff;
+    --accent-teal: #00d4aa;
+    --accent-pink: #ff6b81;
+    --bg: #0d0d0f;
+    --bg2: #16181c;
+    --bg3: #1e2128;
+    --border: #2a2d35;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --radius: 10px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--bg2); border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 14px;
+    padding: 0 20px; height: 52px; flex-shrink: 0;
+  }
+  .logo { font-size: 18px; font-weight: 700; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .back-link { color: var(--muted); font-size: 13px; text-decoration: none; display: flex; align-items: center; gap: 5px; }
+  .back-link:hover { color: var(--text); }
+  .header-sep { width: 1px; height: 24px; background: var(--border); }
+  .badge-ai { background: linear-gradient(135deg, var(--accent), var(--accent-teal)); border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+  .spacer { flex: 1; }
+  .model-indicator { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  .model-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-teal); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  /* ── LAYOUT ── */
+  .app { display: flex; flex: 1; overflow: hidden; }
+
+  /* ── LEFT PANEL ── */
+  .panel-left {
+    width: 320px; flex-shrink: 0;
+    background: var(--bg2); border-right: 1px solid var(--border);
+    display: flex; flex-direction: column; overflow-y: auto;
+  }
+  .panel-section { padding: 16px; border-bottom: 1px solid var(--border); }
+  .panel-section:last-child { border-bottom: none; }
+  .section-title { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+
+  textarea {
+    width: 100%; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius);
+    color: var(--text); font-size: 13px; padding: 10px 12px; resize: vertical; min-height: 100px;
+    font-family: inherit; line-height: 1.5; transition: border-color 0.2s;
+  }
+  textarea:focus { outline: none; border-color: var(--accent); }
+  textarea::placeholder { color: var(--muted); }
+  textarea.neg { min-height: 60px; border-color: #3a2a2a; }
+  textarea.neg:focus { border-color: var(--accent-pink); }
+
+  select, input[type="number"] {
+    width: 100%; background: var(--bg3); border: 1px solid var(--border); border-radius: 8px;
+    color: var(--text); font-size: 13px; padding: 8px 12px;
+    appearance: none; cursor: pointer; transition: border-color 0.2s;
+  }
+  select:focus, input:focus { outline: none; border-color: var(--accent); }
+  .select-wrap { position: relative; }
+  .select-wrap::after { content: '▾'; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 12px; }
+
+  .style-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    padding: 5px 10px; border-radius: 20px; font-size: 11px; cursor: pointer;
+    border: 1px solid var(--border); background: var(--bg3); color: var(--muted);
+    transition: all 0.15s; user-select: none;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--text); }
+  .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  .seed-row { display: flex; gap: 8px; }
+  .seed-row input { flex: 1; }
+  .btn-icon { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; color: var(--muted); cursor: pointer; padding: 8px 10px; font-size: 14px; transition: all 0.15s; }
+  .btn-icon:hover { border-color: var(--accent); color: var(--text); }
+
+  .btn-generate {
+    width: 100%; padding: 13px; border-radius: var(--radius); border: none; cursor: pointer;
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    color: #fff; font-size: 15px; font-weight: 700; letter-spacing: 0.3px; transition: all 0.2s;
+  }
+  .btn-generate:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(108,99,255,0.4); }
+  .btn-generate:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .btn-generate.generating .btn-label { display: none; }
+  .btn-generate .spinner { display: none; }
+  .btn-generate.generating .spinner { display: inline; }
+
+  /* ── MAIN ── */
+  .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  .img-stage {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    background: radial-gradient(ellipse at 20% 20%, rgba(108,99,255,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(0,212,170,0.04) 0%, transparent 60%);
+  }
+  .img-placeholder { text-align: center; color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 16px; pointer-events: none; }
+  .img-placeholder .icon-big { font-size: 64px; opacity: 0.3; }
+  .img-placeholder h3 { font-size: 18px; font-weight: 600; color: var(--text); opacity: 0.5; }
+  .img-placeholder p { font-size: 13px; max-width: 300px; line-height: 1.6; }
+
+  #result-img {
+    max-width: 90%; max-height: 90%; border-radius: 12px;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+    display: none; object-fit: contain; animation: fadeIn 0.4s ease;
+  }
+  @keyframes fadeIn { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: scale(1); } }
+
+  .loading-overlay {
+    display: none; position: absolute; inset: 0;
+    background: rgba(13,13,15,0.75); backdrop-filter: blur(4px);
+    align-items: center; justify-content: center; flex-direction: column; gap: 16px;
+  }
+  .loading-overlay.active { display: flex; }
+  .progress-ring { width: 60px; height: 60px; }
+  .progress-ring circle { fill: none; stroke: var(--border); stroke-width: 3; }
+  .progress-ring .arc {
+    stroke: var(--accent); stroke-linecap: round; stroke-dasharray: 150; stroke-dashoffset: 150;
+    animation: spin-arc 1.2s ease-in-out infinite; transform-origin: 30px 30px;
+  }
+  @keyframes spin-arc {
+    0%   { stroke-dashoffset: 140; transform: rotate(0deg); }
+    50%  { stroke-dashoffset: 20; }
+    100% { stroke-dashoffset: 140; transform: rotate(360deg); }
+  }
+  .loading-text { font-size: 14px; color: var(--text); }
+  .loading-tip { font-size: 12px; color: var(--muted); max-width: 260px; text-align: center; line-height: 1.5; }
+
+  .action-bar {
+    background: var(--bg2); border-top: 1px solid var(--border);
+    padding: 10px 16px; display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+  }
+  .action-bar .prompt-preview { flex: 1; font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .btn-action {
+    padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--bg3); color: var(--text); font-size: 12px; cursor: pointer;
+    display: flex; align-items: center; gap: 6px; transition: all 0.15s; white-space: nowrap;
+  }
+  .btn-action:hover:not(:disabled) { border-color: var(--accent); background: rgba(108,99,255,0.1); }
+  .btn-action.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn-action.primary:hover:not(:disabled) { background: #5a52e0; }
+  .btn-action:disabled { opacity: 0.35; cursor: not-allowed; }
+
+  /* ── RIGHT PANEL ── */
+  .panel-right {
+    width: 164px; flex-shrink: 0;
+    background: var(--bg2); border-left: 1px solid var(--border);
+    display: flex; flex-direction: column;
+  }
+  .panel-right-header {
+    padding: 12px; border-bottom: 1px solid var(--border);
+    font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .btn-clear { font-size: 11px; color: var(--muted); background: none; border: none; cursor: pointer; }
+  .btn-clear:hover { color: var(--accent-pink); }
+  .history-grid { flex: 1; overflow-y: auto; padding: 8px; display: flex; flex-direction: column; gap: 8px; }
+  .history-thumb {
+    width: 100%; aspect-ratio: 1; border-radius: 8px; overflow: hidden; cursor: pointer;
+    border: 2px solid transparent; transition: all 0.15s; position: relative;
+    background: var(--bg3); flex-shrink: 0;
+  }
+  .history-thumb:hover { border-color: var(--accent); }
+  .history-thumb.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .history-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .history-thumb .thumb-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: rgba(0,0,0,0.72); font-size: 9px; color: #ccc;
+    padding: 3px 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .history-empty { color: var(--muted); font-size: 11px; text-align: center; padding: 20px 8px; line-height: 1.6; }
+
+  .statusbar {
+    background: #0a0a0c; border-top: 1px solid var(--border);
+    display: flex; gap: 20px; padding: 5px 16px; font-size: 11px; color: var(--muted); flex-shrink: 0;
+  }
+  .status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 5px; background: var(--accent-teal); }
+
+  .toast {
+    position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%) translateY(20px);
+    background: var(--bg3); border: 1px solid var(--border); border-radius: 10px;
+    padding: 10px 18px; font-size: 13px; color: var(--text);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4); opacity: 0;
+    transition: all 0.3s; pointer-events: none; z-index: 999; white-space: nowrap;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .toast.error { border-color: var(--accent-pink); color: var(--accent-pink); }
+  .toast.success { border-color: var(--accent-teal); }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/design-studio/" class="back-link">← Studio</a>
+  <div class="header-sep"></div>
+  <div class="logo">Mighan<span>AI</span></div>
+  <span class="badge-ai">AI</span>
+  <div class="spacer"></div>
+  <div class="model-indicator">
+    <span class="model-dot"></span>
+    <span id="model-name-display">Flux · Pollinations</span>
+  </div>
+</header>
+
+<div class="app">
+
+  <!-- LEFT PANEL -->
+  <div class="panel-left">
+
+    <div class="panel-section">
+      <div class="section-title">Model</div>
+      <div class="select-wrap">
+        <select id="model-select" onchange="onModelChange()">
+          <optgroup label="Pollinations (Free — tanpa API key)">
+            <option value="flux">Flux — Kualitas Tinggi</option>
+            <option value="turbo">Flux Turbo — Cepat</option>
+            <option value="flux-realism">Flux Realism — Fotorealistik</option>
+            <option value="flux-anime">Flux Anime — Gaya Anime</option>
+            <option value="flux-3d">Flux 3D — Render 3D</option>
+            <option value="gptimage">GPT Image — Creative</option>
+          </optgroup>
+          <optgroup label="Google (Butuh Gemini API Key)">
+            <option value="imagen4">Imagen 4 — Terbaik</option>
+          </optgroup>
+          <optgroup label="Server — provider siap di media-tools" id="server-providers"></optgroup>
+        </select>
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <div class="section-title">Prompt</div>
+      <textarea id="prompt" placeholder="Deskripsikan gambar... cth: 'kantor isometrik futuristik dengan lampu neon ungu, pixel art style, clean background'
+
+Ctrl+Enter = Generate"></textarea>
+    </div>
+
+    <div class="panel-section">
+      <div class="section-title">Negative Prompt <span style="font-weight:400">(opsional)</span></div>
+      <textarea id="neg-prompt" class="neg" placeholder="Yang tidak ingin muncul... cth: blurry, watermark, low quality, ugly"></textarea>
+    </div>
+
+    <div class="panel-section">
+      <div class="section-title">Gambar Referensi <span style="font-weight:400">(opsional — image-to-image)</span></div>
+      <textarea id="ref-image" class="neg" style="min-height:34px" placeholder="URL gambar sumber... prompt jadi instruksi edit (pakai model Kontext otomatis)"></textarea>
+    </div>
+
+    <div class="panel-section">
+      <div class="section-title">Style Preset</div>
+      <div class="style-chips" id="style-chips">
+        <span class="chip active" data-style="">— None</span>
+        <span class="chip" data-style="photorealistic, 8k resolution, professional photography, sharp focus">📸 Photo</span>
+        <span class="chip" data-style="anime style, vibrant colors, detailed illustration, studio ghibli">🎌 Anime</span>
+        <span class="chip" data-style="digital art, concept art, artstation trending, highly detailed">🎨 Digital Art</span>
+        <span class="chip" data-style="oil painting, impressionist style, textured brushstrokes, masterpiece">🖼️ Painting</span>
+        <span class="chip" data-style="watercolor illustration, soft edges, pastel tones, dreamy">💧 Watercolor</span>
+        <span class="chip" data-style="cyberpunk aesthetic, neon lights, dark rainy city, futuristic">🌃 Cyberpunk</span>
+        <span class="chip" data-style="isometric 3D render, clean low poly, professional design">📦 Isometric</span>
+        <span class="chip" data-style="flat design, minimal, vector art, modern clean">✨ Minimal</span>
+        <span class="chip" data-style="pixel art, 16-bit retro game style, crisp clean pixels">👾 Pixel Art</span>
+        <span class="chip" data-style="cinematic lighting, dramatic shadows, movie still, epic">🎬 Cinematic</span>
+        <span class="chip" data-style="logo design, corporate branding, clean vector, professional">🏷️ Logo</span>
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <div class="section-title">Ukuran</div>
+      <div class="select-wrap">
+        <select id="size-select" onchange="updateSizeStatus()">
+          <option value="1024,1024">1:1 — 1024×1024 (Square)</option>
+          <option value="1280,720">16:9 — 1280×720 (Landscape)</option>
+          <option value="720,1280">9:16 — 720×1280 (Story/Reel)</option>
+          <option value="1024,768">4:3 — 1024×768</option>
+          <option value="1200,630">OG — 1200×630 (Social Media)</option>
+          <option value="800,1200">2:3 — 800×1200 (Portrait)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <div class="section-title">Seed</div>
+      <div class="seed-row">
+        <input type="number" id="seed-input" placeholder="Random" min="0" max="9999999">
+        <button class="btn-icon" title="Random seed" onclick="randomSeed()">🎲</button>
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <button class="btn-generate" id="btn-gen" onclick="generate()">
+        <span class="btn-label">✨ Generate Gambar</span>
+        <span class="spinner">⏳ Generating...</span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- MAIN STAGE -->
+  <div class="main">
+    <div class="img-stage">
+      <div class="img-placeholder" id="placeholder">
+        <div class="icon-big">🤖</div>
+        <h3>MighanAI Generator</h3>
+        <p>Tulis prompt di panel kiri, pilih model &amp; style, lalu klik Generate.</p>
+        <p style="margin-top:8px;font-size:11px;color:#4b5563;">Pollinations gratis · tanpa API key · hasil ~10-15 detik</p>
+      </div>
+
+      <img id="result-img" alt="Generated" crossorigin="anonymous">
+
+      <div class="loading-overlay" id="loading-overlay">
+        <svg class="progress-ring" viewBox="0 0 60 60">
+          <circle cx="30" cy="30" r="24"/>
+          <circle class="arc" cx="30" cy="30" r="24"/>
+        </svg>
+        <div class="loading-text">Generating...</div>
+        <div class="loading-tip" id="loading-tip">Mengirim prompt ke AI...</div>
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <div class="prompt-preview" id="action-prompt">Belum ada gambar</div>
+      <button class="btn-action" id="btn-download" disabled onclick="downloadImg()">⬇ Download</button>
+      <button class="btn-action" id="btn-copy-url" disabled onclick="copyImgUrl()">🔗 Copy URL</button>
+      <button class="btn-action primary" id="btn-open-canvas" disabled onclick="openInCanvas()">🎨 Buka di Canvas</button>
+    </div>
+
+    <div class="statusbar">
+      <span><span class="status-dot"></span>Pollinations Free</span>
+      <span id="status-size">1024 × 1024</span>
+      <span id="status-model">Model: Flux</span>
+      <span id="status-gen">Belum generate</span>
+      <span style="margin-left:auto;">MighanAI v1.0 — Design Studio Sprint 7</span>
+    </div>
+  </div>
+
+  <!-- HISTORY PANEL -->
+  <div class="panel-right">
+    <div class="panel-right-header">
+      <span id="history-title">Riwayat</span>
+      <span>
+        <button class="btn-clear" onclick="toggleGallery()" id="btn-gallery" title="Galeri server (artifacts/images via media-tools)">🌐 Server</button>
+        <button class="btn-clear" onclick="clearHistory()">Hapus</button>
+      </span>
+    </div>
+    <div class="history-grid" id="history-grid">
+      <div class="history-empty">Gambar yang di-generate muncul di sini</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+var currentImgUrl = null;
+var currentPromptText = '';
+var history = [];
+var selectedStyle = '';
+var isGenerating = false;
+// Same-origin bila diserve gateway (ops.mighan.com / :9797) — localhost hanya untuk file:// atau static dev.
+var GATEWAY = localStorage.getItem('mighan_gateway_url') ||
+  (location.protocol.indexOf('http') === 0 && !/:8\d{3}$/.test(location.host) ? '' : 'http://localhost:9797');
+var POLLINATIONS = 'https://image.pollinations.ai/prompt/';
+
+var TIPS = [
+  'Mengirim prompt ke Pollinations AI...',
+  'Flux menghasilkan gambar berkualitas tinggi...',
+  'Gunakan deskripsi spesifik untuk hasil lebih baik...',
+  'Tambahkan "8k, detailed" untuk kualitas tinggi...',
+  'Style preset membantu mengarahkan gaya visual...',
+  'Seed yang sama + prompt yang sama = hasil konsisten...',
+];
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.chip').forEach(function(c) {
+    c.addEventListener('click', function() {
+      document.querySelectorAll('.chip').forEach(function(x) { x.classList.remove('active'); });
+      c.classList.add('active');
+      selectedStyle = c.dataset.style;
+    });
+  });
+
+  document.getElementById('prompt').addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.key === 'Enter') generate();
+  });
+
+  updateSizeStatus();
+  loadHistoryFromStorage();
+  discoverServerProviders();
+});
+
+// M1 merge (ex cursor-004-mighan-ai): provider siap di media-tools → opsi model dinamis.
+async function discoverServerProviders() {
+  try {
+    var res = await fetch(GATEWAY + '/api/tools/providers');
+    if (!res.ok) return;
+    var st = await res.json();
+    var imgs = (st && st.image) || [];
+    var group = document.getElementById('server-providers');
+    imgs.forEach(function(p) {
+      var id = p.id || p.name || p; var ready = (p.ready !== undefined) ? p.ready : true;
+      if (!ready || id === 'pollinations') return; // pollinations sudah ada di daftar utama
+      var opt = document.createElement('option');
+      opt.value = 'srv:' + id; opt.textContent = id + ' — via server';
+      group.appendChild(opt);
+    });
+    if (!group.children.length) group.remove();
+  } catch (e) { var g = document.getElementById('server-providers'); if (g) g.remove(); }
+}
+
+// M1 merge: generate lewat gateway media-tools (persist ke artifacts/images, BYO provider hub).
+async function generateViaServer(prompt, provider, w, h, seed) {
+  setGenerating(true);
+  currentPromptText = prompt;
+  try {
+    var res = await fetch(GATEWAY + '/api/tools/image/generate', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt: prompt, provider: provider, width: w, height: h, seed: seed })
+    });
+    var d = await res.json();
+    if (!d.success) throw new Error(d.error || 'provider ' + provider + ' gagal');
+    var url = GATEWAY + '/' + (d.relativePath || ('artifacts/images/' + d.filename));
+    var el = document.getElementById('result-img');
+    el.src = url; el.style.display = 'block';
+    document.getElementById('placeholder').style.display = 'none';
+    currentImgUrl = url;
+    addToHistory(url, prompt);
+    enableActions(true);
+    document.getElementById('action-prompt').textContent = prompt;
+    document.getElementById('status-gen').textContent = 'Terakhir: ' + new Date().toLocaleTimeString('id-ID');
+    showToast('Tersimpan di server (artifacts/images) ✨', 'success');
+  } catch (e) { showToast('Error: ' + e.message, 'error'); }
+  finally { setGenerating(false); }
+}
+
+// M1 merge (ex image-ai-studio konsep galeri): riwayat server-side dari media-tools.
+var galleryMode = false;
+async function toggleGallery() {
+  galleryMode = !galleryMode;
+  document.getElementById('history-title').textContent = galleryMode ? 'Galeri Server' : 'Riwayat';
+  document.getElementById('btn-gallery').textContent = galleryMode ? '💾 Lokal' : '🌐 Server';
+  if (!galleryMode) { renderHistory(); return; }
+  var grid = document.getElementById('history-grid');
+  grid.innerHTML = '<div class="history-empty">Memuat galeri server…</div>';
+  try {
+    var res = await fetch(GATEWAY + '/api/tools/image/list');
+    var d = await res.json();
+    var imgs = (d.images || []).slice(0, 60);
+    if (!imgs.length) { grid.innerHTML = '<div class="history-empty">Belum ada gambar di server</div>'; return; }
+    grid.innerHTML = '';
+    imgs.forEach(function(im) {
+      var rel = im.relativePath || ('artifacts/images/' + (im.filename || im));
+      var url = GATEWAY + '/' + rel;
+      var div = document.createElement('div');
+      div.className = 'history-thumb';
+      div.innerHTML = '<img loading="lazy" src="' + url + '"><div class="thumb-label">' + (im.filename || rel.split('/').pop()) + '</div>';
+      div.onclick = function() {
+        var el = document.getElementById('result-img');
+        el.src = url; el.style.display = 'block';
+        document.getElementById('placeholder').style.display = 'none';
+        currentImgUrl = url; enableActions(true);
+      };
+      grid.appendChild(div);
+    });
+  } catch (e) { grid.innerHTML = '<div class="history-empty">Gagal memuat: ' + e.message + '</div>'; }
+}
+
+function updateSizeStatus() {
+  var v = document.getElementById('size-select').value.split(',');
+  document.getElementById('status-size').textContent = v[0] + ' × ' + v[1];
+}
+
+function onModelChange() {
+  var v = document.getElementById('model-select').value;
+  var labels = { flux:'Flux · Pollinations', turbo:'Flux Turbo · Pollinations', 'flux-realism':'Flux Realism · Pollinations', 'flux-anime':'Flux Anime · Pollinations', 'flux-3d':'Flux 3D · Pollinations', gptimage:'GPT Image · Pollinations', imagen4:'Imagen 4 · Google' };
+  var label = labels[v] || v;
+  document.getElementById('model-name-display').textContent = label;
+  document.getElementById('status-model').textContent = 'Model: ' + label.split(' ·')[0];
+}
+
+function randomSeed() {
+  document.getElementById('seed-input').value = Math.floor(Math.random() * 9999999);
+}
+
+async function generate() {
+  if (isGenerating) return;
+  var prompt = document.getElementById('prompt').value.trim();
+  if (!prompt) { showToast('Tulis prompt dulu!', 'error'); return; }
+
+  var model = document.getElementById('model-select').value;
+  var sizeVal = document.getElementById('size-select').value.split(',');
+  var w = parseInt(sizeVal[0]), h = parseInt(sizeVal[1]);
+  var seed = document.getElementById('seed-input').value || Math.floor(Math.random() * 9999999);
+  var neg = document.getElementById('neg-prompt').value.trim();
+  var fullPrompt = prompt + (selectedStyle ? ', ' + selectedStyle : '');
+
+  var refImage = document.getElementById('ref-image').value.trim();
+  if (model.indexOf('srv:') === 0) {
+    await generateViaServer(fullPrompt, model.slice(4), w, h, seed);
+  } else if (model === 'imagen4') {
+    await generateViaGateway(fullPrompt, neg, w, h, seed);
+  } else {
+    await generateViaPollinations(fullPrompt, neg, w, h, seed, model, refImage);
+  }
+}
+
+async function generateViaPollinations(prompt, neg, w, h, seed, model, refImage) {
+  setGenerating(true);
+  currentPromptText = prompt;
+  var tipIdx = 0;
+  var tipTimer = setInterval(function() {
+    document.getElementById('loading-tip').textContent = TIPS[tipIdx % TIPS.length];
+    tipIdx++;
+  }, 3000);
+
+  // M1 merge (ex mighan-media-gen-studio i2i): gambar referensi → Flux Kontext image-to-image.
+  var effModel = refImage ? 'kontext' : model;
+  var params = new URLSearchParams({ width: w, height: h, seed: seed, model: effModel, nologo: 'true', enhance: 'false' });
+  if (refImage) params.set('image', refImage);
+  if (neg) params.set('negative', neg);
+  var url = POLLINATIONS + encodeURIComponent(prompt) + '?' + params.toString();
+
+  try {
+    await new Promise(function(resolve, reject) {
+      var img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = resolve;
+      img.onerror = function() { reject(new Error('Gagal load gambar. Coba lagi.')); };
+      img.src = url;
+    });
+    var el = document.getElementById('result-img');
+    el.src = url;
+    el.style.display = 'block';
+    document.getElementById('placeholder').style.display = 'none';
+    currentImgUrl = url;
+    addToHistory(url, prompt);
+    enableActions(true);
+    document.getElementById('action-prompt').textContent = prompt;
+    document.getElementById('status-gen').textContent = 'Terakhir: ' + new Date().toLocaleTimeString('id-ID');
+    showToast('Gambar berhasil di-generate! ✨', 'success');
+  } catch(e) {
+    showToast('Error: ' + e.message, 'error');
+  } finally {
+    clearInterval(tipTimer);
+    setGenerating(false);
+  }
+}
+
+async function generateViaGateway(prompt, neg, w, h, seed) {
+  setGenerating(true);
+  currentPromptText = prompt;
+  try {
+    var res = await fetch(GATEWAY + '/api/ai/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt: prompt, negPrompt: neg, width: w, height: h, seed: seed, model: 'imagen4' })
+    });
+    var data = await res.json();
+    if (!data.ok || !data.url) throw new Error(data.error || 'Gateway error');
+    var el = document.getElementById('result-img');
+    el.src = data.url;
+    el.style.display = 'block';
+    document.getElementById('placeholder').style.display = 'none';
+    currentImgUrl = data.url;
+    addToHistory(data.url, prompt);
+    enableActions(true);
+    document.getElementById('action-prompt').textContent = prompt;
+    document.getElementById('status-gen').textContent = 'Terakhir: ' + new Date().toLocaleTimeString('id-ID');
+    showToast('Imagen 4 berhasil! ✨', 'success');
+  } catch(e) {
+    showToast('Imagen 4 error: ' + e.message, 'error');
+  } finally {
+    setGenerating(false);
+  }
+}
+
+function setGenerating(val) {
+  isGenerating = val;
+  var btn = document.getElementById('btn-gen');
+  btn.disabled = val;
+  btn.classList.toggle('generating', val);
+  document.getElementById('loading-overlay').classList.toggle('active', val);
+}
+
+function enableActions(on) {
+  ['btn-download','btn-copy-url','btn-open-canvas'].forEach(function(id) {
+    document.getElementById(id).disabled = !on;
+  });
+}
+
+function downloadImg() {
+  if (!currentImgUrl) return;
+  fetch(currentImgUrl)
+    .then(function(r) { return r.blob(); })
+    .then(function(blob) {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'mighanai-' + Date.now() + '.png';
+      a.click();
+      showToast('Download dimulai!', 'success');
+    })
+    .catch(function() { window.open(currentImgUrl, '_blank'); });
+}
+
+function copyImgUrl() {
+  if (!currentImgUrl) return;
+  navigator.clipboard.writeText(currentImgUrl)
+    .then(function() { showToast('URL disalin! 🔗', 'success'); })
+    .catch(function() {
+      var ta = document.createElement('textarea');
+      ta.value = currentImgUrl; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+      showToast('URL disalin!', 'success');
+    });
+}
+
+function openInCanvas() {
+  if (!currentImgUrl) return;
+  sessionStorage.setItem('mighanai_import_url', currentImgUrl);
+  sessionStorage.setItem('mighanai_import_prompt', currentPromptText);
+  window.location.href = '/design-studio/canvas.html?import=ai';
+}
+
+function addToHistory(url, prompt) {
+  history.unshift({ url: url, prompt: prompt, ts: Date.now() });
+  if (history.length > 12) history = history.slice(0, 12);
+  saveHistoryToStorage();
+  renderHistory();
+}
+
+function renderHistory() {
+  var grid = document.getElementById('history-grid');
+  if (!history.length) {
+    grid.innerHTML = '<div class="history-empty">Gambar yang di-generate muncul di sini</div>';
+    return;
+  }
+  grid.innerHTML = '';
+  history.forEach(function(item, i) {
+    var div = document.createElement('div');
+    div.className = 'history-thumb' + (i === 0 ? ' active' : '');
+    div.innerHTML = '<img src="' + item.url + '" loading="lazy"><div class="thumb-label">' + escapeHtml(item.prompt.substring(0, 28)) + '</div>';
+    div.addEventListener('click', function() {
+      document.querySelectorAll('.history-thumb').forEach(function(t) { t.classList.remove('active'); });
+      div.classList.add('active');
+      var el = document.getElementById('result-img');
+      el.src = item.url; el.style.display = 'block';
+      document.getElementById('placeholder').style.display = 'none';
+      currentImgUrl = item.url; currentPromptText = item.prompt;
+      document.getElementById('action-prompt').textContent = item.prompt;
+      enableActions(true);
+    });
+    grid.appendChild(div);
+  });
+}
+
+function clearHistory() {
+  if (!history.length) return;
+  if (!confirm('Hapus semua riwayat?')) return;
+  history = [];
+  saveHistoryToStorage();
+  renderHistory();
+}
+
+function saveHistoryToStorage() {
+  try { localStorage.setItem('mighanai_history', JSON.stringify(history)); } catch(e) {}
+}
+
+function loadHistoryFromStorage() {
+  try {
+    var raw = localStorage.getItem('mighanai_history');
+    if (!raw) return;
+    history = JSON.parse(raw) || [];
+    renderHistory();
+    if (history.length) {
+      var last = history[0];
+      currentImgUrl = last.url; currentPromptText = last.prompt;
+      var el = document.getElementById('result-img');
+      el.src = last.url; el.style.display = 'block';
+      document.getElementById('placeholder').style.display = 'none';
+      document.getElementById('action-prompt').textContent = last.prompt;
+      enableActions(true);
+    }
+  } catch(e) {}
+}
+
+function escapeHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function showToast(msg, type) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (type ? ' ' + type : '');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(function() { t.className = 'toast'; }, 3500);
+}
+</script>
+</body>
+</html>
