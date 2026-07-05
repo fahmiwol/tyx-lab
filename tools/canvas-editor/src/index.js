@@ -1,5 +1,5 @@
 /**
- * MighanCanvas API — by Cursor (CommonJS)
+ * Canvas Editor API — by Cursor (CommonJS)
  */
 const express = require('express');
 const cors = require('cors');
@@ -30,7 +30,7 @@ app.use(express.json({ limit: '25mb' }));
 app.get('/health', (req, res) => {
   res.json({
     success: true,
-    data: { service: 'mighan-canvas', version: '0.1.0', port: PORT }
+    data: { service: 'Studio-canvas', version: '0.1.0', port: PORT }
   });
 });
 
@@ -110,5 +110,5 @@ app.use(express.static(clientDist));
 
 ensureDataDir();
 app.listen(PORT, () => {
-  console.log(`[by Cursor] MighanCanvas API http://localhost:${PORT}`);
+  console.log(`[by Cursor] Canvas Editor API http://localhost:${PORT}`);
 });
