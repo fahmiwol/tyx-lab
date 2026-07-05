@@ -1,0 +1,1 @@
+{"id":"csrf-security-guard","name":"CSRF Security Guard","version":"1.0.0","category":["ops","infra"],"description":"CSRF token generation, validation, and session security hardening with HttpOnly + Secure + SameSite cookies.","status":"stable","author":"Tiranyx","license":"MIT"}
