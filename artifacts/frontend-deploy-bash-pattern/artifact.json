@@ -1,0 +1,13 @@
+{
+  "id": "frontend-deploy-bash-pattern",
+  "name": "Frontend Deploy Bash Pattern",
+  "kind": "template",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Parameterized shell script for zero-downtime frontend deployment: git pull, npm build, PM2 restart, rsync sync, health check verification.",
+  "tags": ["bash", "deploy", "pm2", "rsync", "ci-cd", "frontend"],
+  "compatible_with": ["bash", "linux", "pm2"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
