@@ -1,18 +1,10 @@
 {
-  "version": "1.0.0",
-  "last_updated": "2026-07-05",
-  "total_modules": 0,
-  "total_artifacts": 10,
-  "atoms": [
-    { "id": "meta-capi-dedup", "name": "Meta Pixel + Conversions API with Dedup", "lane": "artifact", "kind": "playbook", "category": "infra", "path": "artifacts/meta-capi-dedup", "status": "stable", "tags": ["meta","capi","tracking","nextjs","dedup"] },
-    { "id": "nextjs-subdomain-multitenant", "name": "Next.js Subdomain Multi-Tenant Routing", "lane": "artifact", "kind": "playbook", "category": "infra", "path": "artifacts/nextjs-subdomain-multitenant", "status": "stable", "tags": ["nextjs","middleware","multi-tenant","subdomain"] },
-    { "id": "facebook-domain-verification", "name": "Facebook Business Domain Verification (dual-method)", "lane": "artifact", "kind": "playbook", "category": "ops", "path": "artifacts/facebook-domain-verification", "status": "stable", "tags": ["meta","domain-verification","nextjs","seo"] },
-    { "id": "disciplined-execution", "name": "Disciplined Execution — the 8-gate loop", "lane": "artifact", "kind": "method", "category": "ops", "path": "artifacts/disciplined-execution", "status": "stable", "tags": ["methodology","testing","deploy","verification"] },
-    { "id": "repo-cartography-handoff", "name": "Repository Cartography & Agent Handoff", "lane": "artifact", "kind": "method", "category": "ops", "path": "artifacts/repo-cartography-handoff", "status": "stable", "tags": ["documentation","onboarding","handoff","monorepo"] },
-    { "id": "shopee-open-platform-integration", "name": "Shopee Open Platform — Partner App Integration", "lane": "artifact", "kind": "playbook", "category": "ops", "path": "artifacts/shopee-open-platform-integration", "status": "stable", "tags": ["shopee","oauth","marketplace","hmac"] },
-    { "id": "exfat-windows-fix", "name": "exFAT Windows Fix for Next.js / Webpack", "lane": "artifact", "kind": "finding", "category": "infra", "path": "artifacts/exfat-windows-fix", "status": "stable", "tags": ["windows","exfat","nextjs","webpack"] },
-    { "id": "nextjs-webgl-deploy-gotchas", "name": "Next.js + Three.js Deploy & WebGL Debugging Gotchas", "lane": "artifact", "kind": "finding", "category": "infra", "path": "artifacts/nextjs-webgl-deploy-gotchas", "status": "stable", "tags": ["nextjs","threejs","webgl","deploy","glb"] },
-    { "id": "shopee-data-import", "name": "Shopee Storefront to Your DB — decision tree", "lane": "artifact", "kind": "playbook", "category": "ops", "path": "artifacts/shopee-data-import", "status": "stable", "tags": ["shopee","scraping","catalog","product-data"] },
-    { "id": "git-workflow-windows", "name": "Git Workflow — Windows + Private GitHub Repo", "lane": "artifact", "kind": "playbook", "category": "infra", "path": "artifacts/git-workflow-windows", "status": "stable", "tags": ["git","windows","github","pat"] }
-  ]
+    "version":  "1.0.0",
+    "last_updated":  "2026-07-05",
+    "total_modules":  0,
+    "total_artifacts":  0,
+    "total_atoms":  0,
+    "atoms":  [
+
+              ]
 }
