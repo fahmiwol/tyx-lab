@@ -1,0 +1,14 @@
+{
+  "id": "slm-identity-training-guide",
+  "name": "SLM Identity Training Guide",
+  "version": "1.0.0",
+  "kind": "guide",
+  "category": "ai",
+  "description": "End-to-end guide for training small language model identity and behavior via SFT and DPO with contamination prevention and eval gates",
+  "tags": ["small-language-models", "fine-tuning", "identity", "lora", "sft", "dpo"],
+  "compatible_with": ["Qwen", "Llama", "Mistral", "Phi"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
