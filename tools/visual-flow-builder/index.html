@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visual Flow Builder</title>
+  <style>
+    :root {
+      --ground: #0A0C16;
+      --panel: #121626;
+      --panel2: #1A1F30;
+      --line: #2A3150;
+      --ink: #E8ECF8;
+      --muted: #8791AE;
+      --accent: #FF7A1A;
+      --cyan: #22D3EE;
+      --good: #34D399;
+      --warn: #FBBF24;
+      --r: 12px;
+      --mono: ui-monospace, monospace;
+      --ui: system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--ui); font-size: 15px; }
+    .top { display: flex; gap: 14px; padding: 14px 22px; border-bottom: 1px solid var(--line); background: rgba(10,12,22,.7); }
+    .brand { display: flex; gap: 10px; font-weight: 700; }
+    .spark { width: 22px; height: 22px; border-radius: 6px; background: linear-gradient(135deg, var(--accent), #ff9a4d); display: grid; place-items: center; color: #140a02; font-weight: 900; }
+    .top .grow { flex: 1; }
+    .chip { display: inline-flex; gap: 7px; padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px; font-size: 12.5px; color: var(--muted); background: var(--panel); }
+    .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: calc(100vh - 55px); }
+    @media (max-width: 940px) { .wrap { grid-template-columns: 1fr; } }
+    .left { padding: 22px 24px; border-right: 1px solid var(--line); overflow-y: auto; max-height: calc(100vh - 55px); }
+    .right { padding: 22px 22px; background: linear-gradient(180deg, rgba(18,22,38,.5), transparent); overflow-y: auto; max-height: calc(100vh - 55px); }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 20px; margin-bottom: 20px; }
+    .card h2 { font-size: 20px; margin: 0 0 4px; }
+    .lead { color: var(--muted); margin: 0 0 18px; font-size: 14px; }
+    .form-group { margin-bottom: 14px; }
+    label { display: block; margin-bottom: 6px; font-weight: 600; }
+    input, textarea, select { background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; color: var(--ink); font-family: inherit; font-size: 14px; width: 100%; }
+    input:focus, textarea:focus, select:focus { outline: 0; border-color: var(--accent); }
+    button { background: var(--accent); color: #140a02; border: 0; border-radius: 8px; padding: 10px 16px; font-weight: 700; cursor: pointer; }
+    button:hover { opacity: .9; }
+    .flow-canvas { background: var(--ground); border: 1px solid var(--line); border-radius: var(--r); padding: 20px; min-height: 400px; font-size: 12px; color: var(--muted); font-family: var(--mono); }
+    .flow-node { background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin-bottom: 10px; display: flex; gap: 10px; }
+    .flow-node-icon { width: 24px; height: 24px; border-radius: 6px; background: var(--accent); color: #140a02; display: grid; place-items: center; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand">
+      <div class="spark">W</div>
+      <div>Flow Builder</div>
+    </div>
+    <div class="grow"></div>
+    <div class="chip">v1.0.0</div>
+  </div>
+
+  <div class="wrap">
+    <div class="left">
+      <div class="card">
+        <h2>Steps</h2>
+        <p class="lead">Build workflow by adding steps</p>
+
+        <div class="form-group">
+          <label>Workflow Name</label>
+          <input type="text" id="workflowName" placeholder="My Workflow" value="My Workflow">
+        </div>
+
+        <div class="form-group">
+          <label>Step Type</label>
+          <select id="stepType">
+            <option value="">Choose type</option>
+            <option value="fetch">Fetch Data</option>
+            <option value="transform">Transform</option>
+            <option value="action">Action</option>
+            <option value="condition">Condition</option>
+            <option value="delay">Delay</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Parameters</label>
+          <textarea id="stepParams" placeholder='{"key":"value"}' rows="4"></textarea>
+        </div>
+
+        <button onclick="addStep()">+ Add Step</button>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="card">
+        <h2>Flow Preview</h2>
+        <p class="lead">Workflow steps in order</p>
+
+        <div class="flow-canvas" id="flowCanvas">
+          <div style="opacity:0.5;">Click "Add Step" to start...</div>
+        </div>
+
+        <button onclick="saveFlow()" style="margin-top:14px;width:100%;">Save Workflow</button>
+        <button onclick="runFlow()" style="margin-top:10px;width:100%;background:var(--good);color:#04170f;">Run Workflow</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let flow = { name: 'My Workflow', steps: [] };
+
+    function addStep() {
+      const type = document.getElementById('stepType').value;
+      const params = document.getElementById('stepParams').value;
+      if (!type) { alert('Select step type'); return; }
+      try {
+        const p = params ? JSON.parse(params) : {};
+        flow.steps.push({ id: 'step-' + Date.now(), type, params: p });
+        document.getElementById('stepType').value = '';
+        document.getElementById('stepParams').value = '';
+        renderFlow();
+      } catch (e) {
+        alert('Invalid JSON: ' + e.message);
+      }
+    }
+
+    function renderFlow() {
+      const canvas = document.getElementById('flowCanvas');
+      flow.name = document.getElementById('workflowName').value;
+      if (flow.steps.length === 0) {
+        canvas.innerHTML = '<div style="opacity:0.5;">Click "Add Step" to start...</div>';
+        return;
+      }
+      canvas.innerHTML = flow.steps.map((s, i) => 
+        '<div class="flow-node"><div class="flow-node-icon">' + (i+1) + 
+        '</div><div><div style="font-weight:600;color:var(--ink);">' + s.type + 
+        '</div><div style="font-size:11px;opacity:0.7;">' + s.id + 
+        '</div></div></div>'
+      ).join('<div style="text-align:center;color:var(--muted);font-size:11px;margin:10px 0;">↓</div>');
+    }
+
+    function saveFlow() {
+      const json = JSON.stringify(flow, null, 2);
+      const blob = new Blob([json], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = (flow.name.replace(/\s+/g, '-').toLowerCase()) + '.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function runFlow() {
+      alert('Running: ' + flow.name + '\nSteps: ' + flow.steps.length);
+    }
+
+    renderFlow();
+  </script>
+</body>
+</html>
