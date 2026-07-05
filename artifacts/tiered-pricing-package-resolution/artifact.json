@@ -1,0 +1,14 @@
+{
+  "id": "tiered-pricing-package-resolution",
+  "name": "Tiered Pricing & Package Resolution",
+  "version": "1.0.0",
+  "kind": "formula",
+  "category": ["business"],
+  "description": "Dynamic pricing models: fixed packages with bonuses, quantity-based tiers, customer segments, and time-based proration for subscriptions.",
+  "tags": ["fintech", "pricing", "saas", "subscriptions", "revenue"],
+  "compatible_with": ["typescript", "javascript", "python", "postgresql"],
+  "used_in_recipes": ["topup-flow", "subscription-billing"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
