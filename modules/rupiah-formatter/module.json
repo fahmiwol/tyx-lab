@@ -1,0 +1,1 @@
+{"id":"rupiah-formatter","name":"Rupiah Currency & Text Formatter","version":"1.0.0","category":["ops"],"description":"Format numbers as IDR currency with short notation (M/jt/rb), and convert to Indonesian words (terbilang).","status":"stable","author":"Tiranyx","license":"MIT"}
