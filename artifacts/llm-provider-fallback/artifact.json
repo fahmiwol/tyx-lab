@@ -1,0 +1,1 @@
+{"id":"llm-provider-fallback","name":"LLM Provider Fallback Router","version":"1.0.0","kind":"method","category":"ai","description":"Route LLM calls across multiple providers with automatic fallback on error or rate limit.","tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
