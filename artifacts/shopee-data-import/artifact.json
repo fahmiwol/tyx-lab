@@ -1,0 +1,14 @@
+{
+  "id": "shopee-data-import",
+  "name": "Shopee Storefront to Your DB — decision tree",
+  "version": "1.0.0",
+  "kind": "playbook",
+  "category": "ops",
+  "description": "Pragmatic ranked paths to get product data out of a Shopee storefront (CSV export, Meta Catalog API, paid scraper, manual seed) with what fails and why.",
+  "tags": ["shopee", "scraping", "catalog", "product-data", "anti-bot", "meta-catalog"],
+  "compatible_with": ["shopee-open-platform-integration"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
