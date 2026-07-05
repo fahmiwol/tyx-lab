@@ -1,1 +1,42 @@
-ewogICJpZCI6ICJub2RlbWFpbGVyLWVtYWlsLXRlbXBsYXRlIiwKICAibmFtZSI6ICJOb2RlbWFpbGVyIEVtYWlsIFRlbXBsYXRlIiwKICAidmVyc2lvbiI6ICIxLjAuMCIsCiAgImNhdGVnb3J5IjogWyJidXNpbmVzcyJdLAogICJkZXNjcmlwdGlvbiI6ICJFbWFpbCBkaXNwYXRjaCB2aWEgbm9kZW1haWxlciB3aXRoIFNNVFAgcmVsYXkuIEdyYWNlZnVsIGZhbGxiYWNrIGlmIFNNVFAgdW5jb25maWd1cmVkLiBCdWlsdC1pbiBIVE1MIHRlbXBsYXRlcyBmb3IgY29tbW9uIFNhYVMgZmxvd3MgKHB1cmNoYXNlLCByZXNldCwgaW52aXRlKS4iLAogICJpbnB1dCI6IFsKICAgIHsKICAgICAgIm5hbWUiOiAidG8iLAogICAgICAidHlwZSI6ICJzdHJpbmciLAogICAgICAiZGVzY3JpcHRpb24iOiAiUmVjaXBpZW50IGVtYWlsIGFkZHJlc3MiCiAgICB9LAogICAgewogICAgICAibmFtZSI6ICJzdWJqZWN0IiwKICAgICAgInR5cGUiOiAic3RyaW5nIiwKICAgICAgImRlc2NyaXB0aW9uIjogIkVtYWlsIHN1YmplY3QiCiAgICB9LAogICAgewogICAgICAibmFtZSI6ICJodG1sIiwKICAgICAgInR5cGUiOiAic3RyaW5nIiwKICAgICAgImRlc2NyaXB0aW9uIjogIkhUTUwgZW1haWwgYm9keSIKICAgIH0KICBdLAogICJvdXRwdXQiOiBbCiAgICB7CiAgICAgICJuYW1lIjogIm9rIiwKICAgICAgInR5cGUiOiAiYm9vbGVhbiIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJXaGV0aGVyIHNlbmQgc3VjY2VlZGVkIG9yIGdyYWNlZnVsbHkgc2tpcHBlZCIKICAgIH0sCiAgICB7CiAgICAgICJuYW1lIjogImVycm9yIiwKICAgICAgInR5cGUiOiAic3RyaW5nIiwKICAgICAgImRlc2NyaXB0aW9uIjogIkVycm9yIG1lc3NhZ2UgaWYgc2VuZCBmYWlsZWQiCiAgICB9CiAgXSwKICAidGFncyI6IFsiZW1haWwiLCAibm90aWZpY2F0aW9uIiwgIm1haWxlciIsICJ0ZW1wbGF0ZSJdLAogICJjb21wYXRpYmxlX3dpdGgiOiBbIm5vZGVqcyIsICJiYWNrZW5kIiwgImFwaSJdLAogICJ1c2VkX2luX3JlY2lwZXMiOiBbInVzZXItb25ib2FyZGluZyIsICJ0cmFuc2FjdGlvbi1hbGVydHMiXSwKICAic3RhdHVzIjogInN0YWJsZSIsCiAgImF1dGhvciI6ICJUaXJhbnl4IiwKICAibGljZW5zZSI6ICJNSVQiCn0K
+{
+  "id": "nodemailer-email-template",
+  "name": "Nodemailer Email Template",
+  "version": "1.0.0",
+  "category": ["business"],
+  "description": "Email dispatch via nodemailer with SMTP relay. Graceful fallback if SMTP unconfigured. Built-in HTML templates for common SaaS flows (purchase, reset, invite).",
+  "input": [
+    {
+      "name": "to",
+      "type": "string",
+      "description": "Recipient email address"
+    },
+    {
+      "name": "subject",
+      "type": "string",
+      "description": "Email subject"
+    },
+    {
+      "name": "html",
+      "type": "string",
+      "description": "HTML email body"
+    }
+  ],
+  "output": [
+    {
+      "name": "ok",
+      "type": "boolean",
+      "description": "Whether send succeeded or gracefully skipped"
+    },
+    {
+      "name": "error",
+      "type": "string",
+      "description": "Error message if send failed"
+    }
+  ],
+  "tags": ["email", "notification", "mailer", "template"],
+  "compatible_with": ["nodejs", "backend", "api"],
+  "used_in_recipes": ["user-onboarding", "transaction-alerts"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
