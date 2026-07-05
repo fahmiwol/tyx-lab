@@ -1,0 +1,15 @@
+{
+  "id": "multi-entity-scheduler",
+  "name": "Multi-Entity Scheduler",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Schedules recurring tasks across many entities (accounts/bots) with per-entity stagger, jittered intervals, health + circadian checks.",
+  "input": [{"name": "campaigns", "type": "list"}, {"name": "check_available_fn", "type": "Callable"}, {"name": "check_awake_fn", "type": "Callable"}, {"name": "run_task_fn", "type": "Callable"}],
+  "output": [{"name": "report", "type": "dict"}],
+  "tags": ["scheduler", "orchestration", "multi-account", "anti-detection"],
+  "compatible_with": ["python3.9+"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
