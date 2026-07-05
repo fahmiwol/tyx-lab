@@ -1,0 +1,14 @@
+{
+  "id": "brief-to-video-storyboard-pipeline",
+  "name": "Brief to Storyboard to Video Pipeline",
+  "version": "1.0.0",
+  "kind": "playbook",
+  "category": "ai",
+  "description": "End-to-end methodology for generating short-form video content (20-30 sec) from a brief, featuring Visual DNA consistency, AI storyboard generation, keyframe rendering, video assembly, and provider abstraction pattern.",
+  "tags": ["video-generation", "storyboard", "ai", "generative-video", "content-creation", "workflow"],
+  "compatible_with": ["mighan", "runway", "luma", "google-veo"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
