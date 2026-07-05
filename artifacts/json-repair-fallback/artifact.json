@@ -1,0 +1,1 @@
+{"id":"json-repair-fallback","name":"LLM JSON Repair & Fallback","version":"1.0.0","kind":"method","category":"infra","description":"Recover valid JSON from malformed LLM output via repair and partial extraction.","tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
