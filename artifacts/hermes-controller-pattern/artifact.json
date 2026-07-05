@@ -1,0 +1,13 @@
+{
+  "id": "hermes-controller-pattern",
+  "name": "Hermes Controller — Multi-Agent Orchestration Pattern",
+  "kind": "architecture",
+  "version": "1.0.0",
+  "category": "ai",
+  "description": "2-tier cascade: lightweight controller routes tasks to specialized executors. Each agent has persona + tools + memory. Controller recalls relevant notes, picks best tool, passes brief to executor. Model-agnostic (Gemini, Hermes, OpenRouter, HF).",
+  "tags": ["agent", "orchestration", "multi-agent", "llm", "cascade"],
+  "compatible_with": ["memory-rag", "agent-cascade-router", "provider-registry"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
