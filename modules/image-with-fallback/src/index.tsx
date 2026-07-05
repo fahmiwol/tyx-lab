@@ -1,1 +1,52 @@
-aW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnOwoKLyoqCiAqIEltYWdlIGNvbXBvbmVudCB3aXRoIGlubGluZSBTVkcgZmFsbGJhY2sgb24gZXJyb3IuCiAqIFNob3dzIHBsYWNlaG9sZGVyIHdoZW4gc3JjIGZhaWxzIHRvIGxvYWQuCiAqCiAqIFVzYWdlOgogKiAgIDxJbWFnZVdpdGhGYWxsYmFjawogKiAgICAgc3JjPSJodHRwczovL2FwaS5leGFtcGxlLmNvbS9pbWFnZXMvdXNlci0xMjMuanBnIgogKiAgICAgYWx0PSJVc2VyIHByb2ZpbGUiCiAqICAgICBjbGFzc05hbWU9InctMzIgaC0zMiByb3VuZGVkLWZ1bGwiCiAqICAgLz4KICovCgpjb25zdCBFUlJPUl9JTUdfU1JDID0gYGRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjNhV1IwYUQwaU9EZ2lJR2hsYVdkb2REMGlPRGdpSUhodGJHNXpQU0pvZEhSd09pOHZkM2QzTG5jekxtOXlaeTh5TURBd0wzTjJaeUlnYzNSeWIydGxQU0lqTURBd0lpQnpkSEp2YTJVdGJHbHVaV3B2YVc0OUluSnZkVzVrSWlCdmNHRmphWFI1UFNJdU15SWdabWxzYkQwaWJtOXVaU0lnYzNSeWIydGxMWGRwWkhSb1BTSXpMamNpUGp4eVpXTjBJSGc5SWpFMklpQjVQU0l4TmlJZ2QybGtkR2c5SWpVMklpQm9aV2xuYUhROUlqVTJJaUJ5ZUQwaU5pSXZQanh3WVhSb0lHUTlJbTB4TmlBMU9DQXhOaTB4T0NBek1pQXpNaUl2UGp4amFYSmpiR1VnWTNnOUlqVXpJaUJqZVQwaU16VWlJSEk5SWpjaUx6NDhMM04yWno0S0NnPT1gOwoKZXhwb3J0IGZ1bmN0aW9uIEltYWdlV2l0aEZhbGxiYWNrKAogIHByb3BzOiBSZWFjdC5JbWdIVE1MQXR0cmlidXRlczxIVE1MSW1hZ2VFbGVtZW50PgopIHsKICBjb25zdCBbZGlkRXJyb3IsIHNldERpZEVycm9yXSA9IHVzZVN0YXRlKGZhbHNlKTsKCiAgY29uc3QgaGFuZGxlRXJyb3IgPSAoKSA9PiB7CiAgICBzZXREaWRFcnJvcih0cnVlKTsKICB9OwoKICBjb25zdCB7IHNyYywgYWx0LCBzdHlsZSwgY2xhc3NOYW1lLCAuLi5yZXN0IH0gPSBwcm9wczsKCiAgcmV0dXJuIGRpZEVycm9yID8gKAogICAgPGRpdgogICAgICBjbGFzc05hbWU9e2BpbmxpbmUtYmxvY2sgYmctZ3JheS0xMDAgdGV4dC1jZW50ZXIgYWxpZ24tbWlkZGxlICR7Y2xhc3NOYW1lID8/ICcnfWB9CiAgICAgIHN0eWxlPXtzdHlsZX0KICAgID4KICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHctZnVsbCBoLWZ1bGwiPgogICAgICAgIDxpbWcKICAgICAgICAgIHNyYz17RVJST1JfSU1HX1NSQ30KICAgICAgICAgIGFsdD0iQnJva2VuIGltYWdlIHBsYWNlaG9sZGVyIgogICAgICAgICAgey4uLnJlc3R9CiAgICAgICAgICBkYXRhLW9yaWdpbmFsLXVybD17c3JjfQogICAgICAgIC8+CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgKSA6ICgKICAgIDxpbWcKICAgICAgc3JjPXtzcmN9CiAgICAgIGFsdD17YWx0fQogICAgICBjbGFzc05hbWU9e2NsYXNzTmFtZX0KICAgICAgc3R5bGU9e3N0eWxlfQogICAgICB7Li4ucmVzdH0KICAgICAgb25FcnJvcj17aGFuZGxlRXJyb3J9CiAgICAvPgogICk7Cn0K
+import React, { useState } from 'react';
+
+/**
+ * Image component with inline SVG fallback on error.
+ * Shows placeholder when src fails to load.
+ *
+ * Usage:
+ *   <ImageWithFallback
+ *     src="https://api.example.com/images/user-123.jpg"
+ *     alt="User profile"
+ *     className="w-32 h-32 rounded-full"
+ *   />
+ */
+
+const ERROR_IMG_SRC = `data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODgiIGhlaWdodD0iODgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIzLjciPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU2IiByeD0iNiIvPjxwYXRoIGQ9Im0xNiA1OCAxNi0xOCAzMiAzMiIvPjxjaXJjbGUgY3g9IjUzIiBjeT0iMzUiIHI9IjciLz48L3N2Zz4KCg==`;
+
+export function ImageWithFallback(
+  props: React.ImgHTMLAttributes<HTMLImageElement>
+) {
+  const [didError, setDidError] = useState(false);
+
+  const handleError = () => {
+    setDidError(true);
+  };
+
+  const { src, alt, style, className, ...rest } = props;
+
+  return didError ? (
+    <div
+      className={`inline-block bg-gray-100 text-center align-middle ${className ?? ''}`}
+      style={style}
+    >
+      <div className="flex items-center justify-center w-full h-full">
+        <img
+          src={ERROR_IMG_SRC}
+          alt="Broken image placeholder"
+          {...rest}
+          data-original-url={src}
+        />
+      </div>
+    </div>
+  ) : (
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      style={style}
+      {...rest}
+      onError={handleError}
+    />
+  );
+}
