@@ -1,0 +1,13 @@
+{
+  "id": "pm2-feature-flag-ecosystem-config",
+  "name": "PM2 Ecosystem Config with Feature Flags",
+  "kind": "template",
+  "version": "1.0.0",
+  "category": "ops",
+  "description": "Multi-process PM2 ecosystem.config.js with environment-based feature flags, cron health checks, mixed interpreter support (bash, node, serve), and A/B testing patterns.",
+  "tags": ["pm2", "ecosystem", "feature-flags", "ops", "devops", "docker"],
+  "compatible_with": ["pm2", "nodejs"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
