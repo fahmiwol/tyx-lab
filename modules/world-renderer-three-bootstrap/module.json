@@ -1,0 +1,15 @@
+{
+  "id": "world-renderer-three-bootstrap",
+  "name": "World Renderer Three.js Bootstrap",
+  "version": "1.0.0",
+  "category": "3d",
+  "description": "Three.js initialization: camera, lights, environment, post-processing, and render loop for isometric world rendering.",
+  "input": ["container-element", "world-config"],
+  "output": ["scene", "renderer", "camera"],
+  "tags": ["three.js", "isometric", "renderer", "initialization", "environment", "lighting"],
+  "compatible_with": ["npc-world-state-model"],
+  "used_in_recipes": ["isometric-world-loading"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
