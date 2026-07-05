@@ -1,0 +1,37 @@
+{
+  "id": "bullmq-job-enqueuer",
+  "name": "BullMQ Job Enqueuer",
+  "version": "1.0.0",
+  "category": ["infra", "ops"],
+  "description": "Wrapper for BullMQ queue with exponential backoff, retry policy, and auto-cleanup. Standardizes job enqueueing for e-commerce workflows (scrape, process, ship).",
+  "input": [
+    {
+      "name": "jobType",
+      "type": "string",
+      "description": "Job type identifier (e.g., 'scrape_orders')"
+    },
+    {
+      "name": "payload",
+      "type": "object",
+      "description": "Job-specific data"
+    }
+  ],
+  "output": [
+    {
+      "name": "jobId",
+      "type": "string",
+      "description": "BullMQ job ID"
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "description": "Initial job status (queued)"
+    }
+  ],
+  "tags": ["queue", "job", "retry", "backoff", "task-processing"],
+  "compatible_with": ["nestjs", "nodejs"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
