@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MighanAI — Image to 3D</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d0d0f; --surface: #16181c; --border: #2a2d35;
+      --accent: #6c63ff; --accent2: #00d4aa; --text: #e8eaf0; --muted: #6b7280;
+      --danger: #ff4757; --success: #2ed573;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+    header {
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 16px 32px; display: flex; align-items: center; gap: 16px;
+    }
+    header .logo { font-size: 20px; font-weight: 700; }
+    header .logo span { color: var(--accent); }
+    header .back-btn { margin-left: auto; background: var(--border); border: none; border-radius: 8px; color: var(--text); cursor: pointer; padding: 8px 16px; font-size: 13px; text-decoration: none; display: inline-block; }
+    header .back-btn:hover { background: var(--accent); }
+
+    .container { max-width: 1080px; margin: 0 auto; padding: 40px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    @media (max-width: 860px) { .container { grid-template-columns: 1fr; } }
+
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    .subtitle { color: var(--muted); margin-bottom: 24px; }
+
+    .upload-area {
+      border: 2px dashed var(--border); border-radius: 16px;
+      padding: 40px 24px; text-align: center; cursor: pointer;
+      transition: all 0.2s; background: var(--surface); margin-bottom: 20px;
+    }
+    .upload-area:hover { border-color: var(--accent); }
+    .upload-icon { font-size: 36px; margin-bottom: 8px; }
+    .upload-text { font-size: 14px; font-weight: 600; }
+    .upload-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    #preview-img { max-width: 100%; max-height: 280px; border-radius: 12px; display: none; margin: 0 auto; }
+
+    .form-row { margin-bottom: 16px; }
+    label { display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 6px; }
+    input[type="text"], select {
+      width: 100%; padding: 10px 12px; border-radius: 8px;
+      border: 1px solid var(--border); background: var(--surface); color: var(--text);
+      font-size: 14px; font-family: inherit;
+    }
+    input:focus, select:focus { outline: none; border-color: var(--accent); }
+
+    .btn-primary {
+      background: var(--accent); color: #fff; border: none; border-radius: 10px;
+      padding: 12px 24px; font-size: 14px; font-weight: 700; cursor: pointer;
+      transition: all 0.2s; width: 100%;
+    }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(108,99,255,0.3); }
+    .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .viewer-wrap {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      height: 480px; display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .viewer-placeholder { color: var(--muted); font-size: 14px; text-align: center; }
+    #three-canvas { width: 100%; height: 100%; display: none; }
+
+    .result-actions {
+      display: flex; gap: 10px; margin-top: 14px;
+    }
+    .btn-secondary {
+      flex: 1; background: var(--surface); color: var(--text); border: 1px solid var(--border);
+      border-radius: 8px; padding: 10px; font-size: 13px; cursor: pointer;
+    }
+    .btn-secondary:hover { border-color: var(--accent); }
+
+    .progress-text { font-size: 12px; color: var(--muted); margin-top: 10px; text-align: center; }
+
+    .toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+      background: var(--surface); border: 1px solid var(--border); color: var(--text);
+      padding: 10px 20px; border-radius: 10px; font-size: 13px; z-index: 9999;
+      display: none;
+    }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.162.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">Mighan<span>AI</span> — Image to 3D</div>
+    <a class="back-btn" href="index.html">← Kembali</a>
+  </header>
+
+  <div class="container">
+    <div class="left">
+      <h1>🧊 Image to 3D</h1>
+      <p class="subtitle">Generate model 3D dari gambar 2D.</p>
+
+      <div class="upload-area" id="dropzone">
+        <div class="upload-icon">🖼️</div>
+        <div class="upload-text">Drop gambar di sini</div>
+        <div class="upload-sub">JPG / PNG / WebP</div>
+        <input type="file" id="file-input" accept="image/*" style="display:none">
+        <img id="preview-img" alt="Preview">
+      </div>
+
+      <div class="form-row">
+        <label>Prompt (opsional)</label>
+        <input type="text" id="prompt" placeholder="Deskripsikan objek...">
+      </div>
+      <div class="form-row">
+        <label>Format Output</label>
+        <select id="format">
+          <option value="glb">GLB (Recommended)</option>
+          <option value="obj">OBJ</option>
+          <option value="fbx">FBX</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Quality</label>
+        <select id="quality">
+          <option value="fast">Fast (Preview)</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High (Slow)</option>
+        </select>
+      </div>
+      <button class="btn-primary" id="generate">Generate 3D Model</button>
+      <div class="progress-text" id="status">Siap.</div>
+    </div>
+
+    <div class="right">
+      <div class="viewer-wrap" id="viewer">
+        <div class="viewer-placeholder">
+          <div style="font-size:40px;margin-bottom:8px">🧊</div>
+          Preview 3D akan muncul di sini
+        </div>
+        <canvas id="three-canvas"></canvas>
+      </div>
+      <div class="result-actions" id="actions" style="display:none">
+        <button class="btn-secondary" id="download">Download GLB</button>
+        <button class="btn-secondary" id="send-world">Send to World</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script type="module">
+    import { skillLoader } from '../src/skills/skill-loader.js';
+    import * as THREE from 'three';
+    import { OrbitControls } from 'https://unpkg.com/three@0.162.0/examples/jsm/controls/OrbitControls.js';
+
+    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById('file-input');
+    const preview = document.getElementById('preview-img');
+    const promptEl = document.getElementById('prompt');
+    const formatEl = document.getElementById('format');
+    const qualityEl = document.getElementById('quality');
+    const generateBtn = document.getElementById('generate');
+    const statusEl = document.getElementById('status');
+    const viewer = document.getElementById('viewer');
+    const canvas = document.getElementById('three-canvas');
+    const placeholder = viewer.querySelector('.viewer-placeholder');
+    const actions = document.getElementById('actions');
+    const toast = document.getElementById('toast');
+
+    let imageBase64 = null;
+    let scene, camera, renderer, controls, currentMesh;
+
+    dropzone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => handleFile(e.target.files[0]);
+    dropzone.ondragover = (e) => { e.preventDefault(); dropzone.style.borderColor = 'var(--accent)'; };
+    dropzone.ondragleave = () => dropzone.style.borderColor = '';
+    dropzone.ondrop = (e) => {
+      e.preventDefault(); dropzone.style.borderColor = '';
+      if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+    };
+
+    async function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) { showToast('Bukan gambar'); return; }
+      const reader = new FileReader();
+      reader.onload = () => {
+        imageBase64 = reader.result;
+        preview.src = reader.result; preview.style.display = 'block';
+        dropzone.querySelector('.upload-icon').style.display = 'none';
+        dropzone.querySelector('.upload-text').style.display = 'none';
+        dropzone.querySelector('.upload-sub').style.display = 'none';
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function initViewer() {
+      if (renderer) return;
+      canvas.style.display = 'block'; placeholder.style.display = 'none';
+      renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+      renderer.setSize(viewer.clientWidth, viewer.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color('#16181c');
+      camera = new THREE.PerspectiveCamera(45, viewer.clientWidth / viewer.clientHeight, 0.1, 100);
+      camera.position.set(3, 2, 4);
+
+      const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+      scene.add(ambient);
+      const dir = new THREE.DirectionalLight(0xffffff, 0.8);
+      dir.position.set(2, 4, 2);
+      scene.add(dir);
+
+      controls = new OrbitControls(camera, canvas);
+      controls.enableDamping = true;
+      controls.autoRotate = true;
+
+      // Grid
+      const grid = new THREE.GridHelper(10, 10, 0x334155, 0x1e293b);
+      scene.add(grid);
+
+      animate();
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      if (controls) controls.update();
+      if (renderer && scene && camera) renderer.render(scene, camera);
+    }
+
+    function showMesh(geometry) {
+      initViewer();
+      if (currentMesh) { scene.remove(currentMesh); currentMesh.geometry.dispose(); currentMesh.material.dispose(); }
+      const mat = new THREE.MeshStandardMaterial({ color: 0x6c63ff, roughness: 0.4, metalness: 0.3 });
+      currentMesh = new THREE.Mesh(geometry, mat);
+      scene.add(currentMesh);
+    }
+
+    generateBtn.onclick = async () => {
+      if (!imageBase64) { showToast('Upload gambar dulu'); return; }
+      generateBtn.disabled = true;
+      statusEl.textContent = 'Mengirim ke server...';
+      actions.style.display = 'none';
+
+      try {
+        await skillLoader.init();
+        await skillLoader.loadSkills(['image-to-3d']);
+        const res = await skillLoader.dispatch('image-to-3d', 'generate', {
+          imageBase64, prompt: promptEl.value,
+          format: formatEl.value, quality: qualityEl.value
+        });
+        statusEl.textContent = 'Job: ' + (res.jobId || 'mock');
+
+        if (res.jobId) {
+          const stopPoll = skillLoader.loaded.get('image-to-3d').poll(res.jobId, (status) => {
+            statusEl.textContent = 'Status: ' + status.status;
+            if (status.status === 'completed') {
+              stopPoll();
+              statusEl.textContent = 'Selesai! Menampilkan preview...';
+              // Mock preview: show a box until real GLB loaded
+              showMesh(new THREE.BoxGeometry(1, 1, 1));
+              actions.style.display = 'flex';
+              generateBtn.disabled = false;
+            } else if (status.status === 'failed') {
+              stopPoll();
+              statusEl.textContent = 'Gagal: ' + (status.error || 'unknown');
+              generateBtn.disabled = false;
+            }
+          });
+        } else {
+          // Mock mode: show preview box
+          setTimeout(() => {
+            statusEl.textContent = 'Preview (mock mode)';
+            showMesh(new THREE.TorusKnotGeometry(0.6, 0.2, 100, 16));
+            actions.style.display = 'flex';
+            generateBtn.disabled = false;
+          }, 1200);
+        }
+      } catch (e) {
+        showToast('Error: ' + e.message);
+        generateBtn.disabled = false;
+      }
+    };
+
+    document.getElementById('download').onclick = () => showToast('Download mock: file.glb');
+    document.getElementById('send-world').onclick = () => showToast('Dikirim ke ObjectLibrary (mock)');
+
+    function showToast(msg) {
+      toast.textContent = msg; toast.style.display = 'block';
+      setTimeout(() => toast.style.display = 'none', 3000);
+    }
+  </script>
+</body>
+</html>
