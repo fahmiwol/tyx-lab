@@ -1,0 +1,15 @@
+{
+  "id": "dual-auth-internal-key-pattern",
+  "name": "Dual-Auth Internal Key Pattern",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Server-to-server + user authentication hybrid: (1) Client sends JWT (user auth), (2) Server adds x-internal-key header (server auth). Prevents MITM impersonation + unauthorized backend calls. Common in fintech proxies, multi-tenant APIs.",
+  "input": ["userJwt: string, internalKey: string"],
+  "output": ["{ authorized: boolean, userId?: string }"],
+  "tags": ["security","auth","jwt","api-gateway","fintech"],
+  "compatible_with": ["jwt-auth-cookies","server-auth-token-cache"],
+  "used_in_recipes": ["api-proxy","multi-tenant-gateway"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
