@@ -1,0 +1,15 @@
+{
+  "id": "telegram-command-router",
+  "name": "Telegram Command Router & Inline Keyboard Builder",
+  "version": "1.0.0",
+  "category": "ai",
+  "description": "Route Telegram bot commands to handlers and build inline keyboard UI with callback actions.",
+  "input": ["telegram-message", "handler-map"],
+  "output": ["handler-result", "keyboard-markup"],
+  "tags": ["telegram", "bot", "command-routing", "inline-keyboard", "callback-query", "message-handler"],
+  "compatible_with": [],
+  "used_in_recipes": ["telegram-bot-setup"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
