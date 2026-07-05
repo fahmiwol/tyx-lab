@@ -1,0 +1,22 @@
+{
+  "id": "slm-training-pipeline-patterns",
+  "name": "Slm Training Pipeline Patterns",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "ai",
+  "description": "End-to-end SLM fine-tuning patterns including data curation, LoRA configuration, eval gates, and rollback procedures",
+  "tags": [
+    "small-language-models",
+    "fine-tuning",
+    "lora",
+    "training",
+    "evaluation"
+  ],
+  "compatible_with": [
+    "generic-ai-systems"
+  ],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
