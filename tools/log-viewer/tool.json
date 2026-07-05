@@ -1,0 +1,17 @@
+{
+  "id": "log-viewer",
+  "name": "Log Viewer Dashboard",
+  "version": "1.0.0",
+  "kind": "web-app",
+  "category": "ops",
+  "description": "Real-time reactive log viewer with polling & Socket.io support. Displays structured logs with live refresh, filtering by agent/service, and state synchronization.",
+  "run": "cd tools/log-viewer && npm install && npm run dev",
+  "input": [{"name": "GATEWAY_URL", "type": "string", "description": "Backend gateway URL for polling logs (e.g., http://localhost:9797)"}],
+  "output": [{"name": "logs", "type": "array", "description": "Streamed log events"}],
+  "tags": ["logging", "monitoring", "reactive", "socket.io", "vite", "react"],
+  "compatible_with": ["ops-gateway", "agent-framework"],
+  "used_in_recipes": ["agent-observability", "ops-dashboard"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
