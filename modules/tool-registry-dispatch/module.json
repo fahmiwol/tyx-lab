@@ -1,0 +1,22 @@
+{
+  "id": "tool-registry-dispatch",
+  "name": "Tool Registry & Dispatch Pattern",
+  "version": "1.0.0",
+  "category": ["ai", "infrastructure"],
+  "description": "Centralized registry of available tools/skills. Agents query registry to discover available actions, validate parameters, execute with permission gates, and log usage. Foundation for scalable multi-agent systems.",
+  "input": [
+    {"name": "tool_request", "type": "object", "description": "Tool name + params"},
+    {"name": "permission_context", "type": "object", "description": "User/agent permissions"}
+  ],
+  "output": [
+    {"name": "tool_result", "type": "string"},
+    {"name": "execution_trace", "type": "object"},
+    {"name": "permission_granted", "type": "boolean"}
+  ],
+  "tags": ["tool-registry", "dispatch", "permissions", "agent-orchestration"],
+  "compatible_with": ["agent-frameworks", "react-loop", "multi-agent-systems"],
+  "used_in_recipes": ["autonomous-agent-stack"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
