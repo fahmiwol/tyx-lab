@@ -1,0 +1,14 @@
+{
+  "id": "ihos-epistemology-framework",
+  "name": "IHOS Epistemology Framework",
+  "version": "1.0.0",
+  "kind": "framework",
+  "category": ["ai", "research"],
+  "description": "Islamic Epistemology (Ilmu Jariyah, Hifdz, Akses Umat, Sistem) as applied to AI system design. Translates 1400-year-old validation principles into modern engineering: flowing knowledge, chain-of-custody, universal access, systematic hierarchy.",
+  "tags": ["epistemology", "islamic", "ai-alignment", "knowledge-systems", "validation"],
+  "compatible_with": ["agent-frameworks", "rag-systems", "LoRA-training"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
