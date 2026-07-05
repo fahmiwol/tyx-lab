@@ -1,0 +1,21 @@
+{
+  "id": "autonomous-growth-flywheel",
+  "name": "Autonomous Growth Flywheel",
+  "version": "1.0.0",
+  "kind": "framework",
+  "category": "ai",
+  "description": "Closed-loop architecture for autonomous AI systems: input\u2192process\u2192store\u2192output layers enabling self-improvement without manual training",
+  "tags": [
+    "autonomy",
+    "ai-training",
+    "self-improvement",
+    "feedback-loops"
+  ],
+  "compatible_with": [
+    "generic-ai-systems"
+  ],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
