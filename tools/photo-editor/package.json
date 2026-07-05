@@ -1,8 +1,8 @@
 {
-  "name": "cursor-003-mighan-photo",
+  "name": "photo-editor",
   "version": "0.1.0",
   "private": true,
-  "description": "by Cursor — Photo editor + Sharp API",
+  "description": "Tool: Photo editor + Sharp API",
   "scripts": {
     "server": "node server/index.js",
     "client": "npm run dev --prefix client",
