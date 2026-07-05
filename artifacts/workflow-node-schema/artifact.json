@@ -1,0 +1,1 @@
+{"id":"workflow-node-schema","name":"Visual Workflow Node Schema","version":"1.0.0","kind":"framework","category":"ai","description":"A visual-orchestration node contract and execution engine for chaining tools and LLMs.","tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
