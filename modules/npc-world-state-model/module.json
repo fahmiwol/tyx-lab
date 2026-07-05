@@ -1,0 +1,15 @@
+{
+  "id": "npc-world-state-model",
+  "name": "NPC World State Model",
+  "version": "1.0.0",
+  "category": "3d",
+  "description": "Declarative JSON schema for representing a room/world state: grid, objects, agents, zones, floors, themes.",
+  "input": ["world-config-json"],
+  "output": ["normalized-world-state"],
+  "tags": ["world-state", "room-model", "grid", "3d-scene", "npc-positioning", "serialization"],
+  "compatible_with": ["world-renderer-three-bootstrap", "agent-persona-registry"],
+  "used_in_recipes": ["isometric-world-loading", "scene-persistence"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
