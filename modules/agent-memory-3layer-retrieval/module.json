@@ -1,0 +1,15 @@
+{
+  "id": "agent-memory-3layer-retrieval",
+  "name": "Agent Memory: 3-Layer Progressive Retrieval",
+  "version": "1.0.0",
+  "category": "ai",
+  "description": "Memory architecture for agents: index layer (FTS5), timeline layer (recent events), full context layer. Reduces token use 10x via progressive retrieval.",
+  "input": ["query-string", "context-window-size"],
+  "output": ["ranked-memory-results"],
+  "tags": ["memory", "retrieval", "full-text-search", "timeline", "token-optimization", "sqlite"],
+  "compatible_with": ["agent-persona-registry"],
+  "used_in_recipes": ["agent-context-retrieval"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
