@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MighanAI — Image to Video</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d0d0f; --surface: #16181c; --border: #2a2d35;
+      --accent: #6c63ff; --accent2: #00d4aa; --text: #e8eaf0; --muted: #6b7280;
+      --danger: #ff4757; --success: #2ed573;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+    header {
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 16px 32px; display: flex; align-items: center; gap: 16px;
+    }
+    header .logo { font-size: 20px; font-weight: 700; }
+    header .logo span { color: var(--accent); }
+    header .back-btn { margin-left: auto; background: var(--border); border: none; border-radius: 8px; color: var(--text); cursor: pointer; padding: 8px 16px; font-size: 13px; text-decoration: none; display: inline-block; }
+    header .back-btn:hover { background: var(--accent); }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 40px 32px; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    .subtitle { color: var(--muted); margin-bottom: 28px; }
+
+    .upload-area {
+      border: 2px dashed var(--border); border-radius: 16px;
+      padding: 48px 24px; text-align: center; cursor: pointer;
+      transition: all 0.2s; background: var(--surface); margin-bottom: 24px;
+    }
+    .upload-area:hover { border-color: var(--accent); }
+    .upload-area.dragover { border-color: var(--accent); background: rgba(108,99,255,0.05); }
+    .upload-icon { font-size: 40px; margin-bottom: 10px; }
+    .upload-text { font-size: 15px; font-weight: 600; }
+    .upload-sub { font-size: 13px; color: var(--muted); margin-top: 6px; }
+    #preview-img { max-width: 100%; max-height: 320px; border-radius: 12px; display: none; margin: 0 auto; }
+
+    .form-row { margin-bottom: 18px; }
+    label { display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 6px; }
+    input[type="text"], textarea, select {
+      width: 100%; padding: 10px 12px; border-radius: 8px;
+      border: 1px solid var(--border); background: var(--surface); color: var(--text);
+      font-size: 14px; font-family: inherit;
+    }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: var(--accent); }
+    textarea { min-height: 80px; resize: vertical; }
+    .range-wrap { display: flex; align-items: center; gap: 12px; }
+    input[type="range"] { flex: 1; }
+    .range-val { min-width: 40px; text-align: right; font-size: 13px; font-weight: 600; }
+
+    .preset-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+    .preset-chip {
+      padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--muted); font-size: 12px; cursor: pointer;
+    }
+    .preset-chip:hover { border-color: var(--accent); color: var(--text); }
+    .preset-chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    .btn-primary {
+      background: var(--accent); color: #fff; border: none; border-radius: 10px;
+      padding: 12px 28px; font-size: 14px; font-weight: 700; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(108,99,255,0.3); }
+    .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .progress-wrap { margin-top: 24px; display: none; }
+    .progress-bar { height: 8px; background: var(--surface); border-radius: 4px; overflow: hidden; }
+    .progress-fill { height: 100%; width: 0%; background: var(--accent); border-radius: 4px; transition: width 0.3s; }
+    .progress-text { font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+    .result-wrap { margin-top: 24px; display: none; }
+    video { max-width: 100%; border-radius: 12px; }
+    .actions { display: flex; gap: 10px; margin-top: 12px; }
+    .btn-secondary {
+      background: var(--surface); color: var(--text); border: 1px solid var(--border);
+      border-radius: 8px; padding: 8px 16px; font-size: 13px; cursor: pointer;
+    }
+    .btn-secondary:hover { border-color: var(--accent); }
+
+    .toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+      background: var(--surface); border: 1px solid var(--border); color: var(--text);
+      padding: 10px 20px; border-radius: 10px; font-size: 13px; z-index: 9999;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Mighan<span>AI</span> — Image to Video</div>
+    <a class="back-btn" href="index.html">← Kembali</a>
+  </header>
+
+  <div class="container">
+    <h1>🎬 Image to Video</h1>
+    <p class="subtitle">Ubah gambar statis jadi video animasi dengan AI.</p>
+
+    <div class="upload-area" id="dropzone">
+      <div class="upload-icon">🖼️</div>
+      <div class="upload-text">Drag & drop gambar di sini</div>
+      <div class="upload-sub">atau klik untuk pilih file (JPG, PNG, WebP)</div>
+      <input type="file" id="file-input" accept="image/*" style="display:none">
+      <img id="preview-img" alt="Preview">
+    </div>
+
+    <div class="form-row">
+      <label>Prompt Gerakan</label>
+      <textarea id="prompt" placeholder="Contoh: slow zoom in, gentle wind blowing hair, cinematic lighting..."></textarea>
+    </div>
+
+    <div class="form-row">
+      <label>Style Preset</label>
+      <div class="preset-row" id="presets">
+        <span class="preset-chip active" data-style="cinematic">Cinematic</span>
+        <span class="preset-chip" data-style="anime">Anime</span>
+        <span class="preset-chip" data-style="3d">3D Render</span>
+        <span class="preset-chip" data-style="realistic">Realistic</span>
+        <span class="preset-chip" data-style="motion">Motion Graphics</span>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Durasi (detik)</label>
+      <div class="range-wrap">
+        <input type="range" id="duration" min="2" max="10" value="4" step="1">
+        <span class="range-val" id="dur-val">4s</span>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>FPS</label>
+      <select id="fps">
+        <option value="24">24 fps</option>
+        <option value="30" selected>30 fps</option>
+        <option value="60">60 fps</option>
+      </select>
+    </div>
+
+    <button class="btn-primary" id="generate">Generate Video</button>
+
+    <div class="progress-wrap" id="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="progress-text" id="progress-text">Mengantri...</div>
+    </div>
+
+    <div class="result-wrap" id="result-wrap">
+      <video id="result-video" controls></video>
+      <div class="actions">
+        <button class="btn-secondary" id="download">Download</button>
+        <button class="btn-secondary" id="send-canvas">Send to Canvas</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script type="module">
+    import { skillLoader } from '../src/skills/skill-loader.js';
+
+    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById('file-input');
+    const preview = document.getElementById('preview-img');
+    const promptEl = document.getElementById('prompt');
+    const durationEl = document.getElementById('duration');
+    const durVal = document.getElementById('dur-val');
+    const fpsEl = document.getElementById('fps');
+    const generateBtn = document.getElementById('generate');
+    const progressWrap = document.getElementById('progress-wrap');
+    const progressFill = document.getElementById('progress-fill');
+    const progressText = document.getElementById('progress-text');
+    const resultWrap = document.getElementById('result-wrap');
+    const resultVideo = document.getElementById('result-video');
+    const toast = document.getElementById('toast');
+
+    let imageBase64 = null;
+    let currentStyle = 'cinematic';
+
+    dropzone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => handleFile(e.target.files[0]);
+    dropzone.ondragover = (e) => { e.preventDefault(); dropzone.classList.add('dragover'); };
+    dropzone.ondragleave = () => dropzone.classList.remove('dragover');
+    dropzone.ondrop = (e) => {
+      e.preventDefault(); dropzone.classList.remove('dragover');
+      if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+    };
+
+    async function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) { showToast('File bukan gambar'); return; }
+      const reader = new FileReader();
+      reader.onload = () => {
+        imageBase64 = reader.result;
+        preview.src = reader.result;
+        preview.style.display = 'block';
+        dropzone.querySelector('.upload-icon').style.display = 'none';
+        dropzone.querySelector('.upload-text').style.display = 'none';
+        dropzone.querySelector('.upload-sub').style.display = 'none';
+      };
+      reader.readAsDataURL(file);
+    }
+
+    durationEl.oninput = () => durVal.textContent = durationEl.value + 's';
+
+    document.querySelectorAll('.preset-chip').forEach(chip => {
+      chip.onclick = () => {
+        document.querySelectorAll('.preset-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        currentStyle = chip.dataset.style;
+      };
+    });
+
+    generateBtn.onclick = async () => {
+      if (!imageBase64) { showToast('Upload gambar dulu'); return; }
+      generateBtn.disabled = true;
+      progressWrap.style.display = 'block';
+      resultWrap.style.display = 'none';
+      progressFill.style.width = '10%';
+      progressText.textContent = 'Mengirim ke server...';
+
+      try {
+        await skillLoader.init();
+        await skillLoader.loadSkills(['image-to-video']);
+        const res = await skillLoader.dispatch('image-to-video', 'generate', {
+          imageBase64, prompt: promptEl.value,
+          duration: parseInt(durationEl.value), fps: parseInt(fpsEl.value), style: currentStyle
+        });
+        progressFill.style.width = '30%';
+        progressText.textContent = 'Job ID: ' + (res.jobId || 'N/A') + ' — polling...';
+
+        if (res.jobId) {
+          const stopPoll = skillLoader.loaded.get('image-to-video').poll(res.jobId, (status) => {
+            if (status.status === 'completed') {
+              stopPoll();
+              progressFill.style.width = '100%';
+              progressText.textContent = 'Selesai!';
+              resultWrap.style.display = 'block';
+              resultVideo.src = status.url;
+              generateBtn.disabled = false;
+            } else if (status.status === 'failed') {
+              stopPoll();
+              progressText.textContent = 'Gagal: ' + (status.error || 'unknown');
+              generateBtn.disabled = false;
+            } else {
+              progressFill.style.width = Math.min(30 + Math.random() * 50, 90) + '%';
+              progressText.textContent = 'Status: ' + status.status;
+            }
+          });
+        } else {
+          progressFill.style.width = '100%';
+          progressText.textContent = 'Mock complete (no jobId)';
+          generateBtn.disabled = false;
+        }
+      } catch (e) {
+        showToast('Error: ' + e.message);
+        generateBtn.disabled = false;
+      }
+    };
+
+    document.getElementById('download').onclick = () => {
+      if (resultVideo.src) {
+        const a = document.createElement('a'); a.href = resultVideo.src; a.download = 'mighan-video-' + Date.now() + '.mp4'; a.click();
+      }
+    };
+    document.getElementById('send-canvas').onclick = () => {
+      showToast('Dikirim ke MighanCanvas (mock)');
+    };
+
+    function showToast(msg) {
+      toast.textContent = msg; toast.style.display = 'block';
+      setTimeout(() => toast.style.display = 'none', 3000);
+    }
+  </script>
+</body>
+</html>
