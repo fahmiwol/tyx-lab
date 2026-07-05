@@ -1,0 +1,14 @@
+{
+  "id": "shopee-open-platform-integration",
+  "name": "Shopee Open Platform — Partner App Integration",
+  "version": "1.0.0",
+  "kind": "playbook",
+  "category": "ops",
+  "description": "Build a Shopee Partner App: one developer account onboarding many seller shops via OAuth, HMAC-SHA256 signing, token lifecycle, minimum-scope and review strategy.",
+  "tags": ["shopee", "oauth", "marketplace", "hmac", "api-integration", "multi-tenant"],
+  "compatible_with": ["shopee-data-import"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
