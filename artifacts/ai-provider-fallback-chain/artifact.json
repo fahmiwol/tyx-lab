@@ -1,0 +1,14 @@
+{
+  "id": "ai-provider-fallback-chain",
+  "name": "AI Provider Fallback Chain with Circuit Breaker",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "ai",
+  "description": "Graceful degradation pattern for LLM API calls. Primary provider (e.g. Anthropic) fails → fallback to secondary (OpenAI) → tertiary (Mistral/Ollama). Circuit breaker prevents cascade failures. Enables reliable AI features with zero downtime.",
+  "tags": ["llm", "fallback", "circuit-breaker", "resilience", "multi-provider"],
+  "compatible_with": ["nodejs", "anthropic", "openai", "mistral"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
