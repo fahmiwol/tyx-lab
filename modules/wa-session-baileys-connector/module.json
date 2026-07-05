@@ -1,1 +1,1 @@
-
+{"id":"wa-session-baileys-connector","name":"WhatsApp Multi-Device Session Connector","version":"1.0.0","category":"infra","description":"Manage WhatsApp multi-device sessions with per-tenant isolation, QR auth, and auto-reconnect.","input":[],"output":[],"tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
