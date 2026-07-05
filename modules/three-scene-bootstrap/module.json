@@ -1,0 +1,21 @@
+{
+  "id": "three-scene-bootstrap",
+  "name": "Three.js Scene Bootstrap",
+  "version": "1.0.0",
+  "category": "3d",
+  "description": "Minimal WebGL scene initialization with renderer, scene, configurable lights, fog, and resize handling. Factory pattern for lights (ambient/directional/hemisphere/point) with shadow config. Extensible through config object.",
+  "input": [
+    { "name": "canvasId", "type": "string", "description": "DOM canvas element ID" },
+    { "name": "config", "type": "Object", "description": "Scene configuration with clearColor, fog, lights array, etc." }
+  ],
+  "output": [
+    { "name": "scene", "type": "THREE.Scene", "description": "Initialized Three.js scene" },
+    { "name": "renderer", "type": "THREE.WebGLRenderer", "description": "WebGL renderer instance" }
+  ],
+  "tags": ["3d", "threejs", "scene", "rendering", "initialization", "game-dev"],
+  "compatible_with": ["browser", "typescript", "threejs", "react", "vue"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
