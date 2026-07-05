@@ -1,0 +1,14 @@
+{
+  "id": "security-compliance-checklist",
+  "name": "Security & Compliance Checklist",
+  "version": "1.0.0",
+  "kind": "checklist",
+  "category": "ops",
+  "description": "Comprehensive security hardening and regulatory compliance framework for digital platforms, covering authentication, data protection, infrastructure, logging, incident response, GDPR/CCPA/SOC2/PCI-DSS, and ongoing maintenance.",
+  "tags": ["security", "compliance", "gdpr", "ccpa", "soc2", "pci-dss", "encryption", "audit"],
+  "compatible_with": ["aws", "gcp", "azure", "kubernetes", "docker"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
