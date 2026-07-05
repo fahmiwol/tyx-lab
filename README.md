@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-<a href="tools/"><b>Tools</b></a> &middot; <a href="modules/"><b>Modules</b></a> &middot; <a href="artifacts/"><b>Artifacts</b></a> &middot; <a href="recipes/"><b>Recipes</b></a> &middot; <a href="index.json"><b>index.json</b></a> &middot; <a href="llms.txt"><b>llms.txt</b></a> &middot; <a href="CONTRIBUTING.md"><b>Contribute</b></a>
+<a href="tools/"><b>Tools</b></a> &middot; <a href="modules/"><b>Modules</b></a> &middot; <a href="artifacts/"><b>Artifacts</b></a> &middot; <a href="recipes/"><b>Recipes</b></a> &middot; <a href="index.json"><b>index.json</b></a> &middot; <a href="llms.txt"><b>llms.txt</b></a> &middot; <a href="docs/PLAYGROUND.md"><b>&#9654; Playground</b></a> &middot; <a href="CONTRIBUTING.md"><b>Contribute</b></a>
 </p>
 
 ---
