@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mighan — NPC Generator v0</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #07080f;
+  --bg2: #0b0d1c;
+  --bg3: #0f1128;
+  --panel: #12152a;
+  --panel2: #1a1e38;
+  --border: #2a2f55;
+  --cyan: #00f5ff;
+  --cyan2: #06b6d4;
+  --purple: #7c3aed;
+  --purple2: #9b59b6;
+  --gold: #f59e0b;
+  --green: #10b981;
+  --red: #ef4444;
+  --text: #e2e8f0;
+  --muted: #64748b;
+  --font-head: 'Fredoka One', cursive;
+  --font-body: 'Nunito', sans-serif;
+  --font-id: 'Rajdhani', sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);min-height:100vh;overflow-x:hidden;}
+
+/* ── TOP BAR ── */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(11,13,28,.95);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;}
+.topbar-left{display:flex;align-items:center;gap:16px;}
+.topbar-back{color:var(--muted);font-size:.85rem;text-decoration:none;padding:5px 12px;border-radius:8px;border:1px solid var(--border);transition:all .15s;}
+.topbar-back:hover{color:var(--cyan);border-color:var(--cyan);}
+.topbar-logo{font-family:var(--font-head);font-size:1.3rem;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.topbar-tabs{display:flex;gap:8px;}
+.tab-btn{padding:8px 20px;border-radius:10px;border:1.5px solid var(--border);background:transparent;color:var(--muted);font-family:var(--font-body);font-weight:700;font-size:.9rem;cursor:pointer;transition:all .2s;}
+.tab-btn.active{background:linear-gradient(135deg,rgba(0,245,255,.15),rgba(124,58,237,.15));border-color:var(--cyan);color:var(--cyan);}
+.topbar-hud{display:flex;gap:10px;font-family:var(--font-id);font-size:.85rem;align-items:center;}
+.hud-chip{padding:5px 12px;background:var(--panel2);border-radius:8px;border:1px solid var(--border);}
+.hud-chip span{color:var(--gold);}
+.gw-status{width:8px;height:8px;border-radius:50%;background:var(--muted);transition:background .3s;}
+.gw-status.online{background:var(--green);box-shadow:0 0 6px var(--green);}
+.gw-status.offline{background:var(--red);}
+
+/* ── LAYOUT ── */
+.app{display:none;height:calc(100vh - 57px);}
+.app.active{display:flex;}
+
+/* ══════════════════════════════════════════
+   NPC EDITOR
+══════════════════════════════════════════ */
+#app-npc{gap:0;}
+
+/* Roster sidebar */
+.roster{width:200px;min-width:200px;background:var(--panel);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;}
+.roster-head{padding:14px 14px 10px;font-family:var(--font-head);font-size:1rem;color:var(--cyan);border-bottom:1px solid var(--border);}
+.roster-list{flex:1;overflow-y:auto;padding:8px;}
+.roster-list::-webkit-scrollbar{width:4px;}
+.roster-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+.r-card{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;cursor:pointer;border:1.5px solid transparent;margin-bottom:4px;transition:all .15s;}
+.r-card:hover{background:var(--panel2);}
+.r-card.active{background:rgba(0,245,255,.07);border-color:var(--cyan);}
+.r-emo{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.r-info{overflow:hidden;}
+.r-name{font-weight:800;font-size:.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.r-role{font-size:.7rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.r-rarity{font-size:.65rem;margin-top:2px;font-weight:700;}
+.rarity-Common{color:#94a3b8;}
+.rarity-Rare{color:var(--cyan2);}
+.rarity-Epic{color:var(--purple2);}
+.rarity-Legendary{color:var(--gold);}
+
+/* Preview center */
+.npc-preview{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 80%,rgba(0,245,255,.04) 0%,transparent 70%),var(--bg2);position:relative;overflow:hidden;padding:20px;}
+.preview-bg-glow{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(0,245,255,.06),transparent 70%);pointer-events:none;}
+.npc-card-preview{background:linear-gradient(145deg,var(--panel),var(--panel2));border-radius:20px;border:1.5px solid var(--border);padding:0;overflow:hidden;width:240px;box-shadow:0 0 40px rgba(0,245,255,.08);}
+.ncp-rarity-strip{height:4px;width:100%;}
+.ncp-header{padding:16px 16px 0;display:flex;justify-content:space-between;align-items:flex-start;}
+.ncp-serial{font-family:var(--font-id);font-size:.65rem;color:var(--muted);}
+.ncp-rarity-badge{font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:20px;background:rgba(0,0,0,.3);}
+.ncp-char-zone{display:flex;justify-content:center;padding:12px 0 8px;}
+.ncp-hex-wrap{position:relative;width:90px;height:90px;}
+.ncp-hex{width:90px;height:90px;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);display:flex;align-items:center;justify-content:center;font-size:3rem;overflow:hidden;}
+.ncp-portrait{width:90px;height:90px;object-fit:cover;display:none;}
+.ncp-name{text-align:center;font-family:var(--font-head);font-size:1rem;padding:0 16px 2px;}
+.ncp-arch{text-align:center;font-size:.7rem;color:var(--muted);font-style:italic;padding:0 16px 12px;}
+.ncp-stats{padding:0 16px;}
+.ncp-stat-row{display:flex;align-items:center;gap:6px;margin-bottom:5px;font-size:.7rem;}
+.ncp-stat-label{width:28px;color:var(--muted);font-weight:700;}
+.ncp-stat-bar{flex:1;height:4px;background:rgba(255,255,255,.07);border-radius:50px;overflow:hidden;}
+.ncp-stat-fill{height:100%;border-radius:50px;}
+.ncp-stat-val{width:18px;text-align:right;font-weight:700;font-size:.68rem;}
+.ncp-divider{height:1px;background:var(--border);margin:10px 16px;}
+.ncp-inv-label{padding:0 16px 6px;font-size:.68rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;}
+.ncp-inv-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;padding:0 16px 12px;}
+.inv-slot{aspect-ratio:1;border-radius:6px;border:1.5px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.9rem;background:rgba(0,0,0,.2);cursor:pointer;transition:all .15s;position:relative;}
+.inv-slot.equipped{border-color:var(--cyan2);background:rgba(6,182,212,.1);}
+.inv-slot.locked{opacity:.35;cursor:not-allowed;border-style:dashed;}
+.inv-slot:hover:not(.locked){border-color:rgba(255,255,255,.3);}
+.ncp-power{padding:0 16px 14px;}
+.ncp-power-label{display:flex;justify-content:space-between;font-size:.7rem;margin-bottom:4px;}
+.ncp-power-bar{height:6px;background:rgba(255,255,255,.07);border-radius:50px;overflow:hidden;}
+.ncp-power-fill{height:100%;border-radius:50px;background:linear-gradient(90deg,var(--cyan),var(--purple));}
+.preview-actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;justify-content:center;}
+.btn-save{padding:10px 22px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--cyan2));border:none;color:#07080f;font-family:var(--font-body);font-weight:800;font-size:.85rem;cursor:pointer;transition:all .2s;}
+.btn-save:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,245,255,.3);}
+.btn-save:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none;}
+.btn-portrait{padding:10px 16px;border-radius:12px;background:linear-gradient(135deg,rgba(124,58,237,.3),rgba(139,92,246,.2));border:1.5px solid var(--purple);color:var(--purple2);font-family:var(--font-body);font-weight:700;font-size:.85rem;cursor:pointer;transition:all .2s;}
+.btn-portrait:hover{border-color:var(--purple2);color:#fff;}
+.btn-portrait:disabled{opacity:.4;cursor:not-allowed;}
+.btn-gen{padding:10px 16px;border-radius:12px;background:var(--panel2);border:1.5px solid var(--border);color:var(--text);font-family:var(--font-body);font-weight:700;font-size:.85rem;cursor:pointer;transition:all .2s;}
+.btn-gen:hover{border-color:var(--purple);color:var(--purple);}
+
+/* Portrait preview overlay */
+.portrait-preview{width:240px;margin-top:12px;border-radius:12px;overflow:hidden;border:1.5px solid var(--border);display:none;}
+.portrait-preview img{width:100%;display:block;}
+.portrait-actions{display:flex;gap:8px;padding:8px;background:var(--panel);}
+.btn-use-portrait{flex:1;padding:7px;border-radius:8px;background:linear-gradient(135deg,var(--purple),var(--purple2));border:none;color:#fff;font-weight:700;font-size:.8rem;cursor:pointer;}
+.btn-dl-portrait{padding:7px 12px;border-radius:8px;background:var(--panel2);border:1.5px solid var(--border);color:var(--text);font-size:.8rem;cursor:pointer;}
+
+/* Customizer panel */
+.customizer{width:280px;min-width:280px;background:var(--panel);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;}
+.cust-tabs{display:flex;border-bottom:1px solid var(--border);}
+.cust-tab{flex:1;padding:11px 4px;text-align:center;font-size:.8rem;font-weight:700;cursor:pointer;border-bottom:2px solid transparent;color:var(--muted);transition:all .15s;}
+.cust-tab.active{color:var(--cyan);border-bottom-color:var(--cyan);}
+.cust-pane{flex:1;overflow-y:auto;padding:14px;}
+.cust-pane::-webkit-scrollbar{width:4px;}
+.cust-pane::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+.cust-section{margin-bottom:16px;}
+.cust-label{font-size:.72rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px;}
+.face-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;}
+.face-opt{aspect-ratio:1;border-radius:8px;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;background:var(--panel2);transition:all .15s;}
+.face-opt.active,.face-opt:hover{border-color:var(--cyan);background:rgba(0,245,255,.08);}
+.color-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;}
+.color-swatch{width:100%;aspect-ratio:1;border-radius:6px;border:2px solid transparent;cursor:pointer;transition:all .15s;}
+.color-swatch.active,.color-swatch:hover{border-color:#fff;transform:scale(1.1);}
+.acc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.acc-btn{padding:8px 4px;border-radius:10px;border:1.5px solid var(--border);background:var(--panel2);text-align:center;cursor:pointer;transition:all .15s;}
+.acc-btn.active{border-color:var(--cyan);background:rgba(0,245,255,.08);}
+.acc-btn .acc-ico{font-size:1.4rem;margin-bottom:4px;}
+.acc-btn .acc-name{font-size:.67rem;color:var(--muted);}
+.acc-btn.active .acc-name{color:var(--cyan);}
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.skill-chip{padding:7px 10px;border-radius:8px;border:1.5px solid var(--border);background:var(--panel2);font-size:.75rem;cursor:pointer;transition:all .15s;}
+.skill-chip.active{border-color:var(--purple);background:rgba(124,58,237,.1);color:var(--purple2);}
+.rarity-select{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.rarity-opt{padding:6px 4px;border-radius:8px;border:1.5px solid var(--border);text-align:center;cursor:pointer;font-size:.7rem;font-weight:700;transition:all .15s;}
+.rarity-opt.active{border-color:currentColor;background:rgba(255,255,255,.05);}
+
+/* Name + archetype inputs */
+.cust-input{width:100%;background:var(--panel2);border:1.5px solid var(--border);border-radius:8px;padding:8px 12px;color:var(--text);font-size:.85rem;font-family:var(--font-body);outline:none;margin-bottom:8px;}
+.cust-input:focus{border-color:var(--cyan);}
+
+/* Chibi character */
+.chibi{position:relative;width:80px;height:110px;margin:0 auto;}
+.c-platform{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:70px;height:8px;border-radius:50%;background:rgba(0,245,255,.15);box-shadow:0 0 16px rgba(0,245,255,.3);}
+.c-feet{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:50px;height:16px;display:flex;justify-content:space-between;}
+.c-foot{width:20px;height:14px;border-radius:6px 6px 8px 8px;}
+.c-legs{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);width:40px;height:26px;display:flex;justify-content:space-between;}
+.c-leg{width:14px;border-radius:4px 4px 0 0;}
+.c-body{position:absolute;bottom:46px;left:50%;transform:translateX(-50%);width:44px;height:38px;border-radius:14px 14px 10px 10px;display:flex;align-items:center;justify-content:center;}
+.c-badge{font-size:.5rem;background:rgba(0,0,0,.4);padding:2px 6px;border-radius:20px;color:#fff;font-family:var(--font-id);letter-spacing:.08em;}
+.c-arms{position:absolute;bottom:60px;left:50%;transform:translateX(-50%);width:62px;height:20px;display:flex;justify-content:space-between;pointer-events:none;}
+.c-arm{width:14px;height:18px;border-radius:6px;}
+.c-head{position:absolute;bottom:80px;left:50%;transform:translateX(-50%);width:42px;height:40px;border-radius:50% 50% 45% 45%;display:flex;align-items:center;justify-content:center;}
+.c-face{font-size:1.3rem;}
+.c-hair{position:absolute;bottom:116px;left:50%;transform:translateX(-50%);width:44px;height:18px;border-radius:50% 50% 0 0;z-index:2;}
+.c-acc{position:absolute;bottom:122px;left:50%;transform:translateX(-50%);font-size:1.1rem;z-index:3;}
+
+/* ══════════════════════════════════════════
+   ROOM BUILDER
+══════════════════════════════════════════ */
+#app-room{flex-direction:column;}
+.room-toolbar{display:flex;align-items:center;gap:10px;padding:10px 20px;background:var(--panel);border-bottom:1px solid var(--border);}
+.room-tabs{display:flex;gap:6px;flex:1;overflow-x:auto;}
+.room-tabs::-webkit-scrollbar{height:3px;}
+.room-tabs::-webkit-scrollbar-thumb{background:var(--border);}
+.rtab{padding:7px 16px;border-radius:8px;border:1.5px solid var(--border);background:transparent;color:var(--muted);font-size:.8rem;font-weight:700;cursor:pointer;transition:all .15s;white-space:nowrap;}
+.rtab.active{background:rgba(0,245,255,.08);border-color:var(--cyan);color:var(--cyan);}
+.room-actions{display:flex;gap:8px;}
+.act-btn{padding:7px 14px;border-radius:8px;border:1.5px solid var(--border);background:var(--panel2);color:var(--text);font-size:.8rem;font-weight:700;cursor:pointer;transition:all .15s;}
+.act-btn:hover{border-color:var(--cyan);color:var(--cyan);}
+.act-btn.danger:hover{border-color:var(--red);color:var(--red);}
+
+.room-body{flex:1;display:flex;overflow:hidden;}
+
+/* Room canvas */
+.room-canvas-wrap{flex:1;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 40%,rgba(0,245,255,.03),transparent 70%),var(--bg2);padding:20px;overflow:hidden;}
+.room-canvas{position:relative;width:560px;height:380px;}
+.room-back-wall{position:absolute;top:0;left:0;right:0;height:55%;display:flex;}
+.wall-left{width:50%;border-bottom:1px solid rgba(255,255,255,.05);border-right:1px solid rgba(255,255,255,.05);}
+.wall-right{width:50%;border-bottom:1px solid rgba(255,255,255,.05);}
+.room-floor{position:absolute;bottom:0;left:0;right:0;top:55%;border-radius:0 0 12px 12px;}
+.floor-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;}
+.room-item{position:absolute;font-size:1.8rem;cursor:pointer;user-select:none;transition:transform .15s;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5));}
+.room-item:hover{transform:scale(1.15);}
+.room-item.selected{outline:2px dashed var(--cyan);outline-offset:4px;border-radius:4px;}
+.room-item .item-label{position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);font-size:.55rem;color:var(--muted);white-space:nowrap;pointer-events:none;}
+.room-info{position:absolute;top:8px;left:12px;font-family:var(--font-id);font-size:.72rem;color:rgba(255,255,255,.3);}
+.room-empty-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;pointer-events:none;}
+.room-empty-hint .ico{font-size:2.5rem;opacity:.2;}
+.room-empty-hint .txt{font-size:.8rem;color:var(--muted);opacity:.6;}
+
+/* Furniture shop */
+.furniture-shop{width:280px;min-width:280px;background:var(--panel);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;}
+.shop-head{padding:12px 14px 8px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.shop-title{font-family:var(--font-head);font-size:1rem;color:var(--cyan);}
+.shop-search{background:var(--panel2);border:1.5px solid var(--border);border-radius:8px;padding:5px 10px;color:var(--text);font-size:.8rem;width:100%;margin-top:8px;outline:none;}
+.shop-search:focus{border-color:var(--cyan);}
+.shop-cats{display:flex;gap:6px;padding:8px 14px;overflow-x:auto;border-bottom:1px solid var(--border);}
+.shop-cats::-webkit-scrollbar{height:3px;}
+.shop-cat{padding:4px 12px;border-radius:20px;font-size:.72rem;font-weight:700;border:1.5px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;transition:all .15s;}
+.shop-cat.active{background:rgba(0,245,255,.08);border-color:var(--cyan);color:var(--cyan);}
+.shop-items{flex:1;overflow-y:auto;padding:10px 14px;display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.shop-items::-webkit-scrollbar{width:4px;}
+.shop-items::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+.shop-item{background:var(--panel2);border:1.5px solid var(--border);border-radius:10px;padding:12px 8px;text-align:center;cursor:pointer;transition:all .15s;}
+.shop-item:hover,.shop-item.selected-item{border-color:var(--cyan);background:rgba(0,245,255,.07);}
+.shop-item .si-ico{font-size:1.8rem;margin-bottom:5px;}
+.shop-item .si-name{font-size:.72rem;font-weight:700;}
+.shop-item .si-price{font-size:.65rem;color:var(--gold);margin-top:3px;}
+.shop-item .si-rarity{font-size:.6rem;margin-top:2px;font-weight:700;}
+.shop-footer{padding:10px 14px;border-top:1px solid var(--border);display:flex;gap:8px;}
+.btn-place{flex:1;padding:9px;border-radius:10px;background:linear-gradient(135deg,var(--cyan),var(--cyan2));border:none;color:#07080f;font-weight:800;font-size:.85rem;cursor:pointer;transition:all .2s;}
+.btn-place:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,245,255,.25);}
+.btn-place:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none;}
+
+/* Toast */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--panel2);border:1.5px solid var(--cyan);padding:10px 22px;border-radius:12px;font-weight:700;font-size:.9rem;color:var(--cyan);z-index:999;transition:transform .3s;pointer-events:none;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+/* Agent catch phrase tooltip */
+.agent-catch{text-align:center;font-style:italic;font-size:.75rem;color:var(--muted);max-width:500px;padding:0 20px;margin-top:10px;opacity:.7;}
+
+/* Generating spinner */
+@keyframes spin{to{transform:rotate(360deg);}}
+.spin{display:inline-block;animation:spin 1s linear infinite;}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="/design-studio/" class="topbar-back">← Studio</a>
+    <div class="topbar-logo">⬡ NPC Generator</div>
+  </div>
+  <div class="topbar-tabs">
+    <button class="tab-btn active" onclick="switchApp('npc')">🧑 NPC Editor</button>
+    <button class="tab-btn" onclick="switchApp('room')">🏠 Room Builder</button>
+  </div>
+  <div class="topbar-hud">
+    <div class="gw-status" id="gw-dot" title="Gateway status"></div>
+    <div class="hud-chip">🪙 <span id="hud-coins">12,500</span> MGC</div>
+    <div class="hud-chip">💎 <span id="hud-gems">88</span></div>
+  </div>
+</div>
+
+<!-- ══ APP: NPC EDITOR ══ -->
+<div class="app active" id="app-npc">
+
+  <!-- Roster -->
+  <div class="roster">
+    <div class="roster-head">⬡ Agents</div>
+    <div class="roster-list" id="roster-list"></div>
+  </div>
+
+  <!-- Preview -->
+  <div class="npc-preview">
+    <div class="preview-bg-glow"></div>
+    <div class="npc-card-preview" id="npc-card">
+      <div class="ncp-rarity-strip" id="card-strip"></div>
+      <div class="ncp-header">
+        <div class="ncp-serial" id="card-serial">#MGN-001</div>
+        <div class="ncp-rarity-badge" id="card-rarity-badge">RARE</div>
+      </div>
+      <div class="ncp-char-zone">
+        <div class="ncp-hex-wrap">
+          <div class="ncp-hex" id="card-hex-bg">
+            <!-- chibi rendered here OR portrait img -->
+          </div>
+        </div>
+      </div>
+      <div class="ncp-name" id="card-name">—</div>
+      <div class="ncp-arch" id="card-arch">—</div>
+      <div class="ncp-stats">
+        <div class="ncp-stat-row">
+          <div class="ncp-stat-label">STR</div>
+          <div class="ncp-stat-bar"><div class="ncp-stat-fill" id="stat-str" style="width:60%;background:#ef4444;"></div></div>
+          <div class="ncp-stat-val" id="stat-str-v">60</div>
+        </div>
+        <div class="ncp-stat-row">
+          <div class="ncp-stat-label">INT</div>
+          <div class="ncp-stat-bar"><div class="ncp-stat-fill" id="stat-int" style="width:80%;background:#06b6d4;"></div></div>
+          <div class="ncp-stat-val" id="stat-int-v">80</div>
+        </div>
+        <div class="ncp-stat-row">
+          <div class="ncp-stat-label">CRE</div>
+          <div class="ncp-stat-bar"><div class="ncp-stat-fill" id="stat-cre" style="width:70%;background:#10b981;"></div></div>
+          <div class="ncp-stat-val" id="stat-cre-v">70</div>
+        </div>
+      </div>
+      <div class="ncp-divider"></div>
+      <div class="ncp-inv-label">SKILL INVENTORY</div>
+      <div class="ncp-inv-grid" id="card-inventory"></div>
+      <div class="ncp-power">
+        <div class="ncp-power-label"><span>POWER</span><span id="card-power-val">72</span></div>
+        <div class="ncp-power-bar"><div class="ncp-power-fill" id="card-power-fill" style="width:72%;"></div></div>
+      </div>
+    </div>
+    <div class="agent-catch" id="agent-catch"></div>
+
+    <!-- AI Portrait preview -->
+    <div class="portrait-preview" id="portrait-preview">
+      <img id="portrait-img" src="" alt="AI Portrait">
+      <div class="portrait-actions">
+        <button class="btn-use-portrait" onclick="usePortrait()">✓ Use as Card Avatar</button>
+        <a id="portrait-dl" class="btn-dl-portrait" download="npc-portrait.png">⬇</a>
+      </div>
+    </div>
+
+    <div class="preview-actions">
+      <button class="btn-save" id="btn-save" onclick="saveNPC()">💾 Save NPC</button>
+      <button class="btn-portrait" id="btn-portrait" onclick="generatePortrait()">🖼️ AI Portrait</button>
+      <button class="btn-gen" onclick="generateNPC()">🎲 Randomize</button>
+    </div>
+  </div>
+
+  <!-- Customizer -->
+  <div class="customizer">
+    <div class="cust-tabs">
+      <div class="cust-tab active" onclick="switchCustTab('face',this)">😊 Face</div>
+      <div class="cust-tab" onclick="switchCustTab('outfit',this)">👕 Outfit</div>
+      <div class="cust-tab" onclick="switchCustTab('acc',this)">🎩 Acc</div>
+      <div class="cust-tab" onclick="switchCustTab('skills',this)">⚡ Skills</div>
+      <div class="cust-tab" onclick="switchCustTab('info',this)">📝 Info</div>
+    </div>
+
+    <!-- Face Pane -->
+    <div class="cust-pane" id="pane-face">
+      <div class="cust-section">
+        <div class="cust-label">Expression</div>
+        <div class="face-grid" id="face-grid"></div>
+      </div>
+      <div class="cust-section">
+        <div class="cust-label">Skin Tone</div>
+        <div class="color-grid" id="skin-grid"></div>
+      </div>
+      <div class="cust-section">
+        <div class="cust-label">Hair Color</div>
+        <div class="color-grid" id="hair-grid"></div>
+      </div>
+    </div>
+
+    <!-- Outfit Pane -->
+    <div class="cust-pane" id="pane-outfit" style="display:none;">
+      <div class="cust-section">
+        <div class="cust-label">Shirt Color</div>
+        <div class="color-grid" id="shirt-grid"></div>
+      </div>
+      <div class="cust-section">
+        <div class="cust-label">Pants Color</div>
+        <div class="color-grid" id="pants-grid"></div>
+      </div>
+      <div class="cust-section">
+        <div class="cust-label">Shoes Color</div>
+        <div class="color-grid" id="shoes-grid"></div>
+      </div>
+      <div class="cust-section">
+        <div class="cust-label">Rarity Tier</div>
+        <div class="rarity-select" id="rarity-select"></div>
+      </div>
+    </div>
+
+    <!-- Accessories Pane -->
+    <div class="cust-pane" id="pane-acc" style="display:none;">
+      <div class="cust-section">
+        <div class="cust-label">Headwear</div>
+        <div class="acc-grid" id="acc-head-grid"></div>
+      </div>
+      <div class="cust-section">
+        <div class="cust-label">Eyewear</div>
+        <div class="acc-grid" id="acc-eye-grid"></div>
+      </div>
+      <div class="cust-section">
+        <div class="cust-label">Audio</div>
+        <div class="acc-grid" id="acc-audio-grid"></div>
+      </div>
+    </div>
+
+    <!-- Skills Pane -->
+    <div class="cust-pane" id="pane-skills" style="display:none;">
+      <div class="cust-section">
+        <div class="cust-label">Equipped Skills (max 5)</div>
+        <div class="skill-grid" id="skill-grid"></div>
+      </div>
+    </div>
+
+    <!-- Info Pane (name/archetype override) -->
+    <div class="cust-pane" id="pane-info" style="display:none;">
+      <div class="cust-section">
+        <div class="cust-label">Display Name</div>
+        <input class="cust-input" id="ov-name" placeholder="Agent name..." oninput="setOvDirect('name',this.value)">
+      </div>
+      <div class="cust-section">
+        <div class="cust-label">Archetype</div>
+        <input class="cust-input" id="ov-arch" placeholder="The Visionary..." oninput="setOvDirect('arch',this.value)">
+      </div>
+      <div class="cust-section">
+        <div class="cust-label">Catchphrase</div>
+        <input class="cust-input" id="ov-catch" placeholder="Signature line..." oninput="setOvDirect('catch',this.value)">
+      </div>
+      <div class="cust-section">
+        <div class="cust-label">Role / Title</div>
+        <input class="cust-input" id="ov-role" placeholder="Chief of Chaos..." oninput="setOvDirect('role',this.value)">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ APP: ROOM BUILDER ══ -->
+<div class="app" id="app-room">
+  <div class="room-toolbar">
+    <div class="room-tabs" id="room-tabs"></div>
+    <div class="room-actions">
+      <button class="act-btn" onclick="undoLast()">↩ Undo</button>
+      <button class="act-btn danger" onclick="clearSelected()">🗑 Delete</button>
+      <button class="act-btn" onclick="saveRoom()">💾 Save</button>
+    </div>
+  </div>
+  <div class="room-body">
+    <div class="room-canvas-wrap">
+      <div class="room-canvas" id="room-canvas">
+        <div class="room-back-wall">
+          <div class="wall-left" id="wall-left"></div>
+          <div class="wall-right" id="wall-right"></div>
+        </div>
+        <div class="room-floor" id="room-floor">
+          <div class="floor-grid"></div>
+        </div>
+        <div class="room-info" id="room-info"></div>
+        <div class="room-empty-hint" id="room-hint">
+          <div class="ico">🛋️</div>
+          <div class="txt">Pilih furniture di panel kanan, lalu klik Place</div>
+        </div>
+      </div>
+    </div>
+    <div class="furniture-shop">
+      <div class="shop-head">
+        <div>
+          <div class="shop-title">🏪 Furniture Shop</div>
+          <input class="shop-search" id="shop-search" placeholder="Cari furniture..." oninput="filterShop()">
+        </div>
+      </div>
+      <div class="shop-cats" id="shop-cats"></div>
+      <div class="shop-items" id="shop-items"></div>
+      <div class="shop-footer">
+        <button class="btn-place" id="btn-place" onclick="addSelectedToRoom()" disabled>
+          ➕ Place Item
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════
+// GATEWAY CONFIG
+// ══════════════════════════════════════
+const GATEWAY = (window.location.port === '9797' || window.location.port === '')
+  ? '' : 'http://localhost:9797';
+
+async function checkGateway(){
+  try {
+    const r = await fetch(GATEWAY+'/health',{signal:AbortSignal.timeout(3000)});
+    document.getElementById('gw-dot').className = 'gw-status '+(r.ok?'online':'offline');
+    return r.ok;
+  } catch(e) {
+    document.getElementById('gw-dot').className = 'gw-status offline';
+    return false;
+  }
+}
+checkGateway();
+
+// ══════════════════════════════════════
+// DATA — Real Mighan Agents
+// ══════════════════════════════════════
+const AGENTS = [
+  {
+    id:'receptionist-ai', serial:'MGN-001', name:'Rina',
+    role:'Receptionist & Greeter', arch:'The Gatekeeper',
+    catch:'"Mas Fahmi, ini worth dilihat, tapi perlu disaring dulu."',
+    building:'Gedung Operasi', room:'Lobby · L1', emoji:'👩',
+    skin:'#e8b88a', shirt:'#3366aa', pants:'#1a1a3a', shoes:'#222233',
+    hair:'#3a2a1a', face:'😊', hat:null, glasses:null, phones:null,
+    rarity:'Rare', rarityColor:'#06b6d4',
+    stats:{str:40,int:75,cre:60},
+    skills:['Filtering','Scheduling','Greeting','Database','Routing']
+  },
+  {
+    id:'designer', serial:'MGN-002', name:'Dina Mahesa',
+    role:'Visual Lead', arch:'The Perfectionist',
+    catch:'"Desainnya kurang center—biar aku fix dulu."',
+    building:'Gedung Operasi', room:'Adobe Pipeline · L2', emoji:'👩‍🎨',
+    skin:'#c8956c', shirt:'#7c3aed', pants:'#1f1f40', shoes:'#333355',
+    hair:'#1a0a00', face:'😎', hat:null, glasses:'🕶️', phones:null,
+    rarity:'Epic', rarityColor:'#9b59b6',
+    stats:{str:35,int:85,cre:95},
+    skills:['UI Design','Branding','Figma','Illustration','Motion']
+  },
+  {
+    id:'profesor', serial:'MGN-003', name:'Prof. Toard',
+    role:'Kepala Inovasi & Riset', arch:'The Wise Scientist',
+    catch:'"Data menunjukkan pola yang menarik—mari kita selami."',
+    building:'Innovation Lab', room:'Research Chamber · IL2', emoji:'👨‍🔬',
+    skin:'#f5deb3', shirt:'#1e3a5f', pants:'#2d2d4a', shoes:'#1a1a1a',
+    hair:'#c0c0c0', face:'🧐', hat:null, glasses:'🔬', phones:null,
+    rarity:'Legendary', rarityColor:'#f59e0b',
+    stats:{str:50,int:98,cre:88},
+    skills:['Research','AI Strategy','Ideation','Analysis','Forecasting']
+  },
+  {
+    id:'iris', serial:'MGN-004', name:'Iris Noval',
+    role:'Innovation Field Agent', arch:'The Connector',
+    catch:'"Sudah kuriset—ini 3 angle yang bisa kita exploit."',
+    building:'Gedung Adobe', room:'Lantai Adobe · L2', emoji:'🧑‍💻',
+    skin:'#d4a5a5', shirt:'#0f766e', pants:'#1e3a2f', shoes:'#111122',
+    hair:'#800020', face:'🤩', hat:null, glasses:null, phones:'🎧',
+    rarity:'Epic', rarityColor:'#9b59b6',
+    stats:{str:60,int:90,cre:82},
+    skills:['Field Research','Intel','Networking','Ideation','Reporting']
+  },
+  {
+    id:'reza', serial:'MGN-005', name:'Reza',
+    role:'Lead Developer', arch:'The Architect',
+    catch:'"Ini bisa dioptimasi—biar aku refactor sebentar."',
+    building:'Gedung Operasi', room:'Dev Room · L3', emoji:'👨‍💻',
+    skin:'#d2b48c', shirt:'#1e293b', pants:'#0f172a', shoes:'#1e293b',
+    hair:'#2a1a00', face:'🤔', hat:null, glasses:null, phones:'🎧',
+    rarity:'Epic', rarityColor:'#9b59b6',
+    stats:{str:70,int:95,cre:75},
+    skills:['Three.js','Node.js','Architecture','API Design','DevOps']
+  },
+  {
+    id:'maestro', serial:'MGN-006', name:'Maestro',
+    role:'Content Strategist', arch:'The Storyteller',
+    catch:'"Cerita yang bagus bisa jual apa saja."',
+    building:'GK2', room:'Content Studio · GK2', emoji:'🎬',
+    skin:'#c9a96e', shirt:'#831843', pants:'#1f1a35', shoes:'#3b2a1a',
+    hair:'#1a1a00', face:'😄', hat:'🎩', glasses:null, phones:null,
+    rarity:'Rare', rarityColor:'#06b6d4',
+    stats:{str:45,int:78,cre:92},
+    skills:['Copywriting','Video Script','SEO','Brand Story','Campaign']
+  },
+  {
+    id:'hana', serial:'MGN-007', name:'Hana Hunter',
+    role:'KOL & Outreach Agent', arch:'The Influencer',
+    catch:'"Sudah ping 12 KOL—3 udah reply."',
+    building:'OMNYX', room:'KOL Room · OX5', emoji:'🌟',
+    skin:'#ffdbac', shirt:'#db2777', pants:'#1f1a2e', shoes:'#2a1a2a',
+    hair:'#ff69b4', face:'🥰', hat:null, glasses:'😍', phones:null,
+    rarity:'Rare', rarityColor:'#06b6d4',
+    stats:{str:55,int:72,cre:88},
+    skills:['KOL Network','Outreach','Negotiation','Campaign','Analytics']
+  },
+  {
+    id:'budi', serial:'MGN-008', name:'Budi',
+    role:'Head of Technology', arch:'The Innovator',
+    catch:'"Teknologinya sudah ada—tinggal kita yang manfaatkan."',
+    building:'Gedung Operasi', room:'Tech Floor · L4', emoji:'👨‍🔧',
+    skin:'#b8860b', shirt:'#064e3b', pants:'#1a2a1a', shoes:'#0a1a0a',
+    hair:'#1a0a00', face:'🤓', hat:null, glasses:'🤓', phones:null,
+    rarity:'Epic', rarityColor:'#9b59b6',
+    stats:{str:65,int:92,cre:70},
+    skills:['System Design','Cloud Infra','Security','IoT','Automation']
+  },
+  {
+    id:'sari', serial:'MGN-009', name:'Sari',
+    role:'Chief Strategy Officer', arch:'The Visionary',
+    catch:'"Kita perlu pivot—market berubah, kita ikut atau tenggelam."',
+    building:'Gedung Operasi', room:'Executive · L5', emoji:'👩‍💼',
+    skin:'#cd853f', shirt:'#7f1d1d', pants:'#1f1020', shoes:'#2a0a0a',
+    hair:'#4a1a00', face:'😤', hat:null, glasses:null, phones:null,
+    rarity:'Legendary', rarityColor:'#f59e0b',
+    stats:{str:60,int:88,cre:85},
+    skills:['OKR','Market Analysis','Team Leadership','Strategic Planning','Investor Relations']
+  },
+  {
+    id:'social-bot', serial:'MGN-010', name:'Social Bot',
+    role:'Automation Buzzer Agent', arch:'The Executor',
+    catch:'"Task queue: 47 items. ETA: 2.3 hours. Executing."',
+    building:'OMNYX', room:'CS WA · OX4', emoji:'🤖',
+    skin:'#4a90d9', shirt:'#0c1a2e', pants:'#0a0a1a', shoes:'#0a0a0a',
+    hair:'#00f5ff', face:'🤖', hat:null, glasses:null, phones:'🎧',
+    rarity:'Common', rarityColor:'#94a3b8',
+    stats:{str:80,int:65,cre:40},
+    skills:['Auto-Post','Rate Limit Mgmt','Multi-platform','Scheduling','Reporting']
+  }
+];
+
+// ══════════════════════════════════════
+// DATA — Real Mighan Rooms
+// ══════════════════════════════════════
+const ROOMS = [
+  {
+    id:'lobby', name:'Lobby', building:'Gedung Operasi', floor:'L1',
+    wallColor:'#1e2035', wallR:'#181a2e', floorColor:'#141625',
+    items:[
+      {ico:'🛋️',name:'sofa',left:'8%',bottom:'45%'},
+      {ico:'🪴',name:'plant',left:'5%',bottom:'62%'},
+      {ico:'🖥️',name:'front desk',left:'58%',bottom:'50%'},
+      {ico:'💡',name:'lamp',left:'85%',bottom:'70%'},
+      {ico:'🪑',name:'chair',left:'48%',bottom:'42%'}
+    ]
+  },
+  {
+    id:'adobe', name:'Lantai Adobe', building:'Gedung Adobe', floor:'L2',
+    wallColor:'#1a1535', wallR:'#120e2a', floorColor:'#0e0b20',
+    items:[
+      {ico:'🖼️',name:'art board',left:'10%',bottom:'52%'},
+      {ico:'📚',name:'bookcase',left:'72%',bottom:'62%'},
+      {ico:'🖥️',name:'workstation',left:'30%',bottom:'48%'},
+      {ico:'🎨',name:'color table',left:'55%',bottom:'44%'},
+      {ico:'🪑',name:'design chair',left:'42%',bottom:'40%'}
+    ]
+  },
+  {
+    id:'lab', name:'Research Chamber', building:'Innovation Lab', floor:'IL2',
+    wallColor:'#0e1f1e', wallR:'#0a1915', floorColor:'#081210',
+    items:[
+      {ico:'🔬',name:'microscope',left:'12%',bottom:'58%'},
+      {ico:'💻',name:'research pc',left:'35%',bottom:'50%'},
+      {ico:'📊',name:'data board',left:'65%',bottom:'65%'},
+      {ico:'🧪',name:'lab table',left:'55%',bottom:'44%'},
+      {ico:'📖',name:'reference',left:'80%',bottom:'56%'}
+    ]
+  },
+  {
+    id:'content', name:'Content Studio', building:'GK2', floor:'GK2',
+    wallColor:'#1f1020', wallR:'#170b1a', floorColor:'#0d0810',
+    items:[
+      {ico:'🎥',name:'camera rig',left:'15%',bottom:'48%'},
+      {ico:'🎙️',name:'mic stand',left:'40%',bottom:'55%'},
+      {ico:'🖥️',name:'edit station',left:'60%',bottom:'50%'},
+      {ico:'💡',name:'ring light',left:'28%',bottom:'65%'},
+      {ico:'🎧',name:'audio desk',left:'75%',bottom:'46%'}
+    ]
+  },
+  {
+    id:'omnyx-kol', name:'KOL Room', building:'OMNYX', floor:'OX5',
+    wallColor:'#1f1a10', wallR:'#1a1508', floorColor:'#100e08',
+    items:[
+      {ico:'📱',name:'phone station',left:'20%',bottom:'50%'},
+      {ico:'🌟',name:'trophy shelf',left:'68%',bottom:'60%'},
+      {ico:'💼',name:'deal table',left:'42%',bottom:'46%'},
+      {ico:'📊',name:'analytics',left:'78%',bottom:'52%'}
+    ]
+  }
+];
+
+// ══════════════════════════════════════
+// DATA — Furniture Shop
+// ══════════════════════════════════════
+const FURNITURE = [
+  {ico:'🛋️',name:'Sofa',cat:'Seats',price:120,rarity:'Common'},
+  {ico:'🪑',name:'Office Chair',cat:'Seats',price:80,rarity:'Common'},
+  {ico:'🪑',name:'Gaming Chair',cat:'Seats',price:250,rarity:'Rare'},
+  {ico:'🪑',name:'Bean Bag',cat:'Seats',price:150,rarity:'Common'},
+  {ico:'🛏️',name:'Couch',cat:'Seats',price:200,rarity:'Rare'},
+  {ico:'🪑',name:'Director Chair',cat:'Seats',price:180,rarity:'Rare'},
+  {ico:'🖥️',name:'Workstation',cat:'Electronics',price:350,rarity:'Rare'},
+  {ico:'💻',name:'Laptop Desk',cat:'Electronics',price:200,rarity:'Common'},
+  {ico:'📺',name:'Smart TV',cat:'Electronics',price:400,rarity:'Rare'},
+  {ico:'🎮',name:'Gaming Setup',cat:'Electronics',price:600,rarity:'Epic'},
+  {ico:'📱',name:'Phone Dock',cat:'Electronics',price:90,rarity:'Common'},
+  {ico:'🎙️',name:'Mic Stand',cat:'Electronics',price:150,rarity:'Common'},
+  {ico:'🪴',name:'Plant Small',cat:'Deco',price:50,rarity:'Common'},
+  {ico:'🌿',name:'Monstera',cat:'Deco',price:80,rarity:'Common'},
+  {ico:'🌸',name:'Flower Vase',cat:'Deco',price:60,rarity:'Common'},
+  {ico:'🖼️',name:'Art Frame',cat:'Deco',price:100,rarity:'Rare'},
+  {ico:'🕯️',name:'Candle Set',cat:'Deco',price:40,rarity:'Common'},
+  {ico:'🏆',name:'Trophy',cat:'Deco',price:200,rarity:'Epic'},
+  {ico:'💡',name:'Floor Lamp',cat:'Lighting',price:110,rarity:'Common'},
+  {ico:'🔆',name:'Ring Light',cat:'Lighting',price:180,rarity:'Rare'},
+  {ico:'🕯️',name:'LED Strip',cat:'Lighting',price:70,rarity:'Common'},
+  {ico:'📚',name:'Bookcase',cat:'Storage',price:160,rarity:'Common'},
+  {ico:'🗄️',name:'File Cabinet',cat:'Storage',price:140,rarity:'Common'},
+  {ico:'📦',name:'Storage Box',cat:'Storage',price:60,rarity:'Common'},
+  {ico:'🔬',name:'Lab Table',cat:'Lab',price:500,rarity:'Epic'},
+  {ico:'🧪',name:'Test Rack',cat:'Lab',price:300,rarity:'Rare'},
+  {ico:'📊',name:'Data Board',cat:'Lab',price:400,rarity:'Epic'},
+];
+
+// ══════════════════════════════════════
+// STATE
+// ══════════════════════════════════════
+let state = {
+  selectedAgent: null,
+  custTab: 'face',
+  roomIdx: 0,
+  selectedShopItem: null,
+  roomItems: {},
+  selectedRoomItem: null,
+  shopCat: 'All',
+  overrides: {},       // agentId → {face, skin, hair, shirt, pants, shoes, hat, glasses, phones, rarity, skills}
+  portraitUrl: null,   // last generated portrait URL
+};
+
+// ══════════════════════════════════════
+// FACE / COLOR OPTIONS
+// ══════════════════════════════════════
+const FACES = ['😊','😎','🤔','🧐','😄','😤','🥰','🤩','🤓','😌','😏','🤖'];
+const SKIN_TONES = ['#ffdbac','#f1c27d','#e0ac69','#c68642','#8d5524','#4a2912','#d4a5a5','#b8860b','#c8956c','#e8b88a','#4a90d9','#7ec8e3'];
+const HAIR_COLORS = ['#1a0a00','#2a1a00','#4a2000','#8B4513','#c0c0c0','#f5f5dc','#ff69b4','#800020','#00f5ff','#7c3aed','#1a1a00','#d4a017'];
+const OUTFIT_COLORS = ['#1e293b','#0f172a','#3366aa','#7c3aed','#7f1d1d','#064e3b','#831843','#0c1a2e','#1e3a5f','#0f766e','#b45309','#374151'];
+const RARITIES = [
+  {name:'Common',color:'#94a3b8'},{name:'Rare',color:'#06b6d4'},
+  {name:'Epic',color:'#9b59b6'},{name:'Legendary',color:'#f59e0b'}
+];
+const ACC_HEAD = [{ico:'🎩',name:'Top Hat'},{ico:'🧢',name:'Cap'},{ico:'👒',name:'Sun Hat'},{ico:'🎓',name:'Grad Cap'},{ico:'⛑️',name:'Hard Hat'},{ico:null,name:'None'}];
+const ACC_EYE = [{ico:'🕶️',name:'Shades'},{ico:'🤓',name:'Glasses'},{ico:'🥽',name:'Goggles'},{ico:null,name:'None'}];
+const ACC_AUDIO = [{ico:'🎧',name:'Headphones'},{ico:'🎙️',name:'Earpiece'},{ico:null,name:'None'}];
+const ALL_SKILLS = ['Research','Ideation','Design','Coding','Writing','Analysis','Marketing','SEO','Video','AI Strategy','Networking','Leadership','Data','Automation','UI Design','Branding','Figma','Node.js','Three.js','Campaign'];
+
+// ══════════════════════════════════════
+// INIT
+// ══════════════════════════════════════
+function init(){
+  buildRoster();
+  selectAgent(AGENTS[0]);
+  buildFaceGrid();
+  buildColorPickers();
+  buildAccGrids();
+  buildSkillGrid();
+  buildRaritySelect();
+  buildRoomTabs();
+  buildShopCats();
+  buildShopItems();
+  initRoomItems();
+  renderRoom(0);
+}
+
+// ══════════════════════════════════════
+// APP SWITCHING
+// ══════════════════════════════════════
+function switchApp(which){
+  document.querySelectorAll('.app').forEach(a=>a.classList.remove('active'));
+  document.getElementById('app-'+which).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>{
+    b.classList.toggle('active', (which==='npc'&&i===0)||(which==='room'&&i===1));
+  });
+}
+
+// ══════════════════════════════════════
+// ROSTER
+// ══════════════════════════════════════
+function buildRoster(){
+  const el = document.getElementById('roster-list');
+  el.innerHTML = AGENTS.map((a,i)=>`
+    <div class="r-card ${i===0?'active':''}" id="rc-${a.id}" onclick="selectAgent(AGENTS[${i}])">
+      <div class="r-emo" style="background:${a.rarityColor}22;">${a.emoji}</div>
+      <div class="r-info">
+        <div class="r-name">${a.name}</div>
+        <div class="r-role">${a.role.split(' ').slice(0,3).join(' ')}</div>
+        <div class="r-rarity rarity-${a.rarity}">${a.rarity}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function selectAgent(agent){
+  state.selectedAgent = agent;
+  state.portraitUrl = null;
+  document.getElementById('portrait-preview').style.display = 'none';
+  document.querySelectorAll('.r-card').forEach(c=>c.classList.remove('active'));
+  const rc = document.getElementById('rc-'+agent.id);
+  if(rc) rc.classList.add('active');
+  applyCharacter(agent);
+  syncCustomizerToAgent(agent);
+  // Sync info pane
+  const ov = state.overrides[agent.id]||{};
+  document.getElementById('ov-name').value = ov.name||agent.name||'';
+  document.getElementById('ov-arch').value = ov.arch||agent.arch||'';
+  document.getElementById('ov-catch').value = ov.catch||agent.catch||'';
+  document.getElementById('ov-role').value = ov.role||agent.role||'';
+}
+
+// ══════════════════════════════════════
+// CARD RENDER
+// ══════════════════════════════════════
+function applyCharacter(agent){
+  const ov = state.overrides[agent.id] || {};
+  const a = {...agent,...ov};
+
+  const rc = RARITIES.find(r=>r.name===a.rarity)||RARITIES[1];
+  document.getElementById('card-strip').style.background = rc.color;
+  document.getElementById('card-rarity-badge').textContent = a.rarity.toUpperCase();
+  document.getElementById('card-rarity-badge').style.color = rc.color;
+  document.getElementById('card-rarity-badge').style.borderColor = rc.color+'44';
+  document.getElementById('card-serial').textContent = '#'+agent.serial;
+  document.getElementById('card-name').textContent = a.name;
+  document.getElementById('card-arch').textContent = a.arch;
+  document.getElementById('agent-catch').textContent = a.catch;
+
+  // Hex — show portrait img or chibi
+  const hexEl = document.getElementById('card-hex-bg');
+  hexEl.style.background = rc.color+'22';
+  if(state.portraitUrl){
+    hexEl.innerHTML = `<img src="${state.portraitUrl}" style="width:100%;height:100%;object-fit:cover;" alt="portrait">`;
+  } else {
+    hexEl.innerHTML = buildChibi(a);
+  }
+
+  // Stats
+  const str = a.stats.str, int_ = a.stats.int, cre = a.stats.cre;
+  document.getElementById('stat-str').style.width = str+'%';
+  document.getElementById('stat-int').style.width = int_+'%';
+  document.getElementById('stat-cre').style.width = cre+'%';
+  document.getElementById('stat-str-v').textContent = str;
+  document.getElementById('stat-int-v').textContent = int_;
+  document.getElementById('stat-cre-v').textContent = cre;
+
+  const power = Math.round((str+int_+cre)/3);
+  document.getElementById('card-power-val').textContent = power;
+  document.getElementById('card-power-fill').style.width = power+'%';
+
+  // Inventory
+  const skills = a.skills||[];
+  let inv = '';
+  for(let i=0;i<5;i++){
+    if(i<skills.length) inv+=`<div class="inv-slot equipped" title="${skills[i]}">⚡</div>`;
+    else if(i<3) inv+=`<div class="inv-slot" title="Empty slot">—</div>`;
+    else inv+=`<div class="inv-slot locked" title="Locked">🔒</div>`;
+  }
+  document.getElementById('card-inventory').innerHTML = inv;
+}
+
+function buildChibi(a){
+  const hat = a.hat && a.hat !== null ? `<div class="c-acc" style="font-size:1rem;">${a.hat}</div>` : '';
+  const glasses = a.glasses && a.glasses !== null ? `<div style="position:absolute;bottom:98px;left:50%;transform:translateX(-50%);font-size:.7rem;z-index:4;">${a.glasses}</div>` : '';
+  const phones = a.phones && a.phones !== null ? `<div style="position:absolute;bottom:90px;right:8px;font-size:.7rem;z-index:4;">${a.phones}</div>` : '';
+  return `
+    <div class="chibi" style="transform:scale(0.75);transform-origin:bottom center;">
+      ${hat}
+      <div class="c-hair" style="background:${a.hair||'#3a2a1a'};"></div>
+      <div class="c-head" style="background:${a.skin||'#e8b88a'};">
+        <div class="c-face">${a.face||'😊'}</div>
+      </div>
+      ${glasses}${phones}
+      <div class="c-arms">
+        <div class="c-arm" style="background:${a.shirt||'#3366aa'};transform:rotate(-15deg);"></div>
+        <div class="c-arm" style="background:${a.shirt||'#3366aa'};transform:rotate(15deg);"></div>
+      </div>
+      <div class="c-body" style="background:${a.shirt||'#3366aa'};">
+        <div class="c-badge">${(a.serial||'MGN-000')}</div>
+      </div>
+      <div class="c-legs">
+        <div class="c-leg" style="background:${a.pants||'#1a1a3a'};"></div>
+        <div class="c-leg" style="background:${a.pants||'#1a1a3a'};"></div>
+      </div>
+      <div class="c-feet">
+        <div class="c-foot" style="background:${a.shoes||'#222233'};"></div>
+        <div class="c-foot" style="background:${a.shoes||'#222233'};"></div>
+      </div>
+      <div class="c-platform"></div>
+    </div>
+  `;
+}
+
+// ══════════════════════════════════════
+// CUSTOMIZER BUILDERS
+// ══════════════════════════════════════
+function buildFaceGrid(){
+  document.getElementById('face-grid').innerHTML = FACES.map(f=>
+    `<div class="face-opt" onclick="setOv('face','${f}',this)">${f}</div>`
+  ).join('');
+}
+
+function buildColorPickers(){
+  const makeGrid = (id,colors,field)=>
+    document.getElementById(id).innerHTML = colors.map(c=>
+      `<div class="color-swatch" style="background:${c}" onclick="setOv('${field}','${c}',this)"></div>`
+    ).join('');
+  makeGrid('skin-grid',SKIN_TONES,'skin');
+  makeGrid('hair-grid',HAIR_COLORS,'hair');
+  makeGrid('shirt-grid',OUTFIT_COLORS,'shirt');
+  makeGrid('pants-grid',OUTFIT_COLORS,'pants');
+  makeGrid('shoes-grid',OUTFIT_COLORS,'shoes');
+}
+
+function buildAccGrids(){
+  const makeAcc = (id,items,field)=>
+    document.getElementById(id).innerHTML = items.map(a=>
+      `<div class="acc-btn" onclick="setOv('${field}','${a.ico}',this)">
+        <div class="acc-ico">${a.ico||'🚫'}</div>
+        <div class="acc-name">${a.name}</div>
+      </div>`
+    ).join('');
+  makeAcc('acc-head-grid',ACC_HEAD,'hat');
+  makeAcc('acc-eye-grid',ACC_EYE,'glasses');
+  makeAcc('acc-audio-grid',ACC_AUDIO,'phones');
+}
+
+function buildSkillGrid(){
+  document.getElementById('skill-grid').innerHTML = ALL_SKILLS.map(s=>
+    `<div class="skill-chip" onclick="toggleSkill('${s}',this)">${s}</div>`
+  ).join('');
+}
+
+function buildRaritySelect(){
+  document.getElementById('rarity-select').innerHTML = RARITIES.map(r=>
+    `<div class="rarity-opt rarity-${r.name}" style="color:${r.color}" onclick="setOv('rarity','${r.name}',this)">${r.name}</div>`
+  ).join('');
+}
+
+function syncCustomizerToAgent(agent){
+  const ov = state.overrides[agent.id] || {};
+  const a = {...agent,...ov};
+  document.querySelectorAll('.face-opt').forEach(el=>el.classList.toggle('active',el.textContent===a.face));
+  syncSwatches('skin-grid',a.skin);
+  syncSwatches('hair-grid',a.hair);
+  syncSwatches('shirt-grid',a.shirt);
+  syncSwatches('pants-grid',a.pants);
+  syncSwatches('shoes-grid',a.shoes);
+  syncAcc('acc-head-grid',a.hat);
+  syncAcc('acc-eye-grid',a.glasses);
+  syncAcc('acc-audio-grid',a.phones);
+  const skills = ov.skills || agent.skills || [];
+  document.querySelectorAll('.skill-chip').forEach(el=>el.classList.toggle('active',skills.includes(el.textContent)));
+  document.querySelectorAll('.rarity-opt').forEach(el=>el.classList.toggle('active',el.textContent===a.rarity));
+}
+
+function syncSwatches(gridId,val){
+  document.querySelectorAll(`#${gridId} .color-swatch`).forEach(el=>
+    el.classList.toggle('active',el.style.background===val||el.style.backgroundColor===val)
+  );
+}
+function syncAcc(gridId,val){
+  document.querySelectorAll(`#${gridId} .acc-btn`).forEach(el=>{
+    const ico = el.querySelector('.acc-ico').textContent;
+    el.classList.toggle('active',(ico===val)||(val===null&&ico==='🚫'));
+  });
+}
+
+function setOv(field,val,el){
+  if(!state.selectedAgent) return;
+  const id = state.selectedAgent.id;
+  if(!state.overrides[id]) state.overrides[id]={};
+  const cleaned = (val==='null'||val==='🚫') ? null : val;
+  state.overrides[id][field] = cleaned;
+  applyCharacter(state.selectedAgent);
+  if(el){
+    const parent = el.parentElement;
+    parent.querySelectorAll('.face-opt,.color-swatch,.acc-btn,.rarity-opt').forEach(e=>e.classList.remove('active'));
+    el.classList.add('active');
+  }
+}
+
+function setOvDirect(field, val){
+  if(!state.selectedAgent) return;
+  const id = state.selectedAgent.id;
+  if(!state.overrides[id]) state.overrides[id]={};
+  state.overrides[id][field] = val;
+  applyCharacter(state.selectedAgent);
+}
+
+function toggleSkill(skill,el){
+  if(!state.selectedAgent) return;
+  const id = state.selectedAgent.id;
+  if(!state.overrides[id]) state.overrides[id]={};
+  const base = state.selectedAgent.skills||[];
+  let skills = state.overrides[id].skills ? [...state.overrides[id].skills] : [...base];
+  const idx = skills.indexOf(skill);
+  if(idx>-1) skills.splice(idx,1);
+  else if(skills.length<5) skills.push(skill);
+  else { showToast('Max 5 skills!','error'); return; }
+  state.overrides[id].skills = skills;
+  el.classList.toggle('active',skills.includes(skill));
+  applyCharacter(state.selectedAgent);
+}
+
+function switchCustTab(tab,el){
+  state.custTab = tab;
+  document.querySelectorAll('.cust-tab').forEach(t=>t.classList.remove('active'));
+  if(el) el.classList.add('active');
+  ['face','outfit','acc','skills','info'].forEach(t=>{
+    document.getElementById('pane-'+t).style.display = t===tab ? 'block' : 'none';
+  });
+}
+
+// ══════════════════════════════════════
+// SAVE NPC → GATEWAY
+// ══════════════════════════════════════
+async function saveNPC(){
+  if(!state.selectedAgent) return;
+  const agent = state.selectedAgent;
+  const ov = state.overrides[agent.id]||{};
+  const merged = {...agent,...ov};
+  const payload = {
+    id: agent.id,
+    serial: agent.serial,
+    name: merged.name,
+    role: merged.role,
+    arch: merged.arch,
+    catch: merged.catch,
+    rarity: merged.rarity,
+    stats: merged.stats,
+    skills: merged.skills||[],
+    appearance: {
+      face: merged.face, skin: merged.skin, hair: merged.hair,
+      shirt: merged.shirt, pants: merged.pants, shoes: merged.shoes,
+      hat: merged.hat, glasses: merged.glasses, phones: merged.phones
+    },
+    portraitUrl: state.portraitUrl || null
+  };
+
+  const btn = document.getElementById('btn-save');
+  btn.disabled = true;
+  btn.textContent = '⏳ Saving...';
+
+  try {
+    const gwOk = await checkGateway();
+    if(!gwOk){
+      showToast('Gateway offline — saved locally','warn');
+      localStorage.setItem('npc_draft_'+agent.id, JSON.stringify(payload));
+      btn.disabled = false; btn.textContent = '💾 Save NPC'; return;
+    }
+    const r = await fetch(GATEWAY+'/api/npc/create', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    });
+    if(r.ok){
+      showToast('✅ NPC saved to world!');
+    } else {
+      // Fallback: save locally if endpoint not yet built
+      localStorage.setItem('npc_draft_'+agent.id, JSON.stringify(payload));
+      showToast('💾 Saved locally (endpoint pending)','warn');
+    }
+  } catch(e){
+    localStorage.setItem('npc_draft_'+agent.id, JSON.stringify(payload));
+    showToast('💾 Saved locally','warn');
+  }
+  btn.disabled = false;
+  btn.textContent = '💾 Save NPC';
+}
+
+// ══════════════════════════════════════
+// AI PORTRAIT GENERATION
+// ══════════════════════════════════════
+async function generatePortrait(){
+  if(!state.selectedAgent) return;
+  const agent = state.selectedAgent;
+  const ov = state.overrides[agent.id]||{};
+  const merged = {...agent,...ov};
+
+  // Build style prompt
+  const skinDesc = ['light','warm light','golden','medium brown','dark brown','deep brown','rosy','olive','tan','peach','blue-tinted','pale blue'][SKIN_TONES.indexOf(merged.skin)] || 'medium';
+  const hairDesc = merged.hair === '#c0c0c0' ? 'silver/white' : merged.hair === '#ff69b4' ? 'pink' : merged.hair === '#00f5ff' ? 'cyan' : 'dark';
+  const prompt = `low-poly 3D chibi figurine, kawaii vinyl plush character, Pop Mart Fall Guys aesthetic, Pixar-style soft shading, pastel gradient studio background, 3/4 front view portrait, soft rim lighting, clean isolated, WebGL render quality, collectible toy photography, ${merged.role}, ${skinDesc} skin tone, ${hairDesc} hair, wearing ${merged.shirt ? 'professional outfit' : 'casual clothes'}, ${merged.rarity} tier NPC character`;
+
+  const btn = document.getElementById('btn-portrait');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spin">⏳</span> Generating...';
+
+  try {
+    const gwOk = await checkGateway();
+    let imgUrl;
+
+    if(gwOk){
+      const r = await fetch(GATEWAY+'/api/ai/generate', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({prompt, width:512, height:512, model:'flux'})
+      });
+      if(r.ok){
+        const data = await r.json();
+        imgUrl = data.url || data.imageUrl || data.image;
+      }
+    }
+
+    // Fallback: Pollinations direct
+    if(!imgUrl){
+      const seed = Math.floor(Math.random()*9999);
+      imgUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=512&height=512&model=flux&nologo=true&seed=${seed}&enhance=true`;
+    }
+
+    state.portraitUrl = imgUrl;
+    document.getElementById('portrait-img').src = imgUrl;
+    document.getElementById('portrait-dl').href = imgUrl;
+    document.getElementById('portrait-preview').style.display = 'block';
+    applyCharacter(agent);
+    showToast('🖼️ Portrait generated!');
+  } catch(e){
+    showToast('Portrait failed: '+e.message,'error');
+  }
+  btn.disabled = false;
+  btn.innerHTML = '🖼️ AI Portrait';
+}
+
+function usePortrait(){
+  applyCharacter(state.selectedAgent);
+  document.getElementById('portrait-preview').style.display = 'none';
+  showToast('✅ Portrait set as card avatar');
+}
+
+// ══════════════════════════════════════
+// RANDOMIZE
+// ══════════════════════════════════════
+function generateNPC(){
+  if(!state.selectedAgent) return;
+  const id = state.selectedAgent.id;
+  if(!state.overrides[id]) state.overrides[id]={};
+  state.overrides[id].face = FACES[Math.floor(Math.random()*FACES.length)];
+  state.overrides[id].skin = SKIN_TONES[Math.floor(Math.random()*SKIN_TONES.length)];
+  state.overrides[id].hair = HAIR_COLORS[Math.floor(Math.random()*HAIR_COLORS.length)];
+  state.overrides[id].shirt = OUTFIT_COLORS[Math.floor(Math.random()*OUTFIT_COLORS.length)];
+  state.overrides[id].pants = OUTFIT_COLORS[Math.floor(Math.random()*OUTFIT_COLORS.length)];
+  state.overrides[id].shoes = OUTFIT_COLORS[Math.floor(Math.random()*OUTFIT_COLORS.length)];
+  const r = RARITIES[Math.floor(Math.random()*RARITIES.length)];
+  state.overrides[id].rarity = r.name;
+  state.selectedAgent.rarityColor = r.color;
+  state.portraitUrl = null;
+  document.getElementById('portrait-preview').style.display = 'none';
+  applyCharacter(state.selectedAgent);
+  syncCustomizerToAgent(state.selectedAgent);
+  showToast('🎲 New look generated!');
+}
+
+// ══════════════════════════════════════
+// ROOM BUILDER
+// ══════════════════════════════════════
+function initRoomItems(){
+  ROOMS.forEach(r=>{
+    state.roomItems[r.id] = r.items.map((item,i)=>({
+      ...item, id:'item-'+r.id+'-'+i, selected:false
+    }));
+  });
+}
+
+function buildRoomTabs(){
+  document.getElementById('room-tabs').innerHTML = ROOMS.map((r,i)=>
+    `<button class="rtab ${i===0?'active':''}" onclick="renderRoom(${i},this)">${r.name}<br><small style="font-size:.6rem;opacity:.6;">${r.building} · ${r.floor}</small></button>`
+  ).join('');
+}
+
+function renderRoom(idx, tabEl){
+  state.roomIdx = idx;
+  const room = ROOMS[idx];
+  state.selectedRoomItem = null;
+  if(tabEl){
+    document.querySelectorAll('.rtab').forEach(t=>t.classList.remove('active'));
+    tabEl.classList.add('active');
+  }
+  document.getElementById('wall-left').style.background = room.wallColor;
+  document.getElementById('wall-right').style.background = room.wallR;
+  document.getElementById('room-floor').style.background = room.floorColor;
+  document.getElementById('room-info').textContent = `${room.building} · ${room.floor}`;
+  renderRoomItems();
+}
+
+function renderRoomItems(){
+  const room = ROOMS[state.roomIdx];
+  const items = state.roomItems[room.id]||[];
+  document.querySelectorAll('.room-item').forEach(e=>e.remove());
+  const hint = document.getElementById('room-hint');
+  hint.style.display = items.length ? 'none' : 'flex';
+
+  const canvas = document.getElementById('room-canvas');
+  items.forEach((item)=>{
+    const el = document.createElement('div');
+    el.className = 'room-item'+(item.selected?' selected':'');
+    el.id = item.id;
+    el.style.left = item.left;
+    el.style.bottom = item.bottom;
+    el.innerHTML = item.ico+'<div class="item-label">'+item.name+'</div>';
+    el.onclick = ()=>selectRoomItem(item.id);
+    canvas.appendChild(el);
+  });
+}
+
+function selectRoomItem(itemId){
+  const room = ROOMS[state.roomIdx];
+  const items = state.roomItems[room.id]||[];
+  items.forEach(it=>it.selected = it.id===itemId);
+  state.selectedRoomItem = itemId;
+  renderRoomItems();
+}
+
+function addSelectedToRoom(){
+  if(!state.selectedShopItem) return;
+  const fi = FURNITURE[state.selectedShopItem];
+  const room = ROOMS[state.roomIdx];
+  if(!state.roomItems[room.id]) state.roomItems[room.id]=[];
+  const items = state.roomItems[room.id];
+  items.push({
+    ico: fi.ico, name: fi.name,
+    left: (10+Math.random()*70)+'%',
+    bottom: (40+Math.random()*25)+'%',
+    id: 'item-'+Date.now(), selected:false
+  });
+  renderRoomItems();
+  showToast(`${fi.ico} ${fi.name} placed!`);
+  const cur = parseInt(document.getElementById('hud-coins').textContent.replace(/[^0-9]/g,''));
+  document.getElementById('hud-coins').textContent = Math.max(0,cur-fi.price).toLocaleString();
+}
+
+function deleteSelected(){
+  if(!state.selectedRoomItem) return;
+  const room = ROOMS[state.roomIdx];
+  state.roomItems[room.id] = (state.roomItems[room.id]||[]).filter(it=>it.id!==state.selectedRoomItem);
+  state.selectedRoomItem=null;
+  renderRoomItems();
+  showToast('Item deleted','warn');
+}
+function clearSelected(){ deleteSelected(); }
+function undoLast(){
+  const room = ROOMS[state.roomIdx];
+  const items = state.roomItems[room.id];
+  if(!items||!items.length){showToast('Nothing to undo','warn');return;}
+  items.pop();
+  renderRoomItems();
+  showToast('↩ Undo');
+}
+function saveRoom(){ showToast('💾 Room layout saved!'); }
+
+// ══════════════════════════════════════
+// FURNITURE SHOP
+// ══════════════════════════════════════
+function buildShopCats(){
+  const cats = ['All',...new Set(FURNITURE.map(f=>f.cat))];
+  document.getElementById('shop-cats').innerHTML = cats.map(c=>
+    `<div class="shop-cat ${c==='All'?'active':''}" onclick="setShopCat('${c}',this)">${c}</div>`
+  ).join('');
+}
+function setShopCat(cat,el){
+  state.shopCat = cat;
+  document.querySelectorAll('.shop-cat').forEach(e=>e.classList.remove('active'));
+  el.classList.add('active');
+  buildShopItems();
+}
+function filterShop(){ buildShopItems(); }
+function buildShopItems(){
+  const query = document.getElementById('shop-search').value.toLowerCase();
+  const filtered = FURNITURE.filter(f=>
+    (state.shopCat==='All'||f.cat===state.shopCat) &&
+    (!query||f.name.toLowerCase().includes(query)||f.cat.toLowerCase().includes(query))
+  );
+  document.getElementById('shop-items').innerHTML = filtered.map((f)=>{
+    const realIdx = FURNITURE.indexOf(f);
+    const rc = RARITIES.find(r=>r.name===f.rarity)||RARITIES[0];
+    return `<div class="shop-item ${state.selectedShopItem===realIdx?'selected-item':''}" onclick="selectShopItem(${realIdx},this)">
+      <div class="si-ico">${f.ico}</div>
+      <div class="si-name">${f.name}</div>
+      <div class="si-price">🪙 ${f.price}</div>
+      <div class="si-rarity" style="color:${rc.color}">${f.rarity}</div>
+    </div>`;
+  }).join('');
+}
+function selectShopItem(idx,el){
+  state.selectedShopItem = idx;
+  document.querySelectorAll('.shop-item').forEach(e=>e.classList.remove('selected-item'));
+  el.classList.add('selected-item');
+  document.getElementById('btn-place').disabled = false;
+}
+
+// ══════════════════════════════════════
+// TOAST
+// ══════════════════════════════════════
+let toastTimer;
+function showToast(msg, type){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.borderColor = type==='error'?'var(--red)':type==='warn'?'var(--gold)':'var(--cyan)';
+  t.style.color = type==='error'?'var(--red)':type==='warn'?'var(--gold)':'var(--cyan)';
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove('show'),2200);
+}
+
+// Start
+init();
+</script>
+</body>
+</html>
