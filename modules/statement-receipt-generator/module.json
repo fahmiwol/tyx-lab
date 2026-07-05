@@ -1,0 +1,28 @@
+{
+  "id": "statement-receipt-generator",
+  "name": "Statement & Receipt Generator",
+  "version": "1.0.0",
+  "category": "business",
+  "description": "On-demand PDF generation of transaction statements and receipts. Supports date range filtering, denomination breakdown, QR code embedding for verification, and digital signature. Compliant with accounting and audit requirements.",
+  "input": [
+    {"name": "userId", "type": "string"},
+    {"name": "statementType", "type": "enum", "values": ["full_statement", "single_receipt", "monthly_summary", "audit_report"]},
+    {"name": "startDate", "type": "date", "optional": true},
+    {"name": "endDate", "type": "date", "optional": true},
+    {"name": "transactionId", "type": "string", "optional": true}
+  ],
+  "output": [
+    {"name": "documentId", "type": "string"},
+    {"name": "pdfUrl", "type": "string"},
+    {"name": "documentHash", "type": "string"},
+    {"name": "digitallySigned", "type": "boolean"},
+    {"name": "generatedAt", "type": "datetime"},
+    {"name": "expiresAt", "type": "datetime", "nullable": true}
+  ],
+  "tags": ["compliance", "reporting", "audit-trail", "receipts"],
+  "compatible_with": ["token-burn-redemption-audit", "admin-approval-maker-checker"],
+  "used_in_recipes": ["tax-reporting", "dispute-resolution"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
