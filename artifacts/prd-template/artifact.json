@@ -1,0 +1,14 @@
+{
+  "id": "prd-template-structure",
+  "name": "PRD Template & Structure",
+  "version": "1.0.0",
+  "kind": "template",
+  "category": "business",
+  "description": "Comprehensive PRD framework for digital products, covering overview, goals, users, scope, architecture, features, design systems, data models, roles, workflows, and release planning.",
+  "tags": ["product", "requirements", "template", "prd", "structure"],
+  "compatible_with": ["figma", "notion", "markdown"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
