@@ -1,0 +1,33 @@
+{
+  "id": "message-pipeline-router",
+  "name": "Message Pipeline Router",
+  "version": "1.0.0",
+  "category": ["business", "infra"],
+  "description": "Inbound webhook message handler with intent parsing and action dispatch. Normalizes multi-channel input (WhatsApp, Telegram) → parses intent via rules or LLM → routes to action handler.",
+  "input": [
+    {
+      "name": "inboundMessage",
+      "type": "object",
+      "schema": {
+        "phone": "string (E.164)",
+        "text": "string",
+        "channel": "enum(wa, telegram, sms)",
+        "externalRef": "string (optional)",
+        "rawPayload": "object (optional)"
+      }
+    }
+  ],
+  "output": [
+    {
+      "name": "reply",
+      "type": "string",
+      "description": "Outbound reply text"
+    }
+  ],
+  "tags": ["webhook", "intent-parsing", "message-routing", "multi-channel"],
+  "compatible_with": ["nestjs", "fastapi", "nodejs"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
