@@ -1,0 +1,14 @@
+{
+  "id": "selective-adoption-doctrine",
+  "name": "Selective Adoption Doctrine",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "research",
+  "description": "When studying an external reference (library, competitor, sample repo), adopt the transferable PATTERN only — never import the whole framework.",
+  "tags": ["methodology", "architecture", "decision", "dependencies", "engineering-discipline"],
+  "compatible_with": ["disciplined-execution", "repo-cartography-handoff"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
