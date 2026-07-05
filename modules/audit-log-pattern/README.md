@@ -55,7 +55,7 @@ model AdminAuditLog {
 ## Usage Example
 
 ```typescript
-// From bank-tiranyx src/lib/audit.ts
+// from a production ledger service src/lib/audit.ts
 import { recordUserAudit, auditMetaFromRequest } from "./audit";
 
 // In a route handler
