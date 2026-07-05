@@ -1,0 +1,21 @@
+{
+  "id": "sprite-sheet-animator",
+  "name": "Sprite Sheet Animator",
+  "version": "1.0.0",
+  "category": "3d",
+  "description": "Canvas 2D sprite sheet animation player. Manages frame sequences, playback speed, looping, ping-pong, and draw positioning. Ideal for character animations, VFX, and 2D game sprites.",
+  "input": [
+    { "name": "canvasContext", "type": "CanvasRenderingContext2D", "description": "Canvas 2D rendering context" },
+    { "name": "config", "type": "Object", "description": "frameWidth, frameHeight, cols, rows, image" }
+  ],
+  "output": [
+    { "name": "frameIndex", "type": "number", "description": "Current frame index in animation" },
+    { "name": "isAnimating", "type": "boolean", "description": "Whether animation is currently playing" }
+  ],
+  "tags": ["2d", "animation", "sprite", "game-dev", "canvas"],
+  "compatible_with": ["browser", "typescript", "react", "vue", "game-engines"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
