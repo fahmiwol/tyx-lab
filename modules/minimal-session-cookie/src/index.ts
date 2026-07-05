@@ -1,1 +1,123 @@
-aW1wb3J0IHsgY29va2llcyB9IGZyb20gJ25leHQvaGVhZGVycyc7CmltcG9ydCBjcnlwdG8gZnJvbSAnbm9kZTpjcnlwdG8nOwoKLyoqCiAqIE1pbmltYWwgc2Vzc2lvbiBjb29raWUgYXV0aCDigJQgSE1BQy1TSEEyNTYgc2lnbmVkIHRva2Vucy4KICogTm8gZXh0ZXJuYWwgbGlicmFyeSAoQXV0aC5qcywgZXRjLikuIFBheWxvYWQgZm9ybWF0OiBiYXNlNjQoanNvbikuc2lnbmF0dXJlCiAqCiAqIFVzYWdlOgogKiAgIGNvbnN0IHRva2VuID0gZW5jb2RlU2Vzc2lvbigndXNlci0xMjMnKTsgIC8vICdleUouLi5JZy5hYmMxMjMuLi4nCiAqICAgY29uc3QgcGF5bG9hZCA9IGRlY29kZVNlc3Npb24odG9rZW4pOyAgICAgLy8geyB1c2VySWQ6ICd1c2VyLTEyMycsIGV4cDogLi4uIH0KICogICBzZXRTZXNzaW9uQ29va2llKCd1c2VyLTEyMycpOyAgICAgICAgICAgICAvLyBTZXRzIGh0dHBPbmx5IGNvb2tpZQogKiAgIGNvbnN0IHVzZXJJZCA9IGdldEN1cnJlbnRVc2VySWQoKTsgICAgICAgIC8vICd1c2VyLTEyMycgb3IgbnVsbAogKi8KCmNvbnN0IENPT0tJRV9OQU1FID0gJ2h1Yl9zZXNzaW9uJzsKY29uc3QgU0VDUkVUID0gcHJvY2Vzcy5lbnYuSFVCX1NFU1NJT05fU0VDUkVUID8/ICdkZXYtc2VjcmV0LWNoYW5nZS1tZSc7CmNvbnN0IFRUTF9TRUNPTkRTID0gNjAgKiA2MCAqIDI0ICogMTQ7IC8vIDE0IGRheXMKCmV4cG9ydCBpbnRlcmZhY2UgU2Vzc2lvblBheWxvYWQgewogIHVzZXJJZDogc3RyaW5nOwogIGV4cDogbnVtYmVyOyAvLyBVbml4IHRpbWVzdGFtcCAoc2Vjb25kcykKfQoKLyoqCiAqIFNpZ24gYSBwYXlsb2FkIHdpdGggSE1BQy1TSEEyNTYuCiAqLwpmdW5jdGlvbiBzaWduKHBheWxvYWQ6IHN0cmluZyk6IHN0cmluZyB7CiAgcmV0dXJuIGNyeXB0bwogICAgLmNyZWF0ZUhtYWMoJ3NoYTI1NicsIFNFQ1JFVCkKICAgIC51cGRhdGUocGF5bG9hZCkKICAgIC5kaWdlc3QoJ2Jhc2U2NHVybCcpOwp9CgovKioKICogRW5jb2RlIHsgdXNlcklkLCBleHAgfSBhcyBiYXNlNjQuc2lnbmF0dXJlCiAqLwpleHBvcnQgZnVuY3Rpb24gZW5jb2RlU2Vzc2lvbih1c2VySWQ6IHN0cmluZyk6IHN0cmluZyB7CiAgY29uc3QgcGF5bG9hZDogU2Vzc2lvblBheWxvYWQgPSB7CiAgICB1c2VySWQsCiAgICBleHA6IE1hdGguZmxvb3IoRGF0ZS5ub3coKSAvIDEwMDApICsgVFRMX1NFQ09ORFMsCiAgfTsKCiAgY29uc3QgYm9keSA9IEJ1ZmZlci5mcm9tKEpTT04uc3RyaW5naWZ5KHBheWxvYWQpKS50b1N0cmluZygnYmFzZTY0dXJsJyk7CiAgY29uc3Qgc2lnID0gc2lnbihib2R5KTsKCiAgcmV0dXJuIGAke2JvZHl9LiR7c2lnfWA7Cn0KCi8qKgogKiBEZWNvZGUgYW5kIHZlcmlmeSBiYXNlNjQuc2lnbmF0dXJlIHRva2VuLgogKiBSZXR1cm5zIG51bGwgaWYgaW52YWxpZCwgZXhwaXJlZCwgb3IgdGFtcGVyZWQuCiAqLwpleHBvcnQgZnVuY3Rpb24gZGVjb2RlU2Vzc2lvbih0b2tlbjogc3RyaW5nKTogU2Vzc2lvblBheWxvYWQgfCBudWxsIHsKICBjb25zdCBwYXJ0cyA9IHRva2VuLnNwbGl0KCcuJyk7CiAgY29uc3QgW2JvZHksIHNpZ10gPSBwYXJ0czsKCiAgaWYgKCFib2R5IHx8ICFzaWcgfHwgcGFydHMubGVuZ3RoICE9PSAyKSB7CiAgICByZXR1cm4gbnVsbDsKICB9CgogIC8vIFZlcmlmeSBzaWduYXR1cmUKICBpZiAoc2lnbihib2R5KSAhPT0gc2lnKSB7CiAgICByZXR1cm4gbnVsbDsgLy8gVGFtcGVyZWQgb3Igd3Jvbmcgc2VjcmV0CiAgfQoKICAvLyBEZWNvZGUgcGF5bG9hZAogIHRyeSB7CiAgICBjb25zdCBwYXlsb2FkID0gSlNPTi5wYXJzZSgKICAgICAgQnVmZmVyLmZyb20oYm9keSwgJ2Jhc2U2NHVybCcpLnRvU3RyaW5nKCkKICAgICkgYXMgU2Vzc2lvblBheWxvYWQ7CgogICAgLy8gQ2hlY2sgZXhwaXJhdGlvbgogICAgY29uc3Qgbm93ID0gTWF0aC5mbG9vcihEYXRlLm5vdygpIC8gMTAwMCk7CiAgICBpZiAocGF5bG9hZC5leHAgPCBub3cpIHsKICAgICAgcmV0dXJuIG51bGw7IC8vIEV4cGlyZWQKICAgIH0KCiAgICByZXR1cm4gcGF5bG9hZDsKICB9IGNhdGNoIHsKICAgIHJldHVybiBudWxsOyAvLyBJbnZhbGlkIEpTT04gb3IgYnVmZmVyIGRlY29kZSBlcnJvcgogIH0KfQoKLyoqCiAqIFNldCBzZXNzaW9uIGNvb2tpZSBmb3IgdGhlIGdpdmVuIHVzZXIuCiAqIFN0b3JlcyBpbiBodHRwT25seSwgc2VjdXJlLCBzYW1lU2l0ZT1sYXggY29va2llLgogKi8KZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIHNldFNlc3Npb25Db29raWUodXNlcklkOiBzdHJpbmcpIHsKICBjb25zdCBjID0gYXdhaXQgY29va2llcygpOwogIGNvbnN0IHRva2VuID0gZW5jb2RlU2Vzc2lvbih1c2VySWQpOwoKICBjLnNldChDT09LSUVfTkFNRSwgdG9rZW4sIHsKICAgIGh0dHBPbmx5OiB0cnVlLAogICAgc2VjdXJlOiB0cnVlLAogICAgc2FtZVNpdGU6ICdsYXgnLAogICAgcGF0aDogJy8nLAogICAgbWF4QWdlOiBUVExfU0VDT05EUywKICB9KTsKfQoKLyoqCiAqIENsZWFyIHRoZSBzZXNzaW9uIGNvb2tpZS4KICovCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBjbGVhclNlc3Npb25Db29raWUoKSB7CiAgY29uc3QgYyA9IGF3YWl0IGNvb2tpZXMoKTsKICBjLmRlbGV0ZShDT09LSUVfTkFNRSk7Cn0KCi8qKgogKiBHZXQgY3VycmVudCB1c2VyIElEIGZyb20gc2Vzc2lvbiBjb29raWUuCiAqIFJldHVybnMgbnVsbCBpZiBub3Qgc2V0LCBpbnZhbGlkLCBvciBleHBpcmVkLgogKi8KZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGdldEN1cnJlbnRVc2VySWQoKTogUHJvbWlzZTxzdHJpbmcgfCBudWxsPiB7CiAgY29uc3QgYyA9IGF3YWl0IGNvb2tpZXMoKTsKICBjb25zdCByYXcgPSBjLmdldChDT09LSUVfTkFNRSk/LnZhbHVlOwoKICBpZiAoIXJhdykgewogICAgcmV0dXJuIG51bGw7CiAgfQoKICBjb25zdCBwYXlsb2FkID0gZGVjb2RlU2Vzc2lvbihyYXcpOwogIHJldHVybiBwYXlsb2FkPy51c2VySWQgPz8gbnVsbDsKfQo=
+import { cookies } from 'next/headers';
+import crypto from 'node:crypto';
+
+/**
+ * Minimal session cookie auth — HMAC-SHA256 signed tokens.
+ * No external library (Auth.js, etc.). Payload format: base64(json).signature
+ *
+ * Usage:
+ *   const token = encodeSession('user-123');  // 'eyJ...Ig.abc123...'
+ *   const payload = decodeSession(token);     // { userId: 'user-123', exp: ... }
+ *   setSessionCookie('user-123');             // Sets httpOnly cookie
+ *   const userId = getCurrentUserId();        // 'user-123' or null
+ */
+
+const COOKIE_NAME = 'hub_session';
+const SECRET = process.env.HUB_SESSION_SECRET ?? 'dev-secret-change-me';
+const TTL_SECONDS = 60 * 60 * 24 * 14; // 14 days
+
+export interface SessionPayload {
+  userId: string;
+  exp: number; // Unix timestamp (seconds)
+}
+
+/**
+ * Sign a payload with HMAC-SHA256.
+ */
+function sign(payload: string): string {
+  return crypto
+    .createHmac('sha256', SECRET)
+    .update(payload)
+    .digest('base64url');
+}
+
+/**
+ * Encode { userId, exp } as base64.signature
+ */
+export function encodeSession(userId: string): string {
+  const payload: SessionPayload = {
+    userId,
+    exp: Math.floor(Date.now() / 1000) + TTL_SECONDS,
+  };
+
+  const body = Buffer.from(JSON.stringify(payload)).toString('base64url');
+  const sig = sign(body);
+
+  return `${body}.${sig}`;
+}
+
+/**
+ * Decode and verify base64.signature token.
+ * Returns null if invalid, expired, or tampered.
+ */
+export function decodeSession(token: string): SessionPayload | null {
+  const parts = token.split('.');
+  const [body, sig] = parts;
+
+  if (!body || !sig || parts.length !== 2) {
+    return null;
+  }
+
+  // Verify signature
+  if (sign(body) !== sig) {
+    return null; // Tampered or wrong secret
+  }
+
+  // Decode payload
+  try {
+    const payload = JSON.parse(
+      Buffer.from(body, 'base64url').toString()
+    ) as SessionPayload;
+
+    // Check expiration
+    const now = Math.floor(Date.now() / 1000);
+    if (payload.exp < now) {
+      return null; // Expired
+    }
+
+    return payload;
+  } catch {
+    return null; // Invalid JSON or buffer decode error
+  }
+}
+
+/**
+ * Set session cookie for the given user.
+ * Stores in httpOnly, secure, sameSite=lax cookie.
+ */
+export async function setSessionCookie(userId: string) {
+  const c = await cookies();
+  const token = encodeSession(userId);
+
+  c.set(COOKIE_NAME, token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'lax',
+    path: '/',
+    maxAge: TTL_SECONDS,
+  });
+}
+
+/**
+ * Clear the session cookie.
+ */
+export async function clearSessionCookie() {
+  const c = await cookies();
+  c.delete(COOKIE_NAME);
+}
+
+/**
+ * Get current user ID from session cookie.
+ * Returns null if not set, invalid, or expired.
+ */
+export async function getCurrentUserId(): Promise<string | null> {
+  const c = await cookies();
+  const raw = c.get(COOKIE_NAME)?.value;
+
+  if (!raw) {
+    return null;
+  }
+
+  const payload = decodeSession(raw);
+  return payload?.userId ?? null;
+}
