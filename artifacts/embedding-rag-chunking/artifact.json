@@ -1,0 +1,1 @@
+{"id":"embedding-rag-chunking","name":"Embedding / RAG Chunking","version":"1.0.0","kind":"method","category":"ai","description":"Split documents semantically for RAG with hierarchical metadata.","tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
