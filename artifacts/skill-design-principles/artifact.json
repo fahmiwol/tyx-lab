@@ -1,0 +1,14 @@
+{
+  "id": "skill-design-principles",
+  "name": "AI Agent Skill Design Principles & Progressive Disclosure",
+  "version": "1.0.0",
+  "kind": "playbook",
+  "category": "ai",
+  "description": "Framework for designing reusable skills for AI agents (Claude, Cursor, OpenCode, Codex). Covers progressive disclosure (metadata → SKILL.md → bundled resources), context efficiency, proper scope, and validation patterns.",
+  "tags": ["skills", "agents", "context-efficiency", "reusability"],
+  "compatible_with": ["claude", "cursor", "codex", "opencode"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
