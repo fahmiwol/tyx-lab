@@ -1,0 +1,14 @@
+{
+  "id": "erd-data-model-design",
+  "name": "ERD & Data Model Design Method",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "infra",
+  "description": "Structured methodology for designing Entity-Relationship Diagrams and data models for multi-user platforms, covering entity inventory, relationships, attributes, permissions, indexing, and scalability.",
+  "tags": ["database", "data-model", "erd", "schema", "design-method"],
+  "compatible_with": ["postgres", "mysql", "sqlite", "prisma", "mermaid"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
