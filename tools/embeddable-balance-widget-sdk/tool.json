@@ -1,0 +1,27 @@
+{
+  "id": "embeddable-balance-widget-sdk",
+  "name": "Embeddable Balance Widget SDK",
+  "version": "1.0.0",
+  "kind": "tool",
+  "category": "business",
+  "description": "JavaScript/React SDK for embedding real-time wallet balance display in partner web apps. Reads from public REST API, handles currency formatting per denomination, includes dark mode + localization. No API key required for read-only views.",
+  "input": [
+    {"name": "walletAddress", "type": "string"},
+    {"name": "displayMode", "type": "enum", "values": ["compact", "full", "card"]},
+    {"name": "currency", "type": "enum", "values": ["GOLD", "SILVER", "BRONZE", "DIAMOND", "ALL"]},
+    {"name": "refreshInterval", "type": "integer", "default": 5000}
+  ],
+  "output": [
+    {"name": "widgetVersion", "type": "string"},
+    {"name": "iframeUrl", "type": "string"},
+    {"name": "jsBundle", "type": "string"},
+    {"name": "cssBundle", "type": "string"}
+  ],
+  "tags": ["sdk", "widget", "embed", "ui-component", "partner-integration"],
+  "compatible_with": ["b2b-api-key-gateway-pattern", "token-supply-cap-accounting"],
+  "used_in_recipes": ["partner-portal", "user-dashboard"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT",
+  "run": "npm run build && npm start"
+}
