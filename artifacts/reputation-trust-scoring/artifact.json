@@ -1,0 +1,14 @@
+{
+  "id": "reputation-trust-scoring",
+  "name": "Reputation & Trust Scoring: Multi-Signal Agent Credibility Framework",
+  "version": "1.0.0",
+  "kind": "framework",
+  "category": "ai",
+  "description": "Framework for scoring agent trustworthiness based on multi-dimensional signals (completion rate, quality, fraud likelihood, financial health) to determine pricing, access levels, and queue priority.",
+  "tags": ["reputation", "trust-score", "fraud-detection", "tier-system", "agent-credibility", "credit-limits"],
+  "compatible_with": ["agent-economy-credit-minting", "credit-metering-system"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
