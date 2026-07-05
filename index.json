@@ -1,10 +1,456 @@
 {
     "version":  "1.0.0",
     "last_updated":  "2026-07-05",
-    "total_modules":  0,
-    "total_artifacts":  0,
-    "total_atoms":  0,
+    "total_modules":  20,
+    "total_artifacts":  27,
+    "total_atoms":  47,
     "atoms":  [
-
+                  {
+                      "id":  "audit-log-pattern",
+                      "name":  "Append-Only Audit Log",
+                      "lane":  "module",
+                      "category":  [
+                                       "business",
+                                       "ops"
+                                   ],
+                      "path":  "modules/audit-log-pattern",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "cinematic-camera-controller",
+                      "name":  "Cinematic Camera Controller",
+                      "lane":  "module",
+                      "category":  "3d",
+                      "path":  "modules/cinematic-camera-controller",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "double-entry-ledger",
+                      "name":  "Double-Entry Ledger",
+                      "lane":  "module",
+                      "category":  [
+                                       "business"
+                                   ],
+                      "path":  "modules/double-entry-ledger",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "env-config-schema",
+                      "name":  "Environment Config Schema",
+                      "lane":  "module",
+                      "category":  [
+                                       "infra"
+                                   ],
+                      "path":  "modules/env-config-schema",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "exponential-backoff-queue",
+                      "name":  "Exponential Backoff Queue",
+                      "lane":  "module",
+                      "category":  [
+                                       "infra",
+                                       "ops"
+                                   ],
+                      "path":  "modules/exponential-backoff-queue",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "idempotent-payment-processing",
+                      "name":  "Idempotent Payment Processing",
+                      "lane":  "module",
+                      "category":  [
+                                       "business",
+                                       "infra"
+                                   ],
+                      "path":  "modules/idempotent-payment-processing",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "intent-pattern-matcher",
+                      "name":  "Intent Pattern Matcher",
+                      "lane":  "module",
+                      "category":  [
+                                       "business",
+                                       "ai"
+                                   ],
+                      "path":  "modules/intent-pattern-matcher",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "jwt-token-helper",
+                      "name":  "JWT Token Helper",
+                      "lane":  "module",
+                      "category":  [
+                                       "infra"
+                                   ],
+                      "path":  "modules/jwt-token-helper",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "knowledge-graph-wikilinks",
+                      "name":  "Knowledge Graph from Wikilinks",
+                      "lane":  "module",
+                      "category":  "research",
+                      "path":  "modules/knowledge-graph-wikilinks",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "particle-avatar-engine",
+                      "name":  "Particle Avatar Engine",
+                      "lane":  "module",
+                      "category":  "3d",
+                      "path":  "modules/particle-avatar-engine",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "phone-normalization",
+                      "name":  "Phone Normalization",
+                      "lane":  "module",
+                      "category":  [
+                                       "business",
+                                       "infra"
+                                   ],
+                      "path":  "modules/phone-normalization",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "prisma-lifecycle-service",
+                      "name":  "Prisma Lifecycle Service",
+                      "lane":  "module",
+                      "category":  [
+                                       "infra",
+                                       "ops"
+                                   ],
+                      "path":  "modules/prisma-lifecycle-service",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "redis-queue-wrapper",
+                      "name":  "Redis Queue Wrapper",
+                      "lane":  "module",
+                      "category":  [
+                                       "infra",
+                                       "ops"
+                                   ],
+                      "path":  "modules/redis-queue-wrapper",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "relative-timestamp-formatter",
+                      "name":  "Relative Timestamp Formatter",
+                      "lane":  "module",
+                      "category":  [
+                                       "infra"
+                                   ],
+                      "path":  "modules/relative-timestamp-formatter",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "safe-localstorage-wrapper",
+                      "name":  "Safe localStorage Wrapper",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/safe-localstorage-wrapper",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "server-auth-token-cache",
+                      "name":  "Server Auth Token Cache",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/server-auth-token-cache",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "sse-chat-stream-parser",
+                      "name":  "Server-Sent Event Chat Stream Parser",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/sse-chat-stream-parser",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "tile-grid-coordinator",
+                      "name":  "Tile Grid Coordinator",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/tile-grid-coordinator",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "webhook-dispatcher",
+                      "name":  "Webhook Dispatcher",
+                      "lane":  "module",
+                      "category":  [
+                                       "infra",
+                                       "business"
+                                   ],
+                      "path":  "modules/webhook-dispatcher",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "webhook-meta-verify",
+                      "name":  "Meta Webhook Verifier",
+                      "lane":  "module",
+                      "category":  [
+                                       "infra",
+                                       "business"
+                                   ],
+                      "path":  "modules/webhook-meta-verify",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "agent-persona-router",
+                      "name":  "Agent Persona Router",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/agent-persona-router",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "disciplined-execution",
+                      "name":  "Disciplined Execution — the 8-gate loop",
+                      "lane":  "artifact",
+                      "category":  "ops",
+                      "path":  "artifacts/disciplined-execution",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "embedding-rag-chunking",
+                      "name":  "Embedding / RAG Chunking",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/embedding-rag-chunking",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "epistemology-reasoning-framework",
+                      "name":  "Epistemology Reasoning Framework",
+                      "lane":  "artifact",
+                      "category":  "research",
+                      "path":  "artifacts/epistemology-reasoning-framework",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "exfat-windows-fix",
+                      "name":  "exFAT Windows Fix for Next.js / Webpack",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/exfat-windows-fix",
+                      "status":  "stable",
+                      "kind":  "finding"
+                  },
+                  {
+                      "id":  "facebook-domain-verification",
+                      "name":  "Facebook Business Domain Verification (dual-method)",
+                      "lane":  "artifact",
+                      "category":  "ops",
+                      "path":  "artifacts/facebook-domain-verification",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "finite-state-machine-workflows",
+                      "name":  "Finite State Machine for Workflows",
+                      "lane":  "artifact",
+                      "category":  [
+                                       "business",
+                                       "ops"
+                                   ],
+                      "path":  "artifacts/finite-state-machine-workflows",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "frontend-deploy-bash-pattern",
+                      "name":  "Frontend Deploy Bash Pattern",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/frontend-deploy-bash-pattern",
+                      "status":  "stable",
+                      "kind":  "template"
+                  },
+                  {
+                      "id":  "git-workflow-windows",
+                      "name":  "Git Workflow — Windows + Private GitHub Repo",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/git-workflow-windows",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "json-repair-fallback",
+                      "name":  "LLM JSON Repair \u0026 Fallback",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/json-repair-fallback",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "llm-provider-fallback",
+                      "name":  "LLM Provider Fallback Router",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/llm-provider-fallback",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "meta-capi-dedup",
+                      "name":  "Meta Pixel + Conversions API with Dedup",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/meta-capi-dedup",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "money-math-minor-units",
+                      "name":  "Money Math in Minor Units",
+                      "lane":  "artifact",
+                      "category":  [
+                                       "business"
+                                   ],
+                      "path":  "artifacts/money-math-minor-units",
+                      "status":  "stable",
+                      "kind":  "formula"
+                  },
+                  {
+                      "id":  "nextjs-subdomain-multitenant",
+                      "name":  "Next.js Subdomain Multi-Tenant Routing",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/nextjs-subdomain-multitenant",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "nextjs-webgl-deploy-gotchas",
+                      "name":  "Next.js + Three.js Deploy \u0026 WebGL Debugging Gotchas",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/nextjs-webgl-deploy-gotchas",
+                      "status":  "stable",
+                      "kind":  "finding"
+                  },
+                  {
+                      "id":  "nginx-security-headers-pattern",
+                      "name":  "Nginx Security Headers Pattern",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/nginx-security-headers-pattern",
+                      "status":  "stable",
+                      "kind":  "template"
+                  },
+                  {
+                      "id":  "pm2-feature-flag-ecosystem-config",
+                      "name":  "PM2 Ecosystem Config with Feature Flags",
+                      "lane":  "artifact",
+                      "category":  "ops",
+                      "path":  "artifacts/pm2-feature-flag-ecosystem-config",
+                      "status":  "stable",
+                      "kind":  "template"
+                  },
+                  {
+                      "id":  "prompt-chain-orchestration",
+                      "name":  "Prompt Chain Orchestration",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/prompt-chain-orchestration",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "repo-cartography-handoff",
+                      "name":  "Repository Cartography \u0026 Agent Handoff",
+                      "lane":  "artifact",
+                      "category":  "ops",
+                      "path":  "artifacts/repo-cartography-handoff",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "reward-gamification-system",
+                      "name":  "Reward \u0026 Gamification System",
+                      "lane":  "artifact",
+                      "category":  [
+                                       "business"
+                                   ],
+                      "path":  "artifacts/reward-gamification-system",
+                      "status":  "stable",
+                      "kind":  "template"
+                  },
+                  {
+                      "id":  "shopee-data-import",
+                      "name":  "Shopee Storefront to Your DB — decision tree",
+                      "lane":  "artifact",
+                      "category":  "ops",
+                      "path":  "artifacts/shopee-data-import",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "shopee-open-platform-integration",
+                      "name":  "Shopee Open Platform — Partner App Integration",
+                      "lane":  "artifact",
+                      "category":  "ops",
+                      "path":  "artifacts/shopee-open-platform-integration",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "storyboard-prompt-variants",
+                      "name":  "Storyboard Prompt Variants",
+                      "lane":  "artifact",
+                      "category":  "video",
+                      "path":  "artifacts/storyboard-prompt-variants",
+                      "status":  "stable",
+                      "kind":  "template"
+                  },
+                  {
+                      "id":  "tiered-pricing-package-resolution",
+                      "name":  "Tiered Pricing \u0026 Package Resolution",
+                      "lane":  "artifact",
+                      "category":  [
+                                       "business"
+                                   ],
+                      "path":  "artifacts/tiered-pricing-package-resolution",
+                      "status":  "stable",
+                      "kind":  "formula"
+                  },
+                  {
+                      "id":  "token-cost-estimator",
+                      "name":  "Multi-Provider Token \u0026 Cost Estimator",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/token-cost-estimator",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "tool-calling-resilient",
+                      "name":  "Resilient Cross-Provider Tool Calling",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/tool-calling-resilient",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "workflow-node-schema",
+                      "name":  "Visual Workflow Node Schema",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/workflow-node-schema",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  }
               ]
 }
