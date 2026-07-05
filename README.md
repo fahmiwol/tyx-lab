@@ -4,14 +4,14 @@
 <h3 align="center">Atomic Building Blocks for AI Agents, LLM Apps, RAG &amp; Modern Software</h3>
 
 <p align="center">
-150+ copy-paste-ready <b>modules</b> &amp; <b>artifacts</b> &mdash; LLM routing, RAG, agent loops, prompt engineering, fintech ledgers, Next.js SaaS, Three.js &mdash; each one distilled from a <b>real, running production system</b>.
+142 copy-paste-ready <b>modules</b> &amp; <b>artifacts</b> &mdash; LLM routing, RAG, agent loops, prompt engineering, fintech ledgers, Next.js SaaS, Three.js &mdash; each one distilled from a <b>real, running production system</b>. Every atom is self-contained: lift it out and use it, no framework attached.
 <br/><b>Open source &mdash; use it wisely.</b>
 </p>
 
 <p align="center">
 <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT"/>
-<img src="https://img.shields.io/badge/atoms-150-6366f1" alt="atoms"/>
-<img src="https://img.shields.io/badge/modules-100-22c55e" alt="modules"/>
+<img src="https://img.shields.io/badge/atoms-142-6366f1" alt="atoms"/>
+<img src="https://img.shields.io/badge/modules-92-22c55e" alt="modules"/>
 <img src="https://img.shields.io/badge/artifacts-50-a855f7" alt="artifacts"/>
 <img src="https://img.shields.io/badge/status-living-brightgreen" alt="living"/>
 </p>
@@ -26,24 +26,24 @@
 
 Every atom here was pulled out of a real system and stripped down to its **smallest reusable unit**. The rule: **each atom does exactly one thing** &mdash; so you can lift it into a completely different project and stitch it together your way. No monolith, no framework lock-in, no theory. Just building blocks with the *why* written down.
 
-- **`modules/`** &mdash; atomic **code** (one job, importable): `README.md` + `LOGIC.md` + `USAGE.md` + `module.json` + `src/`
+- **`modules/`** &mdash; atomic **code** (one job, importable): `module.json` + `src/` + `README.md`
 - **`artifacts/`** &mdash; atomic **non-code** (prompt, template, formula, method, playbook, framework, checklist, finding): a self-contained `ARTIFACT.md` + `artifact.json`
 - **`recipes/`** &mdash; how to stitch several atoms into a working use case
 
 ## Who is this for?
 
-Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, AI tools, self-hosted models, SaaS, or software** who would rather copy a battle-tested piece than reinvent it. Take the atom, read the reasoning in its `LOGIC.md` (or the artifact's *Why* section), and ship.
+Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, AI tools, self-hosted models, SaaS, or software** who would rather copy a battle-tested piece than reinvent it. Open a module, read the `README` and the code in `src/` (or an artifact's *Why* section), and ship.
 
 ---
 
-## Catalog &mdash; 150 atoms
+## Catalog &mdash; 142 atoms
 
-> `100` modules &middot; `50` artifacts. Machine-readable index: [`index.json`](index.json).
+> `92` modules &middot; `50` artifacts. Machine-readable index: [`index.json`](index.json).
 
-### Modules &mdash; atomic code (100)
+### Modules &mdash; atomic code (92)
 
 <details open>
-<summary><b>AI, Agents & LLM</b> (23)</summary>
+<summary><b>AI, Agents & LLM</b> (19)</summary>
 
 - **[Agent Memory: 3-Layer Progressive Retrieval](modules/agent-memory-3layer-retrieval)** &mdash; Memory architecture for agents: index layer (FTS5), timeline layer (recent events), full context layer. Reduces token use 10x via progressive retri...
 - **[Agent Persona Registry](modules/agent-persona-registry)** &mdash; Unified schema for registering NPC identities, personalities, skills, and role mappings in multi-agent systems.
@@ -53,9 +53,6 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, AI tools, self
 - **[Behavior Tree & FSM State Model](modules/behavior-tree-fsm-state-model)** &mdash; Declarative schema for agent behavior: finite state machine (FSM) with states, transitions, conditions, and actions. Serializable and composable.
 - **[Brand Schema Validator](modules/brand-schema-validator)** &mdash; Zod-based schema for 5-step brand brief intake: positioning, competitive analysis, tone, archetype, cultural context. Validates form input, LLM out...
 - **[Dialogue Tree: Branching Narrative Model](modules/dialogue-tree-branching-narrative)** &mdash; Declarative dialogue tree for NPC conversations: branches, conditions, player choices, dialogue outcomes. Serializable for save/load and branching ...
-- **[Haal: User-State Conditioning](modules/haal-user-state-conditioning)** &mdash; User's current state (brand_haal, audience_haal, temporal_haal, spatial_haal) is not metadataâ€”it's first-class computation input. Conditions gene...
-- **[Hierarchical Semantic Layers (Zahir/Batin/Hadd/Mathla)](modules/semantic-layers-decompose)** &mdash; Decomposes text into simultaneous valid semantic layers: surface (Zahir), inner intent (Batin), boundaries (Hadd), ultimate purpose (Mathla). Enabl...
-- **[I'jaz Multi-Scale Coherence Evaluator](modules/ijaz-coherence-quality)** &mdash; Evaluates creative output across 6 scales: word, element, piece, campaign, brand, audience. Harmonic mean; weakest link drags result.
 - **[Jungian Archetype Selector](modules/jungian-archetype-selector)** &mdash; Canonical 12 Jungian brand archetypes mapped to quadrants with voice markers, core desires, and brand examples â€” for strategic positioning and na...
 - **[LLM Provider Registry Switchable](modules/llm-provider-registry-switchable)** &mdash; Declarative multi-provider LLM registry with fallback support (OpenRouter, HF, OpenAI, Anthropic, Gemini, custom)
 - **[Multi-Provider AI Router](modules/ai-router)** &mdash; Unified LLM client with auto-fallback: Geminiâ†’Cerebrasâ†’OpenAIâ†’Anthropicâ†’Pollinations. Prioritizes BYOK.
@@ -65,7 +62,6 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, AI tools, self
 - **[Skill Registry Contract Pattern](modules/skill-registry-contract)** &mdash; Contract-enforced skill registry with boot-time validation: description and parameters mandatory, tools self-documenting.
 - **[Telegram Command Router & Inline Keyboard Builder](modules/telegram-command-router)** &mdash; Route Telegram bot commands to handlers and build inline keyboard UI with callback actions.
 - **[Tile Grid Coordinator](modules/tile-grid-coordinator)** &mdash; Pure grid coordinate conversion utility for top-down and isometric tile maps (RPG/Gather-style). Square tiles, screen offset support, Manhattan dis...
-- **[Tool Registry & Dispatch Pattern](modules/tool-registry-dispatch)** &mdash; Centralized registry of available tools/skills. Agents query registry to discover available actions, validate parameters, execute with permission g...
 - **[Tools Catalogue Schema](modules/tools-catalogue-schema)** &mdash; Unified registry schema for media providers, LLM vendors, and callable tools with free/paid status, fallback chains, and compatibility.
 - **[TTS Provider Wrapper](modules/tts-provider-wrapper)** &mdash; Abstraction layer for TTS services (OpenAI, Google Cloud, Azure) with caching, rate limiting, and streaming output. Normalizes provider APIs into u...
 
@@ -105,7 +101,7 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, AI tools, self
 </details>
 
 <details open>
-<summary><b>Business, SaaS & Fintech</b> (22)</summary>
+<summary><b>Business, SaaS & Fintech</b> (21)</summary>
 
 - **[Append-Only Audit Log](modules/audit-log-pattern)** &mdash; Immutable append-only audit trail for fintech/compliance. Dual-track user + admin logs with soft-fail, denormalization, and request metadata capture.
 - **[Command Intent Router](modules/command-intent-router)** &mdash; Parse text commands and route to intent handlers. Supports regex patterns, fuzzy matching, and parameter extraction.
@@ -126,7 +122,6 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, AI tools, self
 - **[Transfer Intent Checkout State](modules/transfer-intent-checkout-state)** &mdash; Embeddable payment checkout lifecycle: (1) Client creates intent via public API key, (2) Proxy forwards to bank with internal key (CORS-safe), (3) ...
 - **[Trigger-Based Reward Schedule](modules/trigger-reward-schedule)** &mdash; Maps activity triggers (VIDEO_WATCH, QUIZ_COMPLETE, MISSION, etc.) â†’ default reward amounts. Each trigger row: { trigger, label, defaultAmount, i...
 - **[Wallet Denomination Ledger](modules/wallet-denomination-ledger)** &mdash; Append-only transaction log per wallet, per denomination. Tracks all movements: TRANSFER in/out, MINT received, BURN removed, HOLD reserved, SETTLE...
-- **[Withdrawal State Machine](modules/withdrawal-state-machine)** &mdash; Two-phase settlement: (1) PENDING â€” funds held on-chain, (2) COMPLETE â€” transferred to external account. Tracks state transition + admin confir...
 - **[Workflow DAG Executor](modules/workflow-dag-executor)** &mdash; Validate a workflow DAG (node integrity, cycle detection) and simulate/execute nodes in dependency order.
 - **[Workflow Node Registry Builder](modules/workflow-node-registry-builder)** &mdash; Extensible registry of workflow node types with ports, executors, and UI metadata.
 
@@ -154,28 +149,25 @@ Anyone building **AI agents, agentic AI, LLM apps, RAG pipelines, AI tools, self
 </details>
 
 <details open>
-<summary><b>Video, Media & Publishing</b> (6)</summary>
+<summary><b>Video, Media & Publishing</b> (5)</summary>
 
 - **[Infinite Feed Renderer](modules/infinite-feed-renderer)** &mdash; Vertical infinite scroll feed container with post list and navigation. Decoupled from data source; compose with your own post component.
 - **[Ken Burns FFmpeg Renderer](modules/ken-burns-ffmpeg-renderer)** &mdash; Command-line video generation from still images using Ken Burns zoom-pan effect. Chains ffmpeg with zoompan filter for cinematic imageâ†’video conv...
 - **[Multi-Platform Publisher Adapter](modules/multi-platform-publisher-adapter)** &mdash; One interface to publish/assist-publish a video to YouTube, TikTok, Instagram, and Facebook.
 - **[Story Carousel Component](modules/story-carousel-component)** &mdash; Instagram-style story carousel using compound component pattern. Horizontal scroll with narrative-driven UX. Styled, responsive.
-- **[Video Script & Storyboard Generator](modules/video-script-storyboard-generator)** &mdash; Generate short-form video scripts with multiple angle variants and a shot-by-shot storyboard.
 - **[YouTube Resumable Upload Wrapper](modules/youtube-upload-wrapper)** &mdash; Wrap the YouTube Data API for OAuth + resumable uploads with processing/transcript polling.
 
 </details>
 
 <details open>
-<summary><b>3D, Graphics & Games</b> (12)</summary>
+<summary><b>3D, Graphics & Games</b> (10)</summary>
 
 - **[A* Tilemap Pathfinder](modules/astar-tilemap-pathfinder)** &mdash; Classic A* pathfinding algorithm for orthogonal tile grids. Supports 4 or 8-direction movement, configurable heuristics (Manhattan/Euclidean), and ...
-- **[Cinematic Camera Controller](modules/cinematic-camera-controller)** &mdash; Three.js OrthographicCamera controller with preset cinematic animations (building pan, agent zoom, orbit, room sweep). Smooth easing, auto-return o...
 - **[Day Night Cycle](modules/day-night-cycle)** &mdash; 24-hour environment cycle for Three.js scenes. Interpolates directional light, ambient light, fog, and clear color through keyframe-defined phases ...
 - **[Game Loop with Fixed Timestep](modules/game-loop-fixed-timestep)** &mdash; requestAnimationFrame game loop with decoupled fixed-rate update (physics/logic) and variable-rate render. Includes frame skip limits, FPS tracking...
 - **[Image with Fallback Component](modules/image-with-fallback)** &mdash; React component for images with inline fallback SVG on load error. Preserves dims and className. Useful for user-generated content, avatars, produc...
 - **[NPC World State Model](modules/npc-world-state-model)** &mdash; Declarative JSON schema for representing a room/world state: grid, objects, agents, zones, floors, themes.
 - **[Orthographic Camera Rig](modules/orthographic-camera-rig)** &mdash; Three.js orthographic camera controller with smooth follow, drag-to-pan, mouse wheel zoom, and touch pinch-zoom. Ideal for top-down/isometric games...
-- **[Particle Avatar Engine](modules/particle-avatar-engine)** &mdash; Client-side Canvas 2D point-cloud avatar generator. Converts photos to dot patterns with luminance-based sizing, assembly/drift animation, and defa...
 - **[Raycaster Object Picker](modules/raycaster-object-picker)** &mdash; Three.js mouse/touch-to-3D object picking via raycasting. Click/tap to select objects, optional hover highlighting with customizable color. Event-d...
 - **[Sprite Sheet Animator](modules/sprite-sheet-animator)** &mdash; Canvas 2D sprite sheet animation player. Manages frame sequences, playback speed, looping, ping-pong, and draw positioning. Ideal for character ani...
 - **[Three.js Scene Bootstrap](modules/three-scene-bootstrap)** &mdash; Minimal WebGL scene initialization with renderer, scene, configurable lights, fog, and resize handling. Factory pattern for lights (ambient/directi...
