@@ -1,0 +1,15 @@
+{
+  "id": "request-guard-sentinel",
+  "name": "Request Guard Sentinel",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Per-entity request health tracker: classify error signals (challenge/rate-limit/auth-fail/blocked), track 3-state health (healthy/cooling/quarantined), automatic escalation with strike count.",
+  "input": [{"name": "entity_id", "type": "string"}, {"name": "signal", "type": "Signal"}],
+  "output": [{"name": "health_state", "type": "HealthState"}, {"name": "available", "type": "boolean"}, {"name": "cooldown_s", "type": "float"}],
+  "tags": ["sentinel", "health-tracking", "signal-detection", "anti-detection"],
+  "compatible_with": ["python3.9+"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
