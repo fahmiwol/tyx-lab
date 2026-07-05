@@ -1,1 +1,1 @@
-
+{"id":"email-template-builder","name":"Email Template Builder","version":"1.0.0","category":"business","description":"Compile email templates with safe variable substitution and reusable partials.","input":[],"output":[],"tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
