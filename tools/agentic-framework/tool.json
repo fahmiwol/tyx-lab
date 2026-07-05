@@ -1,0 +1,17 @@
+{
+  "id": "agentic-framework",
+  "name": "Agentic Framework",
+  "version": "1.0.0",
+  "kind": "script",
+  "category": "ai",
+  "description": "Lightweight framework for building autonomous agents with tool use, planning, and memory. Supports multiple LLM backends, extensible tool registry, conversation state management.",
+  "run": "npm install && node src/agents/runner.js",
+  "input": [{"name": "prompt", "type": "string", "description": "Agent task/prompt"}, {"name": "tools", "type": "array", "description": "Available tool definitions"}],
+  "output": [{"name": "result", "type": "object", "description": "Agent action result"}],
+  "tags": ["agents", "llm", "tool-use", "planning", "ai-framework", "autonomous"],
+  "compatible_with": ["llm-backend", "tool-registry"],
+  "used_in_recipes": ["autonomous-workflow", "ai-assistant"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
