@@ -1,0 +1,14 @@
+{
+  "id": "finite-state-machine-workflows",
+  "name": "Finite State Machine for Workflows",
+  "version": "1.0.0",
+  "kind": "framework",
+  "category": ["business", "ops"],
+  "description": "Model complex processes (payments, withdrawals, approvals) with explicit states, guarded transitions, side effects, and audit trails. Prevents invalid state changes.",
+  "tags": ["workflow", "state-machine", "fintech", "orchestration", "compliance"],
+  "compatible_with": ["typescript", "javascript", "python", "postgresql"],
+  "used_in_recipes": ["payment-processing", "withdrawal-flow", "approval-workflow"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
