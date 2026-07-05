@@ -1,0 +1,14 @@
+{
+  "id": "reward-gamification-system",
+  "name": "Reward & Gamification System",
+  "version": "1.0.0",
+  "kind": "template",
+  "category": ["business"],
+  "description": "Non-monetary reward system with achievement unlocks, leaderboards, and engagement incentives. Points drive user retention without fintech regulatory burden.",
+  "tags": ["gamification", "engagement", "rewards", "achievements", "leaderboards"],
+  "compatible_with": ["typescript", "javascript", "postgresql", "mysql"],
+  "used_in_recipes": ["user-engagement", "content-platform"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
