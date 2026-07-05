@@ -1,0 +1,12 @@
+{
+  "id": "build-mcp-server",
+  "name": "How to Build an MCP Server",
+  "version": "1.0.0",
+  "kind": "methodology",
+  "category": "infra",
+  "description": "Step-by-step guide to authoring a Model Context Protocol server from scratch. Covers architecture, tool definition, registration, testing, deployment, and common patterns.",
+  "tags": ["mcp", "guide", "tutorial", "server", "ai-integration"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
