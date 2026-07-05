@@ -1,0 +1,11 @@
+{
+  "id": "connector-base-guard-pattern",
+  "name": "Connector Base Guard Pattern",
+  "kind": "architecture",
+  "category": "infra",
+  "description": "Multi-platform integration with automatic guard layers: health check → circadian → rate-limit → think delay → transport. Single source of truth for anti-detection logic across all connectors.",
+  "tags": ["pattern", "architecture", "multi-platform", "anti-detection", "guard-layers"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
