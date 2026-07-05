@@ -1,0 +1,14 @@
+{
+  "id": "sitemap-information-architecture",
+  "name": "Sitemap & Information Architecture Template",
+  "version": "1.0.0",
+  "kind": "template",
+  "category": "business",
+  "description": "Framework for organizing content and navigation structure, covering IA principles, structure patterns, labeling strategy, URL conventions, navigation systems, user flows, and consistency checklist.",
+  "tags": ["sitemap", "information-architecture", "ia", "navigation", "url-structure", "content-organization"],
+  "compatible_with": ["figma", "miro", "lucidchart", "mermaid"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
