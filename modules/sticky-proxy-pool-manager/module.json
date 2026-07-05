@@ -1,0 +1,15 @@
+{
+  "id": "sticky-proxy-pool-manager",
+  "name": "Sticky Proxy Pool Manager",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Pool-based proxy manager with 1:1 sticky entity→proxy binding. Same entity always uses same IP (residential/datacenter/VPN). Rotation is across entities. JSON persistence.",
+  "input": [{"name": "entity_id", "type": "string"}],
+  "output": [{"name": "proxy_url", "type": "string"}],
+  "tags": ["proxy-pool", "anti-detection", "sticky", "rotation"],
+  "compatible_with": ["python3.9+"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
