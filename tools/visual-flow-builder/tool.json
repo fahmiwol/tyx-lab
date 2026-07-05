@@ -1,0 +1,23 @@
+{
+  "id": "visual-flow-builder",
+  "name": "Visual Flow Builder",
+  "version": "1.0.0",
+  "kind": "web-app",
+  "category": "infra",
+  "description": "Browser-based visual flow builder for composing multi-step workflows. Drag-and-drop steps, configure parameters, save as JSON, and execute flows.",
+  "run": "Open index.html in any browser or serve via http-server",
+  "input": [
+    { "name": "workflow_name", "type": "string", "description": "Name of the workflow" },
+    { "name": "steps", "type": "array", "description": "Array of workflow steps with type and parameters" }
+  ],
+  "output": [
+    { "name": "workflow_json", "type": "object", "description": "Saved/exported workflow definition" },
+    { "name": "execution_log", "type": "object", "description": "Step-by-step execution results" }
+  ],
+  "tags": ["webapp", "visual", "workflow", "flow-builder", "html"],
+  "compatible_with": ["browser", "electron", "web-container"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
