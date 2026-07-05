@@ -2,7 +2,7 @@
 
 Incentivize user engagement via earned rewards (points, badges, achievements) without monetary cost to platform.
 
-## Core Model (From bank-tiranyx)
+## Core Model (from a production ledger service)
 
 ```typescript
 // Reward triggers — map user actions to point values
