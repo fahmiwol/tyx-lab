@@ -1,0 +1,15 @@
+{
+  "id": "skill-registry-contract",
+  "name": "Skill Registry Contract Pattern",
+  "version": "1.0.0",
+  "category": "ai",
+  "description": "Contract-enforced skill registry with boot-time validation: description and parameters mandatory, tools self-documenting.",
+  "input": ["skill-definition-object"],
+  "output": ["validated-skill-entry"],
+  "tags": ["skill", "registry", "contract", "validation", "boot-time-check", "tool-definition"],
+  "compatible_with": ["agent-persona-registry", "tools-catalogue-schema"],
+  "used_in_recipes": ["agent-skill-wiring"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
