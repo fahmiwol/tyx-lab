@@ -1,0 +1,37 @@
+{
+  "id": "webhook-meta-header-validator",
+  "name": "Webhook Meta Header Validator",
+  "version": "1.0.0",
+  "category": ["infra", "security"],
+  "description": "Validate Meta (WhatsApp/Facebook/Instagram) webhook signature using HMAC-SHA256. Prevents replay/spoofing attacks.",
+  "input": [
+    {
+      "name": "rawBody",
+      "type": "Buffer | string",
+      "description": "Raw request body"
+    },
+    {
+      "name": "signature",
+      "type": "string",
+      "description": "X-Hub-Signature-256 header value"
+    }
+  ],
+  "output": [
+    {
+      "name": "isValid",
+      "type": "boolean",
+      "description": "Signature verification result"
+    },
+    {
+      "name": "body",
+      "type": "object",
+      "description": "Parsed JSON body if valid"
+    }
+  ],
+  "tags": ["webhook", "security", "signature", "meta", "whatsapp"],
+  "compatible_with": ["nodejs", "fastapi", "nestjs"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
