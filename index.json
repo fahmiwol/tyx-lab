@@ -1,9 +1,10 @@
 {
-    "version":  "1.3.0",
+    "version":  "2.0.0",
     "last_updated":  "2026-07-05",
-    "total_modules":  92,
-    "total_artifacts":  50,
-    "total_atoms":  142,
+    "total_modules":  98,
+    "total_artifacts":  69,
+    "total_tools":  21,
+    "total_atoms":  188,
     "atoms":  [
                   {
                       "id":  "agent-economy-credit-minting",
@@ -24,6 +25,15 @@
                       "kind":  "method"
                   },
                   {
+                      "id":  "api-design-checklist",
+                      "name":  "API Design \u0026 Contract Checklist",
+                      "lane":  "artifact",
+                      "category":  "ops",
+                      "path":  "artifacts/api-design-checklist",
+                      "status":  "stable",
+                      "kind":  "checklist"
+                  },
+                  {
                       "id":  "asbabun-nuzul-grounded-brief",
                       "name":  "Asbabun Nuzul: Grounded Brief Pattern",
                       "lane":  "artifact",
@@ -31,6 +41,24 @@
                       "path":  "artifacts/asbabun-nuzul-grounded-brief",
                       "status":  "stable",
                       "kind":  "playbook"
+                  },
+                  {
+                      "id":  "autonomous-growth-flywheel",
+                      "name":  "Autonomous Growth Flywheel",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/autonomous-growth-flywheel",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "autonomy-preflight-checklist",
+                      "name":  "Autonomy System Pre-Flight Checklist",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/autonomy-preflight-checklist",
+                      "status":  "stable",
+                      "kind":  "checklist"
                   },
                   {
                       "id":  "brand-identity-framework",
@@ -51,6 +79,24 @@
                       "kind":  "template"
                   },
                   {
+                      "id":  "brief-to-video-storyboard-pipeline",
+                      "name":  "Brief to Storyboard to Video Pipeline",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/brief-to-video-storyboard-pipeline",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
+                      "id":  "build-mcp-server",
+                      "name":  "How to Build an MCP Server",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/build-mcp-server",
+                      "status":  "stable",
+                      "kind":  "methodology"
+                  },
+                  {
                       "id":  "continuous-learning-evolution-methodology",
                       "name":  "Continuous Learning \u0026 Self-Evolution: System-Centric Learning Without Catastrophic Forgetting",
                       "lane":  "artifact",
@@ -69,11 +115,29 @@
                       "kind":  "framework"
                   },
                   {
+                      "id":  "cost-aware-gpu-training-optimization",
+                      "name":  "Cost-Aware GPU Training Optimization",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/cost-aware-gpu-training-optimization",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
                       "id":  "credit-metering-system",
                       "name":  "Credit Metering System: Real-Time Usage Tracking \u0026 Enforcement",
                       "lane":  "artifact",
                       "category":  "infra",
                       "path":  "artifacts/credit-metering-system",
+                      "status":  "stable",
+                      "kind":  "framework"
+                  },
+                  {
+                      "id":  "design-system-starter",
+                      "name":  "Design System Starter",
+                      "lane":  "artifact",
+                      "category":  "business",
+                      "path":  "artifacts/design-system-starter",
                       "status":  "stable",
                       "kind":  "framework"
                   },
@@ -103,6 +167,15 @@
                       "path":  "artifacts/epistemology-reasoning-framework",
                       "status":  "stable",
                       "kind":  "framework"
+                  },
+                  {
+                      "id":  "erd-data-model-design",
+                      "name":  "ERD \u0026 Data Model Design Method",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/erd-data-model-design",
+                      "status":  "stable",
+                      "kind":  "method"
                   },
                   {
                       "id":  "eval-gate-regression-guard",
@@ -159,6 +232,15 @@
                       "kind":  "playbook"
                   },
                   {
+                      "id":  "idempotent-payment-retry-pattern",
+                      "name":  "Idempotent Payment Retry Pattern",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/idempotent-payment-retry-pattern",
+                      "status":  null,
+                      "kind":  "artifact"
+                  },
+                  {
                       "id":  "ihos-epistemology-framework",
                       "name":  "IHOS Epistemology Framework",
                       "lane":  "artifact",
@@ -166,6 +248,15 @@
                       "path":  "artifacts/ihos-epistemology-framework",
                       "status":  "stable",
                       "kind":  "framework"
+                  },
+                  {
+                      "id":  "infrastructure-context-mapping",
+                      "name":  "Infrastructure Context Mapping",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/infrastructure-context-mapping",
+                      "status":  "stable",
+                      "kind":  "playbook"
                   },
                   {
                       "id":  "json-repair-fallback",
@@ -267,6 +358,15 @@
                       "kind":  "template"
                   },
                   {
+                      "id":  "prd-template-structure",
+                      "name":  "PRD Template \u0026 Structure",
+                      "lane":  "artifact",
+                      "category":  "business",
+                      "path":  "artifacts/prd-template",
+                      "status":  "stable",
+                      "kind":  "template"
+                  },
+                  {
                       "id":  "pricing-plans-schema",
                       "name":  "Pricing Plans Schema",
                       "lane":  "artifact",
@@ -292,6 +392,15 @@
                       "path":  "artifacts/prompt-version-tracking",
                       "status":  "stable",
                       "kind":  "method"
+                  },
+                  {
+                      "id":  "rbac-role-permission-matrix",
+                      "name":  "RBAC Role/Permission Matrix Template",
+                      "lane":  "artifact",
+                      "category":  "ops",
+                      "path":  "artifacts/rbac-role-permission-matrix",
+                      "status":  "stable",
+                      "kind":  "template"
                   },
                   {
                       "id":  "react-agent-loop-pattern",
@@ -330,6 +439,15 @@
                       "kind":  "template"
                   },
                   {
+                      "id":  "runpod-gpu-training-pipeline",
+                      "name":  "Runpod Gpu Training Pipeline",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/runpod-gpu-training-pipeline",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
                       "id":  "sanad-dataset-provenance",
                       "name":  "Dataset Provenance: The Sanad Method (Certification Chain)",
                       "lane":  "artifact",
@@ -337,6 +455,15 @@
                       "path":  "artifacts/sanad-dataset-provenance",
                       "status":  "stable",
                       "kind":  "method"
+                  },
+                  {
+                      "id":  "security-compliance-checklist",
+                      "name":  "Security \u0026 Compliance Checklist",
+                      "lane":  "artifact",
+                      "category":  "ops",
+                      "path":  "artifacts/security-compliance-checklist",
+                      "status":  "stable",
+                      "kind":  "checklist"
                   },
                   {
                       "id":  "selective-adoption-doctrine",
@@ -375,11 +502,38 @@
                       "kind":  "playbook"
                   },
                   {
+                      "id":  "sitemap-information-architecture",
+                      "name":  "Sitemap \u0026 Information Architecture Template",
+                      "lane":  "artifact",
+                      "category":  "business",
+                      "path":  "artifacts/sitemap-information-architecture",
+                      "status":  "stable",
+                      "kind":  "template"
+                  },
+                  {
                       "id":  "slm-distillation-pipeline",
                       "name":  "SLM Distillation Pipeline: Teacher-Student Recursive Refinement",
                       "lane":  "artifact",
                       "category":  "ai",
                       "path":  "artifacts/slm-distillation-pipeline",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "slm-identity-training-guide",
+                      "name":  "SLM Identity Training Guide",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/slm-identity-training-guide",
+                      "status":  "stable",
+                      "kind":  "guide"
+                  },
+                  {
+                      "id":  "slm-training-pipeline-patterns",
+                      "name":  "Slm Training Pipeline Patterns",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/slm-training-pipeline-patterns",
                       "status":  "stable",
                       "kind":  "method"
                   },
@@ -438,6 +592,15 @@
                       "kind":  "method"
                   },
                   {
+                      "id":  "transaction-settlement-state-machine",
+                      "name":  "Transaction Settlement State Machine",
+                      "lane":  "artifact",
+                      "category":  "business",
+                      "path":  "artifacts/transaction-settlement-state-machine",
+                      "status":  null,
+                      "kind":  "artifact"
+                  },
+                  {
                       "id":  "voice-clone-tts-playbook",
                       "name":  "Voice Clone \u0026 TTS Playbook",
                       "lane":  "artifact",
@@ -447,6 +610,15 @@
                       "kind":  "playbook"
                   },
                   {
+                      "id":  "wireframe-to-prototype-method",
+                      "name":  "Wireframe to Prototype Method",
+                      "lane":  "artifact",
+                      "category":  "business",
+                      "path":  "artifacts/wireframe-to-prototype-method",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
                       "id":  "workflow-node-schema",
                       "name":  "Visual Workflow Node Schema",
                       "lane":  "artifact",
@@ -454,6 +626,14 @@
                       "path":  "artifacts/workflow-node-schema",
                       "status":  "stable",
                       "kind":  "framework"
+                  },
+                  {
+                      "id":  "admin-approval-maker-checker",
+                      "name":  "Admin Approval Workflow â€” Maker-Checker Pattern",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/admin-approval-maker-checker",
+                      "status":  "stable"
                   },
                   {
                       "id":  "aes-256-gcm-secret",
@@ -557,6 +737,14 @@
                       "lane":  "module",
                       "category":  "infra",
                       "path":  "modules/auth-session-token-manager",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "b2b-api-key-gateway-pattern",
+                      "name":  "B2B API-Key Gateway Pattern",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/b2b-api-key-gateway-pattern",
                       "status":  "stable"
                   },
                   {
@@ -701,6 +889,14 @@
                       "lane":  "module",
                       "category":  "infra",
                       "path":  "modules/env-config-schema",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "exchange-rate-oracle-updater",
+                      "name":  "Exchange Rate Oracle Updater",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/exchange-rate-oracle-updater",
                       "status":  "stable"
                   },
                   {
@@ -1040,6 +1236,14 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "statement-receipt-generator",
+                      "name":  "Statement \u0026 Receipt Generator",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/statement-receipt-generator",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "stealth-fetch-engine",
                       "name":  "Stealth Fetch Engine",
                       "lane":  "module",
@@ -1085,6 +1289,22 @@
                       "lane":  "module",
                       "category":  "ai",
                       "path":  "modules/tile-grid-coordinator",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "token-burn-redemption-audit",
+                      "name":  "Token Burn \u0026 Redemption Audit Trail",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/token-burn-redemption-audit",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "token-supply-cap-accounting",
+                      "name":  "Token Supply Cap \u0026 Reserve Accounting",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/token-supply-cap-accounting",
                       "status":  "stable"
                   },
                   {
@@ -1190,6 +1410,195 @@
                       "category":  "video",
                       "path":  "modules/youtube-upload-wrapper",
                       "status":  "stable"
+                  },
+                  {
+                      "id":  "agentic-framework",
+                      "name":  "Agentic Framework",
+                      "lane":  "tool",
+                      "category":  "ai",
+                      "path":  "tools/agentic-framework",
+                      "status":  "stable",
+                      "kind":  "script"
+                  },
+                  {
+                      "id":  "ai-prompt-lab",
+                      "name":  "AI Prompt Lab",
+                      "lane":  "tool",
+                      "category":  "ai",
+                      "path":  "tools/ai-prompt-lab",
+                      "status":  "stable",
+                      "kind":  "web-app"
+                  },
+                  {
+                      "id":  "bg-remover",
+                      "name":  "Background Remover",
+                      "lane":  "tool",
+                      "category":  "ai",
+                      "path":  "tools/bg-remover",
+                      "status":  "stable",
+                      "kind":  "web-app"
+                  },
+                  {
+                      "id":  "canvas-editor",
+                      "name":  "Canvas Editor (Fabric.js)",
+                      "lane":  "tool",
+                      "category":  "3d",
+                      "path":  "tools/canvas-editor",
+                      "status":  "stable",
+                      "kind":  "web-app"
+                  },
+                  {
+                      "id":  "cli-tool-starter",
+                      "name":  "CLI Tool Template",
+                      "lane":  "tool",
+                      "category":  "infra",
+                      "path":  "tools/cli-tool-starter",
+                      "status":  "stable",
+                      "kind":  "cli"
+                  },
+                  {
+                      "id":  "connector-adapter",
+                      "name":  "Platform Connector Adapter",
+                      "lane":  "tool",
+                      "category":  "infra",
+                      "path":  "tools/connector-adapter",
+                      "status":  "stable",
+                      "kind":  "script"
+                  },
+                  {
+                      "id":  "content-calendar",
+                      "name":  "Content Calendar",
+                      "lane":  "tool",
+                      "category":  "business",
+                      "path":  "tools/content-calendar",
+                      "status":  "stable",
+                      "kind":  "web-app"
+                  },
+                  {
+                      "id":  "embeddable-balance-widget-sdk",
+                      "name":  "Embeddable Balance Widget SDK",
+                      "lane":  "tool",
+                      "category":  "business",
+                      "path":  "tools/embeddable-balance-widget-sdk",
+                      "status":  "stable",
+                      "kind":  "tool"
+                  },
+                  {
+                      "id":  "image-to-3d",
+                      "name":  "Image to 3D",
+                      "lane":  "tool",
+                      "category":  "3d",
+                      "path":  "tools/image-to-3d",
+                      "status":  "stable",
+                      "kind":  "web-app"
+                  },
+                  {
+                      "id":  "image-to-video",
+                      "name":  "Image to Video",
+                      "lane":  "tool",
+                      "category":  "video",
+                      "path":  "tools/image-to-video",
+                      "status":  "stable",
+                      "kind":  "web-app"
+                  },
+                  {
+                      "id":  "log-viewer",
+                      "name":  "Log Viewer Dashboard",
+                      "lane":  "tool",
+                      "category":  "ops",
+                      "path":  "tools/log-viewer",
+                      "status":  "stable",
+                      "kind":  "web-app"
+                  },
+                  {
+                      "id":  "map-generator",
+                      "name":  "Map Generator",
+                      "lane":  "tool",
+                      "category":  "design",
+                      "path":  "tools/map-generator",
+                      "status":  "stable",
+                      "kind":  "web-app"
+                  },
+                  {
+                      "id":  "mcp-server-starter",
+                      "name":  "MCP Server Skeleton",
+                      "lane":  "tool",
+                      "category":  "infra",
+                      "path":  "tools/mcp-server-starter",
+                      "status":  "stable",
+                      "kind":  "mcp-server"
+                  },
+                  {
+                      "id":  "npc-generator",
+                      "name":  "NPC Generator",
+                      "lane":  "tool",
+                      "category":  "game",
+                      "path":  "tools/npc-generator",
+                      "status":  "stable",
+                      "kind":  "web-app"
+                  },
+                  {
+                      "id":  "photo-editor",
+                      "name":  "Photo Editor",
+                      "lane":  "tool",
+                      "category":  "design",
+                      "path":  "tools/photo-editor",
+                      "status":  "stable",
+                      "kind":  "web-app"
+                  },
+                  {
+                      "id":  "tts-module",
+                      "name":  "TTS Voice Module",
+                      "lane":  "tool",
+                      "category":  "ai",
+                      "path":  "tools/tts-module",
+                      "status":  "stable",
+                      "kind":  "script"
+                  },
+                  {
+                      "id":  "upload-monitor",
+                      "name":  "Upload Monitor Dashboard",
+                      "lane":  "tool",
+                      "category":  "ops",
+                      "path":  "tools/upload-monitor",
+                      "status":  "stable",
+                      "kind":  "web-app"
+                  },
+                  {
+                      "id":  "usage-dashboard",
+                      "name":  "Credit \u0026 Usage Dashboard",
+                      "lane":  "tool",
+                      "category":  "business",
+                      "path":  "tools/usage-dashboard",
+                      "status":  "stable",
+                      "kind":  "web-app"
+                  },
+                  {
+                      "id":  "video-editor",
+                      "name":  "Video Editor",
+                      "lane":  "tool",
+                      "category":  "video",
+                      "path":  "tools/video-editor",
+                      "status":  "stable",
+                      "kind":  "web-app"
+                  },
+                  {
+                      "id":  "visual-flow-builder",
+                      "name":  "Visual Flow Builder",
+                      "lane":  "tool",
+                      "category":  "infra",
+                      "path":  "tools/visual-flow-builder",
+                      "status":  "stable",
+                      "kind":  "web-app"
+                  },
+                  {
+                      "id":  "world-editor",
+                      "name":  "World Config Editor",
+                      "lane":  "tool",
+                      "category":  "ops",
+                      "path":  "tools/world-editor",
+                      "status":  "stable",
+                      "kind":  "web-app"
                   }
               ]
 }
