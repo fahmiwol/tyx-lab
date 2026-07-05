@@ -1,0 +1,23 @@
+{
+  "id": "cli-tool-starter",
+  "name": "CLI Tool Template",
+  "version": "1.0.0",
+  "kind": "cli",
+  "category": "infra",
+  "description": "Minimal command-line interface template with argument parsing, config storage, and example commands. Adapt for any domain.",
+  "run": "node src/cli_tool.js --help",
+  "input": [
+    { "name": "command", "type": "string", "description": "Command to execute (fetch, action, list, add)" },
+    { "name": "options", "type": "object", "description": "Command-specific flags and arguments" }
+  ],
+  "output": [
+    { "name": "status", "type": "string", "description": "Operation status" },
+    { "name": "data", "type": "object", "description": "Result data (JSON)" }
+  ],
+  "tags": ["cli", "template", "nodejs", "command-line"],
+  "compatible_with": ["bash", "zsh", "powershell"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
