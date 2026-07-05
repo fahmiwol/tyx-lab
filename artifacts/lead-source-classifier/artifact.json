@@ -1,0 +1,1 @@
+{"id":"lead-source-classifier","name":"Lead Source & Bounce Reason Taxonomy","version":"1.0.0","category":["crm","business"],"kind":"framework","description":"Extensible enum of lead sources (WhatsApp, Referral, Cold Call, etc.) and bounce reasons (price, budget, competitor, etc.). Use for CRM pipeline classification.","author":"Tiranyx","license":"MIT"}
