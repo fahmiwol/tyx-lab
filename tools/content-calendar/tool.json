@@ -1,0 +1,17 @@
+{
+  "id": "content-calendar",
+  "name": "Content Calendar",
+  "version": "1.0.0",
+  "kind": "web-app",
+  "category": "business",
+  "description": "Editorial calendar for content planning and scheduling. Month/week/day views, drag-drop scheduling, status tracking, team collaboration.",
+  "run": "cd tools/content-calendar && npm install && npm run dev",
+  "input": [{"name": "GATEWAY_URL", "type": "string", "description": "Backend for calendar data"}],
+  "output": [{"name": "events", "type": "array", "description": "Scheduled content items"}],
+  "tags": ["calendar", "content-planning", "scheduling", "react", "vite"],
+  "compatible_with": ["cms", "workflow-engine"],
+  "used_in_recipes": ["editorial-workflow", "publishing-pipeline"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
