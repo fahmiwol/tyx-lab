@@ -1,0 +1,20 @@
+{
+  "id": "knowledge-graph-wikilinks",
+  "name": "Knowledge Graph from Wikilinks",
+  "version": "1.0.0",
+  "category": "research",
+  "description": "Pure TypeScript module to extract and build directed graphs from markdown notes using [[wikilink]] syntax. Backlink indexing, graph visualization data, normalized slug matching.",
+  "input": [
+    { "name": "notes", "type": "Note[]", "description": "Array of markdown note objects with content containing [[wikilinks]]" }
+  ],
+  "output": [
+    { "name": "graphData", "type": "GraphData", "description": "Nodes (with degree) and edges ready for D3/Three.js/force-directed layout" },
+    { "name": "backlinks", "type": "Record<string, string[]>", "description": "Reverse index mapping note ID to array of linking note IDs" }
+  ],
+  "tags": ["markdown", "knowledge-base", "graph", "wikilink", "obsidian-style"],
+  "compatible_with": ["nodejs", "browser", "typescript", "react", "vue", "svelte"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
