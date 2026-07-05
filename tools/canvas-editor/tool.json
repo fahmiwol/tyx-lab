@@ -1,0 +1,17 @@
+{
+  "id": "canvas-editor",
+  "name": "Canvas Editor (Fabric.js)",
+  "version": "1.0.0",
+  "kind": "web-app",
+  "category": "3d",
+  "description": "2D canvas editor powered by Fabric.js v6. Full-featured drawing, object manipulation, export/import with REST API backend (Express).",
+  "run": "cd tools/canvas-editor && npm install && npm run dev",
+  "input": [{"name": "CORS_ORIGINS", "type": "string", "description": "Comma-separated CORS origins (default: localhost:9797,8080,5173)"}],
+  "output": [{"name": "canvas_json", "type": "object", "description": "Canvas state as JSON export"}],
+  "tags": ["drawing", "fabric.js", "2d-editor", "react", "express", "canvas"],
+  "compatible_with": ["design-suite", "asset-manager"],
+  "used_in_recipes": ["design-export", "collaborative-editing"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
