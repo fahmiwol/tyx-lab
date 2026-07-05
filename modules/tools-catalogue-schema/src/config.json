@@ -1,0 +1,9 @@
+{
+  "provider": "pollinations",
+  "category": "image",
+  "models": ["flux", "sdxl"],
+  "key_required": false,
+  "free": true,
+  "cost_per_1k": 0,
+  "description": "Free image generation, no API key needed"
+}
