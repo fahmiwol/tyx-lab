@@ -1,0 +1,20 @@
+{
+  "id": "orthographic-camera-rig",
+  "name": "Orthographic Camera Rig",
+  "version": "1.0.0",
+  "category": "3d",
+  "description": "Three.js orthographic camera controller with smooth follow, drag-to-pan, mouse wheel zoom, and touch pinch-zoom. Ideal for top-down/isometric games. Handles viewport-relative panning and zoom smoothing.",
+  "input": [
+    { "name": "options", "type": "Object", "description": "width, height, zoom, followSmoothing, panSpeed" },
+    { "name": "x, y", "type": "number", "description": "Target position to follow" }
+  ],
+  "output": [
+    { "name": "camera", "type": "THREE.OrthographicCamera", "description": "Configured orthographic camera instance" }
+  ],
+  "tags": ["3d", "threejs", "camera", "input", "game-dev", "isometric"],
+  "compatible_with": ["browser", "typescript", "threejs"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
