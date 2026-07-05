@@ -75,7 +75,7 @@ Attempted first cloud GPU training run for MiganCore DPO pipeline. Successfully:
 - Need robust GPU fallback logic (implemented)
 
 ### 3.4 Data Transfer from VPS
-- Direct SSH to VPS (`72.62.125.6`) blocked from this Windows machine
+- Direct SSH to VPS (a remote VPS) blocked 
 - Could not access 1,002 real DPO pairs from `/opt/ado/data/training_new/`
 - Used 100 synthetic pairs as fallback for pipeline validation
 
