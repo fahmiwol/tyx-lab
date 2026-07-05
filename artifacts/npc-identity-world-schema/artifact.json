@@ -1,0 +1,14 @@
+{
+  "id": "npc-identity-world-schema",
+  "name": "NPC Agent Identity & World-Object Schema: Gaming AI & Interactive Worlds",
+  "version": "1.0.0",
+  "kind": "schema",
+  "category": "ai",
+  "description": "Unified data model for defining NPC identities, world state, and relationships. Supports emergent gameplay where NPCs react based on persistent episodic/semantic memory and emotional state.",
+  "tags": ["npc", "game-ai", "identity", "world-state", "memory-system", "emergent-gameplay", "hybrid-output"],
+  "compatible_with": ["continuous-learning-tafakkur"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
