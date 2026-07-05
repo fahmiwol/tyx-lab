@@ -1,0 +1,23 @@
+{
+  "id": "ken-burns-ffmpeg-renderer",
+  "name": "Ken Burns FFmpeg Renderer",
+  "version": "1.0.0",
+  "category": "video",
+  "description": "Command-line video generation from still images using Ken Burns zoom-pan effect. Chains ffmpeg with zoompan filter for cinematic image→video conversion. Supports audio padding, batch rendering, and clip concatenation. Uses ffmpeg-static for cross-platform binary support.",
+  "input": [
+    { "name": "inputPath", "type": "string", "description": "Path to input image (JPG/PNG)" },
+    { "name": "duration", "type": "number", "description": "Video duration in seconds" },
+    { "name": "zoomStart, zoomEnd", "type": "number", "description": "Zoom level range (1.0–2.0 typical)" },
+    { "name": "audioPad", "type": "string", "description": "Optional audio file path for voiceover/BGM" }
+  ],
+  "output": [
+    { "name": "success", "type": "boolean", "description": "Render success status" },
+    { "name": "path", "type": "string", "description": "Output MP4 file path" }
+  ],
+  "tags": ["video", "ffmpeg", "media", "rendering", "cli", "node.js"],
+  "compatible_with": ["nodejs", "typescript"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
