@@ -1,0 +1,14 @@
+{
+  "id": "slm-vs-api-decision-framework",
+  "name": "SLM vs Cloud API: Decision Framework for Model Selection",
+  "version": "1.0.0",
+  "kind": "framework",
+  "category": "business",
+  "description": "Decision framework for choosing between self-hosted SLMs (7B-13B) and cloud APIs based on latency, cost, privacy, customization, and reliability requirements.",
+  "tags": ["decision-framework", "model-selection", "cost-analysis", "latency", "privacy", "hybrid-strategy"],
+  "compatible_with": ["self-hosted-model-serving"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
