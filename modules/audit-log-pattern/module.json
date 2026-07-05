@@ -1,0 +1,57 @@
+{
+  "id": "audit-log-pattern",
+  "name": "Append-Only Audit Log",
+  "version": "1.0.0",
+  "category": ["business", "ops"],
+  "description": "Immutable append-only audit trail for fintech/compliance. Dual-track user + admin logs with soft-fail, denormalization, and request metadata capture.",
+  "input": [
+    {
+      "name": "userId",
+      "type": "string | null",
+      "description": "User performing action (nullable for system actions)"
+    },
+    {
+      "name": "username",
+      "type": "string",
+      "description": "Denormalized username frozen at time of action"
+    },
+    {
+      "name": "action",
+      "type": "string",
+      "description": "Action code (e.g., 'user.transfer', 'withdrawal.approve')"
+    },
+    {
+      "name": "payload",
+      "type": "JSON | null",
+      "description": "Structured metadata (before/after snapshots, reason)"
+    },
+    {
+      "name": "ip",
+      "type": "string | null",
+      "description": "Request IP (handles proxies/load balancers)"
+    },
+    {
+      "name": "userAgent",
+      "type": "string | null",
+      "description": "HTTP User-Agent header"
+    }
+  ],
+  "output": [
+    {
+      "name": "auditId",
+      "type": "string",
+      "description": "Unique audit log entry ID (CUID)"
+    },
+    {
+      "name": "createdAt",
+      "type": "DateTime",
+      "description": "Timestamp (auto: now)"
+    }
+  ],
+  "tags": ["fintech", "compliance", "audit", "immutable", "forensics"],
+  "compatible_with": ["prisma", "postgresql", "mysql"],
+  "used_in_recipes": ["transaction-ledger", "payment-processing"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
