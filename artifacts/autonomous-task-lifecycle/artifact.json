@@ -1,0 +1,14 @@
+{
+  "id": "autonomous-task-lifecycle",
+  "name": "Autonomous Task Lifecycle & State Persistence",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "ai",
+  "description": "State machine pattern for long-running AI tasks: pending → started → running → done/failed. Persist state to JSON + Socket.io events for live UI updates. Includes circuit breaker, retry logic, and timeout handling.",
+  "tags": ["async", "state-machine", "persistence", "tasks", "background-jobs"],
+  "compatible_with": ["nodejs", "express"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
