@@ -1,0 +1,14 @@
+{
+  "id": "continuous-learning-evolution-methodology",
+  "name": "Continuous Learning & Self-Evolution: System-Centric Learning Without Catastrophic Forgetting",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "ai",
+  "description": "Methodology for enabling AI agents to continuously improve through experience without retraining base model, based on Stability-Plasticity Tradeoff principle.",
+  "tags": ["continuous-learning", "self-evolution", "meta-cognitive", "episodic-memory", "rag-retrieval", "constitution-reinforcement", "gradient-free"],
+  "compatible_with": ["eval-gate-regression-guard", "sanad-dataset-provenance", "reputation-trust-scoring"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
