@@ -1,11 +1,11 @@
 {
-    "version":  "2.1.0",
+    "version":  "2.2.0",
     "last_updated":  "2026-07-05",
-    "total_modules":  112,
-    "total_artifacts":  70,
-    "total_tools":  22,
+    "total_modules":  117,
+    "total_artifacts":  79,
+    "total_tools":  23,
     "total_recipes":  7,
-    "total_atoms":  204,
+    "total_atoms":  219,
     "atoms":  [
                   {
                       "id":  "agent-economy-credit-minting",
@@ -26,6 +26,24 @@
                       "kind":  "method"
                   },
                   {
+                      "id":  "agent-session-handoff",
+                      "name":  "Agent Session Handoff \u0026 Continuity Pattern",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/agent-session-handoff",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
+                      "id":  "ai-provider-fallback-chain",
+                      "name":  "AI Provider Fallback Chain with Circuit Breaker",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/ai-provider-fallback-chain",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
                       "id":  "api-design-checklist",
                       "name":  "API Design \u0026 Contract Checklist",
                       "lane":  "artifact",
@@ -33,6 +51,15 @@
                       "path":  "artifacts/api-design-checklist",
                       "status":  "stable",
                       "kind":  "checklist"
+                  },
+                  {
+                      "id":  "api-gateway-pattern",
+                      "name":  "Express API Gateway Response Wrapper Pattern",
+                      "lane":  "artifact",
+                      "category":  "infra",
+                      "path":  "artifacts/api-gateway-pattern",
+                      "status":  "stable",
+                      "kind":  "template"
                   },
                   {
                       "id":  "asbabun-nuzul-grounded-brief",
@@ -51,6 +78,15 @@
                       "path":  "artifacts/autonomous-growth-flywheel",
                       "status":  "stable",
                       "kind":  "framework"
+                  },
+                  {
+                      "id":  "autonomous-task-lifecycle",
+                      "name":  "Autonomous Task Lifecycle \u0026 State Persistence",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/autonomous-task-lifecycle",
+                      "status":  "stable",
+                      "kind":  "method"
                   },
                   {
                       "id":  "autonomy-preflight-checklist",
@@ -242,6 +278,15 @@
                       "kind":  "playbook"
                   },
                   {
+                      "id":  "hermes-controller-pattern",
+                      "name":  "Hermes Controller â€” Multi-Agent Orchestration Pattern",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/hermes-controller-pattern",
+                      "status":  "stable",
+                      "kind":  "architecture"
+                  },
+                  {
                       "id":  "idempotent-payment-retry-pattern",
                       "name":  "Idempotent Payment Retry Pattern",
                       "lane":  "artifact",
@@ -321,6 +366,15 @@
                       "path":  "artifacts/money-math-minor-units",
                       "status":  "stable",
                       "kind":  "formula"
+                  },
+                  {
+                      "id":  "multi-agent-dispatch-router",
+                      "name":  "Multi-Agent Intent-Based Dispatch Router",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/multi-agent-dispatch-router",
+                      "status":  "stable",
+                      "kind":  "method"
                   },
                   {
                       "id":  "nextjs-subdomain-multitenant",
@@ -431,6 +485,15 @@
                       "kind":  "method"
                   },
                   {
+                      "id":  "repository-cartography-pattern",
+                      "name":  "Repository Cartography \u0026 Doc Tier Classification",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/repository-cartography-pattern",
+                      "status":  "stable",
+                      "kind":  "method"
+                  },
+                  {
                       "id":  "reputation-trust-scoring",
                       "name":  "Reputation \u0026 Trust Scoring: Multi-Signal Agent Credibility Framework",
                       "lane":  "artifact",
@@ -521,6 +584,15 @@
                       "kind":  "template"
                   },
                   {
+                      "id":  "skill-design-principles",
+                      "name":  "AI Agent Skill Design Principles \u0026 Progressive Disclosure",
+                      "lane":  "artifact",
+                      "category":  "ai",
+                      "path":  "artifacts/skill-design-principles",
+                      "status":  "stable",
+                      "kind":  "playbook"
+                  },
+                  {
                       "id":  "slm-distillation-pipeline",
                       "name":  "SLM Distillation Pipeline: Teacher-Student Recursive Refinement",
                       "lane":  "artifact",
@@ -573,6 +645,15 @@
                       "path":  "artifacts/tenant-isolation-pattern",
                       "status":  "stable",
                       "kind":  "playbook"
+                  },
+                  {
+                      "id":  "threejs-scene-architecture",
+                      "name":  "Three.js Scene Architecture \u0026 Composition Pattern",
+                      "lane":  "artifact",
+                      "category":  "3d",
+                      "path":  "artifacts/threejs-scene-architecture",
+                      "status":  "stable",
+                      "kind":  "method"
                   },
                   {
                       "id":  "tiered-pricing-package-resolution",
@@ -638,6 +719,14 @@
                       "kind":  "framework"
                   },
                   {
+                      "id":  "3d-npc-agent",
+                      "name":  "3D Isometric NPC Agent â€” Random Wander + State Machine",
+                      "lane":  "module",
+                      "category":  "3d",
+                      "path":  "modules/3d-npc-agent",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "action-guarded-executor",
                       "name":  "Action Guarded Executor",
                       "lane":  "module",
@@ -667,6 +756,14 @@
                       "lane":  "module",
                       "category":  "infra",
                       "path":  "modules/aes-256-gcm-secret",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "agent-cascade-router",
+                      "name":  "Agent Cascade Router â€” LLM-based Tool Selection \u0026 Executor Dispatch",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/agent-cascade-router",
                       "status":  "stable"
                   },
                   {
@@ -1094,6 +1191,14 @@
                       "status":  "stable"
                   },
                   {
+                      "id":  "memory-rag",
+                      "name":  "Agent Memory RAG â€” Obsidian-style Markdown + Wikilinks",
+                      "lane":  "module",
+                      "category":  "ai",
+                      "path":  "modules/memory-rag",
+                      "status":  "stable"
+                  },
+                  {
                       "id":  "message-pipeline-router",
                       "name":  "Message Pipeline Router",
                       "lane":  "module",
@@ -1139,6 +1244,14 @@
                       "lane":  "module",
                       "category":  "video",
                       "path":  "modules/multi-platform-publisher-adapter",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "multi-tenant-privilege",
+                      "name":  "Multi-Tenant Granular Privilege System (PHP/MySQL)",
+                      "lane":  "module",
+                      "category":  "business",
+                      "path":  "modules/multi-tenant-privilege",
                       "status":  "stable"
                   },
                   {
@@ -1211,6 +1324,14 @@
                       "lane":  "module",
                       "category":  "infra",
                       "path":  "modules/prisma-lifecycle-service",
+                      "status":  "stable"
+                  },
+                  {
+                      "id":  "provider-registry",
+                      "name":  "Provider Registry â€” Data-Driven LLM/Media Provider Config",
+                      "lane":  "module",
+                      "category":  "infra",
+                      "path":  "modules/provider-registry",
                       "status":  "stable"
                   },
                   {
@@ -1647,6 +1768,15 @@
                       "lane":  "tool",
                       "category":  "infra",
                       "path":  "tools/mcp-server-starter",
+                      "status":  "stable",
+                      "kind":  "mcp-server"
+                  },
+                  {
+                      "id":  "motion-director-mcp",
+                      "name":  "Motion Director MCP â€” Video Pipeline Tool",
+                      "lane":  "tool",
+                      "category":  "video",
+                      "path":  "tools/motion-director-mcp",
                       "status":  "stable",
                       "kind":  "mcp-server"
                   },
