@@ -1,0 +1,1 @@
+{"id":"storyboard-prompt-variants","name":"Storyboard Prompt Variants","version":"1.0.0","kind":"template","category":"video","description":"Generate multi-genre video-generation prompts (ads, cinematic, generic) from a storyboard.","tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
