@@ -1,1 +1,89 @@
-aW1wb3J0IGNyeXB0byBmcm9tICdjcnlwdG8nOwoKLyoqCiAqIEFFUy0yNTYtR0NNIGVuY3J5cHQvZGVjcnlwdCBmb3Igc3RvcmluZyBzZW5zaXRpdmUgaW50ZWdyYXRpb24gc2VjcmV0cwogKiAoQVBJIGtleXMsIHRva2VucywgcGFzc3dvcmRzLCBEQiBjb25uIHN0cmluZ3MsIHBheW1lbnQgc2VjcmV0cykuCiAqCiAqIEtleSBkZXJpdmVkIGZyb20gcHJvY2Vzcy5lbnYuU0VDUkVUU19LRVkgKG9yIGZhbGxiYWNrIENPT0tJRV9TRUNSRVQpIHZpYSBTSEEtMjU2LgogKiBPdXRwdXQgZm9ybWF0OiBiYXNlNjQoaXZbMTJdIHx8IGF1dGhUYWdbMTZdIHx8IGNpcGhlcnRleHQpLgogKgogKiBVc2FnZToKICogICBjb25zdCBlbmMgPSBlbmNyeXB0U2VjcmV0KCdza19saXZlX2FiYzEyMy4uLicpOwogKiAgIGNvbnN0IHBsYWluID0gZGVjcnlwdFNlY3JldChlbmMpOyAgLy8gJ3NrX2xpdmVfYWJjMTIzLi4uJwogKi8KCmZ1bmN0aW9uIGdldEtleSgpOiBCdWZmZXIgewogIGNvbnN0IHNlZWQgPSBwcm9jZXNzLmVudi5TRUNSRVRTX0tFWSB8fAogICAgcHJvY2Vzcy5lbnYuQ09PS0lFX1NFQ1JFVCB8fAogICAgJ2ZhbGxiYWNrLWRldi1rZXktbm90LWZvci1wcm9kdWN0aW9uJzsKICByZXR1cm4gY3J5cHRvLmNyZWF0ZUhhc2goJ3NoYTI1NicpLnVwZGF0ZShzZWVkKS5kaWdlc3QoKTsKfQoKY29uc3QgQUxHTyA9ICdhZXMtMjU2LWdjbSc7CmNvbnN0IElWX0xFTiA9IDEyOyAgIC8vIFN0YW5kYXJkIEdDTSBub25jZQpjb25zdCBUQUdfTEVOID0gMTY7ICAvLyBBdXRoZW50aWNhdGlvbiB0YWcKCi8qKgogKiBFbmNyeXB0IGEgc3RyaW5nIHRvIGJhc2U2NC4KICogUmV0dXJucyBlbXB0eSBzdHJpbmcgaWYgaW5wdXQgaXMgZW1wdHkuCiAqLwpleHBvcnQgZnVuY3Rpb24gZW5jcnlwdFNlY3JldChwbGFpbjogc3RyaW5nKTogc3RyaW5nIHsKICBpZiAoIXBsYWluKSByZXR1cm4gJyc7CgogIGNvbnN0IGtleSA9IGdldEtleSgpOwogIGNvbnN0IGl2ID0gY3J5cHRvLnJhbmRvbUJ5dGVzKElWX0xFTik7CiAgY29uc3QgY2lwaGVyID0gY3J5cHRvLmNyZWF0ZUNpcGhlcml2KEFMR08sIGtleSwgaXYpOwoKICBjb25zdCBjaXBoZXJ0ZXh0ID0gQnVmZmVyLmNvbmNhdChbCiAgICBjaXBoZXIudXBkYXRlKHBsYWluLCAndXRmOCcpLAogICAgY2lwaGVyLmZpbmFsKCksCiAgXSk7CgogIGNvbnN0IGF1dGhUYWcgPSBjaXBoZXIuZ2V0QXV0aFRhZygpOwogIGNvbnN0IHJlc3VsdCA9IEJ1ZmZlci5jb25jYXQoW2l2LCBhdXRoVGFnLCBjaXBoZXJ0ZXh0XSk7CgogIHJldHVybiByZXN1bHQudG9TdHJpbmcoJ2Jhc2U2NCcpOwp9CgovKioKICogRGVjcnlwdCBhIGJhc2U2NC1lbmNvZGVkIHNlY3JldC4KICogUmV0dXJucyBlbXB0eSBzdHJpbmcgaWYgaW52YWxpZCBvciBkZWNyeXB0aW9uIGZhaWxzLgogKi8KZXhwb3J0IGZ1bmN0aW9uIGRlY3J5cHRTZWNyZXQoZW5jb2RlZDogc3RyaW5nKTogc3RyaW5nIHsKICBpZiAoIWVuY29kZWQpIHJldHVybiAnJzsKCiAgdHJ5IHsKICAgIGNvbnN0IGJ1ZmZlciA9IEJ1ZmZlci5mcm9tKGVuY29kZWQsICdiYXNlNjQnKTsKCiAgICAvLyBWYWxpZGF0ZSBtaW5pbXVtIGxlbmd0aDogaXYoMTIpICsgdGFnKDE2KSArIGF0IGxlYXN0IDEgYnl0ZSBjaXBoZXJ0ZXh0CiAgICBpZiAoYnVmZmVyLmxlbmd0aCA8IElWX0xFTiArIFRBR19MRU4gKyAxKSByZXR1cm4gJyc7CgogICAgY29uc3QgaXYgPSBidWZmZXIuc3ViYXJyYXkoMCwgSVZfTEVOKTsKICAgIGNvbnN0IGF1dGhUYWcgPSBidWZmZXIuc3ViYXJyYXkoSVZfTEVOLCBJVl9MRU4gKyBUQUdfTEVOKTsKICAgIGNvbnN0IGNpcGhlcnRleHQgPSBidWZmZXIuc3ViYXJyYXkoSVZfTEVOICsgVEFHX0xFTik7CgogICAgY29uc3Qga2V5ID0gZ2V0S2V5KCk7CiAgICBjb25zdCBkZWNpcGhlciA9IGNyeXB0by5jcmVhdGVEZWNpcGhlcml2KEFMR08sIGtleSwgaXYpOwogICAgZGVjaXBoZXIuc2V0QXV0aFRhZyhhdXRoVGFnKTsKCiAgICBjb25zdCBwbGFpbiA9IEJ1ZmZlci5jb25jYXQoWwogICAgICBkZWNpcGhlci51cGRhdGUoY2lwaGVydGV4dCksCiAgICAgIGRlY2lwaGVyLmZpbmFsKCksCiAgICBdKTsKCiAgICByZXR1cm4gcGxhaW4udG9TdHJpbmcoJ3V0ZjgnKTsKICB9IGNhdGNoIHsKICAgIC8vIERlY3J5cHRpb24gZmFpbGVkICh3cm9uZyBrZXksIGNvcnJ1cHRlZCBkYXRhLCBldGMuKQogICAgcmV0dXJuICcnOwogIH0KfQoKLyoqCiAqIE1hc2sgYSBzZWNyZXQgZm9yIFVJL2xvZ3M6IHNob3cgZmlyc3QgNCArIGxhc3QgNCArIGJ1bGxldHMuCiAqIEV4YW1wbGU6ICdza19saXZlX2FiYzEyM3h5ejQ1Ni4uLicg4oaSICdza19s4peP4peP4peP4peP4peP4peP4pePeHl6NDU2JwogKi8KZXhwb3J0IGZ1bmN0aW9uIG1hc2tTZWNyZXQocGxhaW46IHN0cmluZyk6IHN0cmluZyB7CiAgaWYgKCFwbGFpbikgcmV0dXJuICcnOwogIGlmIChwbGFpbi5sZW5ndGggPD0gMTIpIHJldHVybiAn4pePJy5yZXBlYXQocGxhaW4ubGVuZ3RoKTsKICByZXR1cm4gYCR7cGxhaW4uc2xpY2UoMCwgNCl94peP4peP4peP4peP4peP4pePJHtwbGFpbi5zbGljZSgtNCl9YDsKfQo=
+import crypto from 'crypto';
+
+/**
+ * AES-256-GCM encrypt/decrypt for storing sensitive integration secrets
+ * (API keys, tokens, passwords, DB conn strings, payment secrets).
+ *
+ * Key derived from process.env.SECRETS_KEY (or fallback COOKIE_SECRET) via SHA-256.
+ * Output format: base64(iv[12] || authTag[16] || ciphertext).
+ *
+ * Usage:
+ *   const enc = encryptSecret('sk_live_abc123...');
+ *   const plain = decryptSecret(enc);  // 'sk_live_abc123...'
+ */
+
+function getKey(): Buffer {
+  const seed = process.env.SECRETS_KEY ||
+    process.env.COOKIE_SECRET ||
+    'fallback-dev-key-not-for-production';
+  return crypto.createHash('sha256').update(seed).digest();
+}
+
+const ALGO = 'aes-256-gcm';
+const IV_LEN = 12;   // Standard GCM nonce
+const TAG_LEN = 16;  // Authentication tag
+
+/**
+ * Encrypt a string to base64.
+ * Returns empty string if input is empty.
+ */
+export function encryptSecret(plain: string): string {
+  if (!plain) return '';
+
+  const key = getKey();
+  const iv = crypto.randomBytes(IV_LEN);
+  const cipher = crypto.createCipheriv(ALGO, key, iv);
+
+  const ciphertext = Buffer.concat([
+    cipher.update(plain, 'utf8'),
+    cipher.final(),
+  ]);
+
+  const authTag = cipher.getAuthTag();
+  const result = Buffer.concat([iv, authTag, ciphertext]);
+
+  return result.toString('base64');
+}
+
+/**
+ * Decrypt a base64-encoded secret.
+ * Returns empty string if invalid or decryption fails.
+ */
+export function decryptSecret(encoded: string): string {
+  if (!encoded) return '';
+
+  try {
+    const buffer = Buffer.from(encoded, 'base64');
+
+    // Validate minimum length: iv(12) + tag(16) + at least 1 byte ciphertext
+    if (buffer.length < IV_LEN + TAG_LEN + 1) return '';
+
+    const iv = buffer.subarray(0, IV_LEN);
+    const authTag = buffer.subarray(IV_LEN, IV_LEN + TAG_LEN);
+    const ciphertext = buffer.subarray(IV_LEN + TAG_LEN);
+
+    const key = getKey();
+    const decipher = crypto.createDecipheriv(ALGO, key, iv);
+    decipher.setAuthTag(authTag);
+
+    const plain = Buffer.concat([
+      decipher.update(ciphertext),
+      decipher.final(),
+    ]);
+
+    return plain.toString('utf8');
+  } catch {
+    // Decryption failed (wrong key, corrupted data, etc.)
+    return '';
+  }
+}
+
+/**
+ * Mask a secret for UI/logs: show first 4 + last 4 + bullets.
+ * Example: 'sk_live_abc123xyz456...' → 'sk_l●●●●●●●xyz456'
+ */
+export function maskSecret(plain: string): string {
+  if (!plain) return '';
+  if (plain.length <= 12) return '●'.repeat(plain.length);
+  return `${plain.slice(0, 4)}●●●●●●${plain.slice(-4)}`;
+}
