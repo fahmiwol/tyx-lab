@@ -7,10 +7,10 @@ Dynamic pricing based on quantity tiers or customer segments. Used for top-up pa
 ```typescript
 // from a production ledger service: TOPUP_PACKAGES
 export const TOPUP_PACKAGES = [
-  { id: "starter",  label: "STARTER",  perak: 100,  bonus: 0,    idr: 800_000   },
-  { id: "regular",  label: "REGULAR",  perak: 500,  bonus: 50,   idr: 3_800_000 },
-  { id: "elite",    label: "ELITE",    perak: 1000, bonus: 150,  idr: 7_500_000 },
-  { id: "ultimate", label: "ULTIMATE", perak: 5000, bonus: 1000, idr: 36_000_000},
+  { id: "starter",  label: "STARTER",  silver: 100,  bonus: 0,    idr: 800_000   },
+  { id: "regular",  label: "REGULAR",  silver: 500,  bonus: 50,   idr: 3_800_000 },
+  { id: "elite",    label: "ELITE",    silver: 1000, bonus: 150,  idr: 7_500_000 },
+  { id: "ultimate", label: "ULTIMATE", silver: 5000, bonus: 1000, idr: 36_000_000},
 ] as const;
 
 type PackageId = typeof TOPUP_PACKAGES[number]["id"];
@@ -25,13 +25,13 @@ export function getPackage(packageId: PackageId) {
 // Calculate effective amount (quantity + bonus)
 export function getEffectiveAmount(packageId: PackageId): number {
   const pkg = getPackage(packageId);
-  return pkg.perak + pkg.bonus;  // 100 + 0 = 100, 500 + 50 = 550, etc.
+  return pkg.silver + pkg.bonus;  // 100 + 0 = 100, 500 + 50 = 550, etc.
 }
 
 // Calculate cost per unit
 export function getCostPerUnit(packageId: PackageId): number {
   const pkg = getPackage(packageId);
-  const effective = pkg.perak + pkg.bonus;
+  const effective = pkg.silver + pkg.bonus;
   return pkg.idr / effective;  // e.g., 3_800_000 / 550 = 6909 IDR per coin
 }
 ```
