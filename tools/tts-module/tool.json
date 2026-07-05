@@ -1,0 +1,17 @@
+{
+  "id": "tts-module",
+  "name": "TTS Voice Module",
+  "version": "1.0.0",
+  "kind": "script",
+  "category": "ai",
+  "description": "Multi-engine Text-to-Speech module with voice cloning support. Supports OpenAI TTS, Coqui XTTS-v2 (self-hosted), and Web Speech API. React component + custom hooks for easy integration.",
+  "run": "Copy TTSModule.tsx + useTTS.ts + routes to your Next.js app. See README.",
+  "input": [{"name": "text", "type": "string", "description": "Text to synthesize"}, {"name": "engine", "type": "string", "enum": ["openai", "coqui", "web-speech"], "description": "TTS engine"}],
+  "output": [{"name": "audio_url", "type": "string", "description": "Audio file URL or data URI"}],
+  "tags": ["tts", "voice-synthesis", "react", "openai", "coqui", "voice-clone"],
+  "compatible_with": ["next.js-app", "react-project"],
+  "used_in_recipes": ["voice-agent", "audio-content-generation"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
