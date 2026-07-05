@@ -1,0 +1,1 @@
+{"id":"token-cost-estimator","name":"Multi-Provider Token & Cost Estimator","version":"1.0.0","kind":"method","category":"ai","description":"Estimate token counts and cost across LLM providers with caching.","tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
