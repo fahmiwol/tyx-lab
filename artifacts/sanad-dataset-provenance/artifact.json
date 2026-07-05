@@ -1,0 +1,14 @@
+{
+  "id": "sanad-dataset-provenance",
+  "name": "Dataset Provenance: The Sanad Method (Certification Chain)",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "research",
+  "description": "Provenance tracking methodology for training datasets with verifiable chain from source to production, enabling trust auditing, reproducibility, and regulatory compliance.",
+  "tags": ["provenance", "audit-chain", "data-quality", "reproducibility", "regulatory", "sanad"],
+  "compatible_with": ["slm-distillation-pipeline", "eval-gate-regression-guard"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
