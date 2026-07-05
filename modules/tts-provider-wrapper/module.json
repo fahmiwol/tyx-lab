@@ -1,0 +1,42 @@
+{
+  "id": "tts-provider-wrapper",
+  "name": "TTS Provider Wrapper",
+  "version": "1.0.0",
+  "category": ["ai"],
+  "description": "Abstraction layer for TTS services (OpenAI, Google Cloud, Azure) with caching, rate limiting, and streaming output. Normalizes provider APIs into unified interface.",
+  "input": [
+    {
+      "name": "text",
+      "type": "string",
+      "description": "Text to synthesize"
+    },
+    {
+      "name": "voice",
+      "type": "string",
+      "description": "Voice ID (e.g., 'alloy', 'en-US-Neural2-A')"
+    },
+    {
+      "name": "format",
+      "type": "string",
+      "description": "Output format (mp3, wav, pcm)"
+    }
+  ],
+  "output": [
+    {
+      "name": "audioBuffer",
+      "type": "Buffer | Stream",
+      "description": "Audio data (buffered or streamed)"
+    },
+    {
+      "name": "metadata",
+      "type": "object",
+      "description": "Duration, format, sample rate, cost"
+    }
+  ],
+  "tags": ["tts", "audio", "streaming", "caching", "voice-synthesis"],
+  "compatible_with": ["nodejs", "fastapi", "nestjs"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
