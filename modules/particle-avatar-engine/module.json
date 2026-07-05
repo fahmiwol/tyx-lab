@@ -1,0 +1,20 @@
+{
+  "id": "particle-avatar-engine",
+  "name": "Particle Avatar Engine",
+  "version": "1.0.0",
+  "category": "3d",
+  "description": "Client-side Canvas 2D point-cloud avatar generator. Converts photos to dot patterns with luminance-based sizing, assembly/drift animation, and default silhouette fallback. Zero server dependencies.",
+  "input": [
+    { "name": "image", "type": "HTMLImageElement", "description": "User photo or avatar image" },
+    { "name": "options", "type": "SampleOptions", "description": "Canvas resolution, sampling gap, brightness threshold, elliptical mask, max particles" }
+  ],
+  "output": [
+    { "name": "particles", "type": "Particle[]", "description": "Point cloud array ready for Canvas animation" }
+  ],
+  "tags": ["3d", "canvas", "avatar", "particle", "client-side", "animation"],
+  "compatible_with": ["browser", "typescript", "react", "vue", "svelte"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
