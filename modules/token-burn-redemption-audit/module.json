@@ -1,0 +1,26 @@
+{
+  "id": "token-burn-redemption-audit",
+  "name": "Token Burn & Redemption Audit Trail",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Immutable ledger of token burn events with cryptographic commitment. Records burn reason, timestamp, authorizer, and withdrawal destination. Enables forensic reconstruction of destroyed supply and redemption validation.",
+  "input": [
+    {"name": "coinId", "type": "string"},
+    {"name": "denomination", "type": "enum", "values": ["GOLD", "SILVER", "BRONZE", "DIAMOND"]},
+    {"name": "burnReason", "type": "enum", "values": ["redemption", "penalty", "expiry", "admin_purge"]},
+    {"name": "authorizerUserId", "type": "string"}
+  ],
+  "output": [
+    {"name": "burnEventId", "type": "string"},
+    {"name": "burnedAt", "type": "datetime"},
+    {"name": "previousWalletId", "type": "string"},
+    {"name": "burnSignature", "type": "string"},
+    {"name": "auditHash", "type": "string"}
+  ],
+  "tags": ["supply-chain", "audit", "redemption", "burn-tracking"],
+  "compatible_with": ["token-supply-cap-accounting", "dual-auth-internal-key-pattern", "statement-receipt-generator"],
+  "used_in_recipes": ["redemption-compliance", "supply-reconciliation"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
