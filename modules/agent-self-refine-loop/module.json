@@ -1,0 +1,24 @@
+{
+  "id": "agent-self-refine-loop",
+  "name": "Self-Refining Agent Loop (Tafakkur Pattern)",
+  "version": "1.0.0",
+  "category": ["ai", "agent-reasoning"],
+  "description": "Dual-agent criticism loop: innovator generates → critic evaluates across multiple modes → refine or accept. Prevents single-pass mediocrity; compound quality over iterations.",
+  "input": [
+    {"name": "user_request", "type": "string", "description": "Original user task"},
+    {"name": "initial_output", "type": "string", "description": "Output to refine"},
+    {"name": "critique_mode", "type": "enum", "enum": ["devil_advocate", "quality_check", "destruction_test"], "default": "quality_check"}
+  ],
+  "output": [
+    {"name": "final_output", "type": "string"},
+    {"name": "critique_score", "type": "number", "description": "Quality 0.0-1.0"},
+    {"name": "issues_found", "type": "array"},
+    {"name": "refine_iterations", "type": "integer"}
+  ],
+  "tags": ["agent-reasoning", "self-improvement", "quality-gates", "iteration"],
+  "compatible_with": ["agent-frameworks", "llm-inference", "prompt-engineering"],
+  "used_in_recipes": ["creative-quality-pipeline"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
