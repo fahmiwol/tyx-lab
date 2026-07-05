@@ -167,7 +167,7 @@ console.log(`Charge ${prorationAmount} for mid-month signup`);  // ~30.00
 model PricingTier {
   id            String   @id @default(cuid())
   tier          String   -- "starter", "regular", "elite", "ultimate"
-  quantity      Int      -- 100 PERAK, 500 PERAK, etc.
+  quantity      Int      -- 100 SILVER, 500 SILVER, etc.
   bonus         Int      -- extra coins
   priceIdr      BigInt   -- 800_000, 3_800_000, etc.
   isActive      Boolean  @default(true)
