@@ -1,0 +1,17 @@
+{
+  "id": "connector-adapter",
+  "name": "Platform Connector Adapter",
+  "version": "1.0.0",
+  "kind": "script",
+  "category": "infra",
+  "description": "Unified API connector layer for social/commerce platforms. Adapters for messaging APIs, analytics feeds, e-commerce integrations. Configurable auth, normalized schemas.",
+  "run": "npm install && node src/index.js",
+  "input": [{"name": "platform", "type": "string", "description": "Target platform (telegram, discord, twitter, whatsapp, gdrive, notion)"}],
+  "output": [{"name": "api_response", "type": "object", "description": "Normalized platform response"}],
+  "tags": ["connector", "api", "integration", "multi-platform", "normalized-schema"],
+  "compatible_with": ["workflow-engine", "data-sync"],
+  "used_in_recipes": ["content-distribution", "analytics-aggregation"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
