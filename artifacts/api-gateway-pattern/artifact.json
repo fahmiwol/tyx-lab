@@ -1,0 +1,14 @@
+{
+  "id": "api-gateway-pattern",
+  "name": "Express API Gateway Response Wrapper Pattern",
+  "version": "1.0.0",
+  "kind": "template",
+  "category": "infra",
+  "description": "Standardized Express.js gateway pattern: all endpoints return {ok:boolean, data|error:string} JSON structure with try/catch wrapping, logging, and error codes. Enables consistent client-side error handling, debugging, and audit trails across multi-module Node.js backends.",
+  "tags": ["express", "api", "gateway", "error-handling", "nodejs"],
+  "compatible_with": ["nodejs", "express"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
