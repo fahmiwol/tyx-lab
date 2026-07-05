@@ -1,5 +1,5 @@
 /**
- * MighanPhoto API — by Cursor (CommonJS + Sharp)
+ * Photo Editor API — by Cursor (CommonJS + Sharp)
  */
 const express = require('express');
 const cors = require('cors');
@@ -24,7 +24,7 @@ app.use(express.json({ limit: '2mb' }));
 app.get('/health', (req, res) => {
   res.json({
     success: true,
-    data: { service: 'mighan-photo', version: '0.1.0', port: PORT, sharp: sharp.versions }
+    data: { service: 'Studio-photo', version: '0.1.0', port: PORT, sharp: sharp.versions }
   });
 });
 
@@ -107,5 +107,5 @@ app.post('/photo/process', upload.single('image'), async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`[by Cursor] MighanPhoto API http://localhost:${PORT}`);
+  console.log(`[by Cursor] Photo Editor API http://localhost:${PORT}`);
 });
