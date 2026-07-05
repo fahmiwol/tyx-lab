@@ -1,1 +1,167 @@
-aW1wb3J0IG5vZGVtYWlsZXIgZnJvbSAnbm9kZW1haWxlcic7CgovKioKICogRW1haWwgZGlzcGF0Y2ggdmlhIG5vZGVtYWlsZXIgKyBTTVRQIHJlbGF5LgogKiBHcmFjZWZ1bCBza2lwIGlmIFNNVFBfSE9TVCBub3QgY29uZmlndXJlZC4KICogSW5jbHVkZXMgYnVpbHQtaW4gdGVtcGxhdGVzIGZvciBjb21tb24gZmxvd3MuCiAqCiAqIFJlcXVpcmVkIGVudiB2YXJzOgogKiAgIFNNVFBfSE9TVD1zbXRwLmdtYWlsLmNvbQogKiAgIFNNVFBfUE9SVD01ODcKICogICBTTVRQX1VTRVI9c2VuZGVyQGV4YW1wbGUuY29tCiAqICAgU01UUF9QQVNTPWFwcC1zcGVjaWZpYy1wYXNzd29yZAogKiAgIFNNVFBfRlJPTT1Zb3VyIEFwcCA8bm9yZXBseUBleGFtcGxlLmNvbT4KICovCgpleHBvcnQgaW50ZXJmYWNlIEVtYWlsUGF5bG9hZCB7CiAgdG86IHN0cmluZzsKICBzdWJqZWN0OiBzdHJpbmc7CiAgaHRtbDogc3RyaW5nOwogIHRleHQ/OiBzdHJpbmc7Cn0KCmV4cG9ydCBpbnRlcmZhY2UgRW1haWxSZXN1bHQgewogIG9rOiBib29sZWFuOwogIHNraXBwZWQ/OiBib29sZWFuOwogIGVycm9yPzogc3RyaW5nOwp9CgovKiogU2luZ2xldG9uIHRyYW5zcG9ydGVyIChjcmVhdGVkIG9uY2UgcGVyIHByb2Nlc3MpICovCmxldCBfdHJhbnNwb3J0OiBSZXR1cm5UeXBlPHR5cGVvZiBub2RlbWFpbGVyLmNyZWF0ZVRyYW5zcG9ydD4gfCBudWxsID0gbnVsbDsKCmZ1bmN0aW9uIGdldFRyYW5zcG9ydCgpOiBSZXR1cm5UeXBlPHR5cGVvZiBub2RlbWFpbGVyLmNyZWF0ZVRyYW5zcG9ydD4gfCBudWxsIHsKICBjb25zdCBob3N0ID0gcHJvY2Vzcy5lbnYuU01UUF9IT1NUPy50cmltKCk7CiAgaWYgKCFob3N0KSByZXR1cm4gbnVsbDsKCiAgaWYgKCFfdHJhbnNwb3J0KSB7CiAgICBfdHJhbnNwb3J0ID0gbm9kZW1haWxlci5jcmVhdGVUcmFuc3BvcnQoewogICAgICBob3N0LAogICAgICBwb3J0OiBwYXJzZUludChwcm9jZXNzLmVudi5TTVRQX1BPUlQgPz8gJzU4NycsIDEwKSwKICAgICAgc2VjdXJlOiBwcm9jZXNzLmVudi5TTVRQX1BPUlQgPT09ICc0NjUnLAogICAgICBhdXRoOiB7CiAgICAgICAgdXNlcjogcHJvY2Vzcy5lbnYuU01UUF9VU0VSLAogICAgICAgIHBhc3M6IHByb2Nlc3MuZW52LlNNVFBfUEFTUywKICAgICAgfSwKICAgIH0pOwogIH0KCiAgcmV0dXJuIF90cmFuc3BvcnQ7Cn0KCi8qKgogKiBTZW5kIGVtYWlsIHZpYSBTTVRQLgogKiBSZXR1cm5zIHsgb2s6IHRydWUsIHNraXBwZWQ6IHRydWUgfSBpZiBTTVRQIG5vdCBjb25maWd1cmVkLgogKi8KZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIHNlbmRFbWFpbChwYXlsb2FkOiBFbWFpbFBheWxvYWQpOiBQcm9taXNlPEVtYWlsUmVzdWx0PiB7CiAgY29uc3QgdHJhbnNwb3J0ID0gZ2V0VHJhbnNwb3J0KCk7CgogIGlmICghdHJhbnNwb3J0KSB7CiAgICBjb25zb2xlLmluZm8oCiAgICAgIGBbbWFpbGVyXSBTTVRQIG5vdCBjb25maWd1cmVkIOKAlCBza2lwcGVkOiAiJHtwYXlsb2FkLnN1YmplY3R9IiDihpIgJHtwYXlsb2FkLnRvfWAKICAgICk7CiAgICByZXR1cm4geyBvazogdHJ1ZSwgc2tpcHBlZDogdHJ1ZSB9OwogIH0KCiAgdHJ5IHsKICAgIGNvbnN0IGZyb20gPQogICAgICBwcm9jZXNzLmVudi5TTVRQX0ZST00gPz8KICAgICAgYE5vcmVwbHkgPCR7cHJvY2Vzcy5lbnYuU01UUF9VU0VSID8/ICdub3JlcGx5QGV4YW1wbGUuY29tJ30+YDsKCiAgICBhd2FpdCB0cmFuc3BvcnQuc2VuZE1haWwoewogICAgICBmcm9tLAogICAgICB0bzogcGF5bG9hZC50bywKICAgICAgc3ViamVjdDogcGF5bG9hZC5zdWJqZWN0LAogICAgICBodG1sOiBwYXlsb2FkLmh0bWwsCiAgICAgIHRleHQ6CiAgICAgICAgcGF5bG9hZC50ZXh0ID8/CiAgICAgICAgcGF5bG9hZC5odG1sLnJlcGxhY2UoLzxbXj5dKz4vZywgJycpLnJlcGxhY2UoL1xzKy9nLCAnICcpLnRyaW0oKSwKICAgIH0pOwoKICAgIGNvbnNvbGUuaW5mbygKICAgICAgYFttYWlsZXJdIHNlbnQ6ICIke3BheWxvYWQuc3ViamVjdH0iIOKGkiAke3BheWxvYWQudG99YAogICAgKTsKICAgIHJldHVybiB7IG9rOiB0cnVlIH07CiAgfSBjYXRjaCAoZXJyKSB7CiAgICBjb25zdCBtc2cgPSBlcnIgaW5zdGFuY2VvZiBFcnJvciA/IGVyci5tZXNzYWdlIDogU3RyaW5nKGVycik7CiAgICBjb25zb2xlLmVycm9yKCdbbWFpbGVyXSBzZW5kIGZhaWxlZDonLCBtc2cpOwogICAgcmV0dXJuIHsgb2s6IGZhbHNlLCBlcnJvcjogbXNnIH07CiAgfQp9CgovLyDilIDilIDilIAgQnVpbHQtaW4gVGVtcGxhdGVzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAoKZXhwb3J0IGludGVyZmFjZSBQdXJjaGFzZVN1Y2Nlc3NPcHRzIHsKICBidXllck5hbWU6IHN0cmluZzsKICBwcm9kdWN0TmFtZTogc3RyaW5nOwogIG9yZGVySWQ6IHN0cmluZzsKICBkb3dubG9hZFVybDogc3RyaW5nOwogIGFtb3VudElkcjogbnVtYmVyOwp9CgovKioKICogUHVyY2hhc2Ugc3VjY2VzcyBlbWFpbCB0ZW1wbGF0ZSAoSW5kb25lc2lhbikuCiAqLwpleHBvcnQgZnVuY3Rpb24gdHBsUHVyY2hhc2VTdWNjZXNzKG9wdHM6IFB1cmNoYXNlU3VjY2Vzc09wdHMpOiBFbWFpbFBheWxvYWQgewogIGNvbnN0IHNpdGVVcmwgPSBwcm9jZXNzLmVudi5ORVhUX1BVQkxJQ19TSVRFX1VSTCA/PyAnaHR0cHM6Ly9leGFtcGxlLmNvbSc7CiAgY29uc3QgYW10ID0gJ1JwICcgKyBvcHRzLmFtb3VudElkci50b0xvY2FsZVN0cmluZygnaWQtSUQnKTsKCiAgcmV0dXJuIHsKICAgIHRvOiAnJywgLy8gQ2FsbGVyIHNldHMgdGhpcwogICAgc3ViamVjdDogYOKchSBQZW1iZWxpYW4gYmVyaGFzaWwg4oCUICR7b3B0cy5wcm9kdWN0TmFtZX1gLAogICAgaHRtbDogYAogICAgICA8ZGl2IHN0eWxlPSJmb250LWZhbWlseTpJbnRlcixzYW5zLXNlcmlmO21heC13aWR0aDo1MjBweDttYXJnaW46MCBhdXRvO2NvbG9yOiMxZTI5M2IiPgogICAgICAgIDxkaXYgc3R5bGU9ImJhY2tncm91bmQ6IzYzNjZmMTtwYWRkaW5nOjI0cHggMzJweDtib3JkZXItcmFkaXVzOjEycHggMTJweCAwIDAiPgogICAgICAgICAgPGRpdiBzdHlsZT0iY29sb3I6I2ZmZjtmb250LXNpemU6MjJweDtmb250LXdlaWdodDo4MDAiPk1pZ2FuY29yZTwvZGl2PgogICAgICAgICAgPGRpdiBzdHlsZT0iY29sb3I6cmdiYSgyNTUsMjU1LDI1NSwwLjcpO2ZvbnQtc2l6ZToxM3B4O21hcmdpbi10b3A6NHB4Ij5EaWdpdGFsIFByb2R1Y3RzPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBzdHlsZT0iYmFja2dyb3VuZDojZmZmO3BhZGRpbmc6MzJweDtib3JkZXI6MXB4IHNvbGlkICNlMmU4ZjA7Ym9yZGVyLXRvcDpub25lO2JvcmRlci1yYWRpdXM6MCAwIDEycHggMTJweCI+CiAgICAgICAgICA8aDEgc3R5bGU9ImZvbnQtc2l6ZToyMHB4O2ZvbnQtd2VpZ2h0OjcwMDttYXJnaW46MCAwIDhweCI+UGVtYmVsaWFuIEJlcmhhc2lsISDwn46JPC9oMT4KICAgICAgICAgIDxwIHN0eWxlPSJjb2xvcjojNjQ3NDhiO21hcmdpbjowIDAgMjRweCI+SGFsbyA8c3Ryb25nPiR7b3B0cy5idXllck5hbWV9PC9zdHJvbmc+LCB0ZXJpbWEga2FzaWggc3VkYWggbWVtYmVsaSBwcm9kdWsgZGlnaXRhbCBrYW1pLjwvcD4KICAgICAgICAgIDxkaXYgc3R5bGU9ImJhY2tncm91bmQ6I2Y4ZmFmYztib3JkZXI6MXB4IHNvbGlkICNlMmU4ZjA7Ym9yZGVyLXJhZGl1czo4cHg7cGFkZGluZzoyMHB4O21hcmdpbi1ib3R0b206MjRweCI+CiAgICAgICAgICAgIDxkaXYgc3R5bGU9ImZvbnQtc2l6ZToxMnB4O2NvbG9yOiM5NGEzYjg7dGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlO2xldHRlci1zcGFjaW5nOi4wNmVtO21hcmdpbi1ib3R0b206OHB4Ij5EZXRhaWwgUGVzYW5hbjwvZGl2PgogICAgICAgICAgICA8ZGl2IHN0eWxlPSJmb250LXNpemU6MTVweDtmb250LXdlaWdodDo3MDAiPiR7b3B0cy5wcm9kdWN0TmFtZX08L2Rpdj4KICAgICAgICAgICAgPGRpdiBzdHlsZT0iZm9udC1zaXplOjEzcHg7Y29sb3I6IzY0NzQ4YjttYXJnaW4tdG9wOjRweCI+T3JkZXI6ICR7b3B0cy5vcmRlcklkfSDCtyAke2FtdH08L2Rpdj4KICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPGEgaHJlZj0iJHtzaXRlVXJsfS9hcHAvZG93bmxvYWRzIgogICAgICAgICAgICAgc3R5bGU9ImRpc3BsYXk6YmxvY2s7dGV4dC1hbGlnbjpjZW50ZXI7YmFja2dyb3VuZDojNjM2NmYxO2NvbG9yOiNmZmY7dGV4dC1kZWNvcmF0aW9uOm5vbmU7cGFkZGluZzoxNHB4O2JvcmRlci1yYWRpdXM6MTBweDtmb250LXdlaWdodDo3MDA7Zm9udC1zaXplOjE1cHg7bWFyZ2luLWJvdHRvbToxNnB4Ij4KICAgICAgICAgICAg4qyHIEJ1a2EgTXkgRG93bmxvYWRzCiAgICAgICAgICA8L2E+CiAgICAgICAgICA8cCBzdHlsZT0iZm9udC1zaXplOjEycHg7Y29sb3I6Izk0YTNiODt0ZXh0LWFsaWduOmNlbnRlcjttYXJnaW46MCI+QWtzZXMgZGkgZGFzaGJvYXJkIMK3IExvZ2luIGRlbmdhbiBha3VuIHlhbmcgZGlndW5ha2FuIHNhYXQgbWVtYmVsaS48L3A+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PmAsCiAgfTsKfQoKZXhwb3J0IGludGVyZmFjZSBQYXNzd29yZFJlc2V0T3B0cyB7CiAgcmVjaXBpZW50TmFtZTogc3RyaW5nOwogIHJlc2V0VXJsOiBzdHJpbmc7CiAgZXhwaXJ5TWludXRlcz86IG51bWJlcjsKfQoKLyoqCiAqIFBhc3N3b3JkIHJlc2V0IGVtYWlsIHRlbXBsYXRlLgogKi8KZXhwb3J0IGZ1bmN0aW9uIHRwbFBhc3N3b3JkUmVzZXQob3B0czogUGFzc3dvcmRSZXNldE9wdHMpOiBFbWFpbFBheWxvYWQgewogIGNvbnN0IGV4cGlyeSA9IG9wdHMuZXhwaXJ5TWludXRlcyA/PyA2MDsKCiAgcmV0dXJuIHsKICAgIHRvOiAnJywgLy8gQ2FsbGVyIHNldHMgdGhpcwogICAgc3ViamVjdDogJ/CflJEgUmVzZXQgWW91ciBQYXNzd29yZCcsCiAgICBodG1sOiBgCiAgICAgIDxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OkludGVyLHNhbnMtc2VyaWY7bWF4LXdpZHRoOjUyMHB4O21hcmdpbjowIGF1dG87Y29sb3I6IzFlMjkzYiI+CiAgICAgICAgPGRpdiBzdHlsZT0iYmFja2dyb3VuZDojNjM2NmYxO3BhZGRpbmc6MjRweCAzMnB4O2JvcmRlci1yYWRpdXM6MTJweCAxMnB4IDAgMCI+CiAgICAgICAgICA8ZGl2IHN0eWxlPSJjb2xvcjojZmZmO2ZvbnQtc2l6ZToyMnB4O2ZvbnQtd2VpZ2h0OjgwMCI+TWlnYW5jb3JlPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBzdHlsZT0iYmFja2dyb3VuZDojZmZmO3BhZGRpbmc6MzJweDtib3JkZXI6MXB4IHNvbGlkICNlMmU4ZjA7Ym9yZGVyLXRvcDpub25lO2JvcmRlci1yYWRpdXM6MCAwIDEycHggMTJweCI+CiAgICAgICAgICA8aDEgc3R5bGU9ImZvbnQtc2l6ZToyMHB4O2ZvbnQtd2VpZ2h0OjcwMDttYXJnaW46MCAwIDhweCI+UGFzc3dvcmQgUmVzZXQ8L2gxPgogICAgICAgICAgPHAgc3R5bGU9ImNvbG9yOiM2NDc0OGI7bWFyZ2luOjAgMCAyNHB4Ij5IaSAke29wdHMucmVjaXBpZW50TmFtZX0sPC9wPgogICAgICAgICAgPHAgc3R5bGU9ImNvbG9yOiM2NDc0OGI7bWFyZ2luOjAgMCAyMHB4Ij5DbGljayB0aGUgYnV0dG9uIGJlbG93IHRvIHJlc2V0IHlvdXIgcGFzc3dvcmQuIFRoaXMgbGluayBleHBpcmVzIGluICR7ZXhwaXJ5fSBtaW51dGVzLjwvcD4KICAgICAgICAgIDxhIGhyZWY9IiR7b3B0cy5yZXNldFVybH0iCiAgICAgICAgICAgICBzdHlsZT0iZGlzcGxheTpibG9jazt0ZXh0LWFsaWduOmNlbnRlcjtiYWNrZ3JvdW5kOiM2MzY2ZjE7Y29sb3I6I2ZmZjt0ZXh0LWRlY29yYXRpb246bm9uZTtwYWRkaW5nOjE0cHg7Ym9yZGVyLXJhZGl1czoxMHB4O2ZvbnQtd2VpZ2h0OjcwMDtmb250LXNpemU6MTVweDttYXJnaW4tYm90dG9tOjI0cHgiPgogICAgICAgICAgICDwn5SRIFJlc2V0IFBhc3N3b3JkCiAgICAgICAgICA8L2E+CiAgICAgICAgICA8cCBzdHlsZT0iZm9udC1zaXplOjEycHg7Y29sb3I6Izk0YTNiODttYXJnaW46MCI+SWYgeW91IGRpZG4ndCByZXF1ZXN0IHRoaXMsIGlnbm9yZSB0aGlzIGVtYWlsLjwvcD4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+YCwKICB9Owp9Cg==
+import nodemailer from 'nodemailer';
+
+/**
+ * Email dispatch via nodemailer + SMTP relay.
+ * Graceful skip if SMTP_HOST not configured.
+ * Includes built-in templates for common flows.
+ *
+ * Required env vars:
+ *   SMTP_HOST=smtp.gmail.com
+ *   SMTP_PORT=587
+ *   SMTP_USER=sender@example.com
+ *   SMTP_PASS=app-specific-password
+ *   SMTP_FROM=Your App <noreply@example.com>
+ */
+
+export interface EmailPayload {
+  to: string;
+  subject: string;
+  html: string;
+  text?: string;
+}
+
+export interface EmailResult {
+  ok: boolean;
+  skipped?: boolean;
+  error?: string;
+}
+
+/** Singleton transporter (created once per process) */
+let _transport: ReturnType<typeof nodemailer.createTransport> | null = null;
+
+function getTransport(): ReturnType<typeof nodemailer.createTransport> | null {
+  const host = process.env.SMTP_HOST?.trim();
+  if (!host) return null;
+
+  if (!_transport) {
+    _transport = nodemailer.createTransport({
+      host,
+      port: parseInt(process.env.SMTP_PORT ?? '587', 10),
+      secure: process.env.SMTP_PORT === '465',
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+  }
+
+  return _transport;
+}
+
+/**
+ * Send email via SMTP.
+ * Returns { ok: true, skipped: true } if SMTP not configured.
+ */
+export async function sendEmail(payload: EmailPayload): Promise<EmailResult> {
+  const transport = getTransport();
+
+  if (!transport) {
+    console.info(
+      `[mailer] SMTP not configured — skipped: "${payload.subject}" → ${payload.to}`
+    );
+    return { ok: true, skipped: true };
+  }
+
+  try {
+    const from =
+      process.env.SMTP_FROM ??
+      `Noreply <${process.env.SMTP_USER ?? 'noreply@example.com'}>`;
+
+    await transport.sendMail({
+      from,
+      to: payload.to,
+      subject: payload.subject,
+      html: payload.html,
+      text:
+        payload.text ??
+        payload.html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(),
+    });
+
+    console.info(
+      `[mailer] sent: "${payload.subject}" → ${payload.to}`
+    );
+    return { ok: true };
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error('[mailer] send failed:', msg);
+    return { ok: false, error: msg };
+  }
+}
+
+// ─── Built-in Templates ─────────────────────────────────────────────────
+
+export interface PurchaseSuccessOpts {
+  buyerName: string;
+  productName: string;
+  orderId: string;
+  downloadUrl: string;
+  amountIdr: number;
+}
+
+/**
+ * Purchase success email template (Indonesian).
+ */
+export function tplPurchaseSuccess(opts: PurchaseSuccessOpts): EmailPayload {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://example.com';
+  const amt = 'Rp ' + opts.amountIdr.toLocaleString('id-ID');
+
+  return {
+    to: '', // Caller sets this
+    subject: `✅ Pembelian berhasil — ${opts.productName}`,
+    html: `
+      <div style="font-family:Inter,sans-serif;max-width:520px;margin:0 auto;color:#1e293b">
+        <div style="background:#6366f1;padding:24px 32px;border-radius:12px 12px 0 0">
+          <div style="color:#fff;font-size:22px;font-weight:800">Migancore</div>
+          <div style="color:rgba(255,255,255,0.7);font-size:13px;margin-top:4px">Digital Products</div>
+        </div>
+        <div style="background:#fff;padding:32px;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 12px 12px">
+          <h1 style="font-size:20px;font-weight:700;margin:0 0 8px">Pembelian Berhasil! 🎉</h1>
+          <p style="color:#64748b;margin:0 0 24px">Halo <strong>${opts.buyerName}</strong>, terima kasih sudah membeli produk digital kami.</p>
+          <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:20px;margin-bottom:24px">
+            <div style="font-size:12px;color:#94a3b8;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Detail Pesanan</div>
+            <div style="font-size:15px;font-weight:700">${opts.productName}</div>
+            <div style="font-size:13px;color:#64748b;margin-top:4px">Order: ${opts.orderId} · ${amt}</div>
+          </div>
+          <a href="${siteUrl}/app/downloads"
+             style="display:block;text-align:center;background:#6366f1;color:#fff;text-decoration:none;padding:14px;border-radius:10px;font-weight:700;font-size:15px;margin-bottom:16px">
+            ⬇ Buka My Downloads
+          </a>
+          <p style="font-size:12px;color:#94a3b8;text-align:center;margin:0">Akses di dashboard · Login dengan akun yang digunakan saat membeli.</p>
+        </div>
+      </div>`,
+  };
+}
+
+export interface PasswordResetOpts {
+  recipientName: string;
+  resetUrl: string;
+  expiryMinutes?: number;
+}
+
+/**
+ * Password reset email template.
+ */
+export function tplPasswordReset(opts: PasswordResetOpts): EmailPayload {
+  const expiry = opts.expiryMinutes ?? 60;
+
+  return {
+    to: '', // Caller sets this
+    subject: '🔑 Reset Your Password',
+    html: `
+      <div style="font-family:Inter,sans-serif;max-width:520px;margin:0 auto;color:#1e293b">
+        <div style="background:#6366f1;padding:24px 32px;border-radius:12px 12px 0 0">
+          <div style="color:#fff;font-size:22px;font-weight:800">Migancore</div>
+        </div>
+        <div style="background:#fff;padding:32px;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 12px 12px">
+          <h1 style="font-size:20px;font-weight:700;margin:0 0 8px">Password Reset</h1>
+          <p style="color:#64748b;margin:0 0 24px">Hi ${opts.recipientName},</p>
+          <p style="color:#64748b;margin:0 0 20px">Click the button below to reset your password. This link expires in ${expiry} minutes.</p>
+          <a href="${opts.resetUrl}"
+             style="display:block;text-align:center;background:#6366f1;color:#fff;text-decoration:none;padding:14px;border-radius:10px;font-weight:700;font-size:15px;margin-bottom:24px">
+            🔑 Reset Password
+          </a>
+          <p style="font-size:12px;color:#94a3b8;margin:0">If you didn't request this, ignore this email.</p>
+        </div>
+      </div>`,
+  };
+}
