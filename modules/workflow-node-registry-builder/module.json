@@ -1,1 +1,1 @@
-
+{"id":"workflow-node-registry-builder","name":"Workflow Node Registry Builder","version":"1.0.0","category":"business","description":"Extensible registry of workflow node types with ports, executors, and UI metadata.","input":[],"output":[],"tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
