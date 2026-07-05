@@ -1,1 +1,32 @@
-ewogICJpZCI6ICJzb2NpYWwtcG9zdC1zY2hlZHVsZXIiLAogICJuYW1lIjogIlNvY2lhbCBQb3N0IEF1dG8tU2NoZWR1bGVyIiwKICAidmVyc2lvbiI6ICIxLjAuMCIsCiAgImNhdGVnb3J5IjogWyJidXNpbmVzcyJdLAogICJkZXNjcmlwdGlvbiI6ICJCYWNrZ3JvdW5kIHdvcmtlciAoNjBzIGludGVydmFsKSB0aGF0IHB1Ymxpc2hlcyBzY2hlZHVsZWQgc29jaWFsIHBvc3RzIHdoZW4gc2NoZWR1bGVkX2F0IDw9IG5vdygpLiBTdXBwb3J0cyBiYXRjaCBwcm9jZXNzaW5nLCB0cmFuc2FjdGlvbmFsIHVwZGF0ZXMsIGFuZCBsb2dnaW5nLiIsCiAgImlucHV0IjogWwogICAgewogICAgICAibmFtZSI6ICJjaGVja0ludGVydmFsIiwKICAgICAgInR5cGUiOiAibnVtYmVyIiwKICAgICAgImRlc2NyaXB0aW9uIjogIlNlY29uZHMgYmV0d2VlbiBzY2hlZHVsZXIgdGlja3MgKGRlZmF1bHQ6IDYwKSIKICAgIH0KICBdLAogICJvdXRwdXQiOiBbCiAgICB7CiAgICAgICJuYW1lIjogInByb2Nlc3NlZENvdW50IiwKICAgICAgInR5cGUiOiAibnVtYmVyIiwKICAgICAgImRlc2NyaXB0aW9uIjogIlBvc3RzIHB1Ymxpc2hlZCBpbiB0aGlzIHRpY2siCiAgICB9LAogICAgewogICAgICAibmFtZSI6ICJsb2ciLAogICAgICAidHlwZSI6ICJzdHJpbmciLAogICAgICAiZGVzY3JpcHRpb24iOiAiU2NoZWR1bGVyIGFjdGlvbiBsb2ciCiAgICB9CiAgXSwKICAidGFncyI6IFsic2NoZWR1bGVyIiwgInNvY2lhbC1tZWRpYSIsICJhdXRvbWF0aW9uIiwgImJhY2tncm91bmQtam9iIl0sCiAgImNvbXBhdGlibGVfd2l0aCI6IFsiYmFja2VuZCIsICJub2RlanMiLCAic2VydmVyIl0sCiAgInVzZWRfaW5fcmVjaXBlcyI6IFsic29jaWFsLW1lZGlhLWF1dG9tYXRpb24iLCAiY29udGVudC1jYWxlbmRhciJdLAogICJzdGF0dXMiOiAic3RhYmxlIiwKICAiYXV0aG9yIjogIlRpcmFueXgiLAogICJsaWNlbnNlIjogIk1JVCIKfQo=
+{
+  "id": "social-post-scheduler",
+  "name": "Social Post Auto-Scheduler",
+  "version": "1.0.0",
+  "category": ["business"],
+  "description": "Background worker (60s interval) that publishes scheduled social posts when scheduled_at <= now(). Supports batch processing, transactional updates, and logging.",
+  "input": [
+    {
+      "name": "checkInterval",
+      "type": "number",
+      "description": "Seconds between scheduler ticks (default: 60)"
+    }
+  ],
+  "output": [
+    {
+      "name": "processedCount",
+      "type": "number",
+      "description": "Posts published in this tick"
+    },
+    {
+      "name": "log",
+      "type": "string",
+      "description": "Scheduler action log"
+    }
+  ],
+  "tags": ["scheduler", "social-media", "automation", "background-job"],
+  "compatible_with": ["backend", "nodejs", "server"],
+  "used_in_recipes": ["social-media-automation", "content-calendar"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
