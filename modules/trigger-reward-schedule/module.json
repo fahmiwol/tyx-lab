@@ -1,0 +1,15 @@
+{
+  "id": "trigger-reward-schedule",
+  "name": "Trigger-Based Reward Schedule",
+  "version": "1.0.0",
+  "category": "business",
+  "description": "Maps activity triggers (VIDEO_WATCH, QUIZ_COMPLETE, MISSION, etc.) → default reward amounts. Each trigger row: { trigger, label, defaultAmount, icon, description }. Supports per-call customAmount override for one-off adjustments. Immutable base table versioned for audit; overrides logged per-transaction.",
+  "input": ["trigger: string; customAmount?: number"],
+  "output": ["{ trigger, defaultAmount, awardedAmount, txId, timestamp }"],
+  "tags": ["rewards","gamification","trigger-based","audit","fintech"],
+  "compatible_with": ["ledger-type-router","batch-idempotent-processor"],
+  "used_in_recipes": ["engagement-reward-system","mission-tracking"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
