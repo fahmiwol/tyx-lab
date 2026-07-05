@@ -1,0 +1,1 @@
+{"id":"agent-persona-router","name":"Agent Persona Router","version":"1.0.0","kind":"method","category":"ai","description":"Dispatch tasks to specialized agent personas with isolated memory.","tags":[],"compatible_with":[],"used_in_recipes":[],"status":"stable","author":"Tiranyx","license":"MIT"}
