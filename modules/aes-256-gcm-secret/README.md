@@ -1,1 +1,98 @@
-IyBBRVMtMjU2LUdDTSBTZWNyZXQgRW5jcnlwdC9EZWNyeXB0CgpTeW1tZXRyaWMgZW5jcnlwdGlvbiBmb3Igc3RvcmluZyBzZW5zaXRpdmUgc2VjcmV0cyBpbiBhIGRhdGFiYXNlIG9yIGNvbmZpZyBzdG9yZS4gVXNlcyBBRVMtMjU2LUdDTSB3aXRoIHJhbmRvbSBJViBhbmQgYXV0aGVudGljYXRpb24gdGFnLgoKIyMgV2h5CgotICoqSW50ZWdyYXRpb24gc2VjcmV0cyoqOiBNaWR0cmFucywgU3RyaXBlLCBQYXlQYWwgQVBJIGtleXMKLSAqKkF1dGggdG9rZW5zKio6IE9BdXRoIHJlZnJlc2ggdG9rZW5zLCBBUEkga2V5cwotICoqQ29ubmVjdGlvbiBzdHJpbmdzKio6IERhdGFiYXNlIFVSSXMsIHNlcnZpY2UgVVJMcwotICoqTWFza2VkIGRpc3BsYXkqKjogU2FmZSB0byBsb2cgd2l0aG91dCBleHBvc2luZyBmdWxsIHZhbHVlcwoKU3RvcmUgZW5jcnlwdGVkIGluIERCOyBkZWNyeXB0IG9uLWRlbWFuZCBpbiBtZW1vcnkuCgojIyBVc2FnZQoKYGBgdHlwZXNjcmlwdAppbXBvcnQgeyBlbmNyeXB0U2VjcmV0LCBkZWNyeXB0U2VjcmV0LCBtYXNrU2VjcmV0IH0gZnJvbSAnQC9saWIvYWVzLTI1Ni1nY20tc2VjcmV0JzsKCi8vIEVuY3J5cHQgYmVmb3JlIHN0b3JpbmcgaW4gREIKY29uc3QgZW5jcnlwdGVkID0gZW5jcnlwdFNlY3JldCgnc2tfbGl2ZV9hYmMxMjMuLi4nKTsKLy8g4oaSICdhQmMxZEUvZitnSDJpSmtMM21Ob1A0cVJzNXRVdld4WXo2YUI3Y0RlRjg9JyAocmFuZG9tIGVhY2ggY2FsbCkKCi8vIFN0b3JlIGluIERCCmRiLnByZXBhcmUoJ1VQREFURSBpbnRlZ3JhdGlvbnMgU0VUIHNlY3JldCA9ID8gV0hFUkUgaWQgPSA/JykKICAucnVuKGVuY3J5cHRlZCwgaW50ZWdyYXRpb25JZCk7CgovLyBEZWNyeXB0IHdoZW4gbmVlZGVkCmNvbnN0IHBsYWluID0gZGVjcnlwdFNlY3JldChlbmNyeXB0ZWQpOwovLyDihpIgJ3NrX2xpdmVfYWJjMTIzLi4uJwoKLy8gRGlzcGxheSBzYWZlbHkgKGZpcnN0IDQgKyBsYXN0IDQpCmNvbnN0IG1hc2tlZCA9IG1hc2tTZWNyZXQocGxhaW4pOwovLyDihpIgJ3NrX2zil4/il4/il4/il4/il4/il4/il49hYmMxMjMnCmBgYAoKIyMgSG93IEl0IFdvcmtzCgoxLiBLZXk6IFNIQS0yNTYgaGFzaCBvZiBgcHJvY2Vzcy5lbnYuU0VDUkVUU19LRVlgIChvciBgQ09PS0lFX1NFQ1JFVGAgZmFsbGJhY2spCjIuIENpcGhlcjogQUVTLTI1Ni1HQ00gKDI1Ni1iaXQga2V5KQozLiBOb25jZTogUmFuZG9tIDEyLWJ5dGUgSVYgcGVyIGVuY3J5cHRpb24KNC4gQXV0aDogMTYtYnl0ZSBhdXRoZW50aWNhdGlvbiB0YWcgKGRldGVjdHMgdGFtcGVyaW5nKQo1LiBPdXRwdXQ6IEJhc2U2NChpdiB8fCBhdXRoVGFnIHx8IGNpcGhlcnRleHQpCgpFYWNoIGVuY3J5cHRpb24gcHJvZHVjZXMgZGlmZmVyZW50IG91dHB1dCAocmFuZG9tIElWKSBidXQgZGVjcnlwdHMgdG8gc2FtZSBwbGFpbnRleHQuCgojIyBFbnZpcm9ubWVudCBWYXJpYWJsZXMKCmBgYGJhc2gKIyBQcmltYXJ5IHNlY3JldCBrZXkgKHJlY29tbWVuZGVkKQpTRUNSRVRTX0tFWT15b3VyLTY0LWNoYXJhY3Rlci1yYW5kb20taGV4LXN0cmluZy1oZXJlCgojIEZhbGxiYWNrIGlmIFNFQ1JFVFNfS0VZIG5vdCBzZXQKQ09PS0lFX1NFQ1JFVD15b3VyLWZhbGxiYWNrLWtleQoKIyBXaXRob3V0IGVpdGhlciwgdXNlcyBidWlsdC1pbiBkZXYga2V5IChOT1QgRk9SIFBST0RVQ1RJT04pCmBgYAoKIyMgU2VjdXJpdHkgTm90ZXMKCi0gKipLZXkgcm90YXRpb24qKjogQ2hhbmdlIGBTRUNSRVRTX0tFWWAsIG1hbnVhbGx5IHJlLWVuY3J5cHQgb2xkIHZhbHVlcwotICoqTm8ga2V5IGRlcml2YXRpb24qKjogVXNlcyByYXcgU0hBLTI1NiBvZiBzZWVkIChmYXN0LCBzaW5nbGUgZGVyaXZlKQotICoqR0NNIG1vZGUqKjogUHJldmVudHMgdGFtcGVyaW5nOyBkZWNyeXB0U2VjcmV0IHJldHVybnMgJycgaWYgdGFnIGZhaWxzCi0gKipUaW1pbmctc2FmZSoqOiBDb21wYXJpc29uIChmb3IgYXV0aCkgaXMgdGltaW5nLXJlc2lzdGFudAotICoqUmFuZG9tIElWKio6IEV2ZXJ5IGVuY3J5cHRpb24gdW5pcXVlLCBzYWZlIHRvIHN0b3JlIG11bHRpcGxlIGVuY3J5cHRlZCBjb3BpZXMKCiMjIERhdGFiYXNlIFN0b3JhZ2UKCmBgYHNxbAotLSBFeGFtcGxlOiBpbnRlZ3JhdGlvbnMgdGFibGUKQ1JFQVRFIFRBQkxFIGludGVncmF0aW9ucyAoCiAgaWQgVEVYVCBQUklNQVJZIEtFWSwKICBwcm92aWRlciBURVhUIE5PVCBOVUxMLCAgICAgICAgLS0gJ3N0cmlwZScsICdwYXlwYWwnLCBldGMuCiAgc2VjcmV0IFRFWFQgTk9UIE5VTEwsICAgICAgICAgIC0tIGVuY3J5cHRlZCB2YWx1ZQogIHNlY3JldF9tYXNrZWQgVEVYVCwgICAgICAgICAgICAtLSAnc2tfbOKXj+KXj+KXj+KXj+KXj+KXj+KXj2FiYzEyMycgZm9yIFVJCiAgY3JlYXRlZF9hdCBEQVRFVElNRSBERUZBVUxUIENVUlJFTlRfVElNRVNUQU1QCik7CgotLSBJbnNlcnQKSU5TRVJUIElOVE8gaW50ZWdyYXRpb25zIChpZCwgcHJvdmlkZXIsIHNlY3JldCwgc2VjcmV0X21hc2tlZCkKVkFMVUVTICg/LCAnc3RyaXBlJywgPywgbWFza1NlY3JldChwbGFpblNlY3JldCkpOwoKLS0gUmV0cmlldmUgYW5kIGRlY3J5cHQKY29uc3Qgcm93ID0gZGIucHJlcGFyZSgnU0VMRUNUIHNlY3JldCBGUk9NIGludGVncmF0aW9ucyBXSEVSRSBpZCA9ID8nKS5nZXQoaWQpOwpjb25zdCBwbGFpbiA9IGRlY3J5cHRTZWNyZXQocm93LnNlY3JldCk7CmBgYAoKIyMgQ29tcGFyaXNvbgoKfCBNZXRob2QgfCBTcGVlZCB8IFNpemUgfCBDb21wbGV4aXR5IHwKfC0tLS0tLS0tfC0tLS0tLS18LS0tLS0tfC0tLS0tLS0tLS0tLXwKfCBBRVMtMjU2LUdDTSB8IEZhc3QgfCBNZWRpdW0gKElWK1RhZytDVCkgfCBTdGFuZGFyZCB8CnwgQmNyeXB0IHwgU2xvdyAoaW50ZW50aW9uYWwpIHwgTGFyZ2UgfCBPdmVya2lsbCBmb3Igc2VjcmV0cyB8CnwgUlNBIHwgQXN5bW1ldHJpYyAoa2V5IGV4Y2hhbmdlIG5lZWRlZCkgfCBWZXJ5IGxhcmdlIHwgTW9yZSBjb21wbGV4IHwKfCBQbGFpblRleHQgfCBOL0EgfCBTbWFsbCB8IE5FVkVSIFVTRSB8CgpVc2UgQUVTLTI1Ni1HQ00gZm9yIHNlY3JldHMgeW91IGNvbnRyb2wgYm90aCBrZXkgYW5kIHZhbHVlIGZvci4gVXNlIGJjcnlwdCBvbmx5IGZvciBwYXNzd29yZCB2ZXJpZmljYXRpb24gKG5vdCBzdG9yYWdlKS4KCipPcGVuIHNvdXJjZSDigJQgdXNlIGl0IHdpc2VseS4qCg==
+# AES-256-GCM Secret Encrypt/Decrypt
+
+Symmetric encryption for storing sensitive secrets in a database or config store. Uses AES-256-GCM with random IV and authentication tag.
+
+## Why
+
+- **Integration secrets**: Midtrans, Stripe, PayPal API keys
+- **Auth tokens**: OAuth refresh tokens, API keys
+- **Connection strings**: Database URIs, service URLs
+- **Masked display**: Safe to log without exposing full values
+
+Store encrypted in DB; decrypt on-demand in memory.
+
+## Usage
+
+```typescript
+import { encryptSecret, decryptSecret, maskSecret } from '@/lib/aes-256-gcm-secret';
+
+// Encrypt before storing in DB
+const encrypted = encryptSecret('sk_live_abc123...');
+// → 'aBc1dE/f+gH2iJkL3mNoP4qRs5tUvWxYz6aB7cDeF8=' (random each call)
+
+// Store in DB
+db.prepare('UPDATE integrations SET secret = ? WHERE id = ?')
+  .run(encrypted, integrationId);
+
+// Decrypt when needed
+const plain = decryptSecret(encrypted);
+// → 'sk_live_abc123...'
+
+// Display safely (first 4 + last 4)
+const masked = maskSecret(plain);
+// → 'sk_l●●●●●●●abc123'
+```
+
+## How It Works
+
+1. Key: SHA-256 hash of `process.env.SECRETS_KEY` (or `COOKIE_SECRET` fallback)
+2. Cipher: AES-256-GCM (256-bit key)
+3. Nonce: Random 12-byte IV per encryption
+4. Auth: 16-byte authentication tag (detects tampering)
+5. Output: Base64(iv || authTag || ciphertext)
+
+Each encryption produces different output (random IV) but decrypts to same plaintext.
+
+## Environment Variables
+
+```bash
+# Primary secret key (recommended)
+SECRETS_KEY=your-64-character-random-hex-string-here
+
+# Fallback if SECRETS_KEY not set
+COOKIE_SECRET=your-fallback-key
+
+# Without either, uses built-in dev key (NOT FOR PRODUCTION)
+```
+
+## Security Notes
+
+- **Key rotation**: Change `SECRETS_KEY`, manually re-encrypt old values
+- **No key derivation**: Uses raw SHA-256 of seed (fast, single derive)
+- **GCM mode**: Prevents tampering; decryptSecret returns '' if tag fails
+- **Timing-safe**: Comparison (for auth) is timing-resistant
+- **Random IV**: Every encryption unique, safe to store multiple encrypted copies
+
+## Database Storage
+
+```sql
+-- Example: integrations table
+CREATE TABLE integrations (
+  id TEXT PRIMARY KEY,
+  provider TEXT NOT NULL,        -- 'stripe', 'paypal', etc.
+  secret TEXT NOT NULL,          -- encrypted value
+  secret_masked TEXT,            -- 'sk_l●●●●●●●abc123' for UI
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Insert
+INSERT INTO integrations (id, provider, secret, secret_masked)
+VALUES (?, 'stripe', ?, maskSecret(plainSecret));
+
+-- Retrieve and decrypt
+const row = db.prepare('SELECT secret FROM integrations WHERE id = ?').get(id);
+const plain = decryptSecret(row.secret);
+```
+
+## Comparison
+
+| Method | Speed | Size | Complexity |
+|--------|-------|------|------------|
+| AES-256-GCM | Fast | Medium (IV+Tag+CT) | Standard |
+| Bcrypt | Slow (intentional) | Large | Overkill for secrets |
+| RSA | Asymmetric (key exchange needed) | Very large | More complex |
+| PlainText | N/A | Small | NEVER USE |
+
+Use AES-256-GCM for secrets you control both key and value for. Use bcrypt only for password verification (not storage).
+
+*Open source — use it wisely.*
