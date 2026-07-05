@@ -1,0 +1,11 @@
+{
+  "id": "idempotent-payment-retry-pattern",
+  "name": "Idempotent Payment Retry Pattern",
+  "version": "1.0.0",
+  "kind": "artifact",
+  "category": "infra",
+  "description": "Reference design for payment retry logic that prevents duplicate charges. Uses idempotency keys (UUID-based), response caching, and state machine for in-flight transaction handling. Covers network failures and timeout scenarios.",
+  "tags": ["idempotency", "payment-processing", "retry-logic", "fault-tolerance"],
+  "compatible_with": ["transfer-intent-checkout-state", "idempotent-payment-processing"],
+  "used_in_recipes": ["b2b-payment-settlement", "checkout-reliability"]
+}
