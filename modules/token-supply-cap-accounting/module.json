@@ -1,0 +1,26 @@
+{
+  "id": "token-supply-cap-accounting",
+  "name": "Token Supply Cap & Reserve Accounting",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Tracks minted, burned, and circulating supply across denominations with hard limits per tier. Computes remaining mintable reserve and validates cap enforcement at transaction time.",
+  "input": [
+    {"name": "denomination", "type": "enum", "values": ["GOLD", "SILVER", "BRONZE", "DIAMOND"]},
+    {"name": "action", "type": "enum", "values": ["mint", "burn", "query"]},
+    {"name": "amount", "type": "bigint", "optional": true}
+  ],
+  "output": [
+    {"name": "totalMinted", "type": "bigint"},
+    {"name": "totalBurned", "type": "bigint"},
+    {"name": "circulating", "type": "bigint"},
+    {"name": "maxSupply", "type": "bigint", "nullable": true},
+    {"name": "remainingCapacity", "type": "bigint", "nullable": true},
+    {"name": "capEnforced", "type": "boolean"}
+  ],
+  "tags": ["supply-chain", "ledger", "cap-control", "reserve-accounting"],
+  "compatible_with": ["batch-mint-issuance-authority", "token-burn-redemption-audit", "denomination-unit-price-resolver"],
+  "used_in_recipes": ["supply-governance", "monetary-policy-enforcement"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
