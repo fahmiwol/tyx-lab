@@ -1,1 +1,42 @@
-ewogICJpZCI6ICJhaS1yb3V0ZXItZmFsbGJhY2siLAogICJuYW1lIjogIk11bHRpLVByb3ZpZGVyIEFJIFJvdXRlciIsCiAgInZlcnNpb24iOiAiMS4wLjAiLAogICJjYXRlZ29yeSI6IFsiYWkiXSwKICAiZGVzY3JpcHRpb24iOiAiRmFsbGJhY2sgQUkgY29udGVudCBwcm92aWRlciB3aXRoIHByaW9yaXR5OiBHcm9xIChmcmVlKSDihpIgR2VtaW5pIChmcmVlKSDihpIgT2xsYW1hIChsb2NhbCkg4oaSIEFudGhyb3BpYy4gSGFuZGxlcyB0aW1lb3V0cywgZmFsbGJhY2ssIGFuZCB1bmlmaWVkIHJlc3BvbnNlIGZvcm1hdC4iLAogICJpbnB1dCI6IFsKICAgIHsKICAgICAgIm5hbWUiOiAicHJvbXB0IiwKICAgICAgInR5cGUiOiAic3RyaW5nIiwKICAgICAgImRlc2NyaXB0aW9uIjogIlVzZXIgcHJvbXB0IG9yIGNvbnRlbnQgcmVxdWVzdCIKICAgIH0sCiAgICB7CiAgICAgICJuYW1lIjogIm9wdGlvbnMiLAogICAgICAidHlwZSI6ICJvYmplY3QiLAogICAgICAiZGVzY3JpcHRpb24iOiAiT3B0aW9uYWw6IHsgbWF4VG9rZW5zLCB0ZW1wZXJhdHVyZSwgc3lzdGVtUHJvbXB0IH0iCiAgICB9CiAgXSwKICAib3V0cHV0IjogWwogICAgewogICAgICAibmFtZSI6ICJ0ZXh0IiwKICAgICAgInR5cGUiOiAic3RyaW5nIiwKICAgICAgImRlc2NyaXB0aW9uIjogIkdlbmVyYXRlZCBjb250ZW50IgogICAgfSwKICAgIHsKICAgICAgIm5hbWUiOiAicHJvdmlkZXIiLAogICAgICAidHlwZSI6ICJzdHJpbmciLAogICAgICAiZGVzY3JpcHRpb24iOiAiV2hpY2ggcHJvdmlkZXIgd2FzIHVzZWQgKGdyb3F8Z2VtaW5pfG9sbGFtYXxhbnRocm9waWMpIgogICAgfSwKICAgIHsKICAgICAgIm5hbWUiOiAibW9kZWwiLAogICAgICAidHlwZSI6ICJzdHJpbmciLAogICAgICAiZGVzY3JpcHRpb24iOiAiTW9kZWwgSUQgZnJvbSBwcm92aWRlciIKICAgIH0KICBdLAogICJ0YWdzIjogWyJhaSIsICJjb250ZW50LWdlbmVyYXRpb24iLCAiZmFsbGJhY2siLCAibXVsdGktcHJvdmlkZXIiXSwKICAiY29tcGF0aWJsZV93aXRoIjogWyJiYWNrZW5kIiwgImFwaSIsICJub2RlanMiXSwKICAidXNlZF9pbl9yZWNpcGVzIjogWyJzb2NpYWwtcG9zdC1nZW5lcmF0b3IiLCAiYWktY29udGVudC13cml0ZXIiXSwKICAic3RhdHVzIjogInN0YWJsZSIsCiAgImF1dGhvciI6ICJUaXJhbnl4IiwKICAibGljZW5zZSI6ICJNSVQiCn0K
+{
+  "id": "ai-router-fallback",
+  "name": "Multi-Provider AI Router",
+  "version": "1.0.0",
+  "category": ["ai"],
+  "description": "Fallback AI content provider with priority: Groq (free) → Gemini (free) → Ollama (local) → Anthropic. Handles timeouts, fallback, and unified response format.",
+  "input": [
+    {
+      "name": "prompt",
+      "type": "string",
+      "description": "User prompt or content request"
+    },
+    {
+      "name": "options",
+      "type": "object",
+      "description": "Optional: { maxTokens, temperature, systemPrompt }"
+    }
+  ],
+  "output": [
+    {
+      "name": "text",
+      "type": "string",
+      "description": "Generated content"
+    },
+    {
+      "name": "provider",
+      "type": "string",
+      "description": "Which provider was used (groq|gemini|ollama|anthropic)"
+    },
+    {
+      "name": "model",
+      "type": "string",
+      "description": "Model ID from provider"
+    }
+  ],
+  "tags": ["ai", "content-generation", "fallback", "multi-provider"],
+  "compatible_with": ["backend", "api", "nodejs"],
+  "used_in_recipes": ["social-post-generator", "ai-content-writer"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
