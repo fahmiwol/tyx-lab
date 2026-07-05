@@ -1,0 +1,24 @@
+{
+  "id": "agent-cascade-router",
+  "name": "Agent Cascade Router — LLM-based Tool Selection & Executor Dispatch",
+  "version": "1.0.0",
+  "category": "ai",
+  "description": "2-tier cascade architecture: controller LLM selects tool + executor model, then passes work to specialized executor. Per-agent persona + memory-aware routing. Model-agnostic (Gemini, OpenRouter, HF compatible).",
+  "input": [
+    { "name": "agentId", "type": "string", "description": "Agent identifier" },
+    { "name": "task", "type": "string", "description": "User task/prompt" },
+    { "name": "tools", "type": "array", "description": "Available tools for agent" },
+    { "name": "recalledMemory", "type": "array", "description": "RAG results from memory" }
+  ],
+  "output": [
+    { "name": "tool", "type": "string", "description": "Selected tool name" },
+    { "name": "toolArgs", "type": "object", "description": "Arguments for tool" },
+    { "name": "executorBrief", "type": "string", "description": "Instruction for executor model" }
+  ],
+  "tags": ["agent", "routing", "orchestration", "llm", "tool-selection"],
+  "compatible_with": ["memory-rag", "agent-personas"],
+  "used_in_recipes": ["multi-agent-cognition", "hermes-controller"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
