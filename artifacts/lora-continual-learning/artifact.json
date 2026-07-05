@@ -1,0 +1,14 @@
+{
+  "id": "lora-continual-learning",
+  "name": "LoRA Continual Learning Without Catastrophic Forgetting",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "ai",
+  "description": "Methodology for incrementally improving SLMs via LoRA adapters while preserving previously learned knowledge, persona, and safety constraints.",
+  "tags": ["lora", "continual-learning", "catastrophic-forgetting", "adapter", "stability-plasticity", "incremental-training"],
+  "compatible_with": ["slm-distillation-pipeline", "eval-gate-regression-guard"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
