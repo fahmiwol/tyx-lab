@@ -1,0 +1,21 @@
+{
+  "id": "day-night-cycle",
+  "name": "Day Night Cycle",
+  "version": "1.0.0",
+  "category": "3d",
+  "description": "24-hour environment cycle for Three.js scenes. Interpolates directional light, ambient light, fog, and clear color through keyframe-defined phases (dawn/day/dusk/night). Supports wall-clock time, timezone offset, fast-mode acceleration, and manual hour override for testing.",
+  "input": [
+    { "name": "renderer", "type": "Object", "description": "Three.js renderer object with scene, dirLight, ambientLight, renderer properties" },
+    { "name": "deltaTime", "type": "number", "description": "Elapsed time in seconds (for update call)" }
+  ],
+  "output": [
+    { "name": "phase", "type": "string", "description": "Current phase: 'night'|'dawn'|'day'|'dusk'" },
+    { "name": "hour", "type": "number", "description": "Current hour as float (0-24)" }
+  ],
+  "tags": ["3d", "threejs", "lighting", "environment", "animation", "game-dev", "procedural"],
+  "compatible_with": ["browser", "nodejs", "typescript", "threejs"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
