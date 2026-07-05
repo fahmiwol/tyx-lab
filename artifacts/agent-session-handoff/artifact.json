@@ -1,0 +1,14 @@
+{
+  "id": "agent-session-handoff",
+  "name": "Agent Session Handoff & Continuity Pattern",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "ai",
+  "description": "Durable handoff pattern for multi-agent coding work: continuity log (AGENT_CONTINUITY.md) tracks every session with ID, date, agent, changes, test results, and follow-ups. Includes session structure (AGENT-YYYYMMDD-###), current-focus table, session detail blocks, and integration with changelog.",
+  "tags": ["handoff", "continuity", "multi-agent", "memory", "workflow"],
+  "compatible_with": ["claude", "cursor", "opencode", "codex"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
