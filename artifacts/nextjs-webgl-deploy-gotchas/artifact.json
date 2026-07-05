@@ -1,0 +1,14 @@
+{
+  "id": "nextjs-webgl-deploy-gotchas",
+  "name": "Next.js + Three.js Deploy & WebGL Debugging Gotchas",
+  "version": "1.0.0",
+  "kind": "finding",
+  "category": "infra",
+  "description": "Reusable failure modes when deploying a Next.js app with a Three.js/WebGL scene: stale-serve traps and silent GLB/meshopt render failures, with fixes.",
+  "tags": ["nextjs", "threejs", "webgl", "deploy", "glb", "meshopt", "caching"],
+  "compatible_with": [],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
