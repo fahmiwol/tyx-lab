@@ -1,0 +1,20 @@
+{
+  "id": "provider-registry",
+  "name": "Provider Registry — Data-Driven LLM/Media Provider Config",
+  "version": "1.0.0",
+  "category": "infra",
+  "description": "Catalog of available providers (LLM routers, executors, media services) loaded from JSON config. Zero code changes to add providers. Used by agents to pick executor models and media backends.",
+  "input": [
+    { "name": "kind", "type": "string", "description": "Provider kind: router|executor|media" },
+    { "name": "providersJson", "type": "object", "description": "Config object with provider entries" }
+  ],
+  "output": [
+    { "name": "providers", "type": "array", "description": "Filtered provider list by kind, with enabled status" }
+  ],
+  "tags": ["registry", "config", "provider", "llm", "media"],
+  "compatible_with": ["agent-cascade-router", "llm-caller"],
+  "used_in_recipes": ["multi-model-routing", "media-pipeline"],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
