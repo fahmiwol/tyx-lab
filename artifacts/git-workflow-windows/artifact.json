@@ -1,0 +1,14 @@
+{
+  "id": "git-workflow-windows",
+  "name": "Git Workflow — Windows + Private GitHub Repo",
+  "version": "1.0.0",
+  "kind": "playbook",
+  "category": "infra",
+  "description": "Lean git setup and recovery flow tuned for Windows + a private GitHub repo: PAT auth, conventional commits, Windows path pitfalls, and safe undo.",
+  "tags": ["git", "windows", "github", "pat", "conventional-commits"],
+  "compatible_with": ["exfat-windows-fix"],
+  "used_in_recipes": [],
+  "status": "stable",
+  "author": "Tiranyx",
+  "license": "MIT"
+}
