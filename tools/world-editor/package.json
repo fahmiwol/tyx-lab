@@ -1,8 +1,8 @@
 {
-  "name": "cursor-036-world-editor",
+  "name": "world-editor",
   "version": "0.1.0",
   "private": true,
-  "description": "by Cursor — world.json editor via gateway",
+  "description": "Tool: world.json editor via gateway",
   "type": "module",
   "scripts": {
     "dev": "vite --port 3060",
