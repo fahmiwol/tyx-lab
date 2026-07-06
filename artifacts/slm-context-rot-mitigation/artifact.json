@@ -1,0 +1,14 @@
+{
+  "id": "slm-context-rot-mitigation",
+  "name": "SLM Multi-Turn Context-Rot Mitigation",
+  "version": "1.0.0",
+  "kind": "method",
+  "category": "ai",
+  "description": "Per-turn context-management recipe that stops a small LLM from looping/hallucinating after ~15 turns by externalizing state instead of stuffing the transcript.",
+  "tags": ["slm", "context-rot", "lost-in-the-middle", "agent-memory", "hallucination", "multi-turn", "working-memory", "retrieval"],
+  "compatible_with": ["anti-halu-context-assembler", "agent-memory-3layer-retrieval", "agent-cascade-router"],
+  "used_in_recipes": [],
+  "status": "beta",
+  "author": "fahmiwol",
+  "license": "MIT"
+}
