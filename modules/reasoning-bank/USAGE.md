@@ -17,6 +17,12 @@ matches = bank.retrieve(user_message, query_intent=intent_label, limit=2)
 block = bank.format_context(matches)
 if block:
     system_prompt += "\n\n" + block
+    bank.mark_used([m.id for m in matches])   # v2: injection → uses++ (causal base)
+
+# 2b) TRUST LOOP — when the user rates the answer of an injected turn
+#     (call BEFORE record_from_correction — see LOGIC.md correction #3):
+bank.record_outcome(prompt_text, positive=(rating == "thumbs_up"),
+                    query_intent=intent_label)
 
 # 3) SEED — distill your documented failure classes into starter lessons:
 bank.record(intent="coding",

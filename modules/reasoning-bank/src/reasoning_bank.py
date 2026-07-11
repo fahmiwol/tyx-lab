@@ -45,6 +45,12 @@ MIN_SCORE = 0.30          # retrieval threshold
 INTENT_WEIGHT = 0.25      # deliberately < MIN_SCORE (anti-spam — see module doc)
 MAX_CONTEXT_CHARS = 700
 
+# v2 trust loop (TAME correction, production-validated).
+# Only RATED injected turns move trust — a turn with no feedback is NOT evidence
+# the strategy failed. Demotion needs repeated real harm, never a single rating.
+DEMOTE_MIN_HURT = 3
+DEMOTE_TRUST = 0.25
+
 
 @dataclass(frozen=True)
 class Strategy:
@@ -55,6 +61,7 @@ class Strategy:
     outcome: str  # "failed" (lesson/avoid) | "proven" (do this)
     source: str
     score: float = 0.0
+    trust: float = 0.5
 
 
 class ReasoningBank:
@@ -132,6 +139,58 @@ class ReasoningBank:
             outcome="failed", source="correction_thumbsdown",
         )
 
+    # ---------- v2 trust loop (TAME correction) ----------
+    @staticmethod
+    def _trust(row: dict) -> float:
+        """(helped+1)/(helped+hurt+2) — Laplace-smoothed, 0.5 neutral for new rows."""
+        helped = int(row.get("helped", 0) or 0)
+        hurt = int(row.get("hurt", 0) or 0)
+        return (helped + 1) / (helped + hurt + 2)
+
+    @staticmethod
+    def _demoted(row: dict) -> bool:
+        helped = int(row.get("helped", 0) or 0)
+        hurt = int(row.get("hurt", 0) or 0)
+        return hurt >= DEMOTE_MIN_HURT and (helped + 1) / (helped + hurt + 2) < DEMOTE_TRUST
+
+    def mark_used(self, entry_ids: list[str]) -> None:
+        """Call when strategies are actually INJECTED into a prompt (not on shadow
+        retrieval): bumps uses/last_used_at so outcome attribution has a causal base."""
+        if not entry_ids:
+            return
+        rows = list(self._load())
+        wanted, changed = set(entry_ids), False
+        for row in rows:
+            if row.get("id") in wanted:
+                row["uses"] = int(row.get("uses", 0) or 0) + 1
+                row["last_used_at"] = time.strftime("%Y-%m-%dT%H:%M:%S")
+                changed = True
+        if changed:
+            self._save(rows)
+
+    def record_outcome(self, prompt_text: str, positive: bool,
+                       query_intent: str | None = None) -> int:
+        """Owner rating on a turn whose strategies were injected → helped/hurt.
+        Attribution = deterministic re-retrieval on the SAME prompt (same scorer
+        as injection) + uses>0 guard (must have actually been injected before).
+        Call this BEFORE recording any new lesson born from the same rating,
+        so a just-created entry never absorbs the rating that created it.
+        Returns the number of entries updated."""
+        matches = self.retrieve(prompt_text or "", query_intent)
+        if not matches:
+            return 0
+        field = "helped" if positive else "hurt"
+        rows = list(self._load())
+        ids = {m.id for m in matches}
+        updated = 0
+        for row in rows:
+            if row.get("id") in ids and int(row.get("uses", 0) or 0) > 0:
+                row[field] = int(row.get(field, 0) or 0) + 1
+                updated += 1
+        if updated:
+            self._save(rows)
+        return updated
+
     # ---------- read path ----------
     @staticmethod
     def _tokens(text: str) -> set[str]:
@@ -154,14 +213,18 @@ class ReasoningBank:
         rows = self._load()
         scored = []
         for row in rows:
+            if self._demoted(row):  # proven-harmful strategies never inject again
+                continue
             s = self._score(query, query_intent, row)
+            # Gate on the BASE score (invariant: intent alone never injects);
+            # trust only re-ranks qualified matches + demote-excludes.
             if s >= MIN_SCORE:
                 scored.append(Strategy(
                     id=str(row.get("id", "")), intent=str(row.get("intent", "")),
                     trigger=str(row.get("trigger", "")), strategy=str(row.get("strategy", "")),
                     outcome=str(row.get("outcome", "failed")), source=str(row.get("source", "")),
-                    score=round(s, 3)))
-        scored.sort(key=lambda x: x.score, reverse=True)
+                    score=round(s, 3), trust=round(self._trust(row), 3)))
+        scored.sort(key=lambda x: (x.score * (0.5 + x.trust), x.score), reverse=True)
         return scored[:max(0, limit)]
 
     @staticmethod
