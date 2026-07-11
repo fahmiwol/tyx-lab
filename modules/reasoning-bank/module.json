@@ -1,0 +1,15 @@
+{
+ "id": "reasoning-bank",
+ "name": "Reasoning Bank — Read-Path Strategy Memory (Learn from Failures, Zero Retraining)",
+ "version": "1.0.0",
+ "category": "ai",
+ "description": "Store generalized reasoning strategies mined from user corrections and reflection heuristics, retrieve by intent + token overlap, inject 1-2 lessons into the prompt — the agent improves from its own mistakes without fine-tuning.",
+ "input": ["user-message", "correction-text", "intent-label"],
+ "output": ["prompt-context-block"],
+ "tags": ["agent-memory", "test-time-learning", "reasoningbank", "slm", "anti-hallucination", "self-improvement"],
+ "compatible_with": ["small-model-backbone", "eval-gate-regression-guard"],
+ "used_in_recipes": [],
+ "status": "stable",
+ "author": "Tiranyx",
+ "license": "MIT"
+}

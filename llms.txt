@@ -240,6 +240,10 @@
 - [ship-an-mcp-server](https://github.com/fahmiwol/tyx-lab/tree/main/recipes/ship-an-mcp-server.md)
 - [tracked-multitenant-saas](https://github.com/fahmiwol/tyx-lab/tree/main/recipes/tracked-multitenant-saas.md)
 
+- [Local GPU Bridge — Borrow the Owner's Consumer GPU (Inference, Image-Gen, Training)](https://github.com/fahmiwol/tyx-lab/tree/main/artifacts/local-gpu-bridge) (infra/method): Reverse-SSH bridge so an always-on CPU server borrows a consumer GPU at home: restricted tunnel-only user, one-script installer, antifragile failover, local image-gen via sd-server, WDDM commit trap, local-training pattern.
+- [Small-Model Backbone Design — Intelligence from the System, Not the Weights](https://github.com/fahmiwol/tyx-lab/tree/main/artifacts/small-model-backbone) (ai/framework): Make a 4B-8B model behave like a much larger one via a 17-facility backbone: quality formula, facility catalog, 3-point output discipline, biggest-impact-first rollout.
+- [Reasoning Bank — Read-Path Strategy Memory](https://github.com/fahmiwol/tyx-lab/tree/main/modules/reasoning-bank) (ai/module): Learn from failures with zero retraining — strategies mined from user corrections, retrieved by intent + token overlap, injected into the prompt.
+
 ## Machine access
 - index.json: https://raw.githubusercontent.com/fahmiwol/tyx-lab/main/index.json
 - MCP server (search_atoms/get_atom/list_categories): tools/tyx-lab-mcp

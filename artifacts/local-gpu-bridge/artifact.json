@@ -1,0 +1,14 @@
+{
+ "id": "local-gpu-bridge",
+ "name": "Local GPU Bridge — Borrow the Owner's Consumer GPU (Inference, Image-Gen, Training)",
+ "version": "2.0.0",
+ "kind": "method",
+ "category": "infra",
+ "description": "Reverse-SSH bridge so an always-on CPU server borrows a consumer GPU at home: restricted tunnel-only user, one-script installer, antifragile failover (GPU can only ADD speed), local image-gen via sd-server, WDDM commit-limit trap, and the local-training pattern.",
+ "tags": ["gpu", "reverse-ssh", "tunnel", "self-hosted", "ollama", "stable-diffusion", "failover", "local-first", "training"],
+ "compatible_with": ["disciplined-execution", "ai-provider-fallback-chain", "cost-aware-gpu-training-optimization"],
+ "used_in_recipes": [],
+ "status": "stable",
+ "author": "Tiranyx",
+ "license": "MIT"
+}

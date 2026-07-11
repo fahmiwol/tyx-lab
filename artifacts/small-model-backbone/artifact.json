@@ -1,0 +1,14 @@
+{
+ "id": "small-model-backbone",
+ "name": "Small-Model Backbone Design — Intelligence from the System, Not the Weights",
+ "version": "1.0.0",
+ "kind": "framework",
+ "category": "ai",
+ "description": "Make a 4B-8B model behave like a much larger one by offloading intelligence into a backbone of 17 facilities across 7 layers: quality formula, facility catalog, 3-point output discipline, biggest-impact-first rollout.",
+ "tags": ["slm", "small-models", "agent-architecture", "backbone", "context-engineering", "validation", "memory", "anti-hallucination"],
+ "compatible_with": ["disciplined-execution", "local-gpu-bridge", "eval-gate-regression-guard"],
+ "used_in_recipes": [],
+ "status": "stable",
+ "author": "Tiranyx",
+ "license": "MIT"
+}
