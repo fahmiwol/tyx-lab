@@ -12,7 +12,11 @@ production-validated: 92% correct-class retrieval on real traffic, anti-spam by 
 - **One JSON file** as storage (atomic writes, mtime-cached) — no DB, no migration.
 - **Two writers**: typed user corrections (thumbs-down) + reflection heuristics.
 - **Failed vs proven** lessons formatted differently in the injected block.
-- Zero dependencies (stdlib only). ~200 lines.
+- **v2 trust loop (implemented):** owner 👍/👎 on injected turns → per-strategy
+  `helped`/`hurt` → Laplace trust re-ranks retrieval; proven-harmful strategies
+  auto-demote and stop injecting (TAME correction, production-verified E2E).
+- Zero dependencies (stdlib only). ~260 lines.
 
-See `LOGIC.md` for the scoring insight and the TAME trust-score extension; `USAGE.md`
-to wire it into any chat pipeline in 3 calls.
+See `LOGIC.md` for the scoring insight and the trust-loop design (incl. three
+corrections to the naive TAME reading); `USAGE.md` to wire it into any chat
+pipeline in 3 calls (+2 for the trust loop).
